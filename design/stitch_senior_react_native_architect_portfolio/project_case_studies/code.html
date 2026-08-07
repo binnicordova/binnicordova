@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Binni Cordova | Project Case Studies</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Space+Grotesk:wght@600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-surface-variant": "#c4c7c7",
+                      "on-surface": "#d4e4fa",
+                      "surface-container-low": "#0d1c2d",
+                      "on-error-container": "#ffdad6",
+                      "inverse-surface": "#d4e4fa",
+                      "surface-dim": "#051424",
+                      "inverse-on-surface": "#233143",
+                      "on-secondary-container": "#004d44",
+                      "on-primary-fixed": "#1c1b1b",
+                      "on-tertiary-container": "#2f7aed",
+                      "tertiary-container": "#001130",
+                      "primary-fixed": "#e5e2e1",
+                      "on-secondary-fixed": "#00201c",
+                      "error-container": "#93000a",
+                      "inverse-primary": "#5f5e5e",
+                      "on-primary-fixed-variant": "#474646",
+                      "surface-tint": "#c8c6c5",
+                      "surface": "#051424",
+                      "tertiary-fixed-dim": "#adc6ff",
+                      "on-tertiary-fixed": "#001a42",
+                      "tertiary-fixed": "#d8e2ff",
+                      "tertiary": "#adc6ff",
+                      "on-secondary": "#003731",
+                      "surface-bright": "#2c3a4c",
+                      "primary-fixed-dim": "#c8c6c5",
+                      "on-secondary-fixed-variant": "#005047",
+                      "outline-variant": "#444748",
+                      "error": "#ffb4ab",
+                      "surface-container-high": "#1c2b3c",
+                      "on-primary": "#313030",
+                      "on-tertiary-fixed-variant": "#004395",
+                      "on-primary-container": "#7e7d7d",
+                      "surface-container-lowest": "#010f1f",
+                      "on-error": "#690005",
+                      "surface-variant": "#273647",
+                      "secondary": "#44e2cd",
+                      "background": "#051424",
+                      "primary": "#c8c6c5",
+                      "primary-container": "#121212",
+                      "surface-container": "#122131",
+                      "surface-container-highest": "#273647",
+                      "on-tertiary": "#002e6a",
+                      "outline": "#8e9192",
+                      "secondary-container": "#03c6b2",
+                      "on-background": "#d4e4fa",
+                      "secondary-fixed-dim": "#3cddc7",
+                      "secondary-fixed": "#62fae3"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "unit": "4px",
+                      "gutter": "24px",
+                      "margin-desktop": "64px",
+                      "margin-mobile": "16px",
+                      "max-width": "1200px"
+              },
+              "fontFamily": {
+                      "body-md": ["Inter"],
+                      "code-sm": ["JetBrains Mono"],
+                      "headline-xl": ["Space Grotesk"],
+                      "label-caps": ["JetBrains Mono"],
+                      "headline-lg-mobile": ["Space Grotesk"],
+                      "body-lg": ["Inter"],
+                      "headline-lg": ["Space Grotesk"]
+              },
+              "fontSize": {
+                      "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                      "code-sm": ["14px", {"lineHeight": "1.4", "fontWeight": "400"}],
+                      "headline-xl": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                      "label-caps": ["12px", {"lineHeight": "1.0", "letterSpacing": "0.1em", "fontWeight": "500"}],
+                      "headline-lg-mobile": ["28px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                      "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                      "headline-lg": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "600"}]
+              }
+            },
+          },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glow-hover:hover {
+            box-shadow: 0 0 15px rgba(68, 226, 205, 0.2);
+            border-color: rgba(68, 226, 205, 0.4);
+        }
+        .architectural-line {
+            background-image: linear-gradient(to right, rgba(255,255,255,0.08) 1px, transparent 1px);
+            background-size: 40px 100%;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface font-body-md selection:bg-secondary/30 selection:text-secondary">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-surface/90 dark:bg-surface/90 backdrop-blur-md border-b border-outline-variant/20">
+<div class="flex justify-between items-center px-margin-mobile md:px-margin-desktop h-16 w-full max-w-max-width mx-auto">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary">terminal</span>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile md:font-headline-lg md:text-headline-lg tracking-tighter text-on-surface dark:text-on-surface">BINNI CORDOVA</h1>
+</div>
+<div class="hidden md:flex items-center gap-8">
+<nav class="flex items-center gap-6">
+<a class="text-on-surface-variant font-label-caps text-label-caps hover:text-secondary transition-colors duration-300" href="#">Architecture</a>
+<a class="text-secondary font-bold font-label-caps text-label-caps hover:text-secondary transition-colors duration-300" href="#">Projects</a>
+<a class="text-on-surface-variant font-label-caps text-label-caps hover:text-secondary transition-colors duration-300" href="#">Tech Stack</a>
+</nav>
+<span class="material-symbols-outlined text-on-surface-variant cursor-pointer hover:text-secondary transition-all">settings_ethernet</span>
+</div>
+<button class="md:hidden material-symbols-outlined text-on-surface">menu</button>
+</div>
+</header>
+<main class="pt-24 pb-32 min-h-screen max-w-max-width mx-auto px-margin-mobile md:px-margin-desktop architectural-line">
+<!-- Header Section -->
+<section class="mb-16">
+<div class="flex flex-col gap-2">
+<span class="font-code-sm text-code-sm text-secondary uppercase tracking-widest">[ Selected Works ]</span>
+<h2 class="font-headline-xl text-headline-xl text-on-surface">Project Case Studies</h2>
+<div class="h-px w-32 bg-secondary/50 mt-4"></div>
+</div>
+</section>
+<!-- Bento Grid Projects -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+<!-- NFL+ (Large Featured) -->
+<div class="md:col-span-8 group relative bg-surface-container-low border border-outline-variant/15 rounded-xl overflow-hidden transition-all duration-500 glow-hover">
+<div class="absolute inset-0 bg-gradient-to-t from-surface-dim via-transparent to-transparent z-10"></div>
+<img class="w-full h-[400px] object-cover grayscale group-hover:grayscale-0 transition-all duration-700" data-alt="A high-tech control room with multiple glowing monitors displaying live American football streaming analytics and complex cloud infrastructure maps. The lighting is dominated by deep blues and vibrant electric teal accents, creating a high-end engineering atmosphere. The aesthetic is futuristic and professional, reflecting high-scale mobile architecture for millions of concurrent users." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCyQqJmFoffwawThG0-zT8FOSMItNqH7TmNM0N2lNAe3lzwmp3xSmKAh0v0VHf24XYR9v4zanrW3SEqzqextJOp_3q-1mHAwsL3c7EPgT61pPJQCBR7-4CC7Mdib7g9sJjRfKWbEUU3NsbVpKgnpOX3_tJJ4zLB6M-OmRwGodX1xzmK75BZSnDCAt9b6vCl8mFsk5E1t7wACPptxJswhif4mRRTAK-mhuc1aYV6EDUqOItd5QVJKST3ukWSX5QJhFtIOPsgNTxGTFdU"/>
+<div class="absolute bottom-0 left-0 p-8 z-20 w-full">
+<div class="flex justify-between items-end">
+<div class="flex flex-col gap-2">
+<span class="font-code-sm text-code-sm text-secondary">[ Sports &amp; Entertainment ]</span>
+<h3 class="font-headline-lg text-headline-lg text-on-surface">NFL+</h3>
+<div class="flex gap-2 mt-2">
+<span class="px-2 py-1 bg-surface-container-highest/50 border border-outline-variant/30 font-code-sm text-code-sm rounded">SwiftUI</span>
+<span class="px-2 py-1 bg-surface-container-highest/50 border border-outline-variant/30 font-code-sm text-code-sm rounded">WebRTC</span>
+<span class="px-2 py-1 bg-surface-container-highest/50 border border-outline-variant/30 font-code-sm text-code-sm rounded">Dynamic Island</span>
+</div>
+</div>
+<div class="text-right">
+<div class="font-headline-lg text-headline-lg text-secondary">100M+</div>
+<div class="font-label-caps text-label-caps text-on-surface-variant uppercase">Total Downloads</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Platanitos (Small Sidebar) -->
+<div class="md:col-span-4 group relative bg-surface-container-low border border-outline-variant/15 rounded-xl overflow-hidden transition-all duration-500 glow-hover">
+<div class="p-8 h-full flex flex-col">
+<div class="flex flex-col gap-2 mb-auto">
+<span class="font-code-sm text-code-sm text-secondary">[ E-commerce ]</span>
+<h3 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface">Platanitos</h3>
+<p class="text-on-surface-variant font-body-md text-body-md mt-4">End-to-end legacy migration to a micro-frontend architecture for Peru's leading retailer.</p>
+</div>
+<div class="mt-8">
+<div class="flex items-baseline gap-2">
+<span class="font-headline-lg text-headline-lg text-on-surface">1M+</span>
+<span class="material-symbols-outlined text-secondary text-sm">trending_up</span>
+</div>
+<div class="font-label-caps text-label-caps text-on-surface-variant uppercase mb-6">Active Users</div>
+<div class="flex flex-wrap gap-2">
+<span class="px-2 py-1 bg-surface-container-highest/50 border border-outline-variant/30 font-code-sm text-code-sm rounded">React Native</span>
+<span class="px-2 py-1 bg-surface-container-highest/50 border border-outline-variant/30 font-code-sm text-code-sm rounded">Node.js</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Itau Bank (Medium) -->
+<div class="md:col-span-6 group relative bg-surface-container-low border border-outline-variant/15 rounded-xl overflow-hidden transition-all duration-500 glow-hover">
+<div class="flex flex-col md:flex-row h-full">
+<div class="md:w-1/2 overflow-hidden">
+<img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700" data-alt="A macro close-up of a futuristic biometric fingerprint scanner integrated into a sleek glass smartphone screen. Subtle geometric circuit patterns in glowing electric teal light up beneath the glass surface. The background is a deep, sophisticated midnight blue, conveying extreme digital security and high-end banking reliability for a premium financial application." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAdNdcFVr4na4BAiNRHUpEjZ5457rfkoj4L5wHsUs-DMQ3gsvzu5pBW3I9kwIaEIYFviFUj2gOu0otBLfeQypzGw2rNl4w7QBXGXOE6rDTjllLTC-Ax1mY4GEJCC2Q_oSHbum9ugy-9-dFj27jKhmlQhegCv9_FQwuzNuzn0T58j2zV8NDQY6nZAQglAY27YpfLQtCHZiHzAkqXp-3DgU2wPz2ahE5B67edVBrua0k27NMb8d0LWQSfOpgoRFOTuwqkbhxtiJF4t-9M"/>
+</div>
+<div class="md:w-1/2 p-8 flex flex-col justify-between">
+<div>
+<span class="font-code-sm text-code-sm text-secondary">[ FinTech ]</span>
+<h3 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface mt-2">Itau Bank</h3>
+<p class="text-on-surface-variant font-body-md text-body-md mt-4">High-security biometrics and transaction signing at kernel level.</p>
+</div>
+<div class="mt-6">
+<div class="font-code-sm text-code-sm text-secondary mb-2">99.9% Uptime</div>
+<div class="flex flex-wrap gap-2">
+<span class="px-2 py-1 bg-surface-container-highest/50 border border-outline-variant/30 font-code-sm text-code-sm rounded">Security SDK</span>
+<span class="px-2 py-1 bg-surface-container-highest/50 border border-outline-variant/30 font-code-sm text-code-sm rounded">Kotlin</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- The Coca-Cola Company (Medium) -->
+<div class="md:col-span-6 group relative bg-surface-container-low border border-outline-variant/15 rounded-xl overflow-hidden transition-all duration-500 glow-hover">
+<div class="p-8 h-full flex flex-col justify-between">
+<div>
+<div class="flex justify-between items-start">
+<div>
+<span class="font-code-sm text-code-sm text-secondary">[ Marketplace ]</span>
+<h3 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface mt-2">The Coca-Cola Co.</h3>
+</div>
+<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">offline_bolt</span>
+</div>
+<p class="text-on-surface-variant font-body-md text-body-md mt-4">Offline-first marketplace architecture for distributed supply chains in emerging markets.</p>
+</div>
+<div class="mt-8 flex justify-between items-end">
+<div class="flex flex-wrap gap-2 max-w-[200px]">
+<span class="px-2 py-1 bg-surface-container-highest/50 border border-outline-variant/30 font-code-sm text-code-sm rounded">Realm DB</span>
+<span class="px-2 py-1 bg-surface-container-highest/50 border border-outline-variant/30 font-code-sm text-code-sm rounded">Protobuf</span>
+<span class="px-2 py-1 bg-surface-container-highest/50 border border-outline-variant/30 font-code-sm text-code-sm rounded">GRPC</span>
+</div>
+<div class="text-right">
+<div class="font-headline-lg text-headline-lg text-on-surface">Global</div>
+<div class="font-label-caps text-label-caps text-on-surface-variant">Rollout Scope</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- System Stats / Technical Readout -->
+<section class="mt-24 py-12 border-t border-outline-variant/20 grid grid-cols-2 md:grid-cols-4 gap-8">
+<div class="flex flex-col gap-1">
+<span class="font-label-caps text-label-caps text-on-surface-variant">YEARS_OF_EXPERIENCE</span>
+<span class="font-headline-lg text-headline-lg text-secondary font-bold">12+</span>
+</div>
+<div class="flex flex-col gap-1">
+<span class="font-label-caps text-label-caps text-on-surface-variant">SYSTEMS_SHIPPED</span>
+<span class="font-headline-lg text-headline-lg text-secondary font-bold">45</span>
+</div>
+<div class="flex flex-col gap-1">
+<span class="font-label-caps text-label-caps text-on-surface-variant">UPTIME_KPI_AVG</span>
+<span class="font-headline-lg text-headline-lg text-secondary font-bold">99.98%</span>
+</div>
+<div class="flex flex-col gap-1">
+<span class="font-label-caps text-label-caps text-on-surface-variant">TOTAL_USER_BASE</span>
+<span class="font-headline-lg text-headline-lg text-secondary font-bold">150M+</span>
+</div>
+</section>
+</main>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="fixed bottom-0 left-0 w-full flex justify-around items-center h-16 px-4 pb-safe md:hidden bg-surface-container-low/80 backdrop-blur-xl border-t border-outline-variant/20 z-50">
+<div class="flex flex-col items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-label-caps text-label-caps">System</span>
+</div>
+<div class="flex flex-col items-center justify-center text-secondary drop-shadow-[0_0_8px_rgba(68,226,205,0.4)]">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">rocket_launch</span>
+<span class="font-label-caps text-label-caps">Builds</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined">timeline</span>
+<span class="font-label-caps text-label-caps">History</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined">code</span>
+<span class="font-label-caps text-label-caps">Input</span>
+</div>
+</nav>
+<script>
+        // Micro-interaction for project cards
+        document.querySelectorAll('.group').forEach(card => {
+            card.addEventListener('mousedown', () => {
+                card.style.transform = 'scale(0.98)';
+                card.style.transition = 'transform 0.15s ease';
+            });
+            card.addEventListener('mouseup', () => {
+                card.style.transform = 'scale(1)';
+            });
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'scale(1)';
+            });
+        });
+
+        // Atmospheric parallax on mouse move (Subtle)
+        document.addEventListener('mousemove', (e) => {
+            const architecturalBg = document.querySelector('.architectural-line');
+            if (architecturalBg) {
+                const moveX = (e.clientX / window.innerWidth - 0.5) * 10;
+                const moveY = (e.clientY / window.innerHeight - 0.5) * 10;
+                architecturalBg.style.backgroundPosition = `${moveX}px ${moveY}px`;
+            }
+        });
+    </script>
+</body></html>

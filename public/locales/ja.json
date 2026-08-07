@@ -1,0 +1,281 @@
+{
+  "nav": {
+    "home": "ホーム",
+    "architecture": "アーキテクチャ",
+    "projects": "プロジェクト",
+    "timeline": "タイムライン",
+    "portfolio": "ポートフォリオ"
+  },
+  "lang": {
+    "switch_to_en": "言語を英語に切り替える",
+    "switch_to_fr": "言語をフランス語に切り替える",
+    "switch_to_de": "言語をドイツ語に切り替える",
+    "switch_to_it": "言語をイタリア語に切り替える",
+    "switch_to_es": "言語をスペイン語に切り替える",
+    "switch_to_pt": "言語をポルトガル語に切り替える",
+    "switch_to_ru": "言語をロシア語に切り替える",
+    "switch_to_zh": "言語を中国語に切り替える",
+    "switch_to_ja": "言語を日本語に切り替える"
+  },
+  "pages": {
+    "index": {
+      "meta": {
+        "title": "シニア React Native エンジニア | iOS・Android アーキテクト – Binni Cordova",
+        "description": "シニア React Native エンジニア（iOS/Android）、大規模エンタープライズ開発の実務経験7年以上。ビザスポンサー、リロケーション、契約ベースの就業に対応可能 — カナダ、米国、欧州。"
+      }
+    },
+    "architecture": {
+      "meta": {
+        "title": "React Native アーキテクチャ & モバイルスキル – Binni Cordova",
+        "description": "シニアレベルのモバイルアーキテクチャ: React Native と Expo のワークフロー、セキュアなネイティブモジュール、オフラインファースト設計、BFF サービス、AI 駆動開発。"
+      }
+    },
+    "projects": {
+      "meta": {
+        "title": "React Native プロジェクト事例 – Binni Cordova",
+        "description": "マーケットプレイス、スポーツ配信、銀行、EC、医療分野における、成果を伴うシニアモバイル事例。"
+      }
+    },
+    "timeline": {
+      "meta": {
+        "title": "シニアソフトウェアエンジニア 経験タイムライン – Binni Cordova",
+        "description": "Coca-Cola、NFL+、Itau Bank、Platanitos、Gruppo GPI にまたがる職務経験を時系列で紹介。"
+      }
+    }
+  },
+  "index": {
+    "hero": {
+      "badge_label": "現地時間（バンクーバー）",
+      "title": "シニアソフトウェアエンジニア <br /><span class=\"text-accent\">モバイルアーキテクト（React Native, Expo）</span>",
+      "subtitle": "フィンテック、銀行、メディア、医療、マーケットプレイス、EC で数百万人に利用される本番クリティカルなモバイルシステムを設計。オフラインファースト、セキュアなネイティブモジュール、AI 駆動開発を強みとしています。",
+      "note": "多言語対応のエンジニアとして、カナダ・米国・欧州でのポジションを中心に対応しています。企業スポンサーによるビザ取得、リロケーションプログラム、契約ベースでの自己リロケーション（relocation-as-a-service を含む）にも対応可能です。",
+      "cta_architecture": "技術アーキテクチャを見る",
+      "cta_projects": "プロジェクトを見る"
+    },
+    "metrics": {
+      "top_downloads": "主要プロジェクトのダウンロード数（NFL+）",
+      "domains": "対応ドメイン数",
+      "clinics": "クリニック・病院"
+    },
+    "sitemap": {
+      "title": "サイトマップ",
+      "description": "このポートフォリオは、モバイル優先の閲覧性と AI 解析性を高めるため、目的別ページに分割されています。",
+      "architecture_title": "アーキテクチャ",
+      "architecture_desc": "BFF、サーバーレス、ネイティブモジュール、オフラインファースト、AI 駆動開発。",
+      "projects_title": "プロジェクト",
+      "projects_desc": "スポーツ、EC、フィンテック、グローバルマーケットプレイスの事例。",
+      "timeline_title": "タイムライン",
+      "timeline_desc": "リーダーシップの歩み、学習歴、システムレベルの成果。"
+    },
+    "faq": {
+      "badge": "ナレッジベース",
+      "title": "よくある質問",
+      "q1": "ここではどのようなモバイルプロジェクトを扱っていますか？",
+      "a1": "スポーツ配信、フィンテックセキュリティ、EC 近代化、サーバーレスアーキテクチャ、オフラインファーストなマーケットプレイスを紹介しています。",
+      "q2": "最もよく使う技術は何ですか？",
+      "a2": "Expo と React Native（Managed/Bare）を中心に、Swift、Java、Kotlin、TypeScript、GraphQL、REST API、AWS、GCloud、Firebase を活用しています。",
+      "q3": "高トラフィックと信頼性にどう対応していますか？",
+      "a3": "低レイテンシ設計、デバイス最適化、回復性のあるサービスオーケストレーション、強固なオブザーバビリティを組み合わせて対応します。",
+      "q4": "アーキテクチャ相談は依頼できますか？",
+      "a4": "はい。ホームの連絡導線から、背景、技術制約、納期を添えてご連絡ください。",
+      "q5": "React Native のおすすめ 3 つは？",
+      "a5": "意図を持ってメモ化を使い、低性能端末での過剰利用を避けること。ネイティブブリッジは独立モジュール化し、品質と保守性を高めること。OTA 更新で緊急修正を迅速に反映することです。",
+      "q6": "解決した本番バグの例を教えてください。",
+      "a6": "NFL CTV アプリで、再生/一時停止の連打により画面全体の再レンダリングが発生しメモリリークにつながる問題を発見。プレイヤー制御状態の分離、局所的なメモ化、コールバック安定化、残留リスナーのクリーンアップで解決しました。",
+      "q7": "なぜ企業モバイルで React Native と Expo を使うのですか？",
+      "a7": "React Native と Expo はクロスプラットフォーム開発を高速化しつつ、必要時にはセキュアなネイティブモジュールにも対応できます。重複実装を減らし、品質を保ったままリリース速度を高められます。",
+      "q8": "ビザスポンサーやリロケーション支援は必要ですか？",
+      "a8": "企業によるビザスポンサー、体系立ったリロケーションプログラム、契約または relocation-as-a-service を通じた自己リロケーションのいずれにも対応可能です。カナダ・米国・欧州でのシニアモバイルエンジニアリング職を中心に求職中です。"
+    }
+  },
+  "architecture": {
+    "hero": {
+      "badge": "システム仕様",
+      "title": "技術<span class=\"text-accent\">アーキテクチャ</span>",
+      "description": "本番環境で実際に稼働している5つのシステム（コカ・コーラ、NFL+、Itau銀行、Platanitos、Gruppo GPI）を、私が構築した通りの詳細図で解説します。"
+    },
+    "common": {
+      "production": "本番運用"
+    },
+    "systems": {
+      "coca": {
+        "badge": "コカ・コーラ (Coca-Cola) · シニアフルスタックソフトウェアエンジニア",
+        "title": "マーケットプレイス：オフラインファースト ＋ BFF",
+        "date": "2025年4月 – 現在",
+        "description": "低接続な環境下で障害が起きていたクライアントアプリケーションをオフラインファーストなシステムへ再設計し、AWS上のBackend-for-Frontendにビジネスロジックを移行しました。これは逆境下に強い実本番運用実績ある設計パターンです。"
+      },
+      "nfl": {
+        "badge": "NFL+ CTV · メディアシニアソフトウェアエンジニア",
+        "title": "クロスプラットフォーム・ストリーミングプレイヤー",
+        "date": "2024年2月 – 2025年3月",
+        "description": "モバイル、Web、スマートTVを単一のReact Nativeコアで稼働させ、各プラットフォームごとに独自のTheoPlayerネイティブブリッジを統合。数百万ユーザーの規模で、起動時間、メモリ消費、およびJS↔ネイティブブリッジの通信を最適化。"
+      },
+      "itau": {
+        "badge": "Itau 銀行 ITU · バンキングソフトウェアエンジニア",
+        "title": "安全なバンキングアプリ ＋ デリバリーパイプライン",
+        "date": "2021年12月 – 2024年2月",
+        "description": "10万人以上の実顧客が利用する、生体認証対応したモバイルバンキングシステムの安全性を担保。リリースの迅速性を落とさずに自動テストカバー率90%以上を維持する強固なCI/CDパイプラインを運用。"
+      },
+      "platanitos": {
+        "badge": "Platanitos APPs · ECフルスタックソフトウェアエンジニア",
+        "title": "レガシーECサイトからモバイルへのフル移行",
+        "date": "2019年3月 – 2021年12月",
+        "description": "従来型WebサイトフロントからReact Native + Expoへの完全移行を指揮。検索、決済、プッシュ通知をエンドツーエンドで統合し、EASパイプライン経由で3つのアプリケーションストアへ展開しました。"
+      },
+      "gpi": {
+        "badge": "Gruppo GPI · ヘルスケアソフトウェアエンジニア",
+        "title": "臨床検査レポート作成 ＋ 医療アノテーションシステム",
+        "date": "2018年3月 – 2019年3月",
+        "description": "再利用可能なJavaScriptおよびJavaコンポーネントを開発。Jasper Reportsの帳票作成システムと連動し、ドイツ・イタリアにおける約3,000以上の地域病院や診療所の重要医療フローをサポート。"
+      }
+    },
+    "cards": {
+      "bff": {
+        "badge": "コカ・コーラ · マーケットプレイス",
+        "title": "BFF アーキテクチャ",
+        "description": "モバイルクライアントを簡潔に保ちつつ、セキュリティ境界を強化し、低レイテンシのためにペイロード最適化する BFF を設計。"
+      },
+      "native": {
+        "badge": "コカ・コーラ ＆ Itau 銀行 · 本番実績",
+        "title": "ネイティブモジュール",
+        "description": "Swift、Java、Kotlin による拡張で、安全な生体認証、暗号化ストレージ、JS 層を超えるハードウェア機能を実現。",
+        "ios": "iOS ネイティブ（Swift）",
+        "android": "Android ネイティブ（Java/Kotlin）"
+      },
+      "offline": {
+        "badge": "コカ・コーラ · マーケットプレイス",
+        "title": "オフラインファースト",
+        "description": "現場業務とマーケットプレイス向けに、ローカルプライバシーを考慮したオフラインファースト設計と、不安定ネットワーク下での堅牢な同期を提供。",
+        "item1": "耐久性の高いローカル状態とキュー処理",
+        "item2": "再試行安全な同期オーケストレーション",
+        "item3": "低接続環境での安定提供"
+      },
+      "serverless": {
+        "badge": "Itau 銀行 ＆ Platanitos · 本番実績",
+        "title": "サーバーレスアーキテクチャ",
+        "description": "スケーラブルなサービスと CI/CD 自動化により、リリース摩擦を減らし、配信信頼性を向上。"
+      },
+      "ai": {
+        "badge": "現在の開発スタイル · コカ・コーラ",
+        "title": "AI 駆動開発",
+        "description": "エージェント、プロンプト、指示、MCP サーバーを活用した AI ネイティブな開発フローで、設計分析から実装・品質までを加速。"
+      },
+      "sdd": {
+        "badge": "現在の開発スタイル",
+        "title": "仕様書駆動開発 (SDD)",
+        "description": "コードを書く前にプロダクト、デザイン、およびエンジニアリングチームをしっかりと仕様レベルで同期させることで、手戻りを減らし、リリース計画の確実性を極限まで高めます。"
+      }
+    },
+    "skills": {
+      "badge": "スキルマトリクス",
+      "title": "技術スキル",
+      "intro": "上記のプロダクト開発を支える完全な開発ツールボックスです。ここにあるすべての技術はチュートリアルではなく、少なくとも1つのエンタープライズ本番アプリで運用実績があります。",
+      "mobile": "モバイル開発",
+      "mobile_items": "React Native, Expo (Managed & Bare), TypeScript, Swift, Kotlin/Java, ネイティブモジュール, RN New Architecture (JSI, TurboModules, Fabric)",
+      "cloud": "クラウド ＆ バックエンド",
+      "cloud_items": "AWS, Firebase, Google Cloud, GraphQL, REST APIs",
+      "security": "パフォーマンス ＆ セキュリティ",
+      "security_items": "モバイルアプリ動作パフォーマンス最適化, Keychain/Keystore, 生体認証, SSLピニング, ログイン・認証システム基礎",
+      "delivery": "デリバリー ＆ 品質保証",
+      "delivery_items": "CI/CD (GitHub Actions, EAS), Jest, Appium, OTA/CodePush, アジャイルプロセス, コードレビュー",
+      "state": "状態管理",
+      "state_items": "Redux, Zustand, Jotai, Recoil",
+      "leadership": "開発者リーダーシップ",
+      "leadership_items": "技術リーダーシップ、アーキテクチャーの策定・監査、メンターシップ、クロスファンクショナルなチーム間の連動"
+    },
+    "stack": {
+      "title": "技術スタック",
+      "ex": "Expo ワークフロー",
+      "bff": "Backend-for-Frontend",
+      "ci": "CI/CD 配信",
+      "ai": "AI 駆動開発",
+      "test": "Jest + Appium"
+    }
+  },
+  "projects": {
+    "hero": {
+      "badge": "主要実績",
+      "title": "プロジェクト<span class=\"text-accent\">事例</span>"
+    },
+    "common": {
+      "downloads": "ダウンロード数",
+      "clinics": "クリニック・病院"
+    },
+    "cards": {
+      "coca": {
+        "badge": "マーケットプレイス",
+        "description": "オフラインファースト再設計、セキュアなネイティブモジュール、AWS 上のスケーラブルな BFF 統合を主導するシニアフルスタック React Native エンジニア。",
+        "metric": "現在",
+        "metric_label": "在籍期間"
+      },
+      "nfl": {
+        "badge": "スポーツ + メディア",
+        "description": "ライブ/オンデマンド配信向けに、企業規模でのクロスプラットフォーム再生体験を設計・最適化したシニア React Native エンジニア。"
+      },
+      "itau": {
+        "badge": "銀行",
+        "description": "安全な生体認証、暗号化金融取引、再利用可能ネイティブモジュール、安定 CI/CD を実装した React Native エンジニア。"
+      },
+      "platanitos": {
+        "badge": "EC",
+        "description": "React Native + Expo への移行を主導し、iOS/Android/Huawei へ展開、決済・検索・バックエンド統合を実現したフルスタックエンジニア。"
+      },
+      "gpi": {
+        "badge": "医療",
+        "description": "JavaScript、Java、Jasper Reports で医療注釈・レポートシステムを開発し、欧州の医療機関向けに提供。"
+      }
+    }
+  },
+  "timeline": {
+    "hero": {
+      "badge": "経験とリーダーシップ",
+      "title": "経験<span class=\"text-accent\">タイムライン</span>",
+      "description": "医療、配信、銀行、EC、マーケットプレイスにわたる、米欧組織での大規模モバイル開発実績を時系列で紹介。"
+    },
+    "roles": {
+      "coca": "シニアフルスタック React Native エンジニア - マーケットプレイス",
+      "nfl": "シニア React Native エンジニア - メディア",
+      "itau": "React Native エンジニア - 銀行",
+      "platanitos": "フルスタック React Native エンジニア - EC",
+      "gpi": "フルスタックエンジニア - 医療"
+    },
+    "coca": {
+      "item1": "Swift と Java で安全な生体認証・暗号化ストレージ向けネイティブモジュールを構築。",
+      "item2": "低接続環境の信頼性向上のため、オフラインファースト React Native へ再設計を主導。",
+      "item3": "AWS 上でスケーラブルな BFF を設計し、モバイル設計標準を確立。",
+      "item4": "エンジニア育成と米国ステークホルダー連携によるリリース調整・設計意思決定を推進。"
+    },
+    "nfl": {
+      "item1": "数百万人規模に向けた TheoPlayerSDK のクロスプラットフォーム再生を設計・最適化。",
+      "item2": "高トラフィック環境で起動性能とメモリ効率を改善。",
+      "item3": "ライブとオンデマンド双方に対応するスケーラブルな配信アーキテクチャを設計。"
+    },
+    "itau": {
+      "item1": "生体認証と暗号化取引を含む銀行機能をゼロから構築。",
+      "item2": "再利用可能ネイティブモジュールを作成し、90% 以上の自動テストカバレッジを維持。",
+      "item3": "CI/CD を強化し、バックエンド・セキュリティチームと連携して準拠要件に対応。"
+    },
+    "platanitos": {
+      "item1": "レガシー Web から Mobile React Native + Expo への移行を主導。",
+      "item2": "iOS、Android、Huawei AppGallery へクロスプラットフォーム配信を実現。",
+      "item3": "Mercado Pago、Algolia、Firebase を統合した EC フローを構築。",
+      "item4": "リモート開発チームをマネジメントし、リリースパイプラインとデプロイ戦略を主導。"
+    },
+    "gpi": {
+      "item1": "JavaScript、Java、Jasper Reports を用いた医療注釈・レポートエンジン開発を主導。",
+      "item2": "欧州 3000 以上の医療機関で利用される医療 Web システムに貢献。"
+    },
+    "summary": {
+      "languages_badge": "言語",
+      "languages_title": "多言語対応",
+      "languages_desc": "英語（上級）、スペイン語（母語）、イタリア語（上級）、ドイツ語（初級）",
+      "education_badge": "学歴",
+      "education_title": "ソフトウェアアーキテクチャ",
+      "education_desc": "University TECSUP（2025年4月 - 2025年11月）に加え、SOLID、Clean Code、JavaScript パターン、React Native 向け CI/CD、Swift 5、React Native 上級の研修を修了。",
+      "stats_badge": "システム指標",
+      "exp_years": "経験年数",
+      "core_roles": "主要ロール",
+      "top_scale": "最大規模"
+    }
+  }
+}
