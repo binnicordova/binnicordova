@@ -1,0 +1,150 @@
+{
+  "nav": {
+    "home": "Home",
+    "architecture": "Architettura",
+    "projects": "Progetti",
+    "timeline": "Percorso",
+    "portfolio": "Portfolio"
+  },
+  "lang": {
+    "switch_to_en": "Cambia lingua in inglese",
+    "switch_to_fr": "Cambia lingua in francese",
+    "switch_to_de": "Cambia lingua in tedesco",
+    "switch_to_it": "Cambia lingua in italiano",
+    "switch_to_es": "Cambia lingua in spagnolo",
+    "switch_to_pt": "Cambia lingua in portoghese",
+    "switch_to_ru": "Cambia lingua in russo",
+    "switch_to_zh": "Cambia lingua in cinese",
+    "switch_to_ja": "Cambia lingua in giapponese"
+  },
+  "pages": {
+    "index": { "meta": { "title": "Senior React Native Engineer | Architetto iOS & Android – Binni Cordova", "description": "Senior React Native Engineer (iOS/Android), 7+ anni di esperienza enterprise su larga scala. Aperto a sponsorship, relocation e ruoli a contratto — Canada, USA, Europa." } },
+    "architecture": { "meta": { "title": "Architettura React Native & Mobile Skills – Binni Cordova", "description": "Architettura mobile senior: workflow React Native ed Expo, moduli nativi sicuri, design offline-first, servizi BFF e sviluppo guidato dall'IA." } },
+    "projects": { "meta": { "title": "Case Study Progetti React Native – Binni Cordova", "description": "Case study mobile senior allineati al CV su marketplace, streaming sportivo, banking, ecommerce e healthcare." } },
+    "timeline": { "meta": { "title": "Timeline Esperienza di Senior Software Engineer – Binni Cordova", "description": "Timeline professionale allineata al CV tra Coca-Cola, NFL+, Itau Bank, Platanitos e Gruppo GPI." } }
+  },
+  "index": {
+    "hero": {
+      "badge_label": "Ora locale, Vancouver",
+      "title": "Senior Software Engineer <br /><span class=\"text-accent\">Mobile Architect (React Native, Expo)</span>",
+      "subtitle": "Progettazione di sistemi mobile mission-critical usati da milioni di utenti in fintech, banking, media, healthcare, marketplace ed ecommerce.",
+      "note": "Ingegnere multilingue focalizzato su Canada, USA ed Europa. Aperto a sponsorship, programmi di relocation e modalita a contratto, incluso relocation-as-a-service.",
+      "cta_architecture": "Vedi Architettura Tecnica",
+      "cta_projects": "Esplora Progetti"
+    },
+    "metrics": { "top_downloads": "Download Massimi Progetto (NFL+)", "domains": "Settori Coperti", "clinics": "Cliniche e Ospedali" },
+    "sitemap": {
+      "title": "Mappa del Sito",
+      "description": "Questo portfolio e diviso in pagine focalizzate per una navigazione mobile-first e una migliore lettura AI.",
+      "architecture_title": "Architettura",
+      "architecture_desc": "BFF, architettura serverless, moduli nativi, sistemi offline-first e sviluppo guidato dall'IA.",
+      "projects_title": "Progetti",
+      "projects_desc": "Case study da sport, ecommerce, fintech e marketplace globali.",
+      "timeline_title": "Percorso",
+      "timeline_desc": "Leadership, formazione e risultati di livello sistema."
+    },
+    "faq": {
+      "badge": "Knowledge Base",
+      "title": "Domande Frequenti",
+      "q1": "Quali progetti mobile sono inclusi?",
+      "a1": "Questa pagina evidenzia streaming sportivo, sicurezza fintech, modernizzazione ecommerce, architettura serverless e piattaforme marketplace offline-first.",
+      "q2": "Quali tecnologie usi piu spesso?",
+      "a2": "Uso spesso Expo e React Native (Managed e Bare), oltre a Swift, Java, Kotlin, TypeScript, GraphQL, REST APIs, AWS, GCloud e Firebase.",
+      "q3": "Come ottimizzi per alto traffico e affidabilita?",
+      "a3": "Combinando architettura a bassa latenza, ottimizzazione device-level, orchestrazione resiliente e forte observability.",
+      "q4": "I team possono richiedere consulenza architetturale?",
+      "a4": "Si. Usa la call-to-action di contatto dalla home e includi contesto, vincoli tecnici e timeline di delivery.",
+      "q5": "Quali sono i tuoi 3 migliori consigli React Native?",
+      "a5": "Usa la memoizzazione con criterio. Mantieni i bridge nativi come moduli separati. Usa OTA updates per fix urgenti senza attendere il ciclo completo degli store.",
+      "q6": "Puoi condividere un bug di produzione risolto?",
+      "a6": "Sull'app NFL CTV ho trovato un memory leak dove tocchi ripetuti play/pause causavano rerender estesi. Ho risolto isolando lo stato del player, stabilizzando callback e pulendo listener residui.",
+      "q7": "Perche usare React Native ed Expo in enterprise?",
+      "a7": "React Native con Expo accelera la delivery cross-platform mantenendo la possibilita di moduli nativi sicuri quando serve integrazione hardware. Riduce il lavoro duplicato e mantiene alta la velocita di rilascio.",
+      "q8": "Hai bisogno di sponsorship per il visto o supporto alla relocation?",
+      "a8": "Aperto a sponsorship del visto da parte del datore di lavoro, programmi di relocation strutturati e relocation autonoma tramite contratto o accordi di relocation-as-a-service. Focus su ruoli senior di mobile engineering in Canada, USA ed Europa."
+    }
+  },
+  "architecture": {
+    "hero": { "badge": "Specifica di Sistema", "title": "Architettura <span class=\"text-accent\">Tecnica</span>", "description": "Cinque sistemi implementati in produzione — presso Coca-Cola, NFL+, Itau Bank, Platanitos e Gruppo GPI — ciascuno descritto esattamente come l'ho costruito." },
+    "common": { "production": "Produzione" },
+    "systems": {
+      "coca": {
+        "badge": "Coca-Cola · Senior Full Stack Software Engineer",
+        "title": "Marketplace: Offline-First + BFF",
+        "date": "Apr 2025 – Presente",
+        "description": "Riprogettato un client che si bloccava in condizioni di scarsa connettività in un sistema offline-first, e spostato la logica di business fuori dal dispositivo su un AWS Backend-for-Frontend — il pattern attualmente in produzione."
+      },
+      "nfl": {
+        "badge": "NFL+ CTV · Senior Software Engineer, Media",
+        "title": "Player di Streaming Multipiattaforma",
+        "date": "Feb 2024 – Mar 2025",
+        "description": "Un unico core React Native per Mobile, Web e Smart TV, con un bridge nativo di TheoPlayer per ciascuna piattaforma — progettato per ridurre il tempo di avvio, la memoria e il traffico bridge JS↔nativo su una scala di milioni di utenti."
+      },
+      "itau": {
+        "badge": "Itau Bank ITU · Software Engineer, Banking",
+        "title": "App di Banking Sicura + Pipeline di Rilascio",
+        "date": "Dic 2021 – Feb 2024",
+        "description": "Mobile banking protetto da biometria per oltre 100.000 utenti, supportato da una pipeline CI/CD creata per mantenere una copertura di test automatizzati superiore al 90% senza rallentare i rilasci."
+      },
+      "platanitos": {
+        "badge": "Platanitos APPs · Full Stack Software Engineer, Ecommerce",
+        "title": "Migrazione da E-Commerce Legacy a Mobile",
+        "date": "Mar 2019 – Dic 2021",
+        "description": "Guidato il passaggio da una vetrina web legacy a React Native + Expo — ricerca, pagamenti e notifiche push collegate end-to-end, distribuiti tramite una pipeline EAS su tre app store."
+      },
+      "gpi": {
+        "badge": "Gruppo GPI · Software Engineer, Healthcare",
+        "title": "Sistema di Refertazione Clinica e Annotazione",
+        "date": "Mar 2018 – Mar 2019",
+        "description": "Componenti riutilizzabili JavaScript e Java collegati a una pipeline Jasper Reports, distribuiti in una rete ospedaliera dislocata in Italia e Germania."
+      }
+    },
+    "cards": {
+      "bff": { "badge": "Coca-Cola · Piattaforma Marketplace", "title": "Architettura BFF", "description": "Servizi backend-for-frontend per semplificare i client mobile, rafforzare i confini di sicurezza e ottimizzare i payload." },
+      "native": { "badge": "Coca-Cola & Itau Bank · Produzione", "title": "Moduli Nativi", "description": "Estensione di React Native con moduli Swift, Java e Kotlin per biometria sicura, storage cifrato e capacita hardware oltre il layer JS.", "ios": "iOS Nativo (Swift)", "android": "Android Nativo (Java/Kotlin)" },
+      "offline": { "badge": "Coca-Cola · Piattaforma Marketplace", "title": "Offline-First", "description": "Architettura offline-first con sincronizzazione robusta in condizioni di rete instabili.", "item1": "Stato locale durevole e operazioni in coda", "item2": "Orchestrazione sync sicura ai retry", "item3": "Delivery resiliente in bassa connettivita" },
+      "serverless": { "badge": "Itau Bank & Platanitos · Produzione", "title": "Architettura Serverless", "description": "Workflow cloud-native con servizi scalabili e automazione CI/CD per migliorare affidabilita e velocita di rilascio." },
+      "ai": { "badge": "Come lavoro oggi · Coca-Cola", "title": "Sviluppo Guidato da IA", "description": "Workflow AI-native con agenti, prompt, istruzioni e server MCP per accelerare analisi, implementazione e qualita." },
+      "sdd": { "badge": "Come lavoro oggi", "title": "Sviluppo Guidato da Specifiche (SDD)", "description": "Specifiche strutturate che allineano Prodotto, Design e Sviluppo prima che una singola riga di codice venga rilasciata — l'abitudine dietro a meno rilavorazioni e tempistiche di rilascio più prevedibili sui progetti recenti." }
+    },
+    "skills": {
+      "badge": "Matrice delle Competenze",
+      "title": "Competenze Tecniche",
+      "intro": "La cassetta degli attrezzi completa dietro al lavoro descritto sopra — ogni singola riga è stata implementata in almeno un'app in produzione, nessun tutorial.",
+      "mobile": "Ingegneria Mobile",
+      "mobile_items": "React Native, Expo (Managed & Bare), TypeScript, Swift, Kotlin/Java, Moduli Nativi, RN New Architecture (JSI, TurboModules, Fabric)",
+      "cloud": "Cloud & Backend",
+      "cloud_items": "AWS, Firebase, Google Cloud, GraphQL, REST APIs",
+      "security": "Performance & Sicurezza",
+      "security_items": "Ottimizzazione delle prestazioni mobili, Keychain/Keystore, biometria, SSL pinning, sistemi di autenticazione",
+      "delivery": "Rilascio & Qualità",
+      "delivery_items": "CI/CD (GitHub Actions, EAS), Jest, Appium, OTA/CodePush, Agile, code review",
+      "state": "Gestione dello Stato",
+      "state_items": "Redux, Zustand, Jotai, Recoil",
+      "leadership": "Leadership",
+      "leadership_items": "Leadership tecnica, gestione dell'architettura, mentorship, collaborazione interfunzionale"
+    },
+    "stack": { "title": "Stack Tecnico", "ex": "Workflow Expo", "bff": "Backend-for-Frontend", "ci": "CI/CD Delivery", "ai": "AI-Driven Dev", "test": "Jest + Appium" }
+  },
+  "projects": {
+    "hero": { "badge": "Lavori Selezionati", "title": "Case <span class=\"text-accent\">Study</span>" },
+    "common": { "downloads": "Download", "clinics": "Cliniche e Ospedali" },
+    "cards": {
+      "coca": { "badge": "Marketplace", "description": "Senior Full Stack React Native Engineer alla guida di rebuild offline-first, moduli nativi sicuri e integrazione BFF scalabile su AWS.", "metric": "Attuale", "metric_label": "Timeline Ruolo" },
+      "nfl": { "badge": "Sport + Media", "description": "Senior React Native Engineer che ha progettato e ottimizzato una player experience cross-platform per streaming live e on-demand su scala enterprise." },
+      "itau": { "badge": "Banking", "description": "React Native Engineer con autenticazione biometrica sicura, transazioni cifrate, moduli nativi riutilizzabili e CI/CD stabile." },
+      "platanitos": { "badge": "Ecommerce", "description": "Full Stack React Native Engineer che ha guidato la migrazione a React Native + Expo, rilasci iOS/Android/Huawei e integrazioni pagamento e ricerca." },
+      "gpi": { "badge": "Healthcare", "description": "Full Stack Engineer per sistemi medici di annotazione e reporting con JavaScript, Java e Jasper Reports." }
+    }
+  },
+  "timeline": {
+    "hero": { "badge": "Esperienza e Leadership", "title": "Timeline <span class=\"text-accent\">Esperienza</span>", "description": "Timeline allineata al CV per delivery mobile su larga scala in organizzazioni USA ed EU." },
+    "roles": { "coca": "Senior Full Stack React Native Engineer - Marketplace", "nfl": "Senior React Native Engineer - Media", "itau": "React Native Engineer - Banking", "platanitos": "Full Stack React Native Engineer - Ecommerce", "gpi": "Full Stack Engineer - Healthcare" },
+    "coca": { "item1": "Sviluppati moduli nativi in Swift e Java per biometria sicura e storage cifrato.", "item2": "Guidata la ricostruzione architetturale verso una piattaforma React Native offline-first.", "item3": "Progettata architettura BFF scalabile su AWS e definiti standard mobile.", "item4": "Mentoring del team e collaborazione con stakeholder USA su release e decisioni architetturali." },
+    "nfl": { "item1": "Architettura e ottimizzazione TheoPlayerSDK cross-platform per milioni di utenti.", "item2": "Migliorate startup performance e memory footprint in ambienti ad alto traffico.", "item3": "Progettata architettura scalabile per streaming live e on-demand." },
+    "itau": { "item1": "Sviluppate da zero funzionalita bancarie sicure con biometria e transazioni cifrate.", "item2": "Creati moduli nativi riutilizzabili con copertura test oltre il 90%.", "item3": "Rafforzate pipeline CI/CD e collaborazione con backend e security per compliance." },
+    "platanitos": { "item1": "Guidata la migrazione da architettura web legacy a React Native + Expo.", "item2": "Consegne cross-platform per iOS, Android e Huawei AppGallery.", "item3": "Implementati flussi ecommerce con Mercado Pago, Algolia e Firebase.", "item4": "Gestito e formato team remoto con ownership su release e deployment strategy." },
+    "gpi": { "item1": "Guidato sviluppo di sistemi medici di annotazione e reporting con JavaScript, Java e Jasper Reports.", "item2": "Contributo a sistemi web sanitari usati in 3000 cliniche e ospedali in Europa." },
+    "summary": { "languages_badge": "Lingue", "languages_title": "Multilingue", "languages_desc": "Inglese (Avanzato), Spagnolo (Madrelingua), Italiano (Avanzato), Tedesco (Base)", "education_badge": "Formazione", "education_title": "Architettura Software", "education_desc": "Universita TECSUP (Apr 2025 - Nov 2025) piu formazione avanzata in SOLID, Clean Code, pattern JavaScript, CI/CD per React Native, Swift 5 e concetti avanzati React Native.", "stats_badge": "Statistiche Sistema", "exp_years": "Anni_Exp", "core_roles": "Ruoli Core", "top_scale": "Scala Max" }
+  }
+}

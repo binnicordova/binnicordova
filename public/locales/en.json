@@ -1,0 +1,327 @@
+{
+  "nav": {
+    "home": "Home",
+    "architecture": "Architecture",
+    "projects": "Projects",
+    "timeline": "Timeline",
+    "portfolio": "Portfolio"
+  },
+  "lang": {
+    "switch_to_en": "Switch language to English",
+    "switch_to_fr": "Switch language to French",
+    "switch_to_de": "Switch language to German",
+    "switch_to_it": "Switch language to Italian",
+    "switch_to_es": "Switch language to Spanish",
+    "switch_to_pt": "Switch language to Portuguese",
+    "switch_to_ru": "Switch language to Russian",
+    "switch_to_zh": "Switch language to Chinese",
+    "switch_to_ja": "Switch language to Japanese"
+  },
+  "pages": {
+    "index": {
+      "meta": {
+        "title": "Senior React Native Engineer | iOS & Android Architect – Binni Cordova",
+        "description": "Senior React Native Engineer (iOS/Android), 7+ yrs enterprise delivery at scale. Open to sponsorship, relocation & contract roles — Canada, USA, Europe."
+      }
+    },
+    "architecture": {
+      "meta": {
+        "title": "React Native Architecture & Mobile Skills – Binni Cordova",
+        "description": "Senior mobile architecture: React Native New Architecture, secure native modules, offline-first design, BFF services, AIDD, and Spec-Driven Development (SDD)."
+      }
+    },
+    "projects": {
+      "meta": {
+        "title": "React Native Project Case Studies – Binni Cordova",
+        "description": "Senior mobile delivery case studies with measurable outcomes across marketplace, sports streaming, banking, ecommerce, and healthcare."
+      }
+    },
+    "timeline": {
+      "meta": {
+        "title": "Senior Software Engineer Experience Timeline – Binni Cordova",
+        "description": "Career timeline, education, and languages — Coca-Cola, NFL+, Itau Bank, Platanitos, and Gruppo GPI."
+      }
+    }
+  },
+  "index": {
+    "hero": {
+      "badge_label": "Local Time, Vancouver",
+      "title": "Senior Software Engineer <br /><span class=\"text-accent\">Native iOS/Android • React Native • AIDD • SDD</span>",
+      "subtitle": "Senior Mobile Engineer with 7+ years delivering enterprise React Native applications for fintech, banking, media, healthcare, and commerce — from hundreds of thousands to millions of users.",
+      "note": "Multilingual | Targeting Canada, USA & Europe | Open to Sponsorship & Relocation",
+      "cta_architecture": "View Technical Architecture",
+      "cta_projects": "Explore Projects"
+    },
+    "summary": {
+      "badge": "Professional Summary",
+      "p1": "Proven track record improving application reliability, scalability, and developer productivity by modernizing legacy mobile platforms, designing offline-first architectures, building native iOS and Android modules, and developing cloud-backed mobile solutions with AWS and Firebase.",
+      "p2": "Strong collaborator who works closely with Product, Design, QA, Security, and Engineering teams to deliver secure, high-performance mobile applications. Passionate about AI-driven development (AIDD), automation, and Spec-Driven Development (SDD) to accelerate delivery without compromising quality."
+    },
+    "metrics": {
+      "experience": "Years Experience",
+      "domains": "Industry Domains",
+      "clinics": "Clinics and Hospitals"
+    },
+    "sitemap": {
+      "title": "Site Map",
+      "description": "Focused pages for recruiters, hiring managers, and technical reviewers.",
+      "architecture_title": "Architecture",
+      "architecture_desc": "Skills, patterns, and stack — BFF, native modules, offline-first, AIDD, and SDD.",
+      "projects_title": "Projects",
+      "projects_desc": "Case studies with tech stack, app links, and measurable delivery outcomes.",
+      "timeline_title": "Timeline",
+      "timeline_desc": "Career progression, education, languages, and role scope."
+    },
+    "local": {
+      "badge": "Local Services",
+      "title": "App development in Vancouver?",
+      "description": "Local business app planning and delivery details are on the Vancouver services page.",
+      "cta": "See Vancouver Services"
+    },
+    "faq": {
+      "badge": "Knowledge Base",
+      "title": "Frequently Asked Questions",
+      "q1": "What kinds of mobile projects are covered here?",
+      "a1": "Marketplace offline-first platforms, enterprise sports streaming, secure banking, ecommerce modernization, and healthcare reporting systems.",
+      "q2": "Which technologies do you use most often?",
+      "a2": "React Native and Expo (Managed and Bare), TypeScript, Swift, Kotlin, Java, GraphQL, REST APIs, AWS, Firebase, Google Cloud, Jest, Appium, and React Native New Architecture (JSI, TurboModules, Fabric).",
+      "q3": "How do you optimize for high traffic and reliability?",
+      "a3": "Offline-first sync, BFF service boundaries, native module isolation, production profiling, CI/CD with EAS and GitHub Actions, and targeted performance tuning across critical flows.",
+      "q4": "Can teams request architecture consulting?",
+      "a4": "Yes. Reach out via LinkedIn or the contact section with context, technical constraints, and delivery timeline.",
+      "q5": "What are your top 3 React Native tips?",
+      "a5": "Use memoization with intention and avoid overusing it on low-capability devices. Build native bridges as separate modules to improve implementation quality and maintainability. Use OTA updates to deliver urgent production fixes without waiting for full app-store release cycles.",
+      "q6": "Can you share a production bug you solved?",
+      "a6": "On the NFL CTV app, I discovered a memory leak where repeated play and pause taps triggered broad rerenders across the screen. I resolved it by isolating player-control state, applying targeted memoization, stabilizing callbacks, and cleaning up lingering listeners.",
+      "q7": "Why use React Native and Expo for enterprise mobile delivery?",
+      "a7": "React Native with Expo enables fast cross-platform delivery while still supporting secure native modules when product requirements demand hardware-level integrations. It helps teams reduce duplicate effort and keep release velocity high without sacrificing quality.",
+      "q8": "Do you require visa sponsorship or relocation support?",
+      "a8": "Open to employer visa sponsorship, structured relocation programs, and self-relocation under contract or relocation-as-a-service arrangements. Actively targeting senior mobile engineering roles in Canada, the USA, and Europe."
+    }
+  },
+  "architecture": {
+    "hero": {
+      "badge": "System Specification",
+      "title": "Technical <span class=\"text-accent\">Architecture</span>",
+      "description": "Five systems that shipped in production — at Coca-Cola, NFL+, Itau Bank, Platanitos, and Gruppo GPI — each diagrammed exactly as I built it, not a reference architecture copied from a blog post."
+    },
+    "common": {
+      "production": "Production"
+    },
+    "systems": {
+      "coca": {
+        "badge": "Coca-Cola · Senior Full Stack Software Engineer",
+        "title": "Marketplace: Offline-First + BFF",
+        "date": "Apr 2025 – Present",
+        "description": "Redesigned a client that broke down in low-connectivity conditions into an offline-first system, and moved business logic off-device onto an AWS Backend-for-Frontend — the pattern currently in production."
+      },
+      "nfl": {
+        "badge": "NFL+ CTV · Senior Software Engineer, Media",
+        "title": "Cross-Platform Streaming Player",
+        "date": "Feb 2024 – Mar 2025",
+        "description": "One React Native core powering Mobile, Web, and Smart TV, with a native TheoPlayer bridge per platform — built to cut startup time, memory, and JS↔native bridge traffic at millions-user scale."
+      },
+      "itau": {
+        "badge": "Itau Bank ITU · Software Engineer, Banking",
+        "title": "Secure Banking App + Delivery Pipeline",
+        "date": "Dec 2021 – Feb 2024",
+        "description": "Biometric-secured mobile banking for 100K+ users, backed by a CI/CD pipeline built to hold 90%+ automated test coverage without slowing releases."
+      },
+      "platanitos": {
+        "badge": "Platanitos APPs · Full Stack Software Engineer, Ecommerce",
+        "title": "Legacy-to-Mobile Commerce Migration",
+        "date": "Mar 2019 – Dec 2021",
+        "description": "Led the move from a legacy web storefront to React Native + Expo — search, payments, and push notifications wired end-to-end, shipped through an EAS pipeline to three app stores."
+      },
+      "gpi": {
+        "badge": "Gruppo GPI · Software Engineer, Healthcare",
+        "title": "Clinical Reporting & Annotation System",
+        "date": "Mar 2018 – Mar 2019",
+        "description": "Reusable JavaScript and Java components feeding a Jasper Reports pipeline, deployed across a distributed hospital network in Italy and Germany."
+      }
+    },
+    "cards": {
+      "bff": {
+        "badge": "Coca-Cola · Marketplace Platform",
+        "title": "BFF Architecture",
+        "description": "Designed the mobile platform's Backend-for-Frontend on AWS — cleaner service boundaries, faster feature delivery, and less complexity pushed onto the React Native client."
+      },
+      "native": {
+        "badge": "Coca-Cola & Itau Bank · Production",
+        "title": "Native Modules",
+        "description": "Built reusable Swift and Kotlin/Java modules for biometric auth, encrypted storage, and hardware integrations beyond the JS bridge — live in a marketplace app and a banking app serving 100K+ customers.",
+        "ios": "iOS Native (Swift)",
+        "android": "Android Native (Kotlin/Java)"
+      },
+      "offline": {
+        "badge": "Coca-Cola · Marketplace Platform",
+        "title": "Offline-First",
+        "description": "Redesigned a React Native client that struggled in low-connectivity conditions into an offline-first system with SOLID principles and resilient sync — reliability the field teams could count on.",
+        "item1": "Durable local state and queued operations",
+        "item2": "Retry-safe sync orchestration",
+        "item3": "Resilient low-connectivity delivery"
+      },
+      "serverless": {
+        "badge": "Itau Bank & Platanitos · Production",
+        "title": "Cloud & Delivery",
+        "description": "Strengthened CI/CD at Itau Bank toward 90%+ automated test coverage and safer releases, then ran EAS-based delivery at Platanitos across Firebase, Mercado Pago, and Algolia for an app that passed 1M downloads."
+      },
+      "ai": {
+        "badge": "How I Work Today · Coca-Cola",
+        "title": "AI-Driven Development (AIDD)",
+        "description": "The practice I'm building into my current role — using LLM integration and AI agents to speed up architecture analysis, implementation, and review without lowering the bar on quality."
+      },
+      "sdd": {
+        "badge": "How I Work Today",
+        "title": "Spec-Driven Development (SDD)",
+        "description": "Structured specs that align Product, Design, and Engineering before a line of code ships — the habit behind less rework and more predictable release timelines on recent projects."
+      }
+    },
+    "skills": {
+      "badge": "Skills Matrix",
+      "title": "Technical Skills",
+      "intro": "The full toolbox behind the work above — every line here shipped in at least one production app, not a tutorial.",
+      "mobile": "Mobile Engineering",
+      "mobile_items": "React Native, Expo (Managed & Bare), TypeScript, Swift, Kotlin/Java, Native Modules, RN New Architecture (JSI, TurboModules, Fabric)",
+      "cloud": "Cloud & Backend",
+      "cloud_items": "AWS, Firebase, Google Cloud, GraphQL, REST APIs",
+      "security": "Performance & Security",
+      "security_items": "Mobile performance optimization, Keychain/Keystore, biometrics, SSL pinning, authentication systems",
+      "delivery": "Delivery & Quality",
+      "delivery_items": "CI/CD (GitHub Actions, EAS), Jest, Appium, OTA/CodePush, Agile, code reviews",
+      "state": "State Management",
+      "state_items": "Redux, Zustand, Jotai, Recoil",
+      "leadership": "Leadership",
+      "leadership_items": "Technical leadership, architecture ownership, mentorship, cross-functional collaboration"
+    },
+    "stack": {
+      "title": "Technical Stack",
+      "ex": "Expo Workflows",
+      "bff": "Backend-for-Frontend",
+      "ci": "CI/CD Delivery",
+      "ai": "AIDD + SDD",
+      "test": "Jest + Appium"
+    }
+  },
+  "projects": {
+    "hero": {
+      "badge": "Delivery Proof",
+      "title": "Project Case <span class=\"text-accent\">Studies</span>",
+      "description": "Technical delivery outcomes with stack, links, and metrics. For career scope and dates, see the Experience Timeline."
+    },
+    "common": {
+      "challenge": "Challenge",
+      "approach": "Approach",
+      "outcome": "Outcome",
+      "streaming_reach": "Streaming reach",
+      "users": "Active users",
+      "downloads": "Downloads",
+      "clinics": "Clinics and Hospitals",
+      "view_timeline": "View career timeline"
+    },
+    "cards": {
+      "coca": {
+        "badge": "Marketplace",
+        "role": "Senior Full Stack Software Engineer",
+        "challenge": "Legacy marketplace mobile client struggled with low-connectivity reliability and growing API complexity.",
+        "approach": "Redesigned into an offline-first React Native platform with SOLID principles, AWS BFF, and Swift/Kotlin native modules for biometrics and encrypted storage.",
+        "outcome": "Improved reliability in field conditions, cleaner service boundaries, and faster feature delivery with architecture standards for Expo and RN New Architecture.",
+        "metric": "Current",
+        "metric_label": "Role"
+      },
+      "nfl": {
+        "badge": "Sports + Media",
+        "role": "Senior Software Engineer",
+        "challenge": "Enterprise streaming product needed high-performance video across Mobile, Web, and Smart TVs at millions-user scale.",
+        "approach": "Architected cross-platform TheoPlayer integration with modular live/VOD architecture, rendering pipeline optimization, and reduced JS-native bridge traffic.",
+        "outcome": "Reduced startup time and memory consumption; production-ready live and on-demand delivery with improved release confidence.",
+        "metric": "Millions",
+        "metric_label": "Streaming reach"
+      },
+      "itau": {
+        "badge": "Banking",
+        "role": "Software Engineer",
+        "challenge": "Digital banking app required enterprise-grade security for 100K+ users with strict compliance requirements.",
+        "approach": "Built biometric authentication, encrypted financial workflows, reusable Swift/Kotlin native modules, and 90%+ automated test coverage with strengthened CI/CD.",
+        "outcome": "Secure mobile banking capabilities with compliance-aligned authentication and stable release pipelines.",
+        "metric": "100K+",
+        "metric_label": "Active users"
+      },
+      "platanitos": {
+        "badge": "Ecommerce",
+        "role": "Full Stack Software Engineer",
+        "challenge": "Legacy web commerce platform needed a scalable mobile presence across iOS, Android, and Huawei.",
+        "approach": "Led React Native + Expo migration with EAS pipelines, Mercado Pago payments, Algolia search, Firebase services, and OTA update strategy.",
+        "outcome": "Cross-platform commerce experience exceeding 1M downloads with end-to-end shopping, payments, and push notifications.",
+        "metric": "1M+",
+        "metric_label": "Downloads"
+      },
+      "gpi": {
+        "badge": "Healthcare",
+        "role": "Software Engineer",
+        "challenge": "European clinics needed scalable medical reporting and annotation across distributed hospital networks.",
+        "approach": "Developed reusable JavaScript and Java components with Jasper Reports for enterprise healthcare workflows.",
+        "outcome": "Clinical workflow systems deployed across 3,000+ hospitals and clinics in Italy and Germany.",
+        "metric": "3000+",
+        "metric_label": "Clinics and Hospitals"
+      }
+    }
+  },
+  "timeline": {
+    "hero": {
+      "badge": "Career Progression",
+      "title": "Experience <span class=\"text-accent\">Timeline</span>",
+      "description": "Role scope, dates, and leadership context. For technical case studies, app links, and delivery metrics, see Projects."
+    },
+    "roles": {
+      "coca": "Senior Full Stack Software Engineer — Marketplace",
+      "nfl": "Senior Software Engineer — Media",
+      "itau": "Software Engineer — Banking",
+      "platanitos": "Full Stack Software Engineer — ECommerce",
+      "gpi": "Software Engineer — Healthcare"
+    },
+    "coca": {
+      "scope": "The Coca-Cola Company, USA",
+      "item1": "Own mobile architecture for marketplace platform — offline-first redesign, AWS BFF, and native security modules.",
+      "item2": "Define engineering standards for Expo Managed/Bare, RN New Architecture, and cross-functional delivery with Product, Design, QA, and executive stakeholders.",
+      "item3": "Mentor engineers, lead architecture reviews, and drive performance and security improvements across production flows."
+    },
+    "nfl": {
+      "scope": "NFL+ CTV, USA",
+      "item1": "Senior engineer for enterprise streaming across Mobile, Web, and Smart TV platforms serving millions of users.",
+      "item2": "Cross-functional Agile delivery with Product, UX, QA, and backend teams through production releases.",
+      "item3": "Performance ownership — startup time, memory, navigation, and bridge communication optimization."
+    },
+    "itau": {
+      "scope": "Itau Bank ITU APP, Chile",
+      "item1": "Software engineer for secure mobile banking serving 100K+ users with biometric auth and encrypted workflows.",
+      "item2": "Native module development, 90%+ test automation coverage, and CI/CD pipeline ownership.",
+      "item3": "Security compliance partnership with backend, infrastructure, and security teams."
+    },
+    "platanitos": {
+      "scope": "Platanitos APPs, Peru",
+      "item1": "Led migration from legacy web to React Native + Expo across iOS, Android, and Huawei.",
+      "item2": "Mentored developers and owned release pipelines for a distributed engineering team.",
+      "item3": "Commerce platform growth contributing to 1M+ application downloads."
+    },
+    "gpi": {
+      "scope": "Gruppo GPI NGH Healthcare, Italy — Germany",
+      "item1": "Software engineer for medical reporting and annotation systems across 3,000+ European hospitals and clinics.",
+      "item2": "Cross-functional delivery with engineering teams across Italy and Germany."
+    },
+    "link_projects": "View delivery case studies →",
+    "summary": {
+      "languages_badge": "Languages",
+      "languages_title": "Multilingual",
+      "languages_desc": "English (Advanced) • Spanish (Native) • Italian (Advanced) • German (Basic)",
+      "education_badge": "Education",
+      "education_title": "Education",
+      "education_cert": "Software Architecture Certification — University TECSUP (Apr 2025 – Nov 2025)",
+      "education_degree": "Computation Bachelor — Tech Institute Trentino Juan Pablo II (Mar 2013 – Dec 2015)",
+      "stats_badge": "At a Glance",
+      "exp_years": "Years",
+      "core_roles": "Roles",
+      "top_scale": "Peak Scale"
+    }
+  }
+}

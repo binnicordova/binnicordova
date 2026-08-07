@@ -1,0 +1,150 @@
+{
+  "nav": {
+    "home": "Главная",
+    "architecture": "Архитектура",
+    "projects": "Проекты",
+    "timeline": "Опыт",
+    "portfolio": "Портфолио"
+  },
+  "lang": {
+    "switch_to_en": "Переключить язык на английский",
+    "switch_to_fr": "Переключить язык на французский",
+    "switch_to_de": "Переключить язык на немецкий",
+    "switch_to_it": "Переключить язык на итальянский",
+    "switch_to_es": "Переключить язык на испанский",
+    "switch_to_pt": "Переключить язык на португальский",
+    "switch_to_ru": "Переключить язык на русский",
+    "switch_to_zh": "Переключить язык на китайский",
+    "switch_to_ja": "Переключить язык на японский"
+  },
+  "pages": {
+    "index": { "meta": { "title": "Senior React Native Engineer | iOS и Android архитектор – Binni Cordova", "description": "Senior React Native Engineer (iOS/Android), 7+ лет опыта enterprise-разработки. Открыт к спонсорству визы, релокации и контрактным ролям — Канада, США, Европа." } },
+    "architecture": { "meta": { "title": "React Native архитектура и Mobile Skills – Binni Cordova", "description": "Senior mobile-архитектура: React Native и Expo workflows, безопасные native-модули, offline-first дизайн, BFF-сервисы и разработка с ИИ." } },
+    "projects": { "meta": { "title": "Кейсы проектов React Native – Binni Cordova", "description": "Senior mobile кейсы по marketplace, спортивному streaming, banking, ecommerce и healthcare." } },
+    "timeline": { "meta": { "title": "Карьерный таймлайн Senior Software Engineer – Binni Cordova", "description": "Профессиональный таймлайн по опыту в Coca-Cola, NFL+, Itau Bank, Platanitos и Gruppo GPI." } }
+  },
+  "index": {
+    "hero": {
+      "badge_label": "Местное время, Ванкувер",
+      "title": "Senior Software Engineer <br /><span class=\"text-accent\">Mobile Architect (React Native, Expo)</span>",
+      "subtitle": "Проектирование критичных mobile-систем для миллионов пользователей в fintech, banking, media, healthcare, marketplace и ecommerce.",
+      "note": "Мультиязычный инженер, в фокусе — Канада, США и Европа. Открыт к спонсорству визы, программам релокации и контрактным форматам, включая relocation-as-a-service.",
+      "cta_architecture": "Смотреть техническую архитектуру",
+      "cta_projects": "Изучить проекты"
+    },
+    "metrics": { "top_downloads": "Максимальные загрузки проекта (NFL+)", "domains": "Покрытые домены", "clinics": "Клиники и госпитали" },
+    "sitemap": {
+      "title": "Карта сайта",
+      "description": "Портфолио разделено на фокусные страницы для mobile-first просмотра и лучшего AI-парсинга.",
+      "architecture_title": "Архитектура",
+      "architecture_desc": "BFF, serverless архитектура, native-модули, offline-first системы и разработка с ИИ.",
+      "projects_title": "Проекты",
+      "projects_desc": "Кейсы из спорта, ecommerce, fintech и глобальных marketplaces.",
+      "timeline_title": "Опыт",
+      "timeline_desc": "Путь лидерства, образование и системные достижения."
+    },
+    "faq": {
+      "badge": "База знаний",
+      "title": "Частые вопросы",
+      "q1": "Какие mobile-проекты представлены здесь?",
+      "a1": "Эта страница показывает спортивный streaming, fintech security, modern ecommerce, serverless архитектуру и offline-first marketplace платформы.",
+      "q2": "Какие технологии вы используете чаще всего?",
+      "a2": "Чаще всего использую Expo и React Native (Managed и Bare), а также Swift, Java, Kotlin, TypeScript, GraphQL, REST APIs, AWS, GCloud и Firebase.",
+      "q3": "Как вы оптимизируете под высокий трафик и надежность?",
+      "a3": "Через сочетание low-latency архитектуры, device-level оптимизации, resilient orchestration и сильной observability.",
+      "q4": "Команды могут запросить архитектурный консалтинг?",
+      "a4": "Да. Используйте контактный CTA на главной странице и добавьте контекст, технические ограничения и сроки.",
+      "q5": "Ваши топ-3 совета по React Native?",
+      "a5": "Используйте мемоизацию осознанно. Держите native bridges отдельными модулями. Применяйте OTA updates для срочных production-фиксов без ожидания полного store-цикла.",
+      "q6": "Можете рассказать о production-баге, который вы исправили?",
+      "a6": "В NFL CTV app обнаружил memory leak: повторные play/pause вызывали широкие rerenders. Исправил изоляцией состояния player-control, целевой мемоизацией, стабилизацией callbacks и очисткой listeners.",
+      "q7": "Почему React Native и Expo для enterprise mobile delivery?",
+      "a7": "React Native с Expo ускоряет cross-platform delivery и при этом позволяет безопасные native-модули при hardware-требованиях. Это снижает дублирование и сохраняет высокую скорость релизов.",
+      "q8": "Нужна ли вам спонсорская виза или поддержка релокации?",
+      "a8": "Открыт к спонсорству визы со стороны работодателя, структурированным программам релокации и самостоятельной релокации в рамках контрактных или relocation-as-a-service соглашений. В фокусе — senior-роли в mobile engineering в Канаде, США и Европе."
+    }
+  },
+  "architecture": {
+    "hero": { "badge": "Спецификация системы", "title": "Техническая <span class=\"text-accent\">архитектура</span>", "description": "Пять систем, которые успешно работают в продакшене — в Coca-Cola, NFL+, Itau Bank, Platanitos и Gruppo GPI — каждая из них спроектирована ровно так, как я её построил." },
+    "common": { "production": "Production" },
+    "systems": {
+      "coca": {
+        "badge": "Coca-Cola · Senior Full Stack Software Engineer",
+        "title": "Marketplace: Offline-First + BFF",
+        "date": "апр. 2025 – настоящее время",
+        "description": "Переработал клиентское приложение, нестабильно работавшее при плохом соединении, в систему с архитектурой offline-first, и перенес бизнес-логику с устройства на AWS Backend-for-Frontend — это решение сейчас успешно работает в продакшене."
+      },
+      "nfl": {
+        "badge": "NFL+ CTV · Senior Software Engineer, Media",
+        "title": "Кроссплатформенный стриминговый плеер",
+        "date": "февр. 2024 – март 2025",
+        "description": "Единое ядро React Native для мобильных устройств, веб-версии и Smart TV с нативной интеграцией TheoPlayer для каждой платформы — разработано для сокращения времени запуска, оптимизации памяти и минимизации трафика моста JS↔native для миллионов пользователей."
+      },
+      "itau": {
+        "badge": "Itau Bank ITU · Software Engineer, Banking",
+        "title": "Безопасное банковское приложение + CI/CD-пайплайн",
+        "date": "дек. 2021 – февр. 2024",
+        "description": "Мобильный банкинг с биометрической защитой для более чем 100 тыс. пользователей, поддерживаемый пайплайном CI/CD, обеспечивающим покрытие автотестами более 90% без задержки релизов."
+      },
+      "platanitos": {
+        "badge": "Platanitos APPs · Full Stack Software Engineer, Ecommerce",
+        "title": "Миграция с legacy-веба на мобильную коммерцию",
+        "date": "март 2019 – дек. 2021",
+        "description": "Руководил переводом устаревшей веб-платформы на React Native + Expo — поиск, платежи и push-уведомления связаны сквозным образом, релиз осуществлен через пайплайн EAS в три магазина приложений."
+      },
+      "gpi": {
+        "badge": "Gruppo GPI · Software Engineer, Healthcare",
+        "title": "Система клинических отчетов и аннотаций",
+        "date": "март 2018 – март 2019",
+        "description": "Переиспользуемые компоненты на JavaScript и Java, интегрированные с пайплайном Jasper Reports, развернутые в распределенной сети больниц в Италии и Германии."
+      }
+    },
+    "cards": {
+      "bff": { "badge": "Coca-Cola · Платформа Marketplace", "title": "BFF архитектура", "description": "Проектирование backend-for-frontend             сервисов для упрощения mobile-клиентов, усиления security boundary и оптимизации payloads." },
+      "native": { "badge": "Coca-Cola & Itau Bank · Продакшн", "title": "Native модули", "description": "Расширение React Native модулями Swift, Java и Kotlin для secure biometrics, encrypted storage и hardware-level возможностей.", "ios": "iOS Native (Swift)", "android": "Android Native (Java/Kotlin)" },
+      "offline": { "badge": "Coca-Cola · Платформа Marketplace", "title": "Offline-First", "description": "Локальная и offline-first архитектура с надежной синхронизацией для нестабильных сетей.", "item1": "Устойчивое локальное состояние и queued operations", "item2": "Retry-safe sync orchestration", "item3": "Resilient delivery при слабой связи" },
+      "serverless": { "badge": "Itau Bank & Platanitos · Продакшн", "title": "Serverless архитектура", "description": "Cloud-native workflows с масштабируемыми сервисами и CI/CD automation для надежной и быстрой доставки." },
+      "ai": { "badge": "Как я работаю сегодня · Coca-Cola", "title": "Разработка с ИИ", "description": "AI-native workflows с агентами, prompts, instructions и MCP servers для ускорения анализа, реализации и качества." },
+      "sdd": { "badge": "Как я работаю сегодня", "title": "Разработка на основе спецификаций (SDD)", "description": "Структурированные спецификации для согласования требований продукта, дизайна и разработки до написания кода — привычка, ведущая к минимуму переделок и более предсказуемым срокам релизов." }
+    },
+    "skills": {
+      "badge": "Матрица навыков",
+      "title": "Технические навыки",
+      "intro": "Полный набор инструментов, использованных в проектах выше — каждая строка была развернута и проверена в реальных приложениях в продакшене, а не взята из учебников.",
+      "mobile": "Мобильная разработка",
+      "mobile_items": "React Native, Expo (Managed & Bare), TypeScript, Swift, Kotlin/Java, нативные модули, RN New Architecture (JSI, TurboModules, Fabric)",
+      "cloud": "Облако и Бэкенд",
+      "cloud_items": "AWS, Firebase, Google Cloud, GraphQL, REST APIs",
+      "security": "Производительность и безопасность",
+      "security_items": "Оптимизация производительности мобильных приложений, Keychain/Keystore, биометрия, SSL pinning, системы аутентификации",
+      "delivery": "Поставка и качество",
+      "delivery_items": "CI/CD (GitHub Actions, EAS), Jest, Appium, OTA/CodePush, Agile, код-ревью",
+      "state": "Управление состоянием",
+      "state_items": "Redux, Zustand, Jotai, Recoil",
+      "leadership": "Лидерство",
+      "leadership_items": "Техническое руководство, владение архитектурой, менторство, кросс-функциональное сотрудничество"
+    },
+    "stack": { "title": "Технический стек", "ex": "Expo Workflows", "bff": "Backend-for-Frontend", "ci": "CI/CD Delivery", "ai": "AI-Driven Dev", "test": "Jest + Appium" }
+  },
+  "projects": {
+    "hero": { "badge": "Избранные работы", "title": "Кейсы <span class=\"text-accent\">проектов</span>" },
+    "common": { "downloads": "Загрузки", "clinics": "Клиники и госпитали" },
+    "cards": {
+      "coca": { "badge": "Marketplace", "description": "Senior Full Stack React Native Engineer, ведущий offline-first перестройку архитектуры, secure native modules и масштабируемую BFF-интеграцию на AWS.", "metric": "Текущий", "metric_label": "Период роли" },
+      "nfl": { "badge": "Спорт + Медиа", "description": "Senior React Native Engineer, спроектировавший и оптимизировавший cross-platform player experience для live и on-demand streaming на enterprise-масштабе." },
+      "itau": { "badge": "Banking", "description": "React Native Engineer: secure biometric auth, encrypted transactions, reusable native modules и стабильный CI/CD для banking-нагрузок." },
+      "platanitos": { "badge": "Ecommerce", "description": "Full Stack React Native Engineer, руководивший миграцией на React Native + Expo, релизами iOS/Android/Huawei и интеграцией payments/search/backend." },
+      "gpi": { "badge": "Healthcare", "description": "Full Stack Engineer, разрабатывавший медицинские annotation и reporting-системы на JavaScript, Java и Jasper Reports." }
+    }
+  },
+  "timeline": {
+    "hero": { "badge": "Опыт и лидерство", "title": "Таймлайн <span class=\"text-accent\">опыта</span>", "description": "Карьерный таймлайн масштабной mobile delivery в организациях США и ЕС: healthcare, streaming, banking, ecommerce и marketplace." },
+    "roles": { "coca": "Senior Full Stack React Native Engineer - Marketplace", "nfl": "Senior React Native Engineer - Media", "itau": "React Native Engineer - Banking", "platanitos": "Full Stack React Native Engineer - Ecommerce", "gpi": "Full Stack Engineer - Healthcare" },
+    "coca": { "item1": "Созданы native modules на Swift и Java для secure biometrics и encrypted storage.", "item2": "Проведена архитектурная перестройка в offline-first React Native platform для low-connectivity надежности.", "item3": "Спроектирована масштабируемая BFF-архитектура на AWS и стандарты mobile architecture.", "item4": "Менторство инженеров и работа со стейкхолдерами в США по релизам и архитектурным решениям." },
+    "nfl": { "item1": "Архитектура и оптимизация TheoPlayerSDK playback для миллионов пользователей.", "item2": "Улучшены startup performance и memory footprint в high-traffic среде.", "item3": "Разработана масштабируемая архитектура для live и on-demand streaming." },
+    "itau": { "item1": "С нуля созданы secure banking features, включая biometric auth и encrypted transactions.", "item2": "Созданы reusable native modules и поддерживалось >90% test coverage.", "item3": "Усилены CI/CD pipelines и взаимодействие с backend/security командами для compliance." },
+    "platanitos": { "item1": "Руководство миграцией с legacy web архитектуры на React Native + Expo.", "item2": "Доставка cross-platform релизов для iOS, Android и Huawei AppGallery.", "item3": "Реализация ecommerce flows с Mercado Pago, Algolia и Firebase.", "item4": "Управление remote-командой и ответственность за release pipelines и deployment strategy." },
+    "gpi": { "item1": "Руководство разработкой medical annotation systems и reporting engines на JavaScript, Java и Jasper Reports.", "item2": "Вклад в healthcare web systems для 3000 клиник и госпиталей в Европе." },
+    "summary": { "languages_badge": "Языки", "languages_title": "Мультиязычность", "languages_desc": "Английский (Продвинутый), Испанский (Родной), Итальянский (Продвинутый), Немецкий (Базовый)", "education_badge": "Образование", "education_title": "Архитектура ПО", "education_desc": "University TECSUP (Apr 2025 - Nov 2025) + углубленное обучение по SOLID, Clean Code, JavaScript patterns, CI/CD для React Native, Swift 5 и advanced React Native concepts.", "stats_badge": "Системные метрики", "exp_years": "Опыт_лет", "core_roles": "Ключевые роли", "top_scale": "Макс масштаб" }
+  }
+}

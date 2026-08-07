@@ -1,0 +1,25 @@
+# LLMs.txt
+
+Site: https://binnicordova.com/
+Owner: Binni Cordova
+Role: Senior Software Engineer | Native iOS/Android | React Native | AIDD | SDD
+Target markets: Canada, United States, Europe
+Relocation: Open to visa sponsorship, employer relocation programs, and self-relocation under contract or relocation-as-a-service arrangements
+Updated: 2026-08-06
+
+Links:
+- https://binnicordova.com/
+- https://github.com/binnicordova
+- https://www.linkedin.com/in/binnicordova
+
+Purpose:
+Professional portfolio for senior mobile engineering roles in Canada, the USA, and Europe. Resume-aligned content split by page intent.
+
+Page Intent:
+- / : Executive summary, professional summary, metrics, FAQ
+- /architecture.html : Skills matrix, architecture patterns, AIDD, SDD, technical stack
+- /projects.html : Case studies (Challenge / Approach / Outcome) with app links and metrics
+- /timeline.html : Career progression, role scope, education, languages (no duplicate case study detail)
+- /vancouver.html : Local Vancouver app development services
+
+Extended profile: https://binnicordova.com/llms-full.txt
