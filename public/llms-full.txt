@@ -1,7 +1,7 @@
 # LLMs Full Profile — Binni Cordova
 
 Site: https://binnicordova.com/
-Updated: 2026-08-06
+Updated: 2026-08-15
 
 ## Identity
 Name: Binni Cordova
