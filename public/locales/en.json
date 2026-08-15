@@ -20,7 +20,7 @@
   "pages": {
     "index": {
       "meta": {
-        "title": "Senior React Native Engineer | iOS & Android Architect – Binni Cordova",
+        "title": "Senior React Native Engineer (iOS/Android) – Binni Cordova",
         "description": "Senior React Native Engineer (iOS/Android), 7+ yrs enterprise delivery at scale. Open to sponsorship, relocation & contract roles — Canada, USA, Europe."
       }
     },
@@ -38,7 +38,7 @@
     },
     "timeline": {
       "meta": {
-        "title": "Senior Software Engineer Experience Timeline – Binni Cordova",
+        "title": "Senior Software Engineer Timeline – Binni Cordova",
         "description": "Career timeline, education, and languages — Coca-Cola, NFL+, Itau Bank, Platanitos, and Gruppo GPI."
       }
     }
@@ -52,10 +52,20 @@
       "cta_architecture": "View Technical Architecture",
       "cta_projects": "Explore Projects"
     },
+    "tldr": {
+      "badge": "TL;DR",
+      "title": "Key Takeaways",
+      "item1": "Senior Mobile Engineer with 7+ years shipping production React Native apps for The Coca-Cola Company, NFL+ CTV, Itau Bank, Platanitos, and Gruppo GPI.",
+      "item2": "Products reached millions of streaming users, 100K+ banking customers, 1M+ ecommerce downloads, and 3,000+ hospitals and clinics.",
+      "item3": "Core focus: offline-first architecture, native iOS (Swift) and Android (Kotlin/Java) modules, AWS/Firebase backends, and AI-Driven + Spec-Driven Development (AIDD/SDD).",
+      "item4": "Open to visa sponsorship and relocation for senior mobile engineering roles in Canada, the USA, and Europe."
+    },
     "summary": {
       "badge": "Professional Summary",
       "p1": "Proven track record improving application reliability, scalability, and developer productivity by modernizing legacy mobile platforms, designing offline-first architectures, building native iOS and Android modules, and developing cloud-backed mobile solutions with AWS and Firebase.",
-      "p2": "Strong collaborator who works closely with Product, Design, QA, Security, and Engineering teams to deliver secure, high-performance mobile applications. Passionate about AI-driven development (AIDD), automation, and Spec-Driven Development (SDD) to accelerate delivery without compromising quality."
+      "p2": "Strong collaborator who works closely with Product, Design, QA, Security, and Engineering teams to deliver secure, high-performance mobile applications. Passionate about AI-driven development (AIDD), automation, and Spec-Driven Development (SDD) to accelerate delivery without compromising quality.",
+      "quote": "\"Offline-first isn't a UI feature — it's an architecture decision made on day one. Every service boundary, cache, and retry policy has to assume the network will fail.\"",
+      "quote_attribution": "— Binni Cordova, Senior Software Engineer"
     },
     "metrics": {
       "experience": "Years Experience",
@@ -82,21 +92,39 @@
       "badge": "Knowledge Base",
       "title": "Frequently Asked Questions",
       "q1": "What kinds of mobile projects are covered here?",
-      "a1": "Marketplace offline-first platforms, enterprise sports streaming, secure banking, ecommerce modernization, and healthcare reporting systems.",
+      "a1": "Marketplace offline-first platforms at The Coca-Cola Company, enterprise sports streaming for NFL+ CTV reaching millions of users, secure banking for Itau Bank's 100K+ customers, ecommerce modernization at Platanitos with 1M+ downloads, and healthcare reporting systems deployed across 3,000+ hospitals and clinics for Gruppo GPI.",
       "q2": "Which technologies do you use most often?",
-      "a2": "React Native and Expo (Managed and Bare), TypeScript, Swift, Kotlin, Java, GraphQL, REST APIs, AWS, Firebase, Google Cloud, Jest, Appium, and React Native New Architecture (JSI, TurboModules, Fabric).",
+      "a2": "React Native and Expo (Managed and Bare) form the core, paired with TypeScript, Swift, and Kotlin/Java for native modules. On the backend I rely on GraphQL, REST APIs, AWS, Firebase, and Google Cloud, with Jest and Appium covering test automation across the React Native New Architecture (JSI, Fabric, TurboModules).",
       "q3": "How do you optimize for high traffic and reliability?",
-      "a3": "Offline-first sync, BFF service boundaries, native module isolation, production profiling, CI/CD with EAS and GitHub Actions, and targeted performance tuning across critical flows.",
+      "a3": "Offline-first sync keeps apps usable on unreliable networks, while BFF service boundaries isolate business logic from the client. I profile production builds to catch memory and startup regressions, isolate native modules for security-sensitive flows, and run CI/CD through EAS and GitHub Actions so releases stay fast and stable at scale.",
       "q4": "Can teams request architecture consulting?",
-      "a4": "Yes. Reach out via LinkedIn or the contact section with context, technical constraints, and delivery timeline.",
+      "a4": "Yes. I take on architecture advisory and fractional lead engagements for teams that need a senior second opinion on mobile strategy. Reach out via LinkedIn or the contact section with your product context, technical constraints, and delivery timeline, and I will respond with next steps and availability.",
       "q5": "What are your top 3 React Native tips?",
-      "a5": "Use memoization with intention and avoid overusing it on low-capability devices. Build native bridges as separate modules to improve implementation quality and maintainability. Use OTA updates to deliver urgent production fixes without waiting for full app-store release cycles.",
+      "a5": "Use memoization with intention and avoid overusing it on low-capability devices, since excess memoization adds overhead too. Build native bridges as separate modules to improve implementation quality and maintainability. Use OTA updates to deliver urgent production fixes without waiting for full app-store release cycles.",
       "q6": "Can you share a production bug you solved?",
-      "a6": "On the NFL CTV app, I discovered a memory leak where repeated play and pause taps triggered broad rerenders across the screen. I resolved it by isolating player-control state, applying targeted memoization, stabilizing callbacks, and cleaning up lingering listeners.",
+      "a6": "On the NFL+ CTV app, streaming to millions of users, I discovered a memory leak where repeated play and pause taps triggered broad rerenders across the screen. I resolved it by isolating player-control state, applying targeted memoization, stabilizing callbacks, and cleaning up lingering listeners, which cut wasted re-renders significantly.",
       "q7": "Why use React Native and Expo for enterprise mobile delivery?",
-      "a7": "React Native with Expo enables fast cross-platform delivery while still supporting secure native modules when product requirements demand hardware-level integrations. It helps teams reduce duplicate effort and keep release velocity high without sacrificing quality.",
+      "a7": "React Native with Expo enables fast cross-platform delivery across iOS and Android while still supporting secure native modules in Swift and Kotlin when product requirements demand hardware-level integrations like biometrics or encrypted storage. It helps teams reduce duplicate effort, share one codebase, and keep release velocity high without sacrificing quality or security.",
       "q8": "Do you require visa sponsorship or relocation support?",
-      "a8": "Open to employer visa sponsorship, structured relocation programs, and self-relocation under contract or relocation-as-a-service arrangements. Actively targeting senior mobile engineering roles in Canada, the USA, and Europe."
+      "a8": "Open to employer visa sponsorship, structured relocation programs, and self-relocation under contract or relocation-as-a-service arrangements. With 7+ years delivering production mobile systems across fintech, media, banking, and healthcare, I am actively targeting senior mobile engineering roles in Canada, the USA, and Europe, and can start onboarding within a standard notice period."
+    },
+    "howto": {
+      "badge": "Engagement Process",
+      "title": "How to Work With Me",
+      "intro": "The same four-step process whether you're a hiring team evaluating a senior role or a company evaluating an architecture advisory engagement.",
+      "step1_title": "Discovery",
+      "step1_text": "Share role or project context, technical constraints, and timeline via LinkedIn or the contact section.",
+      "step2_title": "Fit Review",
+      "step2_text": "I assess alignment with my experience in offline-first architecture, native modules, and enterprise mobile delivery.",
+      "step3_title": "Technical Alignment",
+      "step3_text": "Interview loop for full-time roles, or an architecture snapshot with priorities and risks for advisory work.",
+      "step4_title": "Next Steps",
+      "step4_text": "We agree on an offer process, fractional advisory arrangement, or project kickoff and onboarding."
+    },
+    "references": {
+      "badge": "Verification",
+      "title": "References & Sources",
+      "intro": "Primary sources backing the metrics and case studies on this site. According to its Google Play and App Store listings, the Itaú ITU banking app and the Platanitos commerce app confirm the install figures cited above."
     }
   },
   "architecture": {
@@ -201,6 +229,11 @@
       "ci": "CI/CD Delivery",
       "ai": "AIDD + SDD",
       "test": "Jest + Appium"
+    },
+    "references": {
+      "badge": "Verification",
+      "title": "References & Sources",
+      "intro": "Primary sources for the systems and claims diagrammed above."
     }
   },
   "projects": {
@@ -265,6 +298,11 @@
         "metric": "3000+",
         "metric_label": "Clinics and Hospitals"
       }
+    },
+    "references": {
+      "badge": "Verification",
+      "title": "References & Sources",
+      "intro": "Primary sources for the install figures and delivery claims above."
     }
   },
   "timeline": {
@@ -322,6 +360,11 @@
       "exp_years": "Years",
       "core_roles": "Roles",
       "top_scale": "Peak Scale"
+    },
+    "references": {
+      "badge": "Verification",
+      "title": "References & Sources",
+      "intro": "Primary sources for the role history and dates above."
     }
   }
 }

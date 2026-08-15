@@ -1,0 +1,12 @@
+{
+  "name": "binnicordova-functions",
+  "description": "Content-negotiation renderer for binnicordova.com (serves markdown to agents, HTML to browsers)",
+  "engines": {
+    "node": "20"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "firebase-functions": "^6.1.0"
+  },
+  "private": true
+}

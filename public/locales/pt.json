@@ -18,10 +18,10 @@
     "switch_to_ja": "Mudar idioma para japones"
   },
   "pages": {
-    "index": { "meta": { "title": "Senior React Native Engineer | Arquiteto iOS & Android – Binni Cordova", "description": "Senior React Native Engineer (iOS/Android), 7+ anos de experiencia enterprise em grande escala. Aberto a sponsorship, mudanca e contratos — Canada, EUA, Europa." } },
+    "index": { "meta": { "title": "Senior React Native Engineer (iOS/Android) – Binni Cordova", "description": "Senior React Native Engineer (iOS/Android), 7+ anos de experiencia enterprise em grande escala. Aberto a sponsorship, mudanca e contratos — Canada, EUA, Europa." } },
     "architecture": { "meta": { "title": "Arquitetura React Native & Mobile Skills – Binni Cordova", "description": "Arquitetura mobile senior: fluxos React Native e Expo, modulos nativos seguros, design offline-first, servicos BFF e desenvolvimento com IA." } },
     "projects": { "meta": { "title": "Estudos de Caso de Projetos React Native – Binni Cordova", "description": "Estudos de caso mobile senior alinhados ao curriculo em marketplace, streaming esportivo, banco, ecommerce e saude." } },
-    "timeline": { "meta": { "title": "Linha de Experiencia de Engenheiro de Software Senior – Binni Cordova", "description": "Timeline profissional alinhada ao curriculo em Coca-Cola, NFL+, Itau Bank, Platanitos e Gruppo GPI." } }
+    "timeline": { "meta": { "title": "Linha do Tempo de Experiência – Binni Cordova", "description": "Timeline profissional alinhada ao curriculo em Coca-Cola, NFL+, Itau Bank, Platanitos e Gruppo GPI." } }
   },
   "index": {
     "hero": {
