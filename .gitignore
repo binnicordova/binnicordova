@@ -70,3 +70,11 @@ node_modules/
 
 # scroll-craft verification output
 lab/
+
+# macOS
+.DS_Store
+
+# scroll-craft build output: regenerable from resources/ via encode.sh, and
+# published into public/ by publish.sh
+scrollcraft/builds/*/assets/*.mp4
+scrollcraft/builds/*/assets/*.jpg

@@ -1,0 +1,517 @@
+/* ============================================================================
+   one-device · the page's own layer.
+   scrollcraft.css is the mechanism and is never edited. Everything here is
+   markup this page wrote: the black volume, the object in it, the camera,
+   the delamination, and the route map that navigates the flight.
+   ========================================================================== */
+
+:root {
+  /* Apple product-page floor: one ground, one ink, one soft ink, one accent. */
+  --sc-canvas:     #000000;
+  --sc-surface:    #0a0a0c;
+  --sc-ink:        #f5f5f7;
+  --sc-ink-soft:   #a1a1a6;
+  --sc-accent:     #2997ff;
+  --sc-accent-ink: #000000;
+  --sc-font-display: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+  --sc-font-text:    "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+
+  --gut: 22px;
+  --pw: min(34vh, 34vw);           /* screen width; screen height is 2x this  */
+  --bez: calc(var(--pw) * 0.035);
+
+  /* written every frame by world.js */
+  --cx: 0px; --cy: 0px; --cz: -760px; --rx: 9deg; --ry: -26deg;
+  --open: 0;                        /* delamination 0..1                      */
+  --spread: 0;                      /* field spread 0..1                      */
+  --por: 0;                         /* portrait presence 0..1                 */
+}
+
+html { background: #000; }
+body {
+  margin: 0;
+  background: #000;
+  color: var(--sc-ink);
+  font-family: var(--sc-font-text);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+}
+:focus-visible { outline: 2px solid var(--sc-accent); outline-offset: 3px; border-radius: 4px; }
+.vh {
+  position: absolute; width: 1px; height: 1px; overflow: hidden;
+  clip-path: inset(50%); white-space: nowrap;
+}
+
+/* --------------------------------------------------------------- the world */
+
+.world { background: #000; }
+
+.world__space {
+  position: absolute; inset: 0;
+  perspective: 1400px;
+  perspective-origin: 50% 48%;
+  transform-style: preserve-3d;
+}
+
+/* The volume. One light, behind the object, so the object has somewhere to be. */
+.world__deep {
+  position: absolute; inset: -20%;
+  background:
+    radial-gradient(58% 44% at 50% 44%, rgba(41,151,255,0.13), rgba(41,151,255,0.04) 46%, transparent 72%),
+    radial-gradient(90% 70% at 50% 58%, #0b0d12 0%, #000 68%);
+  opacity: calc(0.78 + var(--spread) * 0.22);
+}
+/* One horizon line. It is the only thing that says "this is a room". */
+.world__rule {
+  position: absolute; left: 0; right: 0; top: 50%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(245,245,247,0.14) 30%, rgba(245,245,247,0.14) 70%, transparent);
+  opacity: calc(0.12 + var(--spread) * 0.5);
+  transform: translateY(calc(var(--cy) * 0.12));
+}
+/* Front atmosphere: separation only. It never sits over the copy. */
+.world__fore {
+  position: absolute; inset: 0;
+  pointer-events: none;
+  background: radial-gradient(120% 90% at 50% 50%, transparent 52%, rgba(0,0,0,0.55) 100%);
+}
+
+/* ------------------------------------------------------------------ camera */
+
+.rig {
+  position: absolute; inset: 0;
+  transform-style: preserve-3d;
+  transform: translate3d(var(--cx), var(--cy), var(--cz)) rotateX(var(--rx)) rotateY(var(--ry));
+  will-change: transform;
+}
+
+/* ----------------------------------------------------------------- the object */
+
+.phone {
+  position: absolute;
+  left: 50%; top: 50%;
+  width: calc(var(--pw) + var(--bez) * 2);
+  height: calc(var(--pw) * 2 + var(--bez) * 2);
+  margin-left: calc((var(--pw) + var(--bez) * 2) / -2);
+  margin-top: calc((var(--pw) * 2 + var(--bez) * 2) / -2);
+  transform-style: preserve-3d;
+}
+
+.phone__body {
+  position: absolute; inset: 0;
+  border-radius: calc(var(--pw) * 0.135);
+  padding: var(--bez);
+  box-sizing: border-box;
+  background:
+    linear-gradient(145deg, #4a4d55 0%, #23252b 16%, #121317 42%, #1b1d22 68%, #43464e 100%);
+  box-shadow:
+    0 0 0 1px rgba(255,255,255,0.07),
+    0 30px 60px -28px rgba(0,0,0,0.9),
+    0 0 70px -26px rgba(41,151,255,0.3);
+}
+/* the machined highlight along the rail */
+.phone__edge {
+  position: absolute; inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  background:
+    linear-gradient(105deg, rgba(255,255,255,0.32) 0%, transparent 12%, transparent 88%, rgba(255,255,255,0.18) 100%);
+  opacity: 0.4;
+}
+
+/* No clip on this box, deliberately. A rounded `overflow: hidden` around a
+   <video> inside a preserve-3d subtree forces the clip into a mask layer, and
+   Chromium intermittently drops the video texture out of the composite: the
+   element reports readyState 4, opacity 1 and a live currentTime while the
+   screen renders as empty black. Nothing overflows here anyway (every leg is
+   inset:0 at the screen's exact aspect), so the corners are rounded on the
+   painted elements themselves. */
+.phone__screen {
+  position: absolute;
+  inset: var(--bez);
+  border-radius: calc(var(--pw) * 0.105);
+  background: #05070a;
+}
+.phone__screen [data-sc-segment] > video,
+.phone__screen [data-sc-segment] > img {
+  border-radius: calc(var(--pw) * 0.105);
+}
+/* specular sheen. It moves with the camera because it is part of the object. */
+.phone__glass {
+  position: absolute; inset: 0; z-index: 40;
+  pointer-events: none;
+  background: linear-gradient(118deg,
+    rgba(255,255,255,0.11) 0%, rgba(255,255,255,0.03) 22%,
+    transparent 44%, transparent 76%, rgba(255,255,255,0.05) 100%);
+  opacity: calc(0.9 - var(--open) * 0.75);
+}
+.phone__vignette {
+  position: absolute; inset: 0; z-index: 41;
+  pointer-events: none;
+  box-shadow: inset 0 0 60px -14px rgba(0,0,0,0.85);
+}
+
+/* -------------------------------------------------- THE SIGNATURE MOVE
+   The six planes are parked behind the glass at z=0, in perfect register with
+   the screen, and are invisible until scroll pulls them apart. They fan out to
+   the right and up, ranked into depth, each one labelled with the technology it
+   actually is. The interface never stops: the running clip is plane zero, and
+   it stays opaque, sharp and live for the whole move. */
+
+.strata {
+  position: absolute; inset: 0;
+  transform-style: preserve-3d;
+  pointer-events: none;
+}
+.stratum {
+  position: absolute;
+  inset: var(--bez);
+  transform-style: preserve-3d;
+  transform: translate3d(var(--sx, 0px), var(--sy, 0px), var(--sz, 0px));
+  opacity: var(--so, 0);
+}
+.stratum__pane {
+  position: absolute; inset: 0;
+  border-radius: calc(var(--pw) * 0.105);
+  border: 1px solid rgba(245,245,247,0.34);
+  background: linear-gradient(150deg, rgba(20,24,32,0.9), rgba(7,9,13,0.82));
+  box-shadow:
+    0 0 0 1px rgba(41,151,255,0.12),
+    0 18px 44px -26px #000,
+    0 0 38px -16px rgba(41,151,255,0.42);
+  overflow: hidden;
+}
+/* each plane is a different material, so the stack reads as six things */
+.stratum[data-i="1"] .stratum__pane { background-image: repeating-linear-gradient(90deg, rgba(245,245,247,0.16) 0 1px, transparent 1px 13px); }
+.stratum[data-i="2"] .stratum__pane { background-image: radial-gradient(rgba(245,245,247,0.26) 1px, transparent 1.2px); background-size: 16px 16px; }
+.stratum[data-i="3"] .stratum__pane { background-image: repeating-linear-gradient(0deg, rgba(245,245,247,0.18) 0 1px, transparent 1px 15px); }
+.stratum[data-i="4"] .stratum__pane { background-image: repeating-linear-gradient(48deg, rgba(41,151,255,0.3) 0 1px, transparent 1px 17px); }
+.stratum[data-i="5"] .stratum__pane { background-image: radial-gradient(rgba(41,151,255,0.4) 1.2px, transparent 1.4px); background-size: 30px 30px; }
+.stratum[data-i="6"] .stratum__pane {
+  background-image:
+    repeating-linear-gradient(90deg, rgba(41,151,255,0.26) 0 1px, transparent 1px 19px),
+    repeating-linear-gradient(0deg, rgba(41,151,255,0.26) 0 1px, transparent 1px 19px);
+}
+
+/* the callout, as on an exploded-view drawing */
+.stratum__tag {
+  position: absolute;
+  left: 100%; top: 50%;
+  width: 13rem;
+  margin-left: 1.6rem;
+  transform: translateY(-50%);
+  text-align: left;
+}
+.stratum__tag::before {
+  content: "";
+  position: absolute; right: 100%; top: 50%;
+  width: 1.4rem; height: 1px;
+  background: rgba(245,245,247,0.55);
+}
+.stratum__tag b {
+  display: block;
+  font-size: 1.05rem; font-weight: 500; letter-spacing: -0.01em;
+  color: var(--sc-ink);
+}
+.stratum__tag span {
+  display: block; margin-top: 0.22rem;
+  font-size: 0.82rem; line-height: 1.4; font-weight: 400;
+  letter-spacing: 0.005em;
+  color: var(--sc-ink-soft);
+}
+
+/* ------------------------------------------------------- the rest of the work */
+
+.field {
+  position: absolute; inset: 0;
+  transform-style: preserve-3d;
+  pointer-events: none;
+}
+.field__plate {
+  position: absolute; left: 50%; top: 50%;
+  width: calc(var(--pw) * 0.8);
+  margin: 0;
+  transform:
+    translate3d(
+      calc(-50% + var(--fx) * var(--fk, 1)),
+      calc(-50% + var(--fy) * var(--fk, 1)),
+      calc(var(--fz) * var(--fzk, 1) * (1.5 - var(--spread) * 0.5)));
+  opacity: calc(var(--spread) * var(--spread) * 0.95);
+}
+.field__plate--far { opacity: calc(var(--spread) * var(--spread) * 0.6); }
+.field__plate img {
+  display: block; width: 100%; height: auto;
+  border-radius: 10px;
+  border: 1px solid rgba(245,245,247,0.1);
+  box-shadow: 0 20px 50px -24px #000;
+}
+
+/* --------------------------------------------------------------- the portrait */
+
+.portrait {
+  position: absolute;
+  left: 50%; top: 50%;
+  width: calc(var(--pw) * 1.28);
+  margin: 0;
+  transform: translate3d(calc(-50% + var(--pw) * 0.98), calc(-50% + var(--pw) * 0.06), 210px);
+  opacity: var(--por);
+}
+/* portrait */
+.portrait img {
+  display: block; width: 100%; height: auto;
+  filter: contrast(1.02) brightness(0.94);
+  mask-image: linear-gradient(180deg, #000 68%, transparent 100%);
+}
+
+/* ------------------------------------------------------------------- copy */
+
+.scrim {
+  background:
+    linear-gradient(90deg, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.9) 20%, rgba(0,0,0,0.6) 38%, rgba(0,0,0,0.18) 52%, transparent 64%),
+    linear-gradient(0deg, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.72) 18%, rgba(0,0,0,0.3) 36%, transparent 54%);
+}
+
+.c {
+  position: absolute;
+  left: var(--gut); right: var(--gut);
+  bottom: calc(var(--gut) + 74px);
+  /* The column never reaches the object: copy on the left, device on the
+     right, and the scrim only has to cover the column. */
+  max-width: 33rem;
+}
+.c--hero { bottom: auto; top: 50%; transform: translateY(-50%); }
+
+h1 {
+  margin: 0.1em 0 0;
+  font-family: var(--sc-font-display);
+  font-size: clamp(2.7rem, 9.2vw, 5.6rem);
+  font-weight: 600;
+  letter-spacing: -0.042em;
+  line-height: 0.96;
+}
+h2 {
+  margin: 0;
+  font-family: var(--sc-font-display);
+  font-size: clamp(1.65rem, 5.4vw, 3.1rem);
+  font-weight: 600;
+  letter-spacing: -0.033em;
+  line-height: 1.04;
+  text-wrap: balance;
+}
+.kicker {
+  margin: 0;
+  font-size: 0.78rem; font-weight: 500; letter-spacing: 0.02em;
+  color: var(--sc-accent);
+}
+.lede, .body {
+  margin: 0.85rem 0 0;
+  max-width: 30rem;
+  font-size: clamp(0.98rem, 2.8vw, 1.16rem);
+  line-height: 1.5;
+  font-weight: 400;
+  letter-spacing: -0.008em;
+  color: var(--sc-ink-soft);
+}
+.c--peak .body { color: var(--sc-accent); font-weight: 500; }
+
+.figures {
+  margin: 1.1rem 0 0;
+  display: grid;
+  gap: 0.7rem 2.2rem;
+  grid-template-columns: 1fr;
+  max-width: 30rem;
+}
+.figures > div { display: block; }
+.figures dt {
+  font-family: var(--sc-font-display);
+  font-size: clamp(1.5rem, 5vw, 2.3rem);
+  font-weight: 600; letter-spacing: -0.035em; line-height: 1;
+}
+.figures dd {
+  margin: 0.2rem 0 0;
+  font-size: 0.86rem; line-height: 1.35; color: var(--sc-ink-soft);
+}
+
+.cta {
+  display: inline-flex; align-items: center;
+  margin-top: 1.4rem;
+  min-height: 48px; padding: 0 1.5rem;
+  border-radius: 999px;
+  background: var(--sc-accent); color: var(--sc-accent-ink);
+  font-size: 1rem; font-weight: 500; letter-spacing: -0.01em;
+  text-decoration: none;
+  transition: transform 220ms cubic-bezier(.2,.7,.2,1), background-color 220ms;
+}
+.cta:hover { transform: translateY(-2px); background: #4aa8ff; }
+.fine { margin: 1.1rem 0 0; display: flex; gap: 1.4rem; flex-wrap: wrap; }
+.fine a {
+  color: var(--sc-ink-soft); text-decoration: none;
+  font-size: 0.86rem;
+  padding: 6px 0;
+  border-bottom: 1px solid transparent;
+}
+.fine a:hover { color: var(--sc-ink); border-bottom-color: var(--sc-ink-soft); }
+
+/* --------------------------------------------------------------- the map */
+
+.route {
+  position: fixed; z-index: 60;
+  pointer-events: none;
+  inset: 0 0 auto 0;
+  padding: 14px var(--gut) 0;
+  display: flex; align-items: flex-start; justify-content: space-between; gap: 1rem;
+}
+.route__mark, .route__cta {
+  pointer-events: auto;
+  text-decoration: none;
+  font-size: 0.86rem; font-weight: 500; letter-spacing: -0.012em;
+  line-height: 1;
+  display: inline-flex; align-items: center; min-height: 34px;
+}
+.route__mark { color: var(--sc-ink); }
+.route__cta { color: var(--sc-accent); }
+.route__cta:hover { text-decoration: underline; text-underline-offset: 4px; }
+
+.route__legs {
+  position: fixed;
+  right: var(--gut); top: 50%; transform: translateY(-50%);
+  margin: 0; padding: 0; list-style: none;
+  display: flex; flex-direction: column; align-items: flex-end; gap: 2px;
+  pointer-events: auto;
+}
+.route__legs button {
+  appearance: none; background: none; border: 0;
+  display: flex; align-items: center; justify-content: flex-end; gap: 10px;
+  padding: 7px 0; margin: 0;
+  min-height: 34px;
+  color: var(--sc-ink-soft);
+  font: inherit; font-size: 0.74rem; letter-spacing: 0.01em;
+  cursor: pointer;
+  opacity: 0.5;
+  transition: opacity 260ms, color 260ms;
+}
+.route__legs button:hover { opacity: 1; color: var(--sc-ink); }
+.route__legs button[aria-current="true"] { opacity: 1; color: var(--sc-ink); }
+.route__name { transition: opacity 260ms; }
+.route__tick {
+  width: 22px; height: 1px; background: currentColor;
+  transition: width 320ms cubic-bezier(.2,.7,.2,1), background-color 260ms;
+}
+.route__legs button[aria-current="true"] .route__tick { width: 42px; background: var(--sc-accent); }
+
+/* ------------------------------------------------------------------ noscript */
+.fallback { padding: 12vh var(--gut); max-width: 40rem; }
+.fallback a { color: var(--sc-accent); }
+
+/* ================================================================== mobile
+   Art-directed, not shrunk: the object is bigger in frame, the camera turns
+   less so the screen stays readable, the callouts stack under the plane
+   instead of beside it, and the map becomes a scrubber at the bottom edge. */
+
+@media (max-width: 860px) {
+  :root {
+    --gut: 18px;
+    --pw: min(38vh, 62vw);
+    /* The field was laid out in absolute pixels for a 1440px room. At 390px
+       every plate landed outside the viewport, so "Twelve products" had an
+       empty room behind it. Same arrangement, measured for the smaller room. */
+    --fk: 0.40;
+    --fzk: 0.5;
+  }
+  .field__plate { width: calc(var(--pw) * 0.62); }
+  /* Two deepest plates dropped rather than shrunk into noise. */
+  .field__plate--far { display: none; }
+
+  .world__space { perspective: 1050px; perspective-origin: 50% 42%; }
+
+  .c { bottom: calc(var(--gut) + 64px); right: var(--gut); max-width: none; }
+  .c--hero { bottom: calc(var(--gut) + 64px); top: auto; transform: none; }
+  .scrim {
+    background: linear-gradient(0deg,
+      rgba(0,0,0,0.985) 0%, rgba(0,0,0,0.96) 28%, rgba(0,0,0,0.78) 44%,
+      rgba(0,0,0,0.34) 58%, rgba(0,0,0,0.08) 70%, transparent 80%);
+  }
+  .lede, .body { max-width: none; }
+  .figures { gap: 0.55rem; }
+  .figures dd { font-size: 0.78rem; }
+
+  /* The callout cannot sit beside a plane that is already 58vw wide. */
+  .stratum__tag {
+    left: 50%; top: 100%;
+    width: 78vw; margin: 0.9rem 0 0;
+    transform: translateX(-50%);
+    text-align: center;
+  }
+  .stratum__tag::before {
+    right: auto; left: 50%; top: -0.7rem;
+    width: 1px; height: 0.55rem;
+  }
+
+  .portrait {
+    width: calc(var(--pw) * 1.05);
+    transform: translate3d(-50%, calc(-50% - var(--pw) * 0.52), 150px);
+  }
+
+  .route { padding-top: max(12px, env(safe-area-inset-top)); }
+  .route__legs {
+    position: fixed;
+    right: 0; left: 0; top: auto;
+    bottom: max(10px, env(safe-area-inset-bottom));
+    transform: none;
+    flex-direction: row; align-items: center; justify-content: center;
+    gap: 0;
+  }
+  .route__legs li { flex: 1 1 0; display: flex; }
+  .route__legs button {
+    flex: 1; flex-direction: column; gap: 6px; justify-content: center;
+    padding: 10px 2px; min-height: 44px;
+    font-size: 0.6rem; letter-spacing: 0.02em;
+  }
+  .route__name { opacity: 0; }
+  .route__legs button[aria-current="true"] .route__name { opacity: 1; }
+  .route__tick { width: 100%; max-width: 30px; height: 2px; border-radius: 2px; }
+  .route__legs button[aria-current="true"] .route__tick { width: 100%; max-width: 30px; }
+}
+
+/* ======================================================== reduced motion
+   No clip is fetched, the posters are the film, and the camera stops. The
+   depth does not: the stack is shown as a static exploded view, which is
+   the whole idea of the page held still. */
+@media (prefers-reduced-motion: reduce) {
+  .rig {
+    transform: translate3d(0, 0, -520px) rotateX(6deg) rotateY(-15deg) !important;
+  }
+  .stratum { opacity: 0.9 !important; }
+  .stratum[data-i="1"] { transform: translate3d(calc(var(--pw) * 0.30), calc(var(--pw) * -0.13), -150px) !important; }
+  .stratum[data-i="2"] { transform: translate3d(calc(var(--pw) * 0.60), calc(var(--pw) * -0.26), -300px) !important; }
+  .stratum[data-i="3"] { transform: translate3d(calc(var(--pw) * 0.90), calc(var(--pw) * -0.39), -450px) !important; }
+  .stratum[data-i="4"] { transform: translate3d(calc(var(--pw) * 1.20), calc(var(--pw) * -0.52), -600px) !important; }
+  .stratum[data-i="5"] { transform: translate3d(calc(var(--pw) * 1.50), calc(var(--pw) * -0.65), -750px) !important; }
+  .stratum[data-i="6"] { transform: translate3d(calc(var(--pw) * 1.80), calc(var(--pw) * -0.78), -900px) !important; }
+  .field__plate { opacity: 0.4 !important; }
+  .portrait {
+    opacity: 1 !important;
+    /* Clear of the device, not against it: with nothing moving, an overlap
+       reads as a collision rather than as depth. */
+    transform: translate3d(calc(-50% + var(--pw) * 1.34), calc(-50% + var(--pw) * 0.04), 210px) !important;
+  }
+  .cta { transition: none; }
+}
+
+/* Motion off on a phone is its own composition, not the desktop one at a
+   smaller size. Everything that the scroll would have revealed in sequence is
+   on screen at once, so the object shrinks, the whole scene lifts clear of the
+   copy band, and he stands beside the device instead of on top of it. */
+@media (prefers-reduced-motion: reduce) and (max-width: 860px) {
+  :root { --pw: min(26vh, 42vw); }
+  .rig {
+    transform: translate3d(0, -13%, -470px) rotateX(5deg) rotateY(-12deg) !important;
+  }
+  .portrait {
+    width: calc(var(--pw) * 0.95) !important;
+    transform: translate3d(calc(-50% + var(--pw) * 1.08), calc(-50% - var(--pw) * 0.1), 130px) !important;
+  }
+  .stratum__tag { display: none; }
+  .field__plate { opacity: 0.22 !important; }
+}
