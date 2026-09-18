@@ -1,4 +1,0 @@
-User-agent: *
-Disallow:
-Content-signal: search=yes, ai-input=yes, ai-train=yes
-Sitemap: https://binnicordova.com/sitemap.xml
