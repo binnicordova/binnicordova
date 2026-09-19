@@ -123,23 +123,87 @@ One action, one label everywhere on the page: **Email Binni**.
 
 ---
 
-## 12. The score, as built
+## 12. The score, as built  (revision 2)
 
-One leg per beat. Weight is in viewport-heights; every leg holds the same pace,
-`weight / clip_seconds`, so the world never surges or drags.
+Binni's direction for this revision, in his words:
+
+1. "use the demo-enterprise-*.* resources ... to present them during scroll by
+   order according my resume pdf, highlighting the name of the product and
+   including the logo company ... and the other resources demo-own-*.* can be
+   included into the last presentation, where all the apps appears."
+2. "Use the iPhone 18 PRO as the device that presents the site ... i like this
+   presentation landscape vide id="battery-life" presentation, except that on
+   my site we should use a portrait, i trust in your criteria and expertise."
+3. "i dont like that my photo appears cutted, generate a new image to improve
+   how my photo appears on the site."
+
+So the flight is now the resume, newest first, and then his own work.
 
 | # | Waypoint | Feeling | w | Clip | Pace | What the camera does |
 |---|---|---|---|---|---|---|
-| 1 | Signal | anticipation | 1.5 | Platanitos commerce, 7.0s | 0.214 | far, turned away, closing |
-| 2 | Surface | recognition | 1.5 | NFL+, 7.0s | 0.214 | squares up, arrives at the glass |
-| 3 | **Inside** | **awe** | **3.2** | Saludables, 14.9s | 0.215 | crosses the glass; **the delamination** |
-| 4 | Record | weight | 1.8 | Coca-Cola miMarket, 8.4s | 0.214 | withdraws, the figures land |
-| 5 | Range | abundance | 1.8 | ViFaciliTa, 8.4s | 0.214 | the room opens, the field appears |
-| 6 | Arrival | invitation | 1.5 | PlacaOk, 7.0s | 0.214 | settles above the scrim and holds |
+| 1 | The Coca-Cola Company · miMarket | anticipation | 1.5 | 7.0s, wakes from black | 0.214 | far, turned away, closing |
+| 2 | NFL+ | recognition | 1.7 | 8.0s | 0.213 | pushes in to the glass |
+| 3 | Itaú · ITU App | trust | 1.2 | 5.6s | 0.214 | orbits the other way |
+| 4 | Platanitos | weight | 1.8 | 8.4s | 0.214 | pulls back and squares up |
+| 5 | **Inside** | **awe** | **3.4** | 15.9s | 0.214 | crosses the glass; **the delamination** |
+| 6 | Own work | abundance | 2.0 | 9.4s | 0.214 | the room opens on thirteen products |
+| 7 | Arrival | invitation | 1.5 | 7.0s | 0.214 | settles above the scrim and holds |
 
-Track: 11.3vh of legs plus one viewport = 12.3 viewport-heights. Pace spread
-across the six legs is under 1%. The peak has 78% more scroll than the next
-longest act, and act 2 before it is the quietest of the first half.
+Track: 13.1vh of legs plus one viewport = 14.1 viewport-heights. Pace spread
+across the seven legs is under 1%. The peak has 70% more scroll than the next
+longest act, and act 4 before it is a pull-back rather than a push.
+
+Gruppo GPI has no recording, so it gets a note rather than a leg, at the tail
+of the Platanitos act. Inventing a screen for it was the alternative and it is
+not an option: every frame on this page is a real product.
+
+**Variety across the resume run.** Four companies in a row is the one place
+this page could turn into the same slide four times. What varies: the camera
+does something different on each (close, push, orbit, withdraw), the cards
+alternate top and bottom anchoring on desktop, and the figure on each card is
+the one that belongs to that company rather than a shared stat block.
+
+## 12b. The device
+
+iPhone 18 Pro, built in CSS from the description on Apple's own page rather
+than from their assets: unibody with Ceramic Shield on both sides, the
+redesigned Dynamic Island, the burgundy of this generation, the full-width
+camera plateau, Action Button and Camera Control on the rails.
+
+**Apple's renders and their `#battery-life` footage are theirs and are not
+republished here.** What was taken from that section is its *technique*, which
+is the same one this engine already uses: a short clip, scrubbed by scroll,
+the device large in frame with the screen content as the subject and the copy
+beside it. Landscape there, portrait here, because these are phone apps.
+
+The body has real thickness: a back face and two rails rotated a quarter turn
+into depth off the body's own edges. At thirteen degrees of yaw a rail projects
+to about seven pixels, which is physically correct and visually nothing, so
+what carries it is the specular: one bright band down the rail and a bright
+hairline chamfer where it turns into the glass. That is how a product shot
+lights a phone, and it is why the front reads as the face of a solid rather
+than a sheet of paper.
+
+The screen canvas is 1206x2622 reduced, the real capture aspect of the device
+his own recordings came off, so those need no cropping at runtime at all.
+
+## 12c. The photograph
+
+The first version floated the bare cutout and faded its bottom edge out with a
+mask. Against a page that has a device and a field behind it, that fade reads
+as the photograph having been cut off, which is what he said it looked like.
+
+He is a plate now. The subject is lifted with macOS Vision, the alpha eroded
+two pixels to kill the violet rim the original backdrop left in his hair and
+shoulder, and composited onto its own ground: a burgundy pool of light that
+ties to the device, both shoulders in frame, anchored to the bottom edge. The
+bottom of the image is the bottom of an object, and the page rounds its corners
+in CSS. He arrives as one more plate in a room already full of them, which is
+the one that happens to be a person.
+
+No image model was used. There is no key configured and none was needed: the
+new asset is a real composite of his own photograph, built by
+`portrait.sh`, and it can be rebuilt from source at any time.
 
 ## 13. Redaction, and what was cut
 

@@ -12,6 +12,8 @@ cp "$SRC/index.html" "$SRC/world.css" "$SRC/world.js" \
    "$SRC/scrollcraft.css" "$SRC/scrollcraft.js" \
    "$SRC/robots.txt" "$SRC/sitemap.xml" "$SRC/llms.txt" "$SRC/index.md" \
    "$SRC/Binni_Cordova_Resume.pdf" "$DST/"
+# the cutout still ships for the structured-data image and anything that wants
+# a transparent portrait; the plate is what the page actually renders
 cp -R "$SRC/assets" "$DST/assets"
 
 echo "public/ rebuilt:"

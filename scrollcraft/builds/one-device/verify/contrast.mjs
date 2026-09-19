@@ -10,7 +10,7 @@ const ratio=(a,c)=>{const [x,y]=a>c?[a,c]:[c,a];return (x+0.05)/(y+0.05)};
 
 // Sample densely through the whole flight and keep the WORST reading per line.
 const worst=new Map();
-for(let t=0;t<=11.3;t+=0.3){
+for(let t=0;t<=13.1;t+=0.3){
   await p.evaluate(y=>scrollTo({top:y,behavior:'instant'}),Math.round(t*H));
   await p.waitForTimeout(260);
   const lines=await p.evaluate(()=>{

@@ -44,28 +44,32 @@
 
        t      cz     ry   rx    cy
        -----  -----  ---  ---  ----
-        0.00   -760  -26    9    30   the object, far off and turned away, in the dark
-        1.50   -200  -15    5    14   closing, squaring up
-        3.00    250   -4    1     0   at the glass
-        3.70    470    0    0    -6   the interface fills the frame
-        4.30    300    2   -3   -14   the stack starts to fan; the camera gives it room
-        5.35     60    5   -6   -26   the whole stack, ranked into depth
-        6.20   -120   10    2    -6   it closes back up and the camera withdraws
-        8.00   -600   18    6    10   the record, from outside again
-        9.80   -640   24    8     4   the room opens
-       11.30   -560  -22    7   -70   it settles, above the scrim, and holds
+        0.00   -760  -26    9    30   Coca-Cola: far off, turned away, in the dark
+        1.50   -240  -14    5    14   it closes
+        2.60    180   -6    2    -2   NFL+ pushes in
+        3.20    300   -2    0    -8   at the glass
+        4.40     60   22    4     4   Itau orbits the other way
+        6.20   -360    4    6    10   Platanitos pulls back and squares up
+        7.20    470    0    0    -6   Inside: through the glass
+        7.90    300    2   -3   -14   the stack starts to fan
+        8.70     60    5   -6   -26   the whole stack, ranked into depth
+        9.60   -140   10    2    -6   it closes back up
+       11.60   -680   24    8     8   his own work, the room opens
+       13.10   -520  -20    7   -70   it settles, above the scrim, and holds
   */
   var PATH = [
-    { t: 0.00,  cz: -760, ry: -26, rx:  9, cy:  30 },
-    { t: 1.50,  cz: -200, ry: -15, rx:  5, cy:  14 },
-    { t: 3.00,  cz:  250, ry:  -4, rx:  1, cy:   0 },
-    { t: 3.70,  cz:  470, ry:   0, rx:  0, cy:  -6 },
-    { t: 4.30,  cz:  300, ry:   2, rx: -3, cy: -14 },
-    { t: 5.35,  cz:   60, ry:   5, rx: -6, cy: -26 },
-    { t: 6.20,  cz: -120, ry:  10, rx:  2, cy:  -6 },
-    { t: 8.00,  cz: -600, ry:  18, rx:  6, cy:  10 },
-    { t: 9.80,  cz: -640, ry:  24, rx:  8, cy:   4 },
-    { t: 11.30, cz: -560, ry: -22, rx:  7, cy: -70 }
+    { t:  0.00, cz: -760, ry: -26, rx:  9, cy:  30 },
+    { t:  1.50, cz: -240, ry: -14, rx:  5, cy:  14 },
+    { t:  2.60, cz:  180, ry:  -6, rx:  2, cy:  -2 },
+    { t:  3.20, cz:  300, ry:  -2, rx:  0, cy:  -8 },
+    { t:  4.40, cz:   60, ry:  22, rx:  4, cy:   4 },
+    { t:  6.20, cz: -360, ry:   4, rx:  6, cy:  10 },
+    { t:  7.20, cz:  470, ry:   0, rx:  0, cy:  -6 },
+    { t:  7.90, cz:  300, ry:   2, rx: -3, cy: -14 },
+    { t:  8.70, cz:   60, ry:   5, rx: -6, cy: -26 },
+    { t:  9.60, cz: -140, ry:  10, rx:  2, cy:  -6 },
+    { t: 11.60, cz: -680, ry:  24, rx:  8, cy:   8 },
+    { t: 13.10, cz: -520, ry: -20, rx:  7, cy: -70 }
   ];
 
 
@@ -105,6 +109,10 @@
     var pitch = mob ? c.rx * 0.6 : c.rx;
     var depth = mob ? c.cz * 0.78 : c.cz;
 
+    /* On a phone the object is most of the frame, so the peak pulls the camera
+       back on top of the path: otherwise the stack opens behind a device that
+       is already covering it. */
+    if (mob) depth -= open * pw * 1.9;
     docEl.style.setProperty('--cz', depth.toFixed(1) + 'px');
     docEl.style.setProperty('--ry', yaw.toFixed(2) + 'deg');
     docEl.style.setProperty('--rx', pitch.toFixed(2) + 'deg');
@@ -118,20 +126,20 @@
        closes on the way back out. The interface never stops running: the body
        goes translucent so the reader looks THROUGH the phone at the six planes
        it is actually made of. */
-    var open = ramp(t, 3.30, 5.05) * (1 - ramp(t, 5.55, 6.35));
+    var open = ramp(t, 6.85, 8.35) * (1 - ramp(t, 8.85, 9.55));
     docEl.style.setProperty('--open', open.toFixed(4));
-    docEl.style.setProperty('--cx', (mob ? 0 : -innerWidth * 0.06 * open).toFixed(1) + 'px');
+    docEl.style.setProperty('--cx', (-innerWidth * (mob ? 0.16 : 0.06) * open).toFixed(1) + 'px');
 
 
     /* The fan is measured in object-widths, so it holds at every viewport.
        Measured once per resize: --pw is a custom property, so reading it back
        hands over "min(34vh, 34vw)" rather than pixels, and the read itself
        forces a style recalc on every frame. */
-    var gapZ = pw * (mob ? 0.58 : 0.55);
+    var gapZ = pw * (mob ? 0.5 : 0.55);
     /* Capped against the viewport as well as the object, so the last callout
        cannot walk off the right edge on a narrow desktop. */
-    var gapX = mob ? pw * 0.1 : Math.min(pw * 0.48, innerWidth * 0.085);
-    var gapY = pw * (mob ? -0.3 : -0.2);
+    var gapX = mob ? pw * 0.22 : Math.min(pw * 0.48, innerWidth * 0.085);
+    var gapY = pw * (mob ? -0.14 : -0.2);
     for (var i = 0; i < strata.length; i++) {
       var n = i + 1;
       var el = strata[i];
@@ -145,11 +153,11 @@
     }
 
     /* --- the rest of the work ------------------------------------------- */
-    var spread = ramp(t, 7.85, 9.30) * (1 - ramp(t, 10.10, 11.05) * 0.78);
+    var spread = ramp(t, 9.50, 11.00) * (1 - ramp(t, 11.85, 12.85) * 0.78);
     docEl.style.setProperty('--spread', spread.toFixed(4));
 
     /* --- he arrives ------------------------------------------------------ */
-    docEl.style.setProperty('--por', ramp(t, 10.00, 10.95).toFixed(4));
+    docEl.style.setProperty('--por', ramp(t, 11.75, 12.70).toFixed(4));
   }
 
   /* --------------------------------------------------------------- the loop
