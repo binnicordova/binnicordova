@@ -16,13 +16,24 @@
 # ---------------------------------------------------------------------------
 # REDACTION. These are real production recordings and they carry real data.
 # ---------------------------------------------------------------------------
-#   * miMarket is a Coca-Cola B2B field-sales app. Its record rows carry
-#     customer names, account numbers and street addresses, and its Home screen
-#     carries a salesperson's name. The recording also has a device frame baked
-#     into it, so the screen is cropped out of it first and the whole content
-#     band is blurred, leaving the app chrome sharp. The clip stops before the
-#     client-detail screen, which puts a customer's name in the title bar where
-#     no band blur can reach it.
+#   * miMarket is a Coca-Cola B2B field-sales app and it is shown UNBLURRED,
+#     at Binni's instruction. The recording has a device frame baked into it,
+#     so the screen is cropped out of it and nothing else is done to the
+#     pixels. The window is the client-detail screen, which is the only part of
+#     the recording that shows what the app actually does: place an order,
+#     payment condition, cold equipment, success photo, orders placed,
+#     requirements.
+#
+#     What that window puts on screen, and in the downloadable mp4: one
+#     customer's business record. A shop name, a client number, a Chilean RUT
+#     and a street address. They are business records rather than personal
+#     ones, and they are legible in the file even though they are about four
+#     pixels tall as rendered.
+#
+#     If that is not wanted, the window 16.0 / 6.2 is the Cold Equipment
+#     screen, which carries no customer data at all. It is also nearly static
+#     and carries a React Navigation dev warning, which is why it is not the
+#     default.
 #   * Itau is clean for 2.9 seconds only. At 3.2s it starts typing a personal
 #     email into a form, and it ends on an error screen. The leg uses the login
 #     and consent screens and is slowed to fill its span.
@@ -88,10 +99,11 @@ plate () {
 }
 
 echo "intermediates"
-# Screen cropped out of the baked-in device frame, content band blurred.
-"$FF" -y -v error -i "$R/demo-enterprise-miMarket.gif" -filter_complex \
-  "[0:v]crop=196:446:15:19,split[base][t];[t]crop=196:298:0:84,boxblur=luma_radius=8:luma_power=2[b];[base][b]overlay=0:84,format=yuv420p[v]" \
-  -map "[v]" -an -c:v libx264 -crf 12 -preset fast "$TMP/mimarket.mp4"
+# Screen cropped out of the baked-in device frame. Constant frame rate so the
+# window below lands where it says it does. Nothing else is done to the pixels.
+"$FF" -y -v error -i "$R/demo-enterprise-miMarket.gif" \
+  -vf "fps=25,crop=196:446:15:19,format=yuv420p" \
+  -c:v libx264 -crf 12 -preset fast "$TMP/mimarket.mp4"
 # Constant frame rate, so the windows below land where they say they do.
 "$FF" -y -v error -i "$R/demo-enterprise-platanitos-app.gif" -vf "fps=25,crop=246:440:0:0,format=yuv420p" \
   -c:v libx264 -crf 12 -preset fast "$TMP/platanitos.mp4"
@@ -102,7 +114,7 @@ echo
 printf '%-13s %-7s %-7s %s\n' leg desktop mobile duration
 # Pace is weight / clip_seconds, held at ~0.214 everywhere so the world never
 # surges or drags. Weights live in index.html as data-sc-w.
-leg 1-cocacola   "$TMP/mimarket.mp4"                    3.0  6.2  1.129 1.1 # 1.5vh  wakes from black
+leg 1-cocacola   "$TMP/mimarket.mp4"                   11.0  6.2  1.129 1.1 # 1.5vh  wakes from black
 leg 2-nfl        "$R/demo-enterprise-nfl.gif"          27.2  8.0  1       # 1.7vh
 leg 3-itau       "$TMP/itu.mp4"                         0.0  2.9  1.931   # 1.2vh
 leg 4-platanitos "$TMP/platanitos.mp4"                  0.5  6.6  1.273   # 1.8vh

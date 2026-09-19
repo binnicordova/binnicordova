@@ -205,25 +205,42 @@ No image model was used. There is no key configured and none was needed: the
 new asset is a real composite of his own photograph, built by
 `portrait.sh`, and it can be rebuilt from source at any time.
 
-## 13. Redaction, and what was cut
+## 13. What is shown, and what was cut
 
-These are real production recordings, so they carry real data. What was changed,
-and why:
+These are real production recordings and they carry real data. What happens to
+each, and why.
 
-- **Coca-Cola miMarket (act 4)** is a B2B field-sales app. Its record rows carry
-  customer names, account numbers and street addresses, and its Home screen
-  carries a salesperson's name. The recording's baked-in device frame was
-  cropped away and the whole content band is blurred, leaving the app chrome
-  sharp. The clip also stops before the client-detail screen, which puts a
-  customer's name in the title bar where no band-blur can reach it.
-- **Platanitos (act 1)** was trimmed to end before the account screen, which
-  shows a full legal name and an email address.
-- **PlacaOk (act 6)** stops before the share sheet, which exposes a phone number.
-- **PickPointer** is used only as a still, taken before the Google sign-in
-  screen that shows a full legal name and email.
-- **Itaú ITU (dropped from the legs)** was going to be act 3. Its recording types
-  a personal email into a form and ends on an error screen, and it runs at 4fps.
-  It survives as a still of the login screen in the Range field.
+**miMarket is shown unblurred, at Binni's instruction.** The first cut blurred
+its content band, and he said plainly: "Dont blur the content apps, fix it."
+He is right that it looked broken, and it is his call: he built the app, he
+made the recording, and he is the one who answers for it.
+
+So the blur is gone and the window moved to the client-detail screen, which is
+the only part of that recording that shows what the app actually does. What is
+now legible in `assets/1-cocacola.mp4`: one customer's business record. A shop
+name, a client number, a Chilean RUT and a street address. Business records
+rather than personal ones, about four pixels tall as rendered on the page, and
+plainly readable in the downloaded file.
+
+The alternative, if that is ever not wanted, is one number in `encode.sh`: the
+window `16.0 / 6.2` is the Cold Equipment screen and carries no customer data
+at all. It is nearly static and it shows a React Navigation dev warning, which
+is why it is not the default.
+
+Everything else is a choice of window rather than a change to the pixels:
+
+- **Itaú** is clean for 2.9 seconds only. At 3.2s it types a personal email
+  into a form, and it ends on an error screen. The leg uses the login and
+  consent screens and is slowed to fill its span.
+- **Platanitos** stops before the account screen, which shows a full legal
+  name and an email address.
+- **cocap**'s photo picker holds personal family photographs including
+  children. The leg uses the onboarding carousel and the event form, and stops
+  before the picker opens.
+- **PlacaOk**'s share sheet exposes a phone number; only an early frame is used
+  as a field plate.
+- **PickPointer** is a still only, taken before the Google sign-in screen that
+  shows a full legal name and an email.
 
 ## 14. Feel check
 
