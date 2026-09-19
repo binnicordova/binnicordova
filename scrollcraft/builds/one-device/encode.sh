@@ -1,0 +1,177 @@
+#!/usr/bin/env bash
+# Rebuild assets/ from resources/. Encoded files are not committed: they are a
+# pure function of the source recordings and this script, and they ship in
+# public/ once published.
+#
+#   bash scrollcraft/builds/one-device/encode.sh      (from the repository root)
+#
+# ---------------------------------------------------------------------------
+# THE ORDER IS THE RESUME
+# ---------------------------------------------------------------------------
+# The four enterprise legs run in the order the resume prints them, newest
+# first: Coca-Cola, NFL+, Itau, Platanitos. Gruppo GPI has no recording, so it
+# gets a card without a leg, on the way into the peak. Everything under
+# demo-own-* is his own work and lands together in the field at the end.
+#
+# ---------------------------------------------------------------------------
+# REDACTION. These are real production recordings and they carry real data.
+# ---------------------------------------------------------------------------
+#   * miMarket is a Coca-Cola B2B field-sales app and it is shown UNBLURRED,
+#     at Binni's instruction. The recording has a device frame baked into it,
+#     so the screen is cropped out of it and nothing else is done to the
+#     pixels. The window is the client-detail screen, which is the only part of
+#     the recording that shows what the app actually does: place an order,
+#     payment condition, cold equipment, success photo, orders placed,
+#     requirements.
+#
+#     What that window puts on screen, and in the downloadable mp4: one
+#     customer's business record. A shop name, a client number, a Chilean RUT
+#     and a street address. They are business records rather than personal
+#     ones, and they are legible in the file even though they are about four
+#     pixels tall as rendered.
+#
+#     If that is not wanted, the window 16.0 / 6.2 is the Cold Equipment
+#     screen, which carries no customer data at all. It is also nearly static
+#     and carries a React Navigation dev warning, which is why it is not the
+#     default.
+#   * Itau is clean for 2.9 seconds only. At 3.2s it starts typing a personal
+#     email into a form, and it ends on an error screen. The leg uses the login
+#     and consent screens and is slowed to fill its span.
+#   * Platanitos stops before the account screen (full legal name, email).
+#   * cocap's photo picker holds personal family photographs including
+#     children. The leg uses the onboarding carousel and the event form only,
+#     and stops before the picker opens.
+#   * placaok's share sheet exposes a phone number; only an early frame is used.
+#
+# ---------------------------------------------------------------------------
+# SEEKING. `-ss` on a GIF lands on the wrong content, because GIF frame delays
+# are variable and the timestamps do not map linearly. The `trim` filter is
+# worse. Anything needing an accurate window is decoded to a constant-frame-rate
+# intermediate first, and seeked in that.
+# ---------------------------------------------------------------------------
+set -euo pipefail
+
+ROOT="$(cd "$(dirname "$0")/../../.." && pwd)"
+R="$ROOT/resources"
+A="$(cd "$(dirname "$0")" && pwd)/assets"
+TMP="$(mktemp -d)"
+trap 'rm -rf "$TMP"' EXIT
+FF="${SCROLLCRAFT_FFMPEG:-$(command -v ffmpeg)}"
+FP="$(dirname "$FF")/ffprobe"; [ -x "$FP" ] || FP="$(command -v ffprobe)"
+mkdir -p "$A"
+
+# The screen canvas: 1206x2622 reduced, the real capture aspect of the device
+# the own-work recordings came off, so those need no cropping at all.
+DW=460; DH=1000; MW=300; MH=652
+
+# leg <name> <src> <ss> <dur> <setpts>
+#   Dense GOP because scrubbing is random access: a sparse-GOP file plays
+#   perfectly and scrubs like mud. Audio stripped; these are never played.
+leg () {
+  local name=$1 src=$2 ss=$3 dur=$4 pts=${5:-1} wake=${6:-}
+  local v W H G C F SF fade=""
+  # WAKE. The first leg opens the page, and its app is a redacted enterprise
+  # screen that is mostly white. The device wakes into it rather than starting
+  # on it: a black screen that comes up as the camera closes.
+  [ -n "$wake" ] && fade="fade=t=in:st=0:d=${wake}:color=black,"
+  for v in d m; do
+    if [ "$v" = d ]; then W=$DW; H=$DH; G=8; C=21; F=25; SF=""
+    else                  W=$MW; H=$MH; G=4; C=25; F=20; SF="-m"; fi
+    "$FF" -y -v error -ss "$ss" -t "$dur" -i "$src" -an \
+      -vf "setpts=${pts}*PTS,${fade}scale=${W}:${H}:force_original_aspect_ratio=increase:flags=lanczos,crop=${W}:${H}:(iw-${W})/2:(ih-${H})*0.5,fps=${F},format=yuv420p" \
+      -c:v libx264 -profile:v high -preset slow -crf $C \
+      -g $G -keyint_min $G -sc_threshold 0 -movflags +faststart \
+      "$A/${name}${SF}.mp4"
+  done
+  # Poster from the ENCODED file: the encode changes the pixels, so a still
+  # taken from the master does not match the frame the browser decodes.
+  #
+  # NOT frame 0. A poster has exactly one job on this page: to be the app when
+  # the video is not. iOS in Low Power Mode refuses to start the decoder, the
+  # clip paints nothing, and the poster is the only thing the reader sees for
+  # the whole leg (world.css, THE POSTER STAYS UP). Leg 1 opens on a 1.1s wake
+  # from black, so its frame 0 is black, and a black poster under a black clip
+  # is the failure Binni photographed. Take the still clear of the wake.
+  # A fixed offset is not enough either: leg 5 happens to be mid-transition
+  # half a second in and yields a near-empty still. So sample a few candidates
+  # clear of the wake and keep the one with the most in it. At a fixed -q:v the
+  # encoded size IS the detail: a blank or dissolving frame compresses to a
+  # few KB, a legible app screen does not.
+  local best="" bestsz=0 off sz cand
+  for off in 0.5 1.0 1.6 2.4; do
+    cand=$(awk -v w="${wake:-0}" -v o="$off" 'BEGIN{printf "%.2f", w + o}')
+    "$FF" -y -v error -ss "$cand" -i "$A/${name}.mp4" -frames:v 1 -update 1 \
+      -q:v 4 "$TMP/${name}-$off.jpg" 2>/dev/null || continue
+    [ -f "$TMP/${name}-$off.jpg" ] || continue
+    sz=$(wc -c < "$TMP/${name}-$off.jpg")
+    [ "$sz" -gt "$bestsz" ] && { bestsz=$sz; best="$TMP/${name}-$off.jpg"; }
+  done
+  cp "$best" "$A/${name}.jpg"
+  printf '%-13s %-7s %-7s %ss\n' "$name" \
+    "$(du -h "$A/${name}.mp4" | cut -f1)" "$(du -h "$A/${name}-m.mp4" | cut -f1)" \
+    "$("$FP" -v error -show_entries format=duration -of csv=p=0 "$A/${name}.mp4")"
+}
+
+# plate <name> <src> <ss>   a still of one own-work product for the field
+plate () {
+  "$FF" -y -v error -ss "$3" -i "$2" -frames:v 1 -update 1 \
+    -vf "scale=230:500:force_original_aspect_ratio=increase:flags=lanczos,crop=230:500:(iw-230)/2:(ih-500)*0.45" \
+    -q:v 4 "$A/plate-$1.jpg"
+}
+
+echo "intermediates"
+# Screen cropped out of the baked-in device frame. Constant frame rate so the
+# window below lands where it says it does. Nothing else is done to the pixels.
+"$FF" -y -v error -i "$R/demo-enterprise-miMarket.gif" \
+  -vf "fps=25,crop=196:446:15:19,format=yuv420p" \
+  -c:v libx264 -crf 12 -preset fast "$TMP/mimarket.mp4"
+# Constant frame rate, so the windows below land where they say they do.
+"$FF" -y -v error -i "$R/demo-enterprise-platanitos-app.gif" -vf "fps=25,crop=246:440:0:0,format=yuv420p" \
+  -c:v libx264 -crf 12 -preset fast "$TMP/platanitos.mp4"
+"$FF" -y -v error -i "$R/demo-enterprise-itu-app.gif" -vf "fps=25,crop=246:440:0:0,format=yuv420p" \
+  -c:v libx264 -crf 12 -preset fast "$TMP/itu.mp4"
+
+echo
+printf '%-13s %-7s %-7s %s\n' leg desktop mobile duration
+# Pace is weight / clip_seconds, held at ~0.214 everywhere so the world never
+# surges or drags. Weights live in index.html as data-sc-w.
+#
+# Inside and Agents are two windows of the same recording, in sequence. The
+# peak takes the app apart; Agents is what now works on it. Same app carrying
+# both means the seam between them is the app continuing, not a cut.
+leg 1-cocacola   "$TMP/mimarket.mp4"                   11.0  6.2  1.129 1.1 # 1.5vh  wakes from black
+leg 2-nfl        "$R/demo-enterprise-nfl.gif"          27.2  7.0  1       # 1.5vh
+leg 3-itau       "$TMP/itu.mp4"                         0.0  2.9  1.931   # 1.2vh
+leg 4-platanitos "$TMP/platanitos.mp4"                  0.5  6.6  1.136   # 1.6vh
+leg 5-inside     "$R/demo-own-expo.MP4"                 6.0 15.9  1       # 3.4vh  the peak
+leg 6-agents     "$R/demo-own-expo.MP4"                22.0 10.3  1       # 2.2vh  the AI act
+leg 7-own        "$R/demo-own-saludables.mov"          39.5  8.4  1       # 1.8vh
+leg 8-arrival    "$R/demo-own-cocap.MP4"                0.5  7.0  1       # 1.5vh
+
+echo
+echo "field plates, his own work"
+plate jobync     "$R/demo-own-jobync.png"            0
+plate vigiia     "$R/demo-own-vigiia.png"            0
+plate tappro     "$R/demo-own-tappro.png"            0
+plate moto       "$R/demo-own-moto.png"              0
+plate bolidon    "$R/demo-own-bolidon.png"           0
+plate motolisto  "$R/demo-own-motolisto.png"         0
+plate tokai      "$R/demo-own-tokai.gif"             0.1
+plate pickpointer "$R/demo-own-pickpointer.gif"      0.2
+plate placaok    "$R/demo-own-placaok.MP4"           6
+plate hablando   "$R/demo-own-hablandohuevadas.MP4"  8
+
+echo "skill marks"
+# simple-icons serves one path per brand already filled #F5F5F7, so the stack
+# arrives monochrome. AWS and OpenAI are not in simple-icons any more and come
+# from Wikimedia with their own colours; the page normalises everything to
+# white with a CSS filter rather than re-cutting the files.
+mkdir -p "$A/skills"
+cp "$ROOT"/resources/skills-logos/*.svg "$A/skills/" 2>/dev/null || echo "  no resources/skills-logos"
+echo "  $(ls "$A/skills" | wc -l | tr -d ' ') marks"
+
+echo
+for f in "$A"/binni-plate.jpg "$A"/og.jpg; do
+  [ -f "$f" ] || echo "  MISSING $(basename "$f") - see portrait.sh"
+done
+du -sh "$A"

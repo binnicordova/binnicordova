@@ -67,3 +67,29 @@ node_modules/
 
 # dataconnect generated files
 .dataconnect
+
+# scroll-craft verification output
+lab/
+
+# macOS
+.DS_Store
+
+# scroll-craft build output: regenerable from resources/ via encode.sh, and
+# published into public/ by publish.sh
+scrollcraft/builds/*/assets/*.mp4
+scrollcraft/builds/*/assets/*.jpg
+
+# Source recordings. Kept out of git for two reasons.
+#
+# Size: demo-own-placaok.MP4 alone is 103MB, over GitHub's hard 100MB limit,
+# and the directory is 394MB. It cannot be pushed as-is.
+#
+# Content: these are unwindowed production captures and this repository is
+# public. The site ships only tight windows of them, chosen deliberately -
+# cocap stops before its photo picker, Platanitos before its account screen,
+# Itau at 2.9s, placaok before its share sheet. See the REDACTION block at the
+# top of scrollcraft/builds/one-device/encode.sh. The masters carry what those
+# windows exist to exclude, so they stay on the machine that made them.
+#
+# encode.sh documents every file it needs and the exact window it takes.
+resources/

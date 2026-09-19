@@ -1,0 +1,1146 @@
+/* ============================================================================
+   one-device · the page's own layer.
+   scrollcraft.css is the mechanism and is never edited. Everything here is
+   markup this page wrote: the black volume, the device in it, the camera,
+   the delamination, the company cards, and the route map.
+   ========================================================================== */
+
+:root {
+  /* Apple product-page floor: one ground, one ink, one soft ink, one accent.
+     The accent is reserved for things you can act on. The burgundy below is
+     not an accent, it is what the object is made of. */
+  --sc-canvas:     #000000;
+  --sc-surface:    #0a0a0c;
+  --sc-ink:        #f5f5f7;
+  --sc-ink-soft:   #a1a1a6;
+  --sc-accent:     #2997ff;
+  --sc-accent-ink: #000000;
+  --sc-font-display: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+  --sc-font-text:    "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+
+  /* iPhone 18 Pro, burgundy. Unibody, so the rails are the same material as
+     the back and only the light changes across them. */
+  --dev-lit:   #a8536a;
+  --dev-mid:   #6d2839;
+  --dev-deep:  #3c1521;
+  --dev-dark:  #1c0a11;
+  --dev-glow:  rgba(168, 83, 106, 0.42);
+
+  --gut: 22px;
+  /* Screen width. Height is width / 0.46, the capture aspect of the device the
+     recordings came off, so nothing has to be cropped at runtime. */
+  --pw:   min(30vh, 32vw);
+  --ph:   calc(var(--pw) / 0.46);
+  --bez:  calc(var(--pw) * 0.030);
+  --thick: calc(var(--pw) * 0.125);
+  --rad:  calc(var(--pw) * 0.165);
+
+  /* written every frame by world.js */
+  --cx: 0px; --cy: 0px; --cz: -760px; --rx: 9deg; --ry: -26deg;
+  --open: 0;                        /* delamination 0..1                      */
+  --agents: 0;                      /* the agent layer 0..1                   */
+  --spread: 0;                      /* field spread 0..1                      */
+  --toolkit: 0;                     /* the toolkit background 0..1            */
+  --por: 0;                         /* portrait presence 0..1                 */
+}
+
+html { background: #000; }
+body {
+  margin: 0;
+  background: #000;
+  color: var(--sc-ink);
+  font-family: var(--sc-font-text);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+}
+:focus-visible { outline: 2px solid var(--sc-accent); outline-offset: 3px; border-radius: 4px; }
+.vh {
+  position: absolute; width: 1px; height: 1px; overflow: hidden;
+  clip-path: inset(50%); white-space: nowrap;
+}
+
+/* --------------------------------------------------------------- the world */
+
+.world { background: #000; }
+
+.world__space {
+  position: absolute; inset: 0;
+  perspective: 1400px;
+  perspective-origin: 50% 48%;
+  transform-style: preserve-3d;
+}
+
+/* The volume. One light behind the object, warmed to the object's own colour,
+   so the device looks lit rather than pasted on. */
+.world__deep {
+  position: absolute; inset: -20%;
+  background:
+    radial-gradient(56% 42% at 50% 44%, rgba(168,83,106,0.16), rgba(120,45,66,0.05) 48%, transparent 74%),
+    radial-gradient(90% 70% at 50% 58%, #0c0709 0%, #000 68%);
+  opacity: calc(0.78 + var(--spread) * 0.22);
+}
+/* One horizon line. It is the only thing that says "this is a room". */
+.world__rule {
+  position: absolute; left: 0; right: 0; top: 50%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(245,245,247,0.14) 30%, rgba(245,245,247,0.14) 70%, transparent);
+  opacity: calc(0.1 + var(--spread) * 0.45);
+  transform: translateY(calc(var(--cy) * 0.12));
+}
+/* Front atmosphere: separation only. It never sits over the copy. */
+.world__fore {
+  position: absolute; inset: 0;
+  pointer-events: none;
+  background: radial-gradient(120% 90% at 50% 50%, transparent 52%, rgba(0,0,0,0.55) 100%);
+}
+
+/* ------------------------------------------------------------------ camera */
+
+.rig {
+  position: absolute; inset: 0;
+  transform-style: preserve-3d;
+  transform: translate3d(var(--cx), var(--cy), var(--cz)) rotateX(var(--rx)) rotateY(var(--ry));
+  will-change: transform;
+}
+
+/* ================================================================ the device
+   A slab, not a card: a back face and two rails give it real thickness, so a
+   quarter turn shows a side instead of the edge of a sheet of paper. */
+
+.phone {
+  position: absolute;
+  left: 50%; top: 50%;
+  width: calc(var(--pw) + var(--bez) * 2);
+  height: calc(var(--ph) + var(--bez) * 2);
+  margin-left: calc((var(--pw) + var(--bez) * 2) / -2);
+  margin-top: calc((var(--ph) + var(--bez) * 2) / -2);
+  transform-style: preserve-3d;
+}
+
+/* THE POWER-UP. Every warm edge on this object - the unibody gradient's bloom,
+   the chamfer, the shadow under the slab - burns through one token. Re-mixing
+   that token against --agents means the whole device lights when the agent
+   layer lands and cools when it leaves, without one extra element inside a 3D
+   context that is already at its compositing ceiling on a phone. The stack
+   does not sit there while something is done to it; it gains power.
+
+   Gated, because a custom property is not validated until it is substituted:
+   a color-mix() an old WebKit cannot parse would not fail here, it would fail
+   inside every box-shadow that reads the token and take the device's shadow
+   with it. */
+@supports (color: color-mix(in srgb, red, blue 50%)) {
+  .phone {
+    --dev-glow: color-mix(in srgb,
+      rgba(168, 83, 106, 0.42),
+      rgba(255, 138, 170, 0.95) calc(var(--agents) * 72%));
+  }
+}
+
+/* the front: Ceramic Shield over the unibody frame */
+.phone__body {
+  position: absolute; inset: 0;
+  border-radius: var(--rad);
+  padding: var(--bez);
+  box-sizing: border-box;
+  background:
+    linear-gradient(112deg,
+      var(--dev-lit) 0%, var(--dev-mid) 7%, var(--dev-deep) 26%,
+      var(--dev-dark) 50%, var(--dev-deep) 74%, var(--dev-mid) 93%, var(--dev-lit) 100%);
+  box-shadow:
+    0 0 0 1px rgba(255,255,255,0.08),
+    0 30px 60px -28px rgba(0,0,0,0.92),
+    0 0 80px -24px var(--dev-glow);
+}
+/* the machined chamfer where the rail meets the glass */
+.phone__edge {
+  position: absolute; inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  background:
+    linear-gradient(105deg, rgba(255,236,240,0.62) 0%, rgba(210,150,166,0.22) 5%, transparent 12%,
+                            transparent 88%, rgba(210,150,166,0.3) 95%, rgba(255,236,240,0.5) 100%),
+    linear-gradient(0deg, rgba(255,236,240,0.3) 0%, transparent 4%, transparent 96%, rgba(255,236,240,0.26) 100%);
+  opacity: 0.8;
+}
+
+/* the back, one piece with the rails */
+.phone__back {
+  position: absolute; inset: 0;
+  border-radius: var(--rad);
+  transform: translateZ(calc(var(--thick) * -1));
+  background:
+    linear-gradient(112deg,
+      var(--dev-mid) 0%, var(--dev-deep) 16%, var(--dev-dark) 48%,
+      var(--dev-deep) 80%, var(--dev-mid) 100%);
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,0.05);
+}
+/* the camera plateau runs the full width on this generation */
+.phone__plateau {
+  position: absolute;
+  left: 4%; right: 4%; top: 2.4%;
+  height: calc(var(--pw) * 0.30);
+  border-radius: calc(var(--pw) * 0.10);
+  background:
+    radial-gradient(circle at 20% 52%, #0a0a0c 0 5.6%, transparent 5.9%),
+    radial-gradient(circle at 44% 52%, #0a0a0c 0 5.6%, transparent 5.9%),
+    radial-gradient(circle at 32% 84%, #0a0a0c 0 5.6%, transparent 5.9%),
+    linear-gradient(150deg, var(--dev-lit) 0%, var(--dev-deep) 42%, var(--dev-dark) 100%);
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,0.07);
+}
+
+/* the rails. Rotated a quarter turn into depth off the body's own edges, so
+   the thickness is genuine geometry rather than a painted highlight. */
+.phone__rail {
+  position: absolute;
+  top: calc(var(--rad) * 0.55); bottom: calc(var(--rad) * 0.55);
+  width: var(--thick);
+  background: linear-gradient(90deg,
+    var(--dev-dark) 0%, var(--dev-mid) 14%, #d9a3b0 34%, #f2dfe4 42%,
+    #c98c9c 52%, var(--dev-mid) 74%, var(--dev-deep) 100%);
+  transform-style: preserve-3d;
+}
+.phone__rail--l { right: 100%; transform-origin: 100% 50%; transform: rotateY(-90deg); }
+.phone__rail--r { left: 100%;  transform-origin: 0% 50%;   transform: rotateY(90deg); }
+
+.btn {
+  position: absolute;
+  left: 12%; right: 12%;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--dev-dark), var(--dev-lit) 50%, var(--dev-dark));
+  box-shadow: 0 0 0 0.5px rgba(0,0,0,0.5);
+}
+.btn--action { top: 15.5%; height: 3.4%; }
+.btn--volup  { top: 22.5%; height: 5.6%; }
+.btn--voldn  { top: 29.5%; height: 5.6%; }
+/* Camera Control sits lower on the opposite rail, and it is flush rather than
+   proud, so it reads as a panel not a button. */
+.btn--camera { top: 34%; height: 7.2%; left: 6%; right: 6%;
+  background: linear-gradient(90deg, var(--dev-dark), #c9b6bb 46%, var(--dev-mid)); }
+.phone__rail--r::after {
+  content: ""; position: absolute; left: 12%; right: 12%; top: 18%; height: 8.4%;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--dev-dark), var(--dev-lit) 50%, var(--dev-dark));
+}
+
+/* No clip on this box, deliberately. A rounded `overflow: hidden` around a
+   <video> inside a preserve-3d subtree forces the clip into a mask layer, and
+   Chromium intermittently drops the video texture out of the composite: the
+   element reports readyState 4, opacity 1 and a live currentTime while the
+   screen renders as empty black. Nothing overflows here anyway (every leg is
+   inset:0 at the screen's exact aspect), so the corners are rounded on the
+   painted elements themselves. */
+.phone__screen {
+  position: absolute;
+  inset: var(--bez);
+  border-radius: calc(var(--rad) - var(--bez));
+  background: #05070a;
+}
+.phone__screen [data-sc-segment] > video,
+.phone__screen [data-sc-segment] > img {
+  border-radius: calc(var(--rad) - var(--bez));
+}
+/* the redesigned Dynamic Island, over the content and part of the screen */
+.phone__island {
+  position: absolute; z-index: 42;
+  left: 50%; top: 2.1%;
+  width: 21%; height: calc(var(--pw) * 0.072);
+  margin-left: -10.5%;
+  border-radius: 999px;
+  background: #000;
+  box-shadow: inset 0 0 0 0.5px rgba(255,255,255,0.06);
+  pointer-events: none;
+  opacity: calc(1 - var(--open) * 0.85);
+}
+/* Ceramic Shield: a cool specular that moves with the object because it is
+   part of the object. */
+.phone__glass {
+  position: absolute; inset: 0; z-index: 40;
+  pointer-events: none;
+  background: linear-gradient(118deg,
+    rgba(214,232,255,0.13) 0%, rgba(255,255,255,0.035) 20%,
+    transparent 42%, transparent 74%, rgba(226,240,255,0.06) 100%);
+  opacity: calc(0.9 - var(--open) * 0.75);
+}
+.phone__vignette {
+  position: absolute; inset: 0; z-index: 41;
+  pointer-events: none;
+  box-shadow: inset 0 0 60px -14px rgba(0,0,0,0.85);
+}
+
+
+/* ============================================ THE POSTER STAYS UP
+   Binni photographed an iPhone in Low Power Mode showing a black phone
+   screen. This is why, and it is a trade in the engine that is right in
+   general and wrong for this page.
+
+   scrollcraft.js reveals a clip on a 2.5s timer as well as on `seeked`,
+   because iOS can accept a seek on an unprimed muted video and never fire
+   the event, which would otherwise leave the clip hidden forever. Reveal
+   adds .sc-has-clip, and the engine stylesheet then sets the poster to
+   opacity 0. On a device whose decoder never primes, that hides the poster
+   at 2.5s and shows a video that is painting nothing: black.
+
+   On a full-bleed stage a briefly blank frame is the smaller fault, which is
+   the trade the engine made. Here the phone screen IS the subject, so a black
+   rectangle is the whole page failing.
+
+   The poster is not a placeholder here, it is the floor. The video paints
+   over it when the decoder is alive, and when it is not the reader sees the
+   app's own first frame instead of nothing. It costs nothing when video
+   works: both are inset:0, object-fit:cover, identical aspect. */
+.phone__screen [data-sc-segment] .sc-world__poster { opacity: 1; }
+
+/* ======================================== THE CLIP PROVES ITSELF FIRST
+   Measured on a booted iPhone 17 simulator against this exact page.
+
+   A <video> that has no presented frame does not paint nothing, it paints
+   OPAQUE BLACK, and that rectangle sits on top of its own poster. It reports
+   readyState 4, no error, videoWidth 300 — and drawImage into a canvas returns
+   rgba(0,0,0,255). There is no frame; the element is a black hole with good
+   paperwork. Worse, `opacity: 0` does NOT take it out of the composite here
+   (the layer is still drawn); only taking its box away does.
+
+   That is the whole of Binni's black screen, and it is not exotic: iOS refuses
+   the decode in Low Power Mode, which is the state his phone was in.
+
+   So the clip starts PARKED — a 2x4px sliver at 1% opacity. It still has a box,
+   so the decoder still runs and can still prove itself; it just cannot cover
+   anything while it is unproven. world.js promotes it to .clip-live the moment
+   a real frame exists, and only then does it take the screen. Until then the
+   reader sees the poster, which is the app. */
+.phone__screen [data-sc-segment] > video {
+  inset: auto; left: 0; top: 0;
+  width: 2px; height: 4px;
+  opacity: 0.01;
+  pointer-events: none;
+}
+.phone__screen [data-sc-segment].clip-live > video {
+  inset: 0;
+  width: 100%; height: 100%;
+  opacity: 1;
+}
+/* Once the clip is live the engine's own cross-fade takes over again. */
+.phone__screen [data-sc-segment].clip-live.sc-has-clip .sc-world__poster { opacity: 0; }
+
+/* ---------------------------------------------------- THE MOTION FLOOR
+   "lacks on animations". When the decoder is refused, the poster this rule
+   keeps up is one still frame for a whole leg, and a leg is several seconds of
+   scrolling. So a clip world.js has given up on lets its poster drift across
+   the leg instead: scaled a little first so the pan never exposes an edge.
+   It is not the app running and does not pretend to be. It is the screen
+   refusing to be a dead rectangle. */
+.phone__screen [data-sc-segment].clip-dead .sc-world__poster {
+  transform: scale(1.07) translateY(calc(1.5% - var(--sc-segp, 0) * 3%));
+}
+
+/* -------------------------------------------------- THE SIGNATURE MOVE
+   The six planes are parked behind the glass at z=0, in perfect register with
+   the screen, and are invisible until scroll pulls them apart. They fan out to
+   the right and up, ranked into depth, each one labelled with the technology it
+   actually is. The interface never stops: the running clip is plane zero, and
+   it stays opaque, sharp and live for the whole move. */
+
+.strata {
+  position: absolute; inset: 0;
+  transform-style: preserve-3d;
+  pointer-events: none;
+}
+.stratum {
+  position: absolute;
+  inset: var(--bez);
+  transform-style: preserve-3d;
+  transform: translate3d(var(--sx, 0px), var(--sy, 0px), var(--sz, 0px));
+  opacity: var(--so, 0);
+}
+.stratum__pane {
+  position: absolute; inset: 0;
+  border-radius: calc(var(--rad) - var(--bez));
+  border: 1px solid rgba(245,245,247,0.32);
+  background: linear-gradient(150deg, rgba(26,18,22,0.9), rgba(9,6,8,0.82));
+  box-shadow:
+    0 0 0 1px rgba(168,83,106,0.14),
+    0 18px 44px -26px #000,
+    0 0 38px -16px var(--dev-glow);
+  overflow: hidden;
+}
+/* each plane is a different material, so the stack reads as six things */
+.stratum[data-i="1"] .stratum__pane { background-image: repeating-linear-gradient(90deg, rgba(245,245,247,0.16) 0 1px, transparent 1px 13px); }
+.stratum[data-i="2"] .stratum__pane { background-image: radial-gradient(rgba(245,245,247,0.26) 1px, transparent 1.2px); background-size: 16px 16px; }
+.stratum[data-i="3"] .stratum__pane { background-image: repeating-linear-gradient(0deg, rgba(245,245,247,0.18) 0 1px, transparent 1px 15px); }
+.stratum[data-i="4"] .stratum__pane { background-image: repeating-linear-gradient(48deg, rgba(200,120,142,0.34) 0 1px, transparent 1px 17px); }
+.stratum[data-i="5"] .stratum__pane { background-image: radial-gradient(rgba(200,120,142,0.44) 1.2px, transparent 1.4px); background-size: 30px 30px; }
+.stratum[data-i="6"] .stratum__pane {
+  background-image:
+    repeating-linear-gradient(90deg, rgba(200,120,142,0.28) 0 1px, transparent 1px 19px),
+    repeating-linear-gradient(0deg, rgba(200,120,142,0.28) 0 1px, transparent 1px 19px);
+}
+
+/* the callout, as on an exploded-view drawing */
+.stratum__tag {
+  position: absolute;
+  left: 100%; top: 50%;
+  width: 13rem;
+  margin-left: 1.6rem;
+  transform: translateY(-50%);
+  text-align: left;
+}
+.stratum__tag::before {
+  content: "";
+  position: absolute; right: 100%; top: 50%;
+  width: 1.4rem; height: 1px;
+  background: rgba(245,245,247,0.55);
+}
+.stratum__tag b {
+  display: block;
+  font-size: 1.05rem; font-weight: 500; letter-spacing: -0.01em;
+  color: var(--sc-ink);
+}
+.stratum__tag span {
+  display: block; margin-top: 0.22rem;
+  font-size: 0.82rem; line-height: 1.4; font-weight: 400;
+  letter-spacing: 0.005em;
+  color: var(--sc-ink-soft);
+}
+
+/* ------------------------------------------------------- his own work */
+
+.field {
+  position: absolute; inset: 0;
+  transform-style: preserve-3d;
+  pointer-events: none;
+}
+.field__plate {
+  position: absolute; left: 50%; top: 50%;
+  width: calc(var(--pw) * 0.8);
+  margin: 0;
+  transform:
+    translate3d(
+      calc(-50% + var(--fx) * var(--fk, 1)),
+      calc(-50% + var(--fy) * var(--fk, 1)),
+      calc(var(--fz) * var(--fzk, 1) * (1.5 - var(--spread) * 0.5)));
+  opacity: calc(var(--spread) * var(--spread) * 0.95);
+}
+.field__plate--far { opacity: calc(var(--spread) * var(--spread) * 0.6); }
+.field__plate img {
+  display: block; width: 100%; height: auto;
+  border-radius: 12px;
+  border: 1px solid rgba(245,245,247,0.1);
+  box-shadow: 0 20px 50px -24px #000;
+}
+
+/* ------------------------------------------------- he is a plate too
+   The first version floated a bare cutout and faded its bottom edge. Against
+   a page with a device and a field behind it, a fade reads as the photograph
+   having been cut off. A plate has an edge on purpose. */
+
+.portrait {
+  position: absolute;
+  left: 50%; top: 50%;
+  width: calc(var(--pw) * 1.02);
+  margin: 0;
+  transform: translate3d(calc(-50% + var(--pw) * 1.06), calc(-50% + var(--pw) * 0.02), 210px);
+  opacity: var(--por);
+}
+.portrait img {
+  display: block; width: 100%; height: auto;
+  border-radius: 18px;
+  border: 1px solid rgba(245,245,247,0.13);
+  box-shadow: 0 34px 70px -30px #000, 0 0 60px -28px var(--dev-glow);
+}
+
+/* ------------------------------------------------------------------- copy */
+
+.scrim {
+  background:
+    linear-gradient(90deg, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.9) 20%, rgba(0,0,0,0.6) 38%, rgba(0,0,0,0.18) 52%, transparent 64%),
+    linear-gradient(0deg, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.72) 18%, rgba(0,0,0,0.3) 36%, transparent 54%),
+    linear-gradient(180deg, rgba(0,0,0,0.72) 0%, rgba(0,0,0,0.4) 12%, rgba(0,0,0,0.12) 22%, transparent 32%);
+}
+
+.c {
+  position: absolute;
+  left: var(--gut); right: var(--gut);
+  bottom: calc(var(--gut) + 74px);
+  /* The column never reaches the object: copy on the left, device on the
+     right, and the scrim only has to cover the column. */
+  max-width: 33rem;
+}
+.c--hero { bottom: auto; top: 50%; transform: translateY(-50%); }
+/* Cards alternate top and bottom down the resume run, so four labels for four
+   companies do not read as the same slide four times. */
+.c--card-alt { bottom: auto; top: calc(var(--gut) + 58px); }
+.c--note { bottom: calc(var(--gut) + 74px); max-width: 30rem; }
+
+h1 {
+  margin: 0.1em 0 0;
+  font-family: var(--sc-font-display);
+  font-size: clamp(2.7rem, 9.2vw, 5.6rem);
+  font-weight: 600;
+  letter-spacing: -0.042em;
+  line-height: 0.96;
+}
+h2 {
+  margin: 0;
+  font-family: var(--sc-font-display);
+  font-size: clamp(1.65rem, 5.4vw, 3.1rem);
+  font-weight: 600;
+  letter-spacing: -0.033em;
+  line-height: 1.04;
+  text-wrap: balance;
+}
+.kicker {
+  margin: 0;
+  font-size: 0.78rem; font-weight: 500; letter-spacing: 0.02em;
+  color: var(--sc-accent);
+}
+.lede, .body {
+  margin: 0.85rem 0 0;
+  max-width: 30rem;
+  font-size: clamp(0.98rem, 2.8vw, 1.16rem);
+  line-height: 1.5;
+  font-weight: 400;
+  letter-spacing: -0.008em;
+  color: var(--sc-ink-soft);
+}
+.c--peak .body { color: var(--sc-accent); font-weight: 500; }
+
+/* The six layers as real content. Out in the world they are callouts on an
+   exploded view, and that view is aria-hidden, so on desktop this list is the
+   accessible copy of them and nothing more. On a phone it is the only way they
+   can be read, so there it becomes the visible thing. */
+.layers {
+  position: absolute; width: 1px; height: 1px;
+  margin: 0; padding: 0; overflow: hidden;
+  clip-path: inset(50%); white-space: nowrap; list-style: none;
+}
+
+/* --------------------------------------------------------- company cards
+   One schema, four companies. A collection reads as a collection only when
+   every label is set the same way. */
+
+.card__logo {
+  display: block;
+  height: 30px; width: auto;
+  margin: 0 0 1rem;
+}
+.card__logo--sm { height: 42px; }
+.card__product {
+  margin: 0;
+  font-family: var(--sc-font-display);
+  font-size: clamp(1.9rem, 6vw, 3rem);
+  font-weight: 600; letter-spacing: -0.035em; line-height: 1;
+}
+.card__meta {
+  margin: 0.5rem 0 0;
+  font-size: 0.8rem; letter-spacing: 0.01em; line-height: 1.4;
+  color: var(--sc-ink-soft);
+}
+.card__line {
+  margin: 0.85rem 0 0;
+  font-size: clamp(0.95rem, 2.6vw, 1.08rem); line-height: 1.5;
+  letter-spacing: -0.008em;
+  color: var(--sc-ink-soft);
+}
+.card__figure {
+  margin: 0.95rem 0 0;
+  font-size: 0.92rem; line-height: 1.5;
+  color: var(--sc-ink-soft);
+}
+.card__figure b {
+  font-family: var(--sc-font-display);
+  font-size: 1.45rem; font-weight: 600; letter-spacing: -0.03em;
+  color: var(--sc-ink);
+}
+.card__note {
+  margin: 0.8rem 0 0;
+  font-size: 0.78rem; line-height: 1.45;
+  color: #91919a;
+}
+
+.note {
+  margin: 0;
+  display: flex; align-items: flex-start; gap: 0.95rem;
+  font-size: clamp(0.94rem, 2.6vw, 1.05rem); line-height: 1.5;
+  letter-spacing: -0.008em;
+  color: var(--sc-ink-soft);
+}
+.note__logo { flex: none; height: 26px; width: auto; margin-top: 0.15rem; }
+.note b { color: var(--sc-ink); font-weight: 500; }
+
+.cta {
+  display: inline-flex; align-items: center;
+  margin-top: 1.4rem;
+  min-height: 48px; padding: 0 1.5rem;
+  border-radius: 999px;
+  background: var(--sc-accent); color: var(--sc-accent-ink);
+  font-size: 1rem; font-weight: 500; letter-spacing: -0.01em;
+  text-decoration: none;
+  transition: transform 220ms cubic-bezier(.2,.7,.2,1), background-color 220ms;
+}
+.cta:hover { transform: translateY(-2px); background: #4aa8ff; }
+.fine { margin: 1.1rem 0 0; display: flex; gap: 1.4rem; flex-wrap: wrap; }
+.fine a {
+  color: var(--sc-ink-soft); text-decoration: none;
+  font-size: 0.86rem;
+  padding: 6px 0;
+  border-bottom: 1px solid transparent;
+}
+.fine a:hover { color: var(--sc-ink); border-bottom-color: var(--sc-ink-soft); }
+
+
+/* ------------------------------------------------- THE AGENT LAYER
+   The delamination pulls six planes out from UNDER the interface. This one
+   arrives in FRONT of it, because that is where agents sit: on top of the
+   whole stack, working it. Last layer to appear, nearest to the reader. */
+
+.agents {
+  position: absolute;
+  inset: var(--bez);
+  transform-style: preserve-3d;
+  display: flex; align-items: center;
+  /* Same footprint as a stratum, offset the opposite way: six planes went
+     back and away, this one comes forward and toward the reader.
+
+     To the RIGHT, not the left. The first cut put this over the copy, where
+     the copy scrim greys everything behind it: the strongest object on the
+     page arrived looking like a watermark. The room is on the other side of
+     the device, between it and the route rail, and nothing is competing for
+     it.
+
+     And it LANDS rather than slides. Multiplying x by --agents, which is what
+     every other layer here does, meant this one started centred on the device
+     and swept sideways off it: a big translucent rectangle dragging across the
+     running app, which is the thing Binni said he did not like. So x is fixed.
+     Only depth, scale and opacity move, and the object arrives out of the room
+     at the place it belongs instead of travelling there. */
+  transform: translate3d(
+    calc(var(--pw) * 0.92),
+    calc(var(--pw) * -0.14 + (1 - var(--agents)) * var(--pw) * 0.07),
+    calc(var(--pw) * (0.22 + 0.56 * var(--agents))));
+  opacity: var(--agents);
+  pointer-events: none;
+}
+
+/* The surge. The delamination took the stack apart and put it back; this is
+   what arrives on top of it. A bloom that grows as the layer lands reads as
+   power entering the object, and it costs one element and no animation loop:
+   it is driven by the same --agents ramp as everything else, so it is tied to
+   the reader's own scroll rather than running on its own clock. */
+.agents__bloom {
+  position: absolute;
+  left: -14%; top: 0%;
+  width: 128%; aspect-ratio: 1;
+  border-radius: 50%;
+  background: radial-gradient(closest-side,
+    rgba(255,190,208,0.52), rgba(196,96,124,0.24) 40%, transparent 70%);
+  transform: scale(calc(0.4 + var(--agents) * 0.68));
+  opacity: var(--agents);
+}
+
+.agents__stack {
+  position: relative;
+  transform: scale(calc(0.82 + var(--agents) * 0.18));
+  padding: calc(var(--pw) * 0.082) calc(var(--pw) * 0.1)
+           calc(var(--pw) * 0.082) calc(var(--pw) * 0.088);
+  border-radius: calc(var(--rad) - var(--bez));
+  border: 1px solid rgba(255,255,255,0.40);
+  background: linear-gradient(150deg, rgba(52,25,33,0.96), rgba(12,7,10,0.95));
+  box-shadow:
+    0 0 0 1px rgba(214,120,148,0.36),
+    0 34px 74px -26px #000,
+    0 0 96px -10px rgba(190,84,114,0.75);
+}
+/* The charge. A hard accent edge that fills from the top as the layer lands:
+   the one bit of the object that is pure colour, so the eye goes to it first
+   and then up into Claude. */
+.agents__stack::before {
+  content: "";
+  position: absolute; left: 0; top: 0;
+  width: 2px; height: calc(var(--agents) * 100%);
+  border-radius: 2px;
+  background: linear-gradient(180deg, #ffd2de, #e8849f 45%, rgba(168,83,106,0));
+  box-shadow: 0 0 14px rgba(255,170,195,0.85);
+}
+
+/* CLAUDE FIRST, AND BIGGER.
+   Binni asked for Claude highlighted, and a list cannot do that: five equal
+   rows say five equal tools. So Claude is not in the list at all. It is the
+   head of the object at roughly twice the mark size, lit rather than tinted
+   white, with the product names under it, and the other four rank in beneath
+   a rule as what it orchestrates. */
+.agents__lead {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  column-gap: calc(var(--pw) * 0.05);
+  align-items: center;
+  padding-bottom: calc(var(--pw) * 0.062);
+  margin-bottom: calc(var(--pw) * 0.062);
+  border-bottom: 1px solid rgba(245,245,247,0.16);
+}
+.agents__lead img {
+  grid-row: 1 / 3;
+  width: calc(var(--pw) * 0.17); height: calc(var(--pw) * 0.17);
+  filter: brightness(0) invert(1)
+          drop-shadow(0 0 calc(var(--pw) * 0.055) rgba(238,165,186,0.9));
+}
+.agents__lead b {
+  align-self: end;
+  font-size: calc(var(--pw) * 0.112); line-height: 1;
+  letter-spacing: -0.022em; font-weight: 600; color: #fff;
+}
+.agents__lead i {
+  align-self: start;
+  font-style: normal;
+  margin-top: calc(var(--pw) * 0.018);
+  font-size: calc(var(--pw) * 0.044); line-height: 1.15;
+  letter-spacing: 0.012em; color: #edb6c6;
+}
+
+/* The rank arrives after Claude and in order, one at a time. --n is the
+   position, so each row unlocks a little further along the same ramp: the
+   layer assembles instead of appearing. */
+.agents__rank {
+  margin: 0; padding: 0; list-style: none;
+  display: flex; flex-direction: column;
+  gap: calc(var(--pw) * 0.036);
+}
+.agents__rank li {
+  --a: clamp(0, calc((var(--agents) - 0.30 - var(--n) * 0.115) * 5), 1);
+  display: flex; align-items: center;
+  gap: calc(var(--pw) * 0.042);
+  opacity: var(--a);
+  transform: translate3d(calc((1 - var(--a)) * -14%), 0, 0);
+}
+.agents__rank img {
+  flex: none;
+  width: calc(var(--pw) * 0.075); height: calc(var(--pw) * 0.075);
+  filter: brightness(0) invert(1); opacity: 0.82;
+}
+.agents__rank span {
+  font-size: calc(var(--pw) * 0.052); line-height: 1.1;
+  letter-spacing: -0.006em; color: #dcdce2; white-space: nowrap;
+}
+
+
+/* ------------------------------------------------ the AI tools list */
+
+.tools {
+  margin: 1rem 0 0; padding: 0; list-style: none;
+  display: grid; gap: 0.42rem;
+  font-size: 0.86rem; line-height: 1.3; color: var(--sc-ink-soft);
+}
+.tools li { display: flex; align-items: center; gap: 0.6rem; }
+.tools span { color: inherit; }
+.tools img {
+  flex: none; width: 18px; height: 18px;
+  filter: brightness(0) invert(1); opacity: 0.85;
+}
+.tools b { color: var(--sc-ink); font-weight: 500; }
+.c--agents .kicker { color: #d79aa8; }   /* not --dev-lit: that is 4.08:1 over a lit screen */
+
+/* The same hierarchy in the copy: the daily driver is not the fourth item in
+   an alphabetical list. Colour does the work the object does, and the name
+   stays plain white so the contrast harness still has something to measure. */
+.tools__lead b { color: #fff; }
+.tools__lead img {
+  opacity: 1;
+  filter: brightness(0) invert(1) drop-shadow(0 0 7px rgba(238,165,186,0.85));
+}
+
+
+
+/* --------------------------------------------------------- named chips
+   Recruiters do not recognise glyphs. Every mark on this page carries its
+   name, which costs width and buys the only thing the marks are there for. */
+
+.chips {
+  margin: 0; padding: 0; list-style: none;
+  display: flex; flex-wrap: wrap; align-items: center;
+  gap: 0.5rem 1.05rem;
+}
+.chips li { display: flex; align-items: center; gap: 0.42rem; }
+.chips img {
+  flex: none;
+  /* Forced to one white whatever the file shipped as: simple-icons arrive
+     pre-filled, the two from Wikimedia carry their own colours. */
+  filter: brightness(0) invert(1);
+}
+.chips span {
+  font-size: 0.76rem; letter-spacing: 0.005em; white-space: nowrap;
+  color: var(--sc-ink-soft);
+}
+.chips--hero { margin-top: 1.15rem; max-width: 30rem; }
+.chips--hero img { width: 18px; height: 18px; opacity: 0.95; }
+.chips--hero span { color: #cfcfd4; font-weight: 500; }
+.chips--specs { margin-top: 1.2rem; max-width: 32rem; gap: 0.46rem 0.95rem; }
+.chips--specs img { width: 16px; height: 16px; opacity: 0.6; }
+.chips--specs span { font-size: 0.72rem; color: #8b8b93; }
+
+/* ------------------------------------------- the toolkit, in the world
+   One plane, not confetti. The first version scattered eighteen marks across
+   a flat backdrop: it read as dispersed and it was not part of the animation
+   at all, because it sat outside the rig. This is a single object in the
+   room. It dollies and turns with the camera, and it arrives behind the work
+   as one thing. */
+
+.toolwall {
+  position: absolute; left: 50%; top: 50%;
+  width: calc(var(--pw) * 4.6);
+  margin: 0;
+  /* Rides in toward the camera as it appears, which is both the arrival and
+     the only way the names are legible: at a fixed -1.65pw the labels
+     rendered under seven pixels. */
+  transform: translate3d(-50%, -50%,
+    calc(var(--pw) * (-2.3 + 1.5 * var(--toolkit))));
+  opacity: var(--toolkit);
+  pointer-events: none;
+}
+.toolwall__grid {
+  margin: 0; padding: calc(var(--pw) * 0.14) calc(var(--pw) * 0.12);
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: calc(var(--pw) * 0.075) calc(var(--pw) * 0.06);
+  border-radius: calc(var(--pw) * 0.09);
+  border: 1px solid rgba(245,245,247,0.14);
+  background: linear-gradient(150deg, rgba(18,11,14,0.86), rgba(6,4,5,0.8));
+  box-shadow: 0 0 90px -30px var(--dev-glow);
+}
+.toolwall__grid li {
+  display: flex; align-items: center; gap: calc(var(--pw) * 0.03);
+  min-width: 0;
+}
+.toolwall__grid img {
+  flex: none;
+  width: calc(var(--pw) * 0.088); height: calc(var(--pw) * 0.088);
+  filter: brightness(0) invert(1);
+  opacity: 0.72;
+}
+.toolwall__grid span {
+  font-size: calc(var(--pw) * 0.058); line-height: 1.1;
+  letter-spacing: -0.005em; color: #b0b0b8;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+
+/* ---------------------------------------------- the agent layer's list */
+.agents__list {
+  margin: 0; padding: 0 8%; list-style: none;
+  display: flex; flex-direction: column; gap: 6%;
+  width: 100%;
+}
+.agents__list li { display: flex; align-items: center; gap: 0.5rem; }
+.agents__list img {
+  flex: none;
+  width: calc(var(--pw) * 0.1); height: calc(var(--pw) * 0.1);
+  filter: brightness(0) invert(1); opacity: 0.94;
+}
+.agents__list span {
+  font-size: calc(var(--pw) * 0.056); line-height: 1.1;
+  letter-spacing: -0.01em; color: #e9e9ee;
+}
+
+
+/* -------------------------------------------- where the product lives
+   A card that names a shipped app and does not say where it is invites the
+   obvious question. Coca-Cola's answer is the interesting one. */
+
+.stores {
+  margin: 0.85rem 0 0;
+  display: flex; flex-wrap: wrap; align-items: baseline; gap: 0.5rem 1rem;
+  font-size: 0.8rem; line-height: 1.45;
+}
+.stores a {
+  color: var(--sc-accent); text-decoration: none;
+  border-bottom: 1px solid transparent; padding-bottom: 1px;
+}
+.stores a:hover { border-bottom-color: currentColor; }
+.stores span { color: #91919a; }
+.stores--private span:first-child { color: var(--sc-ink); font-weight: 500; }
+.stores--private { display: block; color: #91919a; }
+
+/* --------------------------------------------------------- languages
+   A flag is a country and not a language, so every one is captioned. */
+
+.langs {
+  margin: 1rem 0 0; padding: 0; list-style: none;
+  display: flex; flex-wrap: wrap; gap: 0.5rem 1.3rem;
+  font-size: 0.82rem;
+}
+.langs li { display: flex; align-items: center; gap: 0.44rem; }
+.langs img {
+  flex: none; width: 20px; height: auto;
+  border-radius: 2px;
+  box-shadow: 0 0 0 1px rgba(245,245,247,0.18);
+}
+.langs b { color: var(--sc-ink); font-weight: 500; }
+.langs span { color: #91919a; }
+
+/* --------------------------------------------------------------- the map */
+
+.route {
+  position: fixed; z-index: 60;
+  pointer-events: none;
+  inset: 0 0 auto 0;
+  padding: 14px var(--gut) 0;
+  display: flex; align-items: flex-start; justify-content: space-between; gap: 1rem;
+}
+.route__mark, .route__cta {
+  pointer-events: auto;
+  text-decoration: none;
+  font-size: 0.86rem; font-weight: 500; letter-spacing: -0.012em;
+  line-height: 1;
+  display: inline-flex; align-items: center; min-height: 34px;
+}
+.route__mark { color: var(--sc-ink); }
+.route__cta { color: var(--sc-accent); }
+.route__cta:hover { text-decoration: underline; text-underline-offset: 4px; }
+
+.route__legs {
+  position: fixed;
+  right: var(--gut); top: 50%; transform: translateY(-50%);
+  margin: 0; padding: 0; list-style: none;
+  display: flex; flex-direction: column; align-items: flex-end; gap: 2px;
+  pointer-events: auto;
+}
+.route__legs button {
+  appearance: none; background: none; border: 0;
+  display: flex; align-items: center; justify-content: flex-end; gap: 10px;
+  padding: 7px 0; margin: 0;
+  min-height: 34px;
+  color: var(--sc-ink-soft);
+  font: inherit; font-size: 0.74rem; letter-spacing: 0.01em;
+  cursor: pointer;
+  opacity: 0.5;
+  transition: opacity 260ms, color 260ms;
+}
+.route__legs button:hover { opacity: 1; color: var(--sc-ink); }
+.route__legs button[aria-current="true"] { opacity: 1; color: var(--sc-ink); }
+.route__name { transition: opacity 260ms; }
+.route__tick {
+  width: 22px; height: 1px; background: currentColor;
+  transition: width 320ms cubic-bezier(.2,.7,.2,1), background-color 260ms;
+}
+.route__legs button[aria-current="true"] .route__tick { width: 42px; background: var(--dev-lit); }
+
+/* ------------------------------------------------------------------ noscript */
+.fallback { padding: 12vh var(--gut); max-width: 40rem; }
+.fallback a { color: var(--sc-accent); }
+
+/* ================================================================== mobile
+   Art-directed, not shrunk: the object is bigger in frame, the camera turns
+   less so the screen stays readable, the callouts stack under the plane
+   instead of beside it, and the map becomes a scrubber at the bottom edge. */
+
+@media (max-width: 860px) {
+  :root {
+    --gut: 18px;
+    --pw: min(34vh, 60vw);
+    /* The field was laid out in pixels for a 1440px room. At 390px every plate
+       landed outside the viewport, so the room behind "own work" was empty.
+       Same arrangement, measured for the smaller room. */
+    --fk: 0.40;
+    --fzk: 0.5;
+  }
+  .field__plate { width: calc(var(--pw) * 0.62); }
+  /* the four deepest dropped rather than shrunk into noise */
+  .field__plate--far { display: none; }
+
+  .world__space { perspective: 1050px; perspective-origin: 50% 42%; }
+
+  .c { bottom: calc(var(--gut) + 64px); right: var(--gut); max-width: none; }
+  .c--hero { bottom: calc(var(--gut) + 64px); top: auto; transform: none; }
+  /* No room for a top-anchored card on a phone: the object owns the upper two
+     thirds and the copy owns the bottom. Every card goes to the same place. */
+  .c--card-alt { bottom: calc(var(--gut) + 64px); top: auto; }
+  .scrim {
+    background: linear-gradient(0deg,
+      rgba(0,0,0,0.985) 0%, rgba(0,0,0,0.96) 30%, rgba(0,0,0,0.8) 46%,
+      rgba(0,0,0,0.36) 60%, rgba(0,0,0,0.08) 72%, transparent 82%);
+  }
+  .lede, .body { max-width: none; }
+  .card__logo { height: 26px; }
+  .card__logo--sm { height: 36px; }
+  .card__line { font-size: 0.95rem; }
+  .card__figure { font-size: 0.86rem; }
+  .card__figure b { font-size: 1.25rem; }
+  .card__note { font-size: 0.74rem; }
+  .note { font-size: 0.92rem; gap: 0.7rem; }
+  /* The Agents block is the tallest on the page. At 390px it started at 51%
+     of the viewport, which puts its first line above the scrim and measured
+     1.94:1 over a lit screen. Two columns, no descriptions and no kicker take
+     ~65px off the top and drop the whole block into the dark. */
+  .tools {
+    font-size: 0.78rem; gap: 0.3rem 0.8rem;
+    grid-template-columns: 1fr 1fr;
+  }
+  .tools img { width: 15px; height: 15px; }
+  .tools span { display: none; }
+  .tools li:last-child { grid-column: 1 / -1; }
+  .c--agents .kicker { display: none; }
+  .c--agents .card__note { display: none; }
+  /* Named chips are four times the width of a bare mark. On a phone the hero
+     shows three and the close shows eight, which is what fits above the copy
+     band without pushing the CTA off the screen. */
+  .chips { gap: 0.4rem 0.8rem; }
+  .chips--hero { margin-top: 0.85rem; }
+  .chips--hero span { font-size: 0.72rem; }
+  .chips--hero li:nth-child(n+4) { display: none; }
+  .stores { font-size: 0.76rem; gap: 0.4rem 0.8rem; margin-top: 0.7rem; }
+  .langs { font-size: 0.76rem; gap: 0.4rem 0.9rem; margin-top: 0.8rem; }
+  .langs img { width: 17px; }
+  .chips--specs { margin-top: 0.9rem; gap: 0.36rem 0.75rem; }
+  .chips--specs span { font-size: 0.68rem; }
+  .chips--specs li:nth-child(n+9) { display: none; }
+  /* Twenty-four named cells will not read at 390px. The phone gets three
+     columns and the twelve that matter most. */
+  .toolwall { width: calc(var(--pw) * 2.6); }
+  .toolwall__grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .toolwall__grid li:nth-child(n+13) { display: none; }
+  .note__logo { height: 22px; }
+
+
+  /* THE PEAK ON A PHONE.
+     At 390px the device fills the upper two thirds, and six labelled planes
+     fanning 23px apart behind it are not a diagram, they are a smudge. So the
+     camera gives the stack room, the fan opens wider, the whole rig slides
+     left, and the layer names move out of the world and into the copy where
+     they can actually be read. */
+  .stratum__tag { display: none; }
+  .layers {
+    position: static; width: auto; height: auto;
+    overflow: visible; clip-path: none; white-space: normal;
+    margin: 1rem 0 0;
+    display: grid; gap: 0.28rem 1rem;
+    grid-template-columns: 1fr;
+    font-size: 0.76rem; line-height: 1.3; color: #8f8f96;
+  }
+  .layers li { display: block; }
+  .layers b { color: var(--sc-ink); font-weight: 500; }
+  .c--peak-out .body { display: none; }
+
+  .portrait {
+    width: calc(var(--pw) * 0.84);
+    transform: translate3d(calc(-50% + var(--pw) * 0.86), calc(-50% - var(--pw) * 0.1), 150px);
+  }
+
+  .route { padding-top: max(12px, env(safe-area-inset-top)); }
+  .route__legs {
+    position: fixed;
+    right: 0; left: 0; top: auto;
+    bottom: max(10px, env(safe-area-inset-bottom));
+    transform: none;
+    flex-direction: row; align-items: center; justify-content: center;
+    gap: 0;
+  }
+  .route__legs li { flex: 1 1 0; display: flex; }
+  .route__legs button {
+    flex: 1; flex-direction: column; gap: 6px; justify-content: center;
+    padding: 10px 1px; min-height: 44px;
+    font-size: 0.55rem; letter-spacing: 0.01em;
+  }
+  .route__name { opacity: 0; }
+  .route__legs button[aria-current="true"] .route__name { opacity: 1; }
+  .route__tick { width: 100%; max-width: 26px; height: 2px; border-radius: 2px; }
+  .route__legs button[aria-current="true"] .route__tick { width: 100%; max-width: 26px; }
+}
+
+/* ======================================================== reduced motion
+   No clip is fetched, the posters are the film, and the camera stops. The
+   depth does not: the stack is shown as a static exploded view, which is the
+   whole idea of the page held still. */
+@media (prefers-reduced-motion: reduce) {
+  .rig {
+    transform: translate3d(0, 0, -520px) rotateX(6deg) rotateY(-15deg) !important;
+  }
+  .stratum { opacity: 0.9 !important; }
+  .stratum[data-i="1"] { transform: translate3d(calc(var(--pw) * 0.30), calc(var(--pw) * -0.13), -150px) !important; }
+  .stratum[data-i="2"] { transform: translate3d(calc(var(--pw) * 0.60), calc(var(--pw) * -0.26), -300px) !important; }
+  .stratum[data-i="3"] { transform: translate3d(calc(var(--pw) * 0.90), calc(var(--pw) * -0.39), -450px) !important; }
+  .stratum[data-i="4"] { transform: translate3d(calc(var(--pw) * 1.20), calc(var(--pw) * -0.52), -600px) !important; }
+  .stratum[data-i="5"] { transform: translate3d(calc(var(--pw) * 1.50), calc(var(--pw) * -0.65), -750px) !important; }
+  .stratum[data-i="6"] { transform: translate3d(calc(var(--pw) * 1.80), calc(var(--pw) * -0.78), -900px) !important; }
+  .field__plate { opacity: 0.4 !important; }
+  .portrait {
+    opacity: 1 !important;
+    /* Clear of the device, not against it: with nothing moving, an overlap
+       reads as a collision rather than as depth. */
+    transform: translate3d(calc(-50% + var(--pw) * 1.34), calc(-50% + var(--pw) * 0.04), 210px) !important;
+  }
+  .phone__island { opacity: 1 !important; }
+  /* With motion off, --agents never ramps, and everything inside this layer
+     is keyed to it: the rank would stay at opacity 0 and the plate would show
+     up empty. The arrival is what reduced motion is meant to drop, not the
+     content, so the whole object is simply shown landed. */
+  .agents {
+    opacity: 1 !important;
+    /* Left, not right: with motion off the portrait already stands to the
+       right of the device, and the two landed on top of each other. */
+    transform: translate3d(calc(var(--pw) * -0.62), calc(var(--pw) * -0.34), calc(var(--pw) * 0.70)) !important;
+  }
+  .agents__stack { transform: none !important; }
+  .agents__stack::before { height: 100% !important; }
+  .agents__bloom { opacity: 0.8 !important; transform: scale(1) !important; }
+  .agents__rank li { opacity: 1 !important; transform: none !important; }
+  .phone { --dev-glow: rgba(214, 122, 152, 0.62) !important; }   /* plain colour: no ramp to mix against */
+  .cta { transition: none; }
+}
+
+/* Motion off on a phone is its own composition, not the desktop one at a
+   smaller size. Everything the scroll would have revealed in sequence is on
+   screen at once, so the object shrinks, the whole scene lifts clear of the
+   copy band, and he stands beside the device instead of on top of it. */
+@media (prefers-reduced-motion: reduce) and (max-width: 860px) {
+  :root { --pw: min(24vh, 40vw); }
+  .rig {
+    transform: translate3d(0, -13%, -470px) rotateX(5deg) rotateY(-12deg) !important;
+  }
+  .portrait {
+    width: calc(var(--pw) * 0.95) !important;
+    transform: translate3d(calc(-50% + var(--pw) * 1.12), calc(-50% - var(--pw) * 0.1), 130px) !important;
+  }
+  .stratum__tag { display: none; }
+  .field__plate { opacity: 0.22 !important; }
+  .agents {
+    transform: translate3d(0, calc(var(--pw) * -0.42), calc(var(--pw) * 0.70)) !important;
+  }
+}
+
+/* ========================================= THE THICKNESS IS DRAWN, NOT BUILT
+   Bisected on a booted iPhone 17 simulator, one subtree at a time.
+
+   iOS WebKit has a ceiling on what it will rasterize inside one preserve-3d
+   rendering context. This world is a big one: the rig, the phone, its back
+   face, two rails rotated on their edges with five buttons, six strata with
+   panes and tags, twenty-four toolwall marks, eight legs of poster + clip,
+   glass, island, vignette. Past the ceiling WebKit does not warn and does not
+   degrade evenly — it silently stops painting some layers while still painting
+   their parents. On a phone the casualty was the one that matters: the screen
+   rendered its own background and none of its children, so the device came up
+   a black slab with a Dynamic Island.
+
+   Hiding the back face and the two rails is what brought it back under the
+   ceiling, with everything else left in place. That is 8 layers — two edge-on
+   planes plus their buttons — spent on about two pixels of visible thickness
+   at phone size. The silhouette, the bezel, the screen and every act survive;
+   only the machined side goes, and at this size it was never legible.
+
+   Desktop keeps the real slab. This is the mobile composition, not the desktop
+   one made small, which is the rule this page already follows elsewhere. */
+@media (max-width: 860px) {
+  .phone__back, .phone__rail { display: none; }
+
+  /* There is no room beside the device on a phone: shifted right by an object
+     width, Claude walked off the viewport. So on mobile the agent layer takes
+     the device head on, centred over the running app, which is what "the layer
+     on top" means anyway. It still lands rather than slides - depth, scale and
+     opacity are doing the arrival, and none of them need somewhere to go. */
+  .agents {
+    justify-content: center;
+    transform: translate3d(
+      0,
+      calc(var(--pw) * -0.36 + (1 - var(--agents)) * var(--pw) * 0.07),
+      calc(var(--pw) * (0.22 + 0.56 * var(--agents))));
+  }
+  .agents__bloom { left: -10%; width: 120%; }
+}
