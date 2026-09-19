@@ -10,11 +10,16 @@
 ## Contact
 - Email: binni.2000.cordova@gmail.com
 - GitHub: https://github.com/binnicordova
+- npm: https://www.npmjs.com/~binnizenobiocordovaleandro
 - LinkedIn: https://www.linkedin.com/in/binnicordova
 - Résumé (PDF): https://binnicordova.com/Binni_Cordova_Resume.pdf
 
 ## Current role
 The Coca-Cola Company, USA — Senior Full Stack Software Engineer (Apr 2025 to present).
+Works on miMarket, a B2B field-sales ordering platform used by more than 1,500
+sellers across Peru, Chile, Argentina, Paraguay and Brazil, who place over
+1,350,000 orders a month to Coca-Cola clients, in the field on unreliable
+mobile connections and in both Spanish and Portuguese.
 Backend-for-frontend architecture on Node.js and AWS for the marketplace
 platform, Python Lambda functions and Dockerised services. Offline-first React
 Native platform using WatermelonDB for local persistence and conflict
@@ -40,6 +45,28 @@ multi-account AWS microservices.
   Mar 2019). Medical reporting and annotation systems across 3,000+ hospitals and
   clinics in Europe.
 
+## Own apps
+Thirteen mobile apps designed, built and shipped independently, nights and
+weekends, all listed on Google Play under the BinniCordova.com developer
+account: https://play.google.com/store/apps/developer?id=BinniCordova.com
+They cover ride hailing, vehicle records, a résumé scorer, a beach-safety
+guide, a React drill app, a live-event film maker, a personal-safety network
+and a live-stream AI assistant.
+
+## Open source
+Writes native iOS and Android modules to the security requirements of the
+banking work and publishes them on npm as binnizenobiocordovaleandro, MIT
+licensed, around 500 installs a month across the set.
+Full list: https://www.npmjs.com/~binnizenobiocordovaleandro
+- react-native-check-biometric-changed — detects a biometric re-enrolment on
+  iOS and Android so an app can revoke a session before a newly enrolled face
+  or fingerprint inherits it. Zero runtime dependencies, autolinked.
+- expo-feedback-ai — an in-app feature-request board for Expo apps whose
+  most-voted ideas are picked up and built by an AI agent. No backend, no API
+  key, runs in Expo Go.
+- iphone-duo-expo-rn — the iPhone "Duo" frosted-glass fold effect for any Expo
+  app, TypeScript only, no native code.
+
 ## Skills
 Mobile: React Native, Expo (managed and bare), TypeScript, Swift, Kotlin/Java,
 native modules, React Native New Architecture (JSI, TurboModules, Fabric),
@@ -51,6 +78,8 @@ Firestore, Node.js, Firebase, GraphQL, REST, WebSockets, SQL.
 CI/CD: GitHub Actions, EAS, Bitrise, Jenkins, Docker, Kubernetes, Turborepo, OTA
 updates.
 Testing and observability: Jest, Appium, Detox, Datadog, New Relic.
+Open source: npm package authoring and publishing, semantic versioning,
+autolinked iOS and Android native modules, Expo Go compatible libraries.
 Security: Keychain and Keystore, biometrics, SSL pinning.
 
 ## Education
@@ -59,4 +88,5 @@ Security: Keychain and Keystore, biometrics, SSL pinning.
   (Mar 2013 to Dec 2015).
 
 ## Languages
-English (advanced), Spanish (native), Italian (advanced), German (basic).
+Spanish (native), English (advanced), Italian (fluent), French (basic),
+German (basic).

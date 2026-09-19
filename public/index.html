@@ -37,9 +37,10 @@
   "image": "https://binnicordova.com/assets/binni-square.jpg",
   "sameAs": [
     "https://github.com/binnicordova",
-    "https://www.linkedin.com/in/binnicordova"
+    "https://www.linkedin.com/in/binnicordova",
+    "https://www.npmjs.com/~binnizenobiocordovaleandro"
   ],
-  "knowsLanguage": ["en", "es", "it", "de"],
+  "knowsLanguage": ["es", "en", "it", "fr", "de"],
   "knowsAbout": [
     "React Native", "Expo", "Swift", "Kotlin", "TypeScript",
     "React Native New Architecture", "JSI", "TurboModules", "Fabric",
@@ -47,7 +48,8 @@
     "Backend for frontend", "Node.js", "AWS Lambda", "GraphQL",
     "Multi-agent AI systems", "LangGraph", "Claude Agent SDK", "Claude Code",
     "OpenAI Codex", "Cursor", "AI-driven development", "Spec-driven development",
-    "Prompt engineering", "On-device AI", "TensorFlow Lite"
+    "Prompt engineering", "On-device AI", "TensorFlow Lite",
+    "Open source maintenance", "npm package publishing"
   ],
   "worksFor": { "@type": "Organization", "name": "The Coca-Cola Company" },
   "alumniOf": [
@@ -124,6 +126,7 @@
           <li><img src="assets/skills/jenkins.svg" alt="" loading="lazy" decoding="async" width="24" height="24"><span>Jenkins</span></li>
           <li><img src="assets/skills/bitrise.svg" alt="" loading="lazy" decoding="async" width="24" height="24"><span>Bitrise</span></li>
           <li><img src="assets/skills/turborepo.svg" alt="" loading="lazy" decoding="async" width="24" height="24"><span>Turborepo</span></li>
+          <li><img src="assets/skills/npm.svg" alt="" loading="lazy" decoding="async" width="24" height="24"><span>npm</span></li>
           <li><img src="assets/skills/jest.svg" alt="" loading="lazy" decoding="async" width="24" height="24"><span>Jest</span></li>
           <li><img src="assets/skills/appium.svg" alt="" loading="lazy" decoding="async" width="24" height="24"><span>Appium</span></li>
           <li><img src="assets/skills/datadog.svg" alt="" loading="lazy" decoding="async" width="24" height="24"><span>Datadog</span></li>
@@ -287,8 +290,9 @@
         <img class="card__logo" src="assets/logo-cocacola.svg" alt="The Coca-Cola Company" width="150" height="47">
         <h2 class="card__product">miMarket</h2>
         <p class="card__meta">Senior Full Stack Software Engineer · USA · Apr 2025 to present</p>
-        <p class="card__line">A backend-for-frontend on Node.js and AWS, Python Lambdas behind it, and a React Native client rebuilt offline-first on WatermelonDB so the field keeps working where the signal does not.</p>
-              <p class="stores stores--private"><span>Internal distribution only.</span> It is not on any store: it carries client records and consumes private data, so it ships to field devices under company control.</p>
+        <p class="card__line">A backend-for-frontend on Node.js and AWS, Python Lambdas behind it, and a React Native client rebuilt offline-first on WatermelonDB so the field keeps working where the signal does not — in Spanish and in Portuguese.</p>
+        <p class="card__figure"><b>1,500+</b> sellers across Peru, Chile, Argentina, Paraguay and Brazil · <b>1.35M+</b> orders a month to Coca-Cola clients</p>
+              <p class="stores stores--private"><span>Internal distribution only.</span> <span class="stores__why">It is not on any store: it carries client records and consumes private data, so it ships to field devices under company control.</span></p>
       </article>
     </div>
 
@@ -371,9 +375,27 @@
       </ul>
       <p class="card__note">Spec-driven development, AI-assisted diagnosis, prompt engineering. Eight years of shipping underneath it, which is what makes the review worth anything.</p>
     </div>
+    <!-- The thirteen apps are things a reader has to take his word for. The
+         three packages under them are not: they are on a public registry,
+         other people's builds pull them down, and the claim can be checked in
+         a terminal without asking him for anything. That is why they close
+         this act rather than sitting in a footer. -->
     <div class="c c--range" data-sc-copy data-sc-window="0.7891 0.8878">
       <h2>And then there is what I build for myself.</h2>
-      <p class="body">Thirteen of them. Ride hailing, vehicle records, a résumé scorer, a beach-safety guide, a React drill app, a live-event film maker, a personal-safety network, a live-stream AI assistant. Nights and weekends, shipped.</p>
+      <p class="body">Thirteen of them, nights and weekends, all shipped. <span class="body__more">Ride hailing, vehicle records, a résumé scorer, a beach-safety guide, a React drill app, a live-event film maker, a personal-safety network, a live-stream AI assistant.</span></p>
+      <p class="stores"><a href="https://play.google.com/store/apps/developer?id=BinniCordova.com" rel="noopener">See them on Google&nbsp;Play</a><span>published under BinniCordova.com</span></p>
+      <!-- The turn of the act. The apps are products; this is the layer under
+           them, and it is the one that carries the banking work forward. One
+           module is named and given a figure, the way a company card is. The
+           rest stay behind the link on purpose: a list of three flattens the
+           one that matters. -->
+      <p class="packs__lead"><img src="assets/skills/npm.svg" alt="" width="16" height="16" loading="lazy" decoding="async"><span>Underneath them I write native modules<span class="lead__more">, and I hold them to what a banking app asks for — because that is where this one came from</span>.</span></p>
+      <div class="pack">
+        <a href="https://www.npmjs.com/package/react-native-check-biometric-changed" rel="noopener"><code>react-native-check-biometric-changed</code></a>
+        <p class="pack__line">Swift and Kotlin, out of the Itaú work. A session granted to one face should not survive re-enrolment by another, so it catches the change and lets the app revoke the session before the new face inherits it. Zero runtime dependencies, autolinked.</p>
+        <p class="pack__figure"><b>1,000+</b> installs, and counting</p>
+      </div>
+      <p class="stores"><a href="https://www.npmjs.com/~binnizenobiocordovaleandro" rel="noopener">All of them on npm</a><span>MIT · 500+ installs a month across the set</span></p>
     </div>
 
     <div class="c c--finale" data-sc-copy data-sc-window="finale">
@@ -383,6 +405,7 @@
       <p class="fine">
         <a href="tel:+51971581847" rel="me">+51 971 581 847</a>
         <a href="https://github.com/binnicordova" rel="me">GitHub</a>
+        <a href="https://www.npmjs.com/~binnizenobiocordovaleandro" rel="me">npm</a>
         <a href="https://www.linkedin.com/in/binnicordova" rel="me">LinkedIn</a>
         <a href="/Binni_Cordova_Resume.pdf">Résumé</a>
       </p>
@@ -390,7 +413,9 @@
       <ul class="langs" aria-label="Languages">
         <li><img src="assets/flags/es.png" alt="" width="20" height="13"><b>Spanish</b><span>native</span></li>
         <li><img src="assets/flags/gb.png" alt="" width="20" height="10"><b>English</b><span>advanced</span></li>
-        <li><img src="assets/flags/it.png" alt="" width="20" height="13"><b>Italian</b><span>advanced</span></li>
+        <li><img src="assets/flags/it.png" alt="" width="20" height="13"><b>Italian</b><span>fluent</span></li>
+        <li><img src="assets/flags/fr.png" alt="" width="20" height="13"><b>French</b><span>basic</span></li>
+        <li><img src="assets/flags/de.png" alt="" width="20" height="12"><b>German</b><span>basic</span></li>
       </ul>
       <!-- An Apple product page ends on tech specs. Same job here: the thing a
            recruiter scans last, and the reason every mark carries its name. -->
@@ -406,7 +431,10 @@
   <div class="fallback">
     <h1>Binni Cordova</h1>
     <p>AI-native Senior Software Engineer and Mobile Architect. Configures and operates a multi-agent system on LangGraph and the Claude Agent SDK in production at The Coca-Cola Company, accountable for every change it ships. Eight years of React Native, Swift, Kotlin, Node.js and AWS across fintech, banking, media, healthcare and commerce: Coca-Cola, NFL+, Itaú, Platanitos and Gruppo GPI.</p>
-    <p><a href="mailto:binni.2000.cordova@gmail.com">binni.2000.cordova@gmail.com</a> · <a href="https://github.com/binnicordova">GitHub</a> · <a href="https://www.linkedin.com/in/binnicordova">LinkedIn</a> · <a href="/Binni_Cordova_Resume.pdf">Résumé</a></p>
+    <p>At Coca-Cola he builds miMarket, a B2B field-sales ordering platform where more than 1,500 sellers across Peru, Chile, Argentina, Paraguay and Brazil place over 1,350,000 orders a month to Coca-Cola clients, on unreliable mobile connections and in both Spanish and Portuguese.</p>
+    <p>Thirteen apps of his own, designed, built and shipped independently and listed on Google Play under the BinniCordova.com developer account: <a href="https://play.google.com/store/apps/developer?id=BinniCordova.com">play.google.com/store/apps/developer?id=BinniCordova.com</a>.</p>
+    <p>Writes native iOS and Android modules to banking requirements and publishes them: react-native-check-biometric-changed detects a biometric re-enrolment so an app can revoke a session before a newly enrolled face inherits it, and has passed 1,000 installs. It ships alongside expo-feedback-ai and iphone-duo-expo-rn, all MIT, around 500 installs a month across the set. <a href="https://www.npmjs.com/~binnizenobiocordovaleandro">npmjs.com/~binnizenobiocordovaleandro</a></p>
+    <p><a href="tel:+51971581847">+51 971 581 847</a> · <a href="mailto:binni.2000.cordova@gmail.com">binni.2000.cordova@gmail.com</a> · <a href="https://github.com/binnicordova">GitHub</a> · <a href="https://www.npmjs.com/~binnizenobiocordovaleandro">npm</a> · <a href="https://www.linkedin.com/in/binnicordova">LinkedIn</a> · <a href="/Binni_Cordova_Resume.pdf">Résumé</a></p>
   </div>
 </noscript>
 

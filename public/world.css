@@ -558,6 +558,56 @@ h2 {
   color: #91919a;
 }
 
+/* ------------------------------------------------ the published packages
+   The rest of this page asks to be believed. This list does not: the names
+   resolve on a public registry, so a reader can check the whole claim in a
+   terminal. The names are set in mono for exactly that reason — they are
+   arguments to `npm install`, not product names. */
+
+.packs__lead {
+  margin: 1.05rem 0 0;
+  /* Two flex items, never three. The sentence lives in one span because a
+     bare text node beside the mark becomes its own column the moment the
+     line wraps, and the clause after it lands in a second column with the
+     full stop stranded in a third. */
+  display: flex; align-items: flex-start; gap: 0.55rem;
+  font-size: 0.88rem; line-height: 1.4; letter-spacing: -0.004em;
+  color: var(--sc-ink);
+}
+.packs__lead img {
+  flex: none; width: 16px; height: 16px;
+  margin-top: 0.16em;            /* sits on the first line, not the block */
+  filter: brightness(0) invert(1); opacity: 0.85;
+}
+/* ONE module, named and measured. It was a flat list of three, which gave
+   the same weight to a biometric module carrying a bank's requirements and
+   to a tilt effect. The other packages are a click away; this one gets the
+   treatment a company card gets, because it is the one that says what he
+   does at work when nobody is paying him to. */
+.pack { margin: 0.7rem 0 0; }
+.pack > a { text-decoration: none; display: inline-block; }
+.pack code {
+  font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, monospace;
+  font-size: 0.92rem; letter-spacing: -0.014em;
+  color: var(--sc-ink);
+  border-bottom: 1px solid transparent;
+  transition: border-color 180ms;
+}
+.pack > a:hover code { border-bottom-color: var(--sc-ink-soft); }
+.pack__line {
+  margin: 0.34rem 0 0; max-width: 31rem;
+  font-size: 0.82rem; line-height: 1.45;
+  color: #9a9aa3;
+}
+.pack__figure { margin: 0.5rem 0 0; font-size: 0.86rem; color: var(--sc-ink-soft); }
+.pack__figure b {
+  font-family: var(--sc-font-display);
+  font-size: 1.3rem; font-weight: 600; letter-spacing: -0.03em;
+  color: var(--sc-ink);
+}
+.card__note a { color: var(--sc-ink-soft); text-decoration: none; border-bottom: 1px solid #4a4a52; }
+.card__note a:hover { color: var(--sc-ink); border-bottom-color: var(--sc-ink-soft); }
+
 .note {
   margin: 0;
   display: flex; align-items: flex-start; gap: 0.95rem;
@@ -966,6 +1016,26 @@ h2 {
   .card__figure b { font-size: 1.25rem; }
   .card__note { font-size: 0.74rem; }
   .note { font-size: 0.92rem; gap: 0.7rem; }
+  /* Own work is the second-tallest block, and it grew a package list. Same
+     trade the Agents block makes: the phone keeps the names, which are the
+     verifiable part, and drops the prose around them. The enumeration of the
+     thirteen and the profile URL both survive elsewhere — the URL is in the
+     finale's link row two legs later. */
+  .c--range .body__more { display: none; }
+  /* Own work closes on two link lines now - the thirteen apps, then the
+     packages - and both links have to survive the phone, because they are
+     the only place the reader can go and check either claim. What goes is
+     the prose around them: the enumeration, the clause after the lead, the
+     per-package descriptions and the captions beside the links. */
+  .c--range .lead__more { display: none; }
+  .c--range .stores span { display: none; }
+  .packs__lead { font-size: 0.82rem; margin-top: 0.9rem; }
+  /* The phone keeps the module's name and its figure - the two things that
+     can be checked - and drops the paragraph explaining it. */
+  .pack__line { display: none; }
+  .pack code { font-size: 0.84rem; }
+  .pack__figure { margin-top: 0.35rem; font-size: 0.8rem; }
+  .pack__figure b { font-size: 1.15rem; }
   /* The Agents block is the tallest on the page. At 390px it started at 51%
      of the viewport, which puts its first line above the scrim and measured
      1.94:1 over a lit screen. Two columns, no descriptions and no kicker take
@@ -986,7 +1056,20 @@ h2 {
   .chips--hero { margin-top: 0.85rem; }
   .chips--hero span { font-size: 0.72rem; }
   .chips--hero li:nth-child(n+4) { display: none; }
+  /* Five links, not four, since npm joined the row. At 0.86rem and a 1.4rem
+     gap the fifth wraps to a second line, and the ~30px that adds under the
+     finale lifts "Currently Senior Full Stack..." out of the scrim and into
+     the lit screen: measured 4.26:1, under the 4.5 floor. Closing the gap and
+     dropping a notch of size puts all five back on one line. */
+  .fine { gap: 0.85rem; }
+  .fine a { font-size: 0.82rem; }
   .stores { font-size: 0.76rem; gap: 0.4rem 0.8rem; margin-top: 0.7rem; }
+  /* The Coca-Cola card is the tallest of the four now that it carries its
+     real numbers, and on a phone the extra lines pushed its meta line off the
+     scrim and onto the lit screen: measured 3.50:1. The phone keeps the claim
+     that matters - the app is not on any store - and drops the paragraph
+     explaining why, which is detail a recruiter reads on a desktop. */
+  .stores__why { display: none; }
   .langs { font-size: 0.76rem; gap: 0.4rem 0.9rem; margin-top: 0.8rem; }
   .langs img { width: 17px; }
   .chips--specs { margin-top: 0.9rem; gap: 0.36rem 0.75rem; }
