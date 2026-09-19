@@ -167,6 +167,11 @@
     docEl.style.setProperty('--spread', spread.toFixed(4));
 
     /* --- he arrives ------------------------------------------------------ */
+    /* The toolkit holds through the close rather than receding with the
+       field: the last act is where it is actually being read. */
+    docEl.style.setProperty('--toolkit',
+      (ramp(t, 11.10, 12.60) * (1 - ramp(t, 13.60, 14.60) * 0.3)).toFixed(4));
+
     docEl.style.setProperty('--por', ramp(t, 13.35, 14.30).toFixed(4));
   }
 

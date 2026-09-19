@@ -155,31 +155,44 @@ seam between them is the app continuing rather than a cut.
 pre-filled in whatever colour you ask for; AWS and OpenAI have both pulled
 their marks from it, so those two come from Wikimedia. The page forces
 everything to a single white with a CSS filter, so the set stays consistent
-whatever each file shipped as.
+whatever each file shipped as. GitHub Copilot was downloaded and then deleted:
+it is not on the résumé, and nothing goes on this page he has not claimed.
 
 A grid of 35 icons is what every junior portfolio does and it argues nothing.
 The marks are placed where they carry weight instead:
 
+- **The hero.** Four named marks under the opening claim. AI is the first
+  thing on the page, not a footnote at 10vh.
 - **The agent layer.** The delamination pulls six planes out from UNDER the
   interface. This one arrives in FRONT of it, same footprint, offset the
-  opposite way, carrying Claude, Codex, Cursor, LangGraph and TensorFlow Lite.
-  That is where agents sit: on top of the whole stack, working it. Last layer
-  to appear on the page, nearest to the reader.
+  opposite way, carrying Claude, Codex, Cursor, LangGraph and TensorFlow Lite
+  with their names. That is where agents sit: on top of the whole stack,
+  working it.
 - **The tools list**, beside the Agents copy: five marks, each tied to one
   line of the résumé rather than to a category.
-- **The toolkit band at the close.** An Apple product page ends on tech specs;
-  this is the same job, 29 marks, quiet and monochrome, names in the alt text
-  so it reads as a list rather than as decoration. It is what a recruiter
-  scans last.
+- **The toolkit, as the ground the last act stands on.** Eighteen named marks
+  around the frame, up with the field at Own work and **holding through
+  Arrival**: the field recedes at the close, the toolkit does not, because the
+  close is where it is read. They drift with the camera so the layer belongs
+  to the room.
+- **The closing band**, twelve named chips.
 
-GitHub Copilot was downloaded and then deleted. It is not on the résumé, and
-nothing goes on this page that he has not claimed.
+**Every mark carries its name.** Binni's reason, and it is the right one:
+"many recruiters don't recognize the logos names". A named chip is four times
+the width of a bare mark, which is why the closing band is twelve and not
+twenty-nine: past that the close stops being a close.
+
+Two things had to be redone. The toolkit was first built inside the 3D rig,
+where it rendered at nine pixels behind the product plates and could not be
+seen at all; it is a background layer now. Its first placement also sat
+straight under the route rail, so nothing goes in `x>82%` between `y 30-70%`.
 
 **The Agents copy is the one claim most engineers cannot make.** Not "uses
 AI": configured and operates a multi-agent system on LangGraph and the Claude
 Agent SDK, in production, and signs off its output as the accountable
-engineer. That is the sentence 2027 job posts are reaching for, and it is
-already on his résumé; the page just stops burying it in a footnote.
+engineer. The hero now says it too, along with the title, the description, the
+OpenGraph card and the JSON-LD, because the first view a recruiter gets is
+often a search result rather than the page.
 
 ## 12b. The device
 

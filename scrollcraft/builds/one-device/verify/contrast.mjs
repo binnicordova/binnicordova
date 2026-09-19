@@ -17,8 +17,14 @@ for(let t=0;t<=14.7;t+=0.3){
     const out=[];
     document.querySelectorAll('[data-sc-copy]').forEach(blk=>{
       if(+getComputedStyle(blk).opacity < 0.55) return;
-      blk.querySelectorAll('h1,h2,p,dt,dd,a').forEach(el=>{
+            // li and span included: the chips, the tools list and the toolkit are all
+      // list items, and a selector that stops at <p> silently exempts every
+      // one of them from the only check that would catch them.
+      blk.querySelectorAll('h1,h2,p,dt,dd,a,li,span').forEach(el=>{
         const txt=(el.textContent||'').trim(); if(!txt) return;
+        // Skip a wrapper whose text all lives in a matched descendant: it
+        // would be measured twice, once over a box far wider than its glyphs.
+        if (el.querySelector('h1,h2,p,dt,dd,a,li,span')) return;
         // Skip anything that paints its own ground (the CTA pill): what is
         // behind it is not what its text is read against.
         const bg=getComputedStyle(el).backgroundColor;

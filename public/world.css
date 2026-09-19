@@ -40,6 +40,7 @@
   --open: 0;                        /* delamination 0..1                      */
   --agents: 0;                      /* the agent layer 0..1                   */
   --spread: 0;                      /* field spread 0..1                      */
+  --toolkit: 0;                     /* the toolkit background 0..1            */
   --por: 0;                         /* portrait presence 0..1                 */
 }
 
@@ -525,7 +526,6 @@ h2 {
   position: absolute; inset: 0;
   display: flex; flex-direction: column;
   align-items: center; justify-content: center;
-  gap: 7%;
   border-radius: calc(var(--rad) - var(--bez));
   border: 1px solid rgba(245,245,247,0.38);
   background: linear-gradient(150deg, rgba(40,21,27,0.92), rgba(12,7,9,0.88));
@@ -533,13 +533,6 @@ h2 {
     0 0 0 1px rgba(168,83,106,0.24),
     0 30px 66px -28px #000,
     0 0 64px -12px var(--dev-glow);
-}
-.agents__pane img {
-  width: auto; height: calc(var(--pw) * 0.125);
-  /* Every mark forced to one white, whatever it shipped as: simple-icons are
-     already #F5F5F7, the two from Wikimedia come with their own colours. */
-  filter: brightness(0) invert(1);
-  opacity: 0.94;
 }
 
 /* ------------------------------------------------ the AI tools list */
@@ -558,23 +551,81 @@ h2 {
 .tools b { color: var(--sc-ink); font-weight: 500; }
 .c--agents .kicker { color: #d79aa8; }   /* not --dev-lit: that is 4.08:1 over a lit screen */
 
-/* --------------------------------------------- the toolkit, at the close
-   An Apple product page ends on tech specs. Same idea, same job: the thing a
-   recruiter scans last. Quiet, monochrome, one band. */
 
-.specs {
-  margin: 1.2rem 0 0;
+
+/* --------------------------------------------------------- named chips
+   Recruiters do not recognise glyphs. Every mark on this page carries its
+   name, which costs width and buys the only thing the marks are there for. */
+
+.chips {
+  margin: 0; padding: 0; list-style: none;
   display: flex; flex-wrap: wrap; align-items: center;
-  gap: 0.72rem 0.95rem;
-  max-width: 32rem;
+  gap: 0.5rem 1.05rem;
 }
-.specs img {
-  width: 18px; height: 18px;
+.chips li { display: flex; align-items: center; gap: 0.42rem; }
+.chips img {
+  flex: none;
+  /* Forced to one white whatever the file shipped as: simple-icons arrive
+     pre-filled, the two from Wikimedia carry their own colours. */
   filter: brightness(0) invert(1);
-  opacity: 0.42;
-  transition: opacity 200ms;
 }
-.specs img:hover { opacity: 0.9; }
+.chips span {
+  font-size: 0.76rem; letter-spacing: 0.005em; white-space: nowrap;
+  color: var(--sc-ink-soft);
+}
+.chips--hero { margin-top: 1.15rem; max-width: 30rem; }
+.chips--hero img { width: 18px; height: 18px; opacity: 0.95; }
+.chips--hero span { color: #cfcfd4; font-weight: 500; }
+.chips--specs { margin-top: 1.2rem; max-width: 32rem; gap: 0.46rem 0.95rem; }
+.chips--specs img { width: 16px; height: 16px; opacity: 0.6; }
+.chips--specs span { font-size: 0.72rem; color: #8b8b93; }
+
+/* ------------------------------------------- the toolkit, in the world
+   A background layer rather than objects in the rig. Inside the 3D scene
+   these rendered at nine pixels behind the product plates; out here they are
+   legible and named. They drift a little with the camera so the layer belongs
+   to the room instead of sitting on the glass. */
+
+.constellation {
+  position: absolute; inset: 0;
+  pointer-events: none;
+  /* Its own ramp, not the field's. The field recedes at the close; the
+     toolkit stays, because the close is where it is being read. */
+  opacity: var(--toolkit);
+  transform: translate3d(calc(var(--cx) * -0.05), calc(var(--cy) * -0.07), 0);
+}
+.cmark {
+  position: absolute;
+  left: var(--mx); top: var(--my);
+  display: flex; flex-direction: column; align-items: center; gap: 0.32rem;
+  transform: translate(-50%, -50%);
+}
+.cmark img {
+  width: 26px; height: 26px;
+  filter: brightness(0) invert(1);
+  opacity: 0.6;
+}
+.cmark span {
+  font-size: 11px; letter-spacing: 0.015em; white-space: nowrap;
+  color: #86868b;
+}
+
+/* ---------------------------------------------- the agent layer's list */
+.agents__list {
+  margin: 0; padding: 0 8%; list-style: none;
+  display: flex; flex-direction: column; gap: 6%;
+  width: 100%;
+}
+.agents__list li { display: flex; align-items: center; gap: 0.5rem; }
+.agents__list img {
+  flex: none;
+  width: calc(var(--pw) * 0.1); height: calc(var(--pw) * 0.1);
+  filter: brightness(0) invert(1); opacity: 0.94;
+}
+.agents__list span {
+  font-size: calc(var(--pw) * 0.056); line-height: 1.1;
+  letter-spacing: -0.01em; color: #e9e9ee;
+}
 
 /* --------------------------------------------------------------- the map */
 
@@ -679,11 +730,21 @@ h2 {
   .tools li:last-child { grid-column: 1 / -1; }
   .c--agents .kicker { display: none; }
   .c--agents .card__note { display: none; }
-  /* One row, the marks a recruiter would actually look for. The full band at
-     18px wraps to four rows on a phone and pushes the CTA off the screen. */
-  .specs { gap: 0.6rem 0.7rem; margin-top: 0.9rem; }
-  .specs img { width: 16px; height: 16px; }
-  .specs img:nth-child(n+19) { display: none; }
+  /* Named chips are four times the width of a bare mark. On a phone the hero
+     shows three and the close shows eight, which is what fits above the copy
+     band without pushing the CTA off the screen. */
+  .chips { gap: 0.4rem 0.8rem; }
+  .chips--hero { margin-top: 0.85rem; }
+  .chips--hero span { font-size: 0.72rem; }
+  .chips--hero li:nth-child(n+4) { display: none; }
+  .chips--specs { margin-top: 0.9rem; gap: 0.36rem 0.75rem; }
+  .chips--specs span { font-size: 0.68rem; }
+  .chips--specs li:nth-child(n+9) { display: none; }
+  /* Eighteen named marks round a 390px frame is a thicket. The phone keeps
+     the eight that sit clear of the copy, without labels. */
+  .cmark span { display: none; }
+  .cmark img { width: 20px; height: 20px; opacity: 0.5; }
+  .cmark:nth-child(n+9) { display: none; }
   .note__logo { height: 22px; }
 
 
