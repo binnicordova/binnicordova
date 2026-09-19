@@ -85,7 +85,28 @@ leg () {
   done
   # Poster from the ENCODED file: the encode changes the pixels, so a still
   # taken from the master does not match the frame the browser decodes.
-  "$FF" -y -v error -i "$A/${name}.mp4" -frames:v 1 -update 1 -q:v 4 "$A/${name}.jpg"
+  #
+  # NOT frame 0. A poster has exactly one job on this page: to be the app when
+  # the video is not. iOS in Low Power Mode refuses to start the decoder, the
+  # clip paints nothing, and the poster is the only thing the reader sees for
+  # the whole leg (world.css, THE POSTER STAYS UP). Leg 1 opens on a 1.1s wake
+  # from black, so its frame 0 is black, and a black poster under a black clip
+  # is the failure Binni photographed. Take the still clear of the wake.
+  # A fixed offset is not enough either: leg 5 happens to be mid-transition
+  # half a second in and yields a near-empty still. So sample a few candidates
+  # clear of the wake and keep the one with the most in it. At a fixed -q:v the
+  # encoded size IS the detail: a blank or dissolving frame compresses to a
+  # few KB, a legible app screen does not.
+  local best="" bestsz=0 off sz cand
+  for off in 0.5 1.0 1.6 2.4; do
+    cand=$(awk -v w="${wake:-0}" -v o="$off" 'BEGIN{printf "%.2f", w + o}')
+    "$FF" -y -v error -ss "$cand" -i "$A/${name}.mp4" -frames:v 1 -update 1 \
+      -q:v 4 "$TMP/${name}-$off.jpg" 2>/dev/null || continue
+    [ -f "$TMP/${name}-$off.jpg" ] || continue
+    sz=$(wc -c < "$TMP/${name}-$off.jpg")
+    [ "$sz" -gt "$bestsz" ] && { bestsz=$sz; best="$TMP/${name}-$off.jpg"; }
+  done
+  cp "$best" "$A/${name}.jpg"
   printf '%-13s %-7s %-7s %ss\n' "$name" \
     "$(du -h "$A/${name}.mp4" | cut -f1)" "$(du -h "$A/${name}-m.mp4" | cut -f1)" \
     "$("$FP" -v error -show_entries format=duration -of csv=p=0 "$A/${name}.mp4")"

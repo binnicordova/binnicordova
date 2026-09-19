@@ -240,6 +240,69 @@
   addEventListener('load', relayout);
   if (document.fonts && document.fonts.ready) document.fonts.ready.then(relayout);
 
+  /* --------------------------------------------------- does the clip paint?
+     A <video> with no presented frame paints opaque black over its own poster
+     on iOS, and reports nothing wrong while it does it: readyState 4, no
+     error, a real videoWidth. The only honest question is whether a frame
+     exists, so ask for one.
+
+     Two independent yeses, because either alone can be wrong:
+       - drawImage into a 4x8 canvas returns something that is not pure black.
+         (Leg 1 opens on a deliberate fade from black, so pure black is not
+         proof of failure on its own - hence the second test.)
+       - the playhead honours a seek. A decoder that moves currentTime off zero
+         is alive whatever the pixels say.
+
+     Until one of them passes, world.css keeps the clip parked at 2x4px and the
+     poster holds the screen. This never fires on a healthy device for more
+     than a few hundred ms, and never stops firing on a broken one, so a phone
+     that leaves Low Power Mode mid-page picks its clips up. */
+  var probes = segs.map(function (seg) {
+    return { seg: seg, el: seg.querySelector('video'), live: false, since: 0, tries: 0 };
+  }).filter(function (p) { return p.el; });
+
+  var probeCan = document.createElement('canvas');
+  probeCan.width = 4; probeCan.height = 8;
+  var probeCtx = probeCan.getContext('2d', { willReadFrequently: true });
+
+  function painted(v) {
+    try {
+      probeCtx.clearRect(0, 0, 4, 8);
+      probeCtx.drawImage(v, 0, 0, 4, 8);
+      var d = probeCtx.getImageData(0, 0, 4, 8).data;
+      for (var i = 0; i < d.length; i += 4) {
+        if (d[i + 3] === 0) continue;            /* nothing drawn here */
+        if (d[i] > 10 || d[i + 1] > 10 || d[i + 2] > 10) return true;
+      }
+    } catch (e) { /* a decoder that will not hand over pixels is not proof */ }
+    return false;
+  }
+
+  var sweeper = 0;
+  function sweep() {
+    var pending = 0;
+    for (var i = 0; i < probes.length; i++) {
+      var P = probes[i];
+      if (P.live) continue;
+      var v = P.el;
+      pending++;
+      if (!v.src || v.readyState < 2) continue;
+      if (!P.since) P.since = performance.now();
+      P.tries++;
+      if (painted(v) || v.currentTime > 0.05) {
+        P.live = true;
+        P.seg.classList.add('clip-live');
+        P.seg.classList.remove('clip-dead');
+        continue;
+      }
+      /* Three seconds of a loaded clip with no frame is not a slow start. */
+      if (performance.now() - P.since > 3000) P.seg.classList.add('clip-dead');
+    }
+    /* Every clip has proved itself; there is nothing left to watch for. */
+    if (!pending && sweeper) { clearInterval(sweeper); sweeper = 0; }
+  }
+  if (!reduce) sweeper = setInterval(sweep, 250);
+
   ScrollCraft.mount(document.body);
   measure();
   schedule();

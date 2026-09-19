@@ -249,6 +249,72 @@ body {
   box-shadow: inset 0 0 60px -14px rgba(0,0,0,0.85);
 }
 
+
+/* ============================================ THE POSTER STAYS UP
+   Binni photographed an iPhone in Low Power Mode showing a black phone
+   screen. This is why, and it is a trade in the engine that is right in
+   general and wrong for this page.
+
+   scrollcraft.js reveals a clip on a 2.5s timer as well as on `seeked`,
+   because iOS can accept a seek on an unprimed muted video and never fire
+   the event, which would otherwise leave the clip hidden forever. Reveal
+   adds .sc-has-clip, and the engine stylesheet then sets the poster to
+   opacity 0. On a device whose decoder never primes, that hides the poster
+   at 2.5s and shows a video that is painting nothing: black.
+
+   On a full-bleed stage a briefly blank frame is the smaller fault, which is
+   the trade the engine made. Here the phone screen IS the subject, so a black
+   rectangle is the whole page failing.
+
+   The poster is not a placeholder here, it is the floor. The video paints
+   over it when the decoder is alive, and when it is not the reader sees the
+   app's own first frame instead of nothing. It costs nothing when video
+   works: both are inset:0, object-fit:cover, identical aspect. */
+.phone__screen [data-sc-segment] .sc-world__poster { opacity: 1; }
+
+/* ======================================== THE CLIP PROVES ITSELF FIRST
+   Measured on a booted iPhone 17 simulator against this exact page.
+
+   A <video> that has no presented frame does not paint nothing, it paints
+   OPAQUE BLACK, and that rectangle sits on top of its own poster. It reports
+   readyState 4, no error, videoWidth 300 — and drawImage into a canvas returns
+   rgba(0,0,0,255). There is no frame; the element is a black hole with good
+   paperwork. Worse, `opacity: 0` does NOT take it out of the composite here
+   (the layer is still drawn); only taking its box away does.
+
+   That is the whole of Binni's black screen, and it is not exotic: iOS refuses
+   the decode in Low Power Mode, which is the state his phone was in.
+
+   So the clip starts PARKED — a 2x4px sliver at 1% opacity. It still has a box,
+   so the decoder still runs and can still prove itself; it just cannot cover
+   anything while it is unproven. world.js promotes it to .clip-live the moment
+   a real frame exists, and only then does it take the screen. Until then the
+   reader sees the poster, which is the app. */
+.phone__screen [data-sc-segment] > video {
+  inset: auto; left: 0; top: 0;
+  width: 2px; height: 4px;
+  opacity: 0.01;
+  pointer-events: none;
+}
+.phone__screen [data-sc-segment].clip-live > video {
+  inset: 0;
+  width: 100%; height: 100%;
+  opacity: 1;
+}
+/* Once the clip is live the engine's own cross-fade takes over again. */
+.phone__screen [data-sc-segment].clip-live.sc-has-clip .sc-world__poster { opacity: 0; }
+
+/* ---------------------------------------------------- THE MOTION FLOOR
+   "lacks on animations". When the decoder is refused, the poster this rule
+   keeps up is one still frame for a whole leg, and a leg is several seconds of
+   scrolling. So a clip world.js has given up on lets its poster drift across
+   the leg instead: scaled a little first so the pan never exposes an edge.
+   It is not the app running and does not pretend to be. It is the screen
+   refusing to be a dead rectangle. */
+.phone__screen [data-sc-segment].clip-dead .sc-world__poster {
+  transform: scale(1.07) translateY(calc(1.5% - var(--sc-segp, 0) * 3%));
+}
+
 /* -------------------------------------------------- THE SIGNATURE MOVE
    The six planes are parked behind the glass at z=0, in perfect register with
    the screen, and are invisible until scroll pulls them apart. They fan out to
@@ -893,4 +959,29 @@ h2 {
   }
   .stratum__tag { display: none; }
   .field__plate { opacity: 0.22 !important; }
+}
+
+/* ========================================= THE THICKNESS IS DRAWN, NOT BUILT
+   Bisected on a booted iPhone 17 simulator, one subtree at a time.
+
+   iOS WebKit has a ceiling on what it will rasterize inside one preserve-3d
+   rendering context. This world is a big one: the rig, the phone, its back
+   face, two rails rotated on their edges with five buttons, six strata with
+   panes and tags, twenty-four toolwall marks, eight legs of poster + clip,
+   glass, island, vignette. Past the ceiling WebKit does not warn and does not
+   degrade evenly — it silently stops painting some layers while still painting
+   their parents. On a phone the casualty was the one that matters: the screen
+   rendered its own background and none of its children, so the device came up
+   a black slab with a Dynamic Island.
+
+   Hiding the back face and the two rails is what brought it back under the
+   ceiling, with everything else left in place. That is 8 layers — two edge-on
+   planes plus their buttons — spent on about two pixels of visible thickness
+   at phone size. The silhouette, the bezel, the screen and every act survive;
+   only the machined side goes, and at this size it was never legible.
+
+   Desktop keeps the real slab. This is the mobile composition, not the desktop
+   one made small, which is the rule this page already follows elsewhere. */
+@media (max-width: 860px) {
+  .phone__back, .phone__rail { display: none; }
 }

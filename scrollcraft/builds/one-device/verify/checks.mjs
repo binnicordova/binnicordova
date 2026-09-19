@@ -74,6 +74,65 @@ ok('camera lerp does not overshoot its target', !overshoot);
 await p.close();
 }
 
+// ---------- the clip never hides the app ----------
+// Binni photographed a black phone screen, twice. The cause was a <video> with
+// no presented frame: on iOS it paints OPAQUE BLACK over its own poster while
+// reporting readyState 4 and no error, and `opacity: 0` does not take it out of
+// the composite. world.css therefore parks every clip at 2x4px until world.js
+// has proved a real frame exists. These checks hold both ends of that deal:
+// the clip must still be promoted where decoding works, and where it does not
+// the app's own frame must be on screen instead of a black rectangle.
+{
+for (const [vw, vh, name] of [[1440, 900, 'desktop'], [390, 844, 'mobile']]) {
+  const ctx = await b.newContext({ viewport: { width: vw, height: vh } });
+  const p = await ctx.newPage();
+  await p.goto('http://localhost:4510/', { waitUntil: 'load' });
+  await p.waitForTimeout(1500);
+  const seen = [];
+  for (const t of [0.6, 2.4, 6.0, 10.5]) {
+    await p.evaluate(y => scrollTo({ top: y, behavior: 'instant' }), Math.round(t * vh));
+    await p.waitForTimeout(2600);
+    seen.push(await p.evaluate(() => {
+      const segs = [...document.querySelectorAll('.phone__screen [data-sc-segment]')];
+      const act = segs.find(e => +getComputedStyle(e).opacity > 0.9) || segs[0];
+      const v = act.querySelector('video');
+      return { live: act.classList.contains('clip-live'), w: v.getBoundingClientRect().width };
+    }));
+  }
+  ok(`clip is promoted where the decoder works (${name})`,
+     seen.every(s => s.live), seen.map(s => s.live ? 'live' : 'PARKED').join(' '));
+  await ctx.close();
+}
+
+// And the failure Binni actually hit: the clip cannot be decoded at all.
+for (const [vw, vh, name] of [[1440, 900, 'desktop'], [390, 844, 'mobile']]) {
+  const ctx = await b.newContext({ viewport: { width: vw, height: vh } });
+  const p = await ctx.newPage();
+  await p.route('**/*.mp4', r => r.abort());
+  await p.goto('http://localhost:4510/', { waitUntil: 'load' });
+  await p.waitForTimeout(1200);
+  await p.evaluate(y => scrollTo({ top: y, behavior: 'instant' }), Math.round(2.4 * vh));
+  await p.waitForTimeout(4000);
+  const st = await p.evaluate(() => {
+    const segs = [...document.querySelectorAll('.phone__screen [data-sc-segment]')];
+    const act = segs.find(e => +getComputedStyle(e).opacity > 0.9) || segs[0];
+    const img = act.querySelector('img'), v = act.querySelector('video');
+    const vr = v.getBoundingClientRect();
+    return {
+      posterOp: +getComputedStyle(img).opacity,
+      posterPainted: img.complete && img.naturalWidth > 0,
+      clipBox: Math.round(vr.width * vr.height),
+      live: act.classList.contains('clip-live')
+    };
+  });
+  ok(`a clip that cannot decode never takes the screen (${name})`,
+     !st.live && st.clipBox < 200, `clip box ${st.clipBox}px2, live=${st.live}`);
+  ok(`the app's own frame holds the screen instead (${name})`,
+     st.posterOp > 0.99 && st.posterPainted, `poster opacity ${st.posterOp}`);
+  await ctx.close();
+}
+}
+
 // ---------- reduced motion ----------
 {
 const ctx=await b.newContext({viewport:{width:1440,height:900},reducedMotion:'reduce'});
