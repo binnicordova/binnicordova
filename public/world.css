@@ -118,6 +118,25 @@ body {
   transform-style: preserve-3d;
 }
 
+/* THE POWER-UP. Every warm edge on this object - the unibody gradient's bloom,
+   the chamfer, the shadow under the slab - burns through one token. Re-mixing
+   that token against --agents means the whole device lights when the agent
+   layer lands and cools when it leaves, without one extra element inside a 3D
+   context that is already at its compositing ceiling on a phone. The stack
+   does not sit there while something is done to it; it gains power.
+
+   Gated, because a custom property is not validated until it is substituted:
+   a color-mix() an old WebKit cannot parse would not fail here, it would fail
+   inside every box-shadow that reads the token and take the device's shadow
+   with it. */
+@supports (color: color-mix(in srgb, red, blue 50%)) {
+  .phone {
+    --dev-glow: color-mix(in srgb,
+      rgba(168, 83, 106, 0.42),
+      rgba(255, 138, 170, 0.95) calc(var(--agents) * 72%));
+  }
+}
+
 /* the front: Ceramic Shield over the unibody frame */
 .phone__body {
   position: absolute; inset: 0;
@@ -579,27 +598,130 @@ h2 {
   position: absolute;
   inset: var(--bez);
   transform-style: preserve-3d;
+  display: flex; align-items: center;
   /* Same footprint as a stratum, offset the opposite way: six planes went
-     back and away, this one comes forward and toward the reader. */
+     back and away, this one comes forward and toward the reader.
+
+     To the RIGHT, not the left. The first cut put this over the copy, where
+     the copy scrim greys everything behind it: the strongest object on the
+     page arrived looking like a watermark. The room is on the other side of
+     the device, between it and the route rail, and nothing is competing for
+     it.
+
+     And it LANDS rather than slides. Multiplying x by --agents, which is what
+     every other layer here does, meant this one started centred on the device
+     and swept sideways off it: a big translucent rectangle dragging across the
+     running app, which is the thing Binni said he did not like. So x is fixed.
+     Only depth, scale and opacity move, and the object arrives out of the room
+     at the place it belongs instead of travelling there. */
   transform: translate3d(
-    calc(var(--pw) * -0.42 * var(--agents)),
-    calc(var(--pw) * -0.22 * var(--agents)),
-    calc(var(--pw) * 0.66 * var(--agents)));
+    calc(var(--pw) * 0.92),
+    calc(var(--pw) * -0.14 + (1 - var(--agents)) * var(--pw) * 0.07),
+    calc(var(--pw) * (0.22 + 0.56 * var(--agents))));
   opacity: var(--agents);
   pointer-events: none;
 }
-.agents__pane {
-  position: absolute; inset: 0;
-  display: flex; flex-direction: column;
-  align-items: center; justify-content: center;
-  border-radius: calc(var(--rad) - var(--bez));
-  border: 1px solid rgba(245,245,247,0.38);
-  background: linear-gradient(150deg, rgba(40,21,27,0.92), rgba(12,7,9,0.88));
-  box-shadow:
-    0 0 0 1px rgba(168,83,106,0.24),
-    0 30px 66px -28px #000,
-    0 0 64px -12px var(--dev-glow);
+
+/* The surge. The delamination took the stack apart and put it back; this is
+   what arrives on top of it. A bloom that grows as the layer lands reads as
+   power entering the object, and it costs one element and no animation loop:
+   it is driven by the same --agents ramp as everything else, so it is tied to
+   the reader's own scroll rather than running on its own clock. */
+.agents__bloom {
+  position: absolute;
+  left: -14%; top: 0%;
+  width: 128%; aspect-ratio: 1;
+  border-radius: 50%;
+  background: radial-gradient(closest-side,
+    rgba(255,190,208,0.52), rgba(196,96,124,0.24) 40%, transparent 70%);
+  transform: scale(calc(0.4 + var(--agents) * 0.68));
+  opacity: var(--agents);
 }
+
+.agents__stack {
+  position: relative;
+  transform: scale(calc(0.82 + var(--agents) * 0.18));
+  padding: calc(var(--pw) * 0.082) calc(var(--pw) * 0.1)
+           calc(var(--pw) * 0.082) calc(var(--pw) * 0.088);
+  border-radius: calc(var(--rad) - var(--bez));
+  border: 1px solid rgba(255,255,255,0.40);
+  background: linear-gradient(150deg, rgba(52,25,33,0.96), rgba(12,7,10,0.95));
+  box-shadow:
+    0 0 0 1px rgba(214,120,148,0.36),
+    0 34px 74px -26px #000,
+    0 0 96px -10px rgba(190,84,114,0.75);
+}
+/* The charge. A hard accent edge that fills from the top as the layer lands:
+   the one bit of the object that is pure colour, so the eye goes to it first
+   and then up into Claude. */
+.agents__stack::before {
+  content: "";
+  position: absolute; left: 0; top: 0;
+  width: 2px; height: calc(var(--agents) * 100%);
+  border-radius: 2px;
+  background: linear-gradient(180deg, #ffd2de, #e8849f 45%, rgba(168,83,106,0));
+  box-shadow: 0 0 14px rgba(255,170,195,0.85);
+}
+
+/* CLAUDE FIRST, AND BIGGER.
+   Binni asked for Claude highlighted, and a list cannot do that: five equal
+   rows say five equal tools. So Claude is not in the list at all. It is the
+   head of the object at roughly twice the mark size, lit rather than tinted
+   white, with the product names under it, and the other four rank in beneath
+   a rule as what it orchestrates. */
+.agents__lead {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  column-gap: calc(var(--pw) * 0.05);
+  align-items: center;
+  padding-bottom: calc(var(--pw) * 0.062);
+  margin-bottom: calc(var(--pw) * 0.062);
+  border-bottom: 1px solid rgba(245,245,247,0.16);
+}
+.agents__lead img {
+  grid-row: 1 / 3;
+  width: calc(var(--pw) * 0.17); height: calc(var(--pw) * 0.17);
+  filter: brightness(0) invert(1)
+          drop-shadow(0 0 calc(var(--pw) * 0.055) rgba(238,165,186,0.9));
+}
+.agents__lead b {
+  align-self: end;
+  font-size: calc(var(--pw) * 0.112); line-height: 1;
+  letter-spacing: -0.022em; font-weight: 600; color: #fff;
+}
+.agents__lead i {
+  align-self: start;
+  font-style: normal;
+  margin-top: calc(var(--pw) * 0.018);
+  font-size: calc(var(--pw) * 0.044); line-height: 1.15;
+  letter-spacing: 0.012em; color: #edb6c6;
+}
+
+/* The rank arrives after Claude and in order, one at a time. --n is the
+   position, so each row unlocks a little further along the same ramp: the
+   layer assembles instead of appearing. */
+.agents__rank {
+  margin: 0; padding: 0; list-style: none;
+  display: flex; flex-direction: column;
+  gap: calc(var(--pw) * 0.036);
+}
+.agents__rank li {
+  --a: clamp(0, calc((var(--agents) - 0.30 - var(--n) * 0.115) * 5), 1);
+  display: flex; align-items: center;
+  gap: calc(var(--pw) * 0.042);
+  opacity: var(--a);
+  transform: translate3d(calc((1 - var(--a)) * -14%), 0, 0);
+}
+.agents__rank img {
+  flex: none;
+  width: calc(var(--pw) * 0.075); height: calc(var(--pw) * 0.075);
+  filter: brightness(0) invert(1); opacity: 0.82;
+}
+.agents__rank span {
+  font-size: calc(var(--pw) * 0.052); line-height: 1.1;
+  letter-spacing: -0.006em; color: #dcdce2; white-space: nowrap;
+}
+
 
 /* ------------------------------------------------ the AI tools list */
 
@@ -616,6 +738,15 @@ h2 {
 }
 .tools b { color: var(--sc-ink); font-weight: 500; }
 .c--agents .kicker { color: #d79aa8; }   /* not --dev-lit: that is 4.08:1 over a lit screen */
+
+/* The same hierarchy in the copy: the daily driver is not the fourth item in
+   an alphabetical list. Colour does the work the object does, and the name
+   stays plain white so the contrast harness still has something to measure. */
+.tools__lead b { color: #fff; }
+.tools__lead img {
+  opacity: 1;
+  filter: brightness(0) invert(1) drop-shadow(0 0 7px rgba(238,165,186,0.85));
+}
 
 
 
@@ -937,10 +1068,21 @@ h2 {
     transform: translate3d(calc(-50% + var(--pw) * 1.34), calc(-50% + var(--pw) * 0.04), 210px) !important;
   }
   .phone__island { opacity: 1 !important; }
+  /* With motion off, --agents never ramps, and everything inside this layer
+     is keyed to it: the rank would stay at opacity 0 and the plate would show
+     up empty. The arrival is what reduced motion is meant to drop, not the
+     content, so the whole object is simply shown landed. */
   .agents {
     opacity: 1 !important;
-    transform: translate3d(calc(var(--pw) * -0.34), calc(var(--pw) * -0.30), calc(var(--pw) * 0.62)) !important;
+    /* Left, not right: with motion off the portrait already stands to the
+       right of the device, and the two landed on top of each other. */
+    transform: translate3d(calc(var(--pw) * -0.62), calc(var(--pw) * -0.34), calc(var(--pw) * 0.70)) !important;
   }
+  .agents__stack { transform: none !important; }
+  .agents__stack::before { height: 100% !important; }
+  .agents__bloom { opacity: 0.8 !important; transform: scale(1) !important; }
+  .agents__rank li { opacity: 1 !important; transform: none !important; }
+  .phone { --dev-glow: rgba(214, 122, 152, 0.62) !important; }   /* plain colour: no ramp to mix against */
   .cta { transition: none; }
 }
 
@@ -959,6 +1101,9 @@ h2 {
   }
   .stratum__tag { display: none; }
   .field__plate { opacity: 0.22 !important; }
+  .agents {
+    transform: translate3d(0, calc(var(--pw) * -0.42), calc(var(--pw) * 0.70)) !important;
+  }
 }
 
 /* ========================================= THE THICKNESS IS DRAWN, NOT BUILT
@@ -984,4 +1129,18 @@ h2 {
    one made small, which is the rule this page already follows elsewhere. */
 @media (max-width: 860px) {
   .phone__back, .phone__rail { display: none; }
+
+  /* There is no room beside the device on a phone: shifted right by an object
+     width, Claude walked off the viewport. So on mobile the agent layer takes
+     the device head on, centred over the running app, which is what "the layer
+     on top" means anyway. It still lands rather than slides - depth, scale and
+     opacity are doing the arrival, and none of them need somewhere to go. */
+  .agents {
+    justify-content: center;
+    transform: translate3d(
+      0,
+      calc(var(--pw) * -0.36 + (1 - var(--agents)) * var(--pw) * 0.07),
+      calc(var(--pw) * (0.22 + 0.56 * var(--agents))));
+  }
+  .agents__bloom { left: -10%; width: 120%; }
 }

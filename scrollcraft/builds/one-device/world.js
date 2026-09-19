@@ -137,8 +137,12 @@
     /* --- THE AGENT LAYER -------------------------------------------------
        Arrives after the stack has closed again, in front of the interface
        rather than behind it. It is the last thing to appear on the page. */
+    /* Out before Own work owns the rail. The old close ran to 12.00, which is
+       0.6vh past the point the route marks the next leg; when this layer was a
+       faint list nobody noticed, but it is the loudest object on the page now
+       and it was still sitting at full strength over someone else's act. */
     docEl.style.setProperty('--agents',
-      (ramp(t, 9.45, 10.45) * (1 - ramp(t, 11.30, 12.00))).toFixed(4));
+      (ramp(t, 9.45, 10.45) * (1 - ramp(t, 11.05, 11.70))).toFixed(4));
 
 
     /* The fan is measured in object-widths, so it holds at every viewport.

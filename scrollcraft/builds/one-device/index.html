@@ -23,7 +23,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600&display=swap">
 <link rel="stylesheet" href="scrollcraft.css">
-<link rel="stylesheet" href="world.css?v=2">
+<link rel="stylesheet" href="world.css?v=3">
 
 <script type="application/ld+json">
 {
@@ -176,13 +176,20 @@
                on top of the whole stack, working it. It is the last layer to
                appear on the page and the nearest to the reader. -->
           <div class="agents" id="agents" aria-hidden="true">
-            <div class="agents__pane">
-              <ul class="agents__list">
-              <li><img src="assets/skills/ai-claude.svg" alt="" width="26" height="26"><span>Claude</span></li>
-              <li><img src="assets/skills/ai-openai.svg" alt="" width="26" height="26"><span>Codex</span></li>
-              <li><img src="assets/skills/ai-cursor.svg" alt="" width="26" height="26"><span>Cursor</span></li>
-              <li><img src="assets/skills/ai-langgraph.svg" alt="" width="26" height="26"><span>LangGraph</span></li>
-              <li><img src="assets/skills/ai-tensorflow.svg" alt="" width="26" height="26"><span>TensorFlow Lite</span></li>
+            <span class="agents__bloom"></span>
+            <div class="agents__stack">
+              <!-- Claude is not one of five. It lands first, alone, at twice
+                   the size, and the other four rank in underneath it. -->
+              <div class="agents__lead">
+                <img src="assets/skills/ai-claude.svg" alt="" width="26" height="26">
+                <b>Claude</b>
+                <i>Agent SDK &middot; Claude Code</i>
+              </div>
+              <ul class="agents__rank">
+                <li style="--n:1"><img src="assets/skills/ai-langgraph.svg" alt="" width="26" height="26"><span>LangGraph</span></li>
+                <li style="--n:2"><img src="assets/skills/ai-openai.svg" alt="" width="26" height="26"><span>Codex</span></li>
+                <li style="--n:3"><img src="assets/skills/ai-cursor.svg" alt="" width="26" height="26"><span>Cursor</span></li>
+                <li style="--n:4"><img src="assets/skills/ai-tensorflow.svg" alt="" width="26" height="26"><span>TensorFlow Lite</span></li>
               </ul>
             </div>
           </div>
@@ -356,7 +363,7 @@
       <h2>Agents work this stack now.</h2>
       <p class="body">At Coca-Cola I configured and operate a multi-agent system on <b>LangGraph</b> and the <b>Claude Agent SDK</b> that picks up front-end and back-end tickets and works them. Every change it makes is reviewed and signed off by me, as the accountable engineer.</p>
       <ul class="tools">
-        <li><img src="assets/skills/ai-claude.svg" alt="" width="20" height="20"><b>Claude Code</b><span>daily driver, front end and back end</span></li>
+        <li class="tools__lead"><img src="assets/skills/ai-claude.svg" alt="" width="20" height="20"><b>Claude Code</b><span>daily driver, front end and back end</span></li>
         <li><img src="assets/skills/ai-openai.svg" alt="" width="20" height="20"><b>Codex CLI</b><span>second opinion on diagnosis</span></li>
         <li><img src="assets/skills/ai-cursor.svg" alt="" width="20" height="20"><b>Cursor</b><span>in-editor work</span></li>
         <li><img src="assets/skills/ai-langgraph.svg" alt="" width="20" height="20"><b>LangGraph</b><span>multi-agent orchestration</span></li>
@@ -404,6 +411,6 @@
 </noscript>
 
 <script src="scrollcraft.js"></script>
-<script src="world.js?v=2"></script>
+<script src="world.js?v=3"></script>
 </body>
 </html>
