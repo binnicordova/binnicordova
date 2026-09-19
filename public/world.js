@@ -46,30 +46,34 @@
        -----  -----  ---  ---  ----
         0.00   -760  -26    9    30   Coca-Cola: far off, turned away, in the dark
         1.50   -240  -14    5    14   it closes
-        2.60    180   -6    2    -2   NFL+ pushes in
-        3.20    300   -2    0    -8   at the glass
-        4.40     60   22    4     4   Itau orbits the other way
-        6.20   -360    4    6    10   Platanitos pulls back and squares up
-        7.20    470    0    0    -6   Inside: through the glass
-        7.90    300    2   -3   -14   the stack starts to fan
-        8.70     60    5   -6   -26   the whole stack, ranked into depth
-        9.60   -140   10    2    -6   it closes back up
-       11.60   -680   24    8     8   his own work, the room opens
-       13.10   -520  -20    7   -70   it settles, above the scrim, and holds
+        2.50    180   -6    2    -2   NFL+ pushes in
+        3.00    300   -2    0    -8   at the glass
+        4.20     60   22    4     4   Itau orbits the other way
+        5.80   -360    4    6    10   Platanitos pulls back and squares up
+        6.80    470    0    0    -6   Inside: through the glass
+        7.50    300    2   -3   -14   the stack starts to fan
+        8.40     60    5   -6   -26   the whole stack, ranked into depth
+        9.20   -120   10    2    -6   it closes back up
+       10.30   -300   -6    3   -14   Agents: the layer arrives in front
+       11.40   -420   12    5     2   and settles
+       13.20   -700   24    8     8   his own work, the room opens
+       14.70   -520  -20    7   -70   it settles, above the scrim, and holds
   */
   var PATH = [
     { t:  0.00, cz: -760, ry: -26, rx:  9, cy:  30 },
     { t:  1.50, cz: -240, ry: -14, rx:  5, cy:  14 },
-    { t:  2.60, cz:  180, ry:  -6, rx:  2, cy:  -2 },
-    { t:  3.20, cz:  300, ry:  -2, rx:  0, cy:  -8 },
-    { t:  4.40, cz:   60, ry:  22, rx:  4, cy:   4 },
-    { t:  6.20, cz: -360, ry:   4, rx:  6, cy:  10 },
-    { t:  7.20, cz:  470, ry:   0, rx:  0, cy:  -6 },
-    { t:  7.90, cz:  300, ry:   2, rx: -3, cy: -14 },
-    { t:  8.70, cz:   60, ry:   5, rx: -6, cy: -26 },
-    { t:  9.60, cz: -140, ry:  10, rx:  2, cy:  -6 },
-    { t: 11.60, cz: -680, ry:  24, rx:  8, cy:   8 },
-    { t: 13.10, cz: -520, ry: -20, rx:  7, cy: -70 }
+    { t:  2.50, cz:  180, ry:  -6, rx:  2, cy:  -2 },
+    { t:  3.00, cz:  300, ry:  -2, rx:  0, cy:  -8 },
+    { t:  4.20, cz:   60, ry:  22, rx:  4, cy:   4 },
+    { t:  5.80, cz: -360, ry:   4, rx:  6, cy:  10 },
+    { t:  6.80, cz:  470, ry:   0, rx:  0, cy:  -6 },
+    { t:  7.50, cz:  300, ry:   2, rx: -3, cy: -14 },
+    { t:  8.40, cz:   60, ry:   5, rx: -6, cy: -26 },
+    { t:  9.20, cz: -120, ry:  10, rx:  2, cy:  -6 },
+    { t: 10.30, cz: -300, ry:  -6, rx:  3, cy: -14 },
+    { t: 11.40, cz: -420, ry:  12, rx:  5, cy:   2 },
+    { t: 13.20, cz: -700, ry:  24, rx:  8, cy:   8 },
+    { t: 14.70, cz: -520, ry: -20, rx:  7, cy: -70 }
   ];
 
 
@@ -126,9 +130,15 @@
        closes on the way back out. The interface never stops running: the body
        goes translucent so the reader looks THROUGH the phone at the six planes
        it is actually made of. */
-    var open = ramp(t, 6.85, 8.35) * (1 - ramp(t, 8.85, 9.55));
+    var open = ramp(t, 6.45, 7.95) * (1 - ramp(t, 8.45, 9.15));
     docEl.style.setProperty('--open', open.toFixed(4));
     docEl.style.setProperty('--cx', (-innerWidth * (mob ? 0.16 : 0.06) * open).toFixed(1) + 'px');
+
+    /* --- THE AGENT LAYER -------------------------------------------------
+       Arrives after the stack has closed again, in front of the interface
+       rather than behind it. It is the last thing to appear on the page. */
+    docEl.style.setProperty('--agents',
+      (ramp(t, 9.45, 10.45) * (1 - ramp(t, 11.30, 12.00))).toFixed(4));
 
 
     /* The fan is measured in object-widths, so it holds at every viewport.
@@ -153,11 +163,11 @@
     }
 
     /* --- the rest of the work ------------------------------------------- */
-    var spread = ramp(t, 9.50, 11.00) * (1 - ramp(t, 11.85, 12.85) * 0.78);
+    var spread = ramp(t, 11.10, 12.60) * (1 - ramp(t, 13.45, 14.45) * 0.78);
     docEl.style.setProperty('--spread', spread.toFixed(4));
 
     /* --- he arrives ------------------------------------------------------ */
-    docEl.style.setProperty('--por', ramp(t, 11.75, 12.70).toFixed(4));
+    docEl.style.setProperty('--por', ramp(t, 13.35, 14.30).toFixed(4));
   }
 
   /* --------------------------------------------------------------- the loop

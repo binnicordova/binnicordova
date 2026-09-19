@@ -123,45 +123,63 @@ One action, one label everywhere on the page: **Email Binni**.
 
 ---
 
-## 12. The score, as built  (revision 2)
+## 12. The score, as built  (revision 3)
 
-Binni's direction for this revision, in his words:
-
-1. "use the demo-enterprise-*.* resources ... to present them during scroll by
-   order according my resume pdf, highlighting the name of the product and
-   including the logo company ... and the other resources demo-own-*.* can be
-   included into the last presentation, where all the apps appears."
-2. "Use the iPhone 18 PRO as the device that presents the site ... i like this
-   presentation landscape vide id="battery-life" presentation, except that on
-   my site we should use a portrait, i trust in your criteria and expertise."
-3. "i dont like that my photo appears cutted, generate a new image to improve
-   how my photo appears on the site."
-
-So the flight is now the resume, newest first, and then his own work.
+Revision 3 adds the skill marks and an act for the AI work. Binni's direction:
+"i have many skills on my resume, so download the logos under
+resources/skills-logos and use them on my website according your criteria and
+expertise, highlighting my AI knowledge that job post are requiering this 2027
+to software engineers."
 
 | # | Waypoint | Feeling | w | Clip | Pace | What the camera does |
 |---|---|---|---|---|---|---|
 | 1 | The Coca-Cola Company · miMarket | anticipation | 1.5 | 7.0s, wakes from black | 0.214 | far, turned away, closing |
-| 2 | NFL+ | recognition | 1.7 | 8.0s | 0.213 | pushes in to the glass |
+| 2 | NFL+ | recognition | 1.5 | 7.0s | 0.214 | pushes in to the glass |
 | 3 | Itaú · ITU App | trust | 1.2 | 5.6s | 0.214 | orbits the other way |
-| 4 | Platanitos | weight | 1.8 | 8.4s | 0.214 | pulls back and squares up |
+| 4 | Platanitos | weight | 1.6 | 7.5s | 0.213 | pulls back and squares up |
 | 5 | **Inside** | **awe** | **3.4** | 15.9s | 0.214 | crosses the glass; **the delamination** |
-| 6 | Own work | abundance | 2.0 | 9.4s | 0.214 | the room opens on thirteen products |
-| 7 | Arrival | invitation | 1.5 | 7.0s | 0.214 | settles above the scrim and holds |
+| 6 | **Agents** | **recognition of what is rare** | **2.2** | 10.3s | 0.214 | the layer arrives in front |
+| 7 | Own work | abundance | 1.8 | 8.4s | 0.214 | the room opens on thirteen products |
+| 8 | Arrival | invitation | 1.5 | 7.0s | 0.214 | settles above the scrim and holds |
 
-Track: 13.1vh of legs plus one viewport = 14.1 viewport-heights. Pace spread
-across the seven legs is under 1%. The peak has 70% more scroll than the next
-longest act, and act 4 before it is a pull-back rather than a push.
+Track: 14.7vh of legs plus one viewport = 15.7 viewport-heights. Pace spread
+under 0.5%. The peak keeps 55% more scroll than the next longest, and Agents
+is now second, which is the ranking his ask called for.
 
-Gruppo GPI has no recording, so it gets a note rather than a leg, at the tail
-of the Platanitos act. Inventing a screen for it was the alternative and it is
-not an option: every frame on this page is a real product.
+Inside and Agents are two windows of the same recording in sequence, so the
+seam between them is the app continuing rather than a cut.
 
-**Variety across the resume run.** Four companies in a row is the one place
-this page could turn into the same slide four times. What varies: the camera
-does something different on each (close, push, orbit, withdraw), the cards
-alternate top and bottom anchoring on desktop, and the figure on each card is
-the one that belongs to that company rather than a shared stat block.
+## 12a. The skill marks, and why there is no logo wall
+
+35 marks in `resources/skills-logos`. simple-icons serves one path per brand
+pre-filled in whatever colour you ask for; AWS and OpenAI have both pulled
+their marks from it, so those two come from Wikimedia. The page forces
+everything to a single white with a CSS filter, so the set stays consistent
+whatever each file shipped as.
+
+A grid of 35 icons is what every junior portfolio does and it argues nothing.
+The marks are placed where they carry weight instead:
+
+- **The agent layer.** The delamination pulls six planes out from UNDER the
+  interface. This one arrives in FRONT of it, same footprint, offset the
+  opposite way, carrying Claude, Codex, Cursor, LangGraph and TensorFlow Lite.
+  That is where agents sit: on top of the whole stack, working it. Last layer
+  to appear on the page, nearest to the reader.
+- **The tools list**, beside the Agents copy: five marks, each tied to one
+  line of the résumé rather than to a category.
+- **The toolkit band at the close.** An Apple product page ends on tech specs;
+  this is the same job, 29 marks, quiet and monochrome, names in the alt text
+  so it reads as a list rather than as decoration. It is what a recruiter
+  scans last.
+
+GitHub Copilot was downloaded and then deleted. It is not on the résumé, and
+nothing goes on this page that he has not claimed.
+
+**The Agents copy is the one claim most engineers cannot make.** Not "uses
+AI": configured and operates a multi-agent system on LangGraph and the Claude
+Agent SDK, in production, and signs off its output as the accountable
+engineer. That is the sentence 2027 job posts are reaching for, and it is
+already on his résumé; the page just stops burying it in a footnote.
 
 ## 12b. The device
 

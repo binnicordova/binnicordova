@@ -114,13 +114,18 @@ echo
 printf '%-13s %-7s %-7s %s\n' leg desktop mobile duration
 # Pace is weight / clip_seconds, held at ~0.214 everywhere so the world never
 # surges or drags. Weights live in index.html as data-sc-w.
+#
+# Inside and Agents are two windows of the same recording, in sequence. The
+# peak takes the app apart; Agents is what now works on it. Same app carrying
+# both means the seam between them is the app continuing, not a cut.
 leg 1-cocacola   "$TMP/mimarket.mp4"                   11.0  6.2  1.129 1.1 # 1.5vh  wakes from black
-leg 2-nfl        "$R/demo-enterprise-nfl.gif"          27.2  8.0  1       # 1.7vh
+leg 2-nfl        "$R/demo-enterprise-nfl.gif"          27.2  7.0  1       # 1.5vh
 leg 3-itau       "$TMP/itu.mp4"                         0.0  2.9  1.931   # 1.2vh
-leg 4-platanitos "$TMP/platanitos.mp4"                  0.5  6.6  1.273   # 1.8vh
+leg 4-platanitos "$TMP/platanitos.mp4"                  0.5  6.6  1.136   # 1.6vh
 leg 5-inside     "$R/demo-own-expo.MP4"                 6.0 15.9  1       # 3.4vh  the peak
-leg 6-own        "$R/demo-own-saludables.mov"          39.5  9.35 1       # 2.0vh
-leg 7-arrival    "$R/demo-own-cocap.MP4"                0.5  7.0  1       # 1.5vh
+leg 6-agents     "$R/demo-own-expo.MP4"                22.0 10.3  1       # 2.2vh  the AI act
+leg 7-own        "$R/demo-own-saludables.mov"          39.5  8.4  1       # 1.8vh
+leg 8-arrival    "$R/demo-own-cocap.MP4"                0.5  7.0  1       # 1.5vh
 
 echo
 echo "field plates, his own work"
@@ -134,6 +139,15 @@ plate tokai      "$R/demo-own-tokai.gif"             0.1
 plate pickpointer "$R/demo-own-pickpointer.gif"      0.2
 plate placaok    "$R/demo-own-placaok.MP4"           6
 plate hablando   "$R/demo-own-hablandohuevadas.MP4"  8
+
+echo "skill marks"
+# simple-icons serves one path per brand already filled #F5F5F7, so the stack
+# arrives monochrome. AWS and OpenAI are not in simple-icons any more and come
+# from Wikimedia with their own colours; the page normalises everything to
+# white with a CSS filter rather than re-cutting the files.
+mkdir -p "$A/skills"
+cp "$ROOT"/resources/skills-logos/*.svg "$A/skills/" 2>/dev/null || echo "  no resources/skills-logos"
+echo "  $(ls "$A/skills" | wc -l | tr -d ' ') marks"
 
 echo
 for f in "$A"/binni-plate.jpg "$A"/og.jpg; do
