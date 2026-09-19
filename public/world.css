@@ -581,33 +581,49 @@ h2 {
 .chips--specs span { font-size: 0.72rem; color: #8b8b93; }
 
 /* ------------------------------------------- the toolkit, in the world
-   A background layer rather than objects in the rig. Inside the 3D scene
-   these rendered at nine pixels behind the product plates; out here they are
-   legible and named. They drift a little with the camera so the layer belongs
-   to the room instead of sitting on the glass. */
+   One plane, not confetti. The first version scattered eighteen marks across
+   a flat backdrop: it read as dispersed and it was not part of the animation
+   at all, because it sat outside the rig. This is a single object in the
+   room. It dollies and turns with the camera, and it arrives behind the work
+   as one thing. */
 
-.constellation {
-  position: absolute; inset: 0;
-  pointer-events: none;
-  /* Its own ramp, not the field's. The field recedes at the close; the
-     toolkit stays, because the close is where it is being read. */
+.toolwall {
+  position: absolute; left: 50%; top: 50%;
+  width: calc(var(--pw) * 4.6);
+  margin: 0;
+  /* Rides in toward the camera as it appears, which is both the arrival and
+     the only way the names are legible: at a fixed -1.65pw the labels
+     rendered under seven pixels. */
+  transform: translate3d(-50%, -50%,
+    calc(var(--pw) * (-2.3 + 1.5 * var(--toolkit))));
   opacity: var(--toolkit);
-  transform: translate3d(calc(var(--cx) * -0.05), calc(var(--cy) * -0.07), 0);
+  pointer-events: none;
 }
-.cmark {
-  position: absolute;
-  left: var(--mx); top: var(--my);
-  display: flex; flex-direction: column; align-items: center; gap: 0.32rem;
-  transform: translate(-50%, -50%);
+.toolwall__grid {
+  margin: 0; padding: calc(var(--pw) * 0.14) calc(var(--pw) * 0.12);
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: calc(var(--pw) * 0.075) calc(var(--pw) * 0.06);
+  border-radius: calc(var(--pw) * 0.09);
+  border: 1px solid rgba(245,245,247,0.14);
+  background: linear-gradient(150deg, rgba(18,11,14,0.86), rgba(6,4,5,0.8));
+  box-shadow: 0 0 90px -30px var(--dev-glow);
 }
-.cmark img {
-  width: 26px; height: 26px;
+.toolwall__grid li {
+  display: flex; align-items: center; gap: calc(var(--pw) * 0.03);
+  min-width: 0;
+}
+.toolwall__grid img {
+  flex: none;
+  width: calc(var(--pw) * 0.088); height: calc(var(--pw) * 0.088);
   filter: brightness(0) invert(1);
-  opacity: 0.6;
+  opacity: 0.72;
 }
-.cmark span {
-  font-size: 11px; letter-spacing: 0.015em; white-space: nowrap;
-  color: #86868b;
+.toolwall__grid span {
+  font-size: calc(var(--pw) * 0.058); line-height: 1.1;
+  letter-spacing: -0.005em; color: #b0b0b8;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
 }
 
 /* ---------------------------------------------- the agent layer's list */
@@ -626,6 +642,42 @@ h2 {
   font-size: calc(var(--pw) * 0.056); line-height: 1.1;
   letter-spacing: -0.01em; color: #e9e9ee;
 }
+
+
+/* -------------------------------------------- where the product lives
+   A card that names a shipped app and does not say where it is invites the
+   obvious question. Coca-Cola's answer is the interesting one. */
+
+.stores {
+  margin: 0.85rem 0 0;
+  display: flex; flex-wrap: wrap; align-items: baseline; gap: 0.5rem 1rem;
+  font-size: 0.8rem; line-height: 1.45;
+}
+.stores a {
+  color: var(--sc-accent); text-decoration: none;
+  border-bottom: 1px solid transparent; padding-bottom: 1px;
+}
+.stores a:hover { border-bottom-color: currentColor; }
+.stores span { color: #91919a; }
+.stores--private span:first-child { color: var(--sc-ink); font-weight: 500; }
+.stores--private { display: block; color: #91919a; }
+
+/* --------------------------------------------------------- languages
+   A flag is a country and not a language, so every one is captioned. */
+
+.langs {
+  margin: 1rem 0 0; padding: 0; list-style: none;
+  display: flex; flex-wrap: wrap; gap: 0.5rem 1.3rem;
+  font-size: 0.82rem;
+}
+.langs li { display: flex; align-items: center; gap: 0.44rem; }
+.langs img {
+  flex: none; width: 20px; height: auto;
+  border-radius: 2px;
+  box-shadow: 0 0 0 1px rgba(245,245,247,0.18);
+}
+.langs b { color: var(--sc-ink); font-weight: 500; }
+.langs span { color: #91919a; }
 
 /* --------------------------------------------------------------- the map */
 
@@ -737,14 +789,17 @@ h2 {
   .chips--hero { margin-top: 0.85rem; }
   .chips--hero span { font-size: 0.72rem; }
   .chips--hero li:nth-child(n+4) { display: none; }
+  .stores { font-size: 0.76rem; gap: 0.4rem 0.8rem; margin-top: 0.7rem; }
+  .langs { font-size: 0.76rem; gap: 0.4rem 0.9rem; margin-top: 0.8rem; }
+  .langs img { width: 17px; }
   .chips--specs { margin-top: 0.9rem; gap: 0.36rem 0.75rem; }
   .chips--specs span { font-size: 0.68rem; }
   .chips--specs li:nth-child(n+9) { display: none; }
-  /* Eighteen named marks round a 390px frame is a thicket. The phone keeps
-     the eight that sit clear of the copy, without labels. */
-  .cmark span { display: none; }
-  .cmark img { width: 20px; height: 20px; opacity: 0.5; }
-  .cmark:nth-child(n+9) { display: none; }
+  /* Twenty-four named cells will not read at 390px. The phone gets three
+     columns and the twelve that matter most. */
+  .toolwall { width: calc(var(--pw) * 2.6); }
+  .toolwall__grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .toolwall__grid li:nth-child(n+13) { display: none; }
   .note__logo { height: 22px; }
 
 
