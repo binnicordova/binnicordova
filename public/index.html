@@ -3,18 +3,30 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Binni Cordova · AI-native Senior Software Engineer and Mobile Architect</title>
-<meta name="description" content="Binni Cordova runs a multi-agent system on LangGraph and the Claude Agent SDK in production at The Coca-Cola Company, and is accountable for what it ships. Eight years of React Native, Swift, Kotlin, Node and AWS across Coca-Cola, NFL+, Itaú, Platanitos and Gruppo GPI.">
+<title>Binni Cordova — Senior Forward Deployed Engineer · Coca-Cola, NFL+</title>
+<meta name="description" content="Eight years shipping production software across five industries and five countries, plus multi-agent AI in production. Open to Forward Deployed roles in Canada.">
 <link rel="canonical" href="https://binnicordova.com/">
+<link rel="alternate" type="text/markdown" href="https://binnicordova.com/index.md" title="This page as Markdown">
+<link rel="alternate" type="text/plain" href="https://binnicordova.com/llms.txt" title="Structured summary for language models">
 <meta name="author" content="Binni Cordova">
+<!-- Answer engines and Google summarise from the snippet they are allowed to take.
+     The default cap is short, so the directives lift it: quote as much of this
+     page as the answer needs, and show the portrait at full size. -->
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
 <meta name="theme-color" content="#000000">
 
 <meta property="og:type" content="profile">
-<meta property="og:title" content="Binni Cordova · AI-native Senior Software Engineer and Mobile Architect">
-<meta property="og:description" content="Eight years of shipped mobile, and a multi-agent system in production that works tickets alongside him. Scroll through the glass and the app comes apart into the stack it is built from.">
+<meta property="og:title" content="Binni Cordova — Senior Forward Deployed Engineer · Coca-Cola, NFL+, Itaú">
+<meta property="og:description" content="Five industries, five countries, eight years of production software, and a multi-agent system in production that works tickets alongside him. Open to Forward Deployed Engineer roles in Canada.">
 <meta property="og:url" content="https://binnicordova.com/">
 <meta property="og:image" content="https://binnicordova.com/assets/og.jpg">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Binni Cordova">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Binni Cordova, Senior Software Engineer and Mobile Architect">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image:alt" content="Binni Cordova, Senior Software Engineer and Mobile Architect">
 
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%23000'/><rect x='11' y='5' width='10' height='22' rx='3' fill='none' stroke='%23a8465e' stroke-width='1.6'/><rect x='13.6' y='7.4' width='4.8' height='1.8' rx='0.9' fill='%23a8465e'/></svg>">
 <link rel="apple-touch-icon" href="/assets/binni-square.jpg">
@@ -25,36 +37,531 @@
 <link rel="stylesheet" href="scrollcraft.css">
 <link rel="stylesheet" href="world.css?v=3">
 
+<!-- The first poster is what fills the screen of the phone on arrival, so it is
+     the LCP element. It was discovered only after both stylesheets had parsed;
+     preloading it starts the fetch in the first round trip instead. -->
+<link rel="preload" as="image" href="assets/1-cocacola.jpg?v=2" fetchpriority="high">
+
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "Person",
-  "name": "Binni Cordova",
-  "url": "https://binnicordova.com/",
-  "email": "mailto:binni.2000.cordova@gmail.com",
-  "telephone": "+51971581847",
-  "jobTitle": "AI-native Senior Software Engineer and Mobile Architect",
-  "image": "https://binnicordova.com/assets/binni-square.jpg",
-  "sameAs": [
-    "https://github.com/binnicordova",
-    "https://www.linkedin.com/in/binnicordova",
-    "https://www.npmjs.com/~binnizenobiocordovaleandro"
-  ],
-  "knowsLanguage": ["es", "en", "it", "fr", "de"],
-  "knowsAbout": [
-    "React Native", "Expo", "Swift", "Kotlin", "TypeScript",
-    "React Native New Architecture", "JSI", "TurboModules", "Fabric",
-    "Offline-first architecture", "WatermelonDB",
-    "Backend for frontend", "Node.js", "AWS Lambda", "GraphQL",
-    "Multi-agent AI systems", "LangGraph", "Claude Agent SDK", "Claude Code",
-    "OpenAI Codex", "Cursor", "AI-driven development", "Spec-driven development",
-    "Prompt engineering", "On-device AI", "TensorFlow Lite",
-    "Open source maintenance", "npm package publishing"
-  ],
-  "worksFor": { "@type": "Organization", "name": "The Coca-Cola Company" },
-  "alumniOf": [
-    { "@type": "Organization", "name": "University TECSUP" },
-    { "@type": "Organization", "name": "Tech Institute Trentino Juan Pablo II" }
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://binnicordova.com/#website",
+      "url": "https://binnicordova.com/",
+      "name": "Binni Cordova",
+      "inLanguage": "en",
+      "publisher": {
+        "@id": "https://binnicordova.com/#binni"
+      }
+    },
+    {
+      "@type": "ProfilePage",
+      "@id": "https://binnicordova.com/#page",
+      "url": "https://binnicordova.com/",
+      "name": "Binni Cordova — Senior Forward Deployed Engineer · Coca-Cola, NFL+",
+      "isPartOf": {
+        "@id": "https://binnicordova.com/#website"
+      },
+      "about": {
+        "@id": "https://binnicordova.com/#binni"
+      },
+      "mainEntity": {
+        "@id": "https://binnicordova.com/#binni"
+      },
+      "inLanguage": "en",
+      "dateModified": "2026-09-19",
+      "primaryImageOfPage": {
+        "@type": "ImageObject",
+        "url": "https://binnicordova.com/assets/og.jpg",
+        "width": 1200,
+        "height": 630
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://binnicordova.com/#binni",
+      "name": "Binni Cordova",
+      "givenName": "Binni",
+      "familyName": "Cordova",
+      "url": "https://binnicordova.com/",
+      "mainEntityOfPage": {
+        "@id": "https://binnicordova.com/#page"
+      },
+      "email": "mailto:binni.2000.cordova@gmail.com",
+      "telephone": "+51971581847",
+      "jobTitle": "Senior Software Engineer and Mobile Architect",
+      "image": {
+        "@type": "ImageObject",
+        "url": "https://binnicordova.com/assets/binni-square.jpg"
+      },
+      "description": "Binni Cordova is a Senior Software Engineer and Mobile Architect with eight years of production software shipped across five industries — healthcare, e-commerce, banking, streaming media and consumer-goods field sales — and five countries: Italy, Germany, Peru, Chile and the United States. Every product he has shipped has run in more than one country and more than one language: miMarket at The Coca-Cola Company in Spanish, Portuguese and English across five Latin American markets; NFL+ internationally in English, Spanish and French; Itaú's ITU app in Spanish and Portuguese; and Platanitos across more than one Latin American market. He ships fast, having taken thirteen of his own app products from empty repository to public release in under 90 days each. He is currently Senior Full Stack Software Engineer at The Coca-Cola Company, where he configured and operates a multi-agent AI system on LangGraph and the Claude Agent SDK that works front-end and back-end tickets under his sign-off as the accountable engineer. He is seeking Senior Forward Deployed Engineer and senior product-engineering roles, with a first preference for Canada, and is open to visa sponsorship and employer relocation.",
+      "sameAs": [
+        "https://github.com/binnicordova",
+        "https://www.linkedin.com/in/binnicordova",
+        "https://www.npmjs.com/~binnizenobiocordovaleandro",
+        "https://play.google.com/store/apps/developer?id=BinniCordova.com"
+      ],
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "PE"
+      },
+      "nationality": {
+        "@type": "Country",
+        "name": "Peru"
+      },
+      "knowsLanguage": [
+        {
+          "@type": "Language",
+          "name": "Spanish",
+          "alternateName": "es"
+        },
+        {
+          "@type": "Language",
+          "name": "English",
+          "alternateName": "en"
+        },
+        {
+          "@type": "Language",
+          "name": "Italian",
+          "alternateName": "it"
+        },
+        {
+          "@type": "Language",
+          "name": "French",
+          "alternateName": "fr"
+        },
+        {
+          "@type": "Language",
+          "name": "German",
+          "alternateName": "de"
+        }
+      ],
+      "knowsAbout": [
+        "React Native",
+        "Expo",
+        "Swift",
+        "Kotlin",
+        "Java",
+        "TypeScript",
+        "JavaScript",
+        "React Native New Architecture",
+        "JSI",
+        "TurboModules",
+        "Fabric",
+        "Native modules",
+        "Offline-first architecture",
+        "WatermelonDB",
+        "Conflict resolution",
+        "Backend for frontend",
+        "Serverless microservices",
+        "Serverless architecture",
+        "Event-driven architecture",
+        "Microservices architecture",
+        "AWS Lambda in JavaScript",
+        "AWS Lambda in Python",
+        "Amazon API Gateway",
+        "GraphQL APIs on API Gateway",
+        "Amazon DynamoDB",
+        "Amazon S3",
+        "Amazon SNS",
+        "Amazon SQS",
+        "Amazon Cognito",
+        "AWS KMS",
+        "Amazon CloudWatch",
+        "AWS Amplify",
+        "Amazon CloudSearch",
+        "Node.js",
+        "AWS Lambda",
+        "Amazon Web Services",
+        "GraphQL",
+        "REST APIs",
+        "WebSockets",
+        "Google Cloud Platform",
+        "Firebase",
+        "Firestore",
+        "Docker",
+        "Kubernetes",
+        "Turborepo",
+        "Multi-agent AI systems",
+        "LangGraph",
+        "Claude Agent SDK",
+        "Claude Code",
+        "OpenAI Codex",
+        "Cursor",
+        "AI-native software engineering",
+        "Spec-driven development",
+        "Prompt engineering",
+        "On-device AI",
+        "TensorFlow Lite",
+        "Biometric authentication",
+        "Keychain",
+        "Keystore",
+        "SSL pinning",
+        "Jest",
+        "Detox",
+        "Appium",
+        "Datadog",
+        "New Relic",
+        "GitHub Actions",
+        "Bitrise",
+        "Jenkins",
+        "Open source maintenance",
+        "npm package publishing",
+        "Connected TV applications",
+        "Mobile architecture",
+        "Forward deployed engineering",
+        "Customer-facing engineering",
+        "Solutions architecture",
+        "Field-deployed software",
+        "Enterprise deployment",
+        "Stakeholder management",
+        "Requirements discovery",
+        "Rapid prototyping",
+        "Zero-to-one product engineering",
+        "Cross-functional delivery",
+        "Technical mentoring",
+        "Multi-market product localisation",
+        "Low-connectivity environments",
+        "LLM application development",
+        "Agent orchestration",
+        "Production AI systems",
+        "System design",
+        "SQL",
+        "Internationalisation",
+        "Localisation",
+        "Multi-language application delivery",
+        "Multi-market product delivery",
+        "Rapid delivery",
+        "Time to market",
+        "Zero-to-one delivery under 90 days",
+        "Spanish-language software",
+        "Portuguese-language software",
+        "French-language software",
+        "Connected TV localisation"
+      ],
+      "hasOccupation": [
+        {
+          "@type": "Occupation",
+          "name": "Senior Full Stack Software Engineer",
+          "occupationalCategory": "15-1252.00",
+          "skills": "React Native, Swift, Kotlin, TypeScript, Python, Node.js, AWS serverless microservices (Lambda, API Gateway, DynamoDB, S3, SNS, SQS, Cognito, KMS), GraphQL, LangGraph, Claude Agent SDK"
+        },
+        {
+          "@type": "Occupation",
+          "name": "Forward Deployed Engineer",
+          "description": "The role Binni Cordova is seeking. His record maps to it directly: production systems shipped and maintained across five industries and five countries; not one product delivered to a single country in a single language, spanning Spanish, Portuguese, English and French; software deployed into the customer's own operating conditions rather than an app store; thirteen of his own app products taken from empty repository to public release in under 90 days each; direct work with product, design, QA and executive stakeholders; and a multi-agent AI system he configured and runs in production.",
+          "occupationalCategory": [
+            {
+              "@type": "CategoryCode",
+              "codeValue": "21231",
+              "name": "Software engineers and designers",
+              "inCodeSet": {
+                "@type": "CategoryCodeSet",
+                "name": "National Occupational Classification 2021",
+                "url": "https://noc.esdc.gc.ca/"
+              }
+            },
+            {
+              "@type": "CategoryCode",
+              "codeValue": "21232",
+              "name": "Software developers and programmers",
+              "inCodeSet": {
+                "@type": "CategoryCodeSet",
+                "name": "National Occupational Classification 2021",
+                "url": "https://noc.esdc.gc.ca/"
+              }
+            }
+          ],
+          "skills": "Customer-facing engineering, requirements discovery, rapid prototyping, Python, TypeScript, SQL, serverless microservices on AWS (Lambda, API Gateway, DynamoDB, S3, SNS, SQS, Cognito, KMS, CloudWatch, Amplify, CloudSearch), Google Cloud, Docker, Kubernetes, LLM application development, agent orchestration, LangGraph, Claude Agent SDK, prompt engineering, internationalisation and localisation, multi-market delivery, rapid zero-to-one delivery",
+          "occupationLocation": [
+            {
+              "@type": "Country",
+              "name": "Canada"
+            },
+            {
+              "@type": "City",
+              "name": "Toronto",
+              "address": {
+                "@type": "PostalAddress",
+                "addressRegion": "Ontario",
+                "addressCountry": "CA"
+              }
+            },
+            {
+              "@type": "City",
+              "name": "Vancouver",
+              "address": {
+                "@type": "PostalAddress",
+                "addressRegion": "British Columbia",
+                "addressCountry": "CA"
+              }
+            },
+            {
+              "@type": "City",
+              "name": "Montreal",
+              "address": {
+                "@type": "PostalAddress",
+                "addressRegion": "Quebec",
+                "addressCountry": "CA"
+              }
+            },
+            {
+              "@type": "City",
+              "name": "Ottawa",
+              "address": {
+                "@type": "PostalAddress",
+                "addressRegion": "Ontario",
+                "addressCountry": "CA"
+              }
+            },
+            {
+              "@type": "City",
+              "name": "Waterloo",
+              "address": {
+                "@type": "PostalAddress",
+                "addressRegion": "Ontario",
+                "addressCountry": "CA"
+              }
+            },
+            {
+              "@type": "City",
+              "name": "Calgary",
+              "address": {
+                "@type": "PostalAddress",
+                "addressRegion": "Alberta",
+                "addressCountry": "CA"
+              }
+            }
+          ]
+        }
+      ],
+      "worksFor": [
+        {
+          "@type": "OrganizationRole",
+          "roleName": "Senior Full Stack Software Engineer",
+          "startDate": "2025-04",
+          "description": "miMarket, a B2B field-sales ordering platform: 1,500+ sellers across Peru, Chile, Argentina, Paraguay and Brazil placing 1,350,000+ orders a month to Coca-Cola clients.",
+          "worksFor": {
+            "@id": "https://binnicordova.com/#cocacola"
+          }
+        },
+        {
+          "@type": "OrganizationRole",
+          "roleName": "Senior Software Engineer",
+          "startDate": "2024-02",
+          "endDate": "2025-03",
+          "description": "NFL+ CTV: one React Native and TheoPlayer video player across phones, web and smart TVs for millions of viewers.",
+          "worksFor": {
+            "@id": "https://binnicordova.com/#nfl"
+          }
+        },
+        {
+          "@type": "OrganizationRole",
+          "roleName": "Software Engineer",
+          "startDate": "2021-12",
+          "endDate": "2024-02",
+          "description": "ITU App: biometric authentication and encrypted transaction workflows for 100,000+ banking users, at 90%+ automated test coverage.",
+          "worksFor": {
+            "@id": "https://binnicordova.com/#itau"
+          }
+        },
+        {
+          "@type": "OrganizationRole",
+          "roleName": "Full Stack Software Engineer",
+          "startDate": "2019-03",
+          "endDate": "2021-12",
+          "description": "Migrated a legacy web platform to React Native and Expo across iOS, Android and Huawei; the commerce app passed 1 million downloads.",
+          "worksFor": {
+            "@id": "https://binnicordova.com/#platanitos"
+          }
+        },
+        {
+          "@type": "OrganizationRole",
+          "roleName": "Software Engineer",
+          "startDate": "2018-03",
+          "endDate": "2019-03",
+          "description": "Medical reporting and annotation systems running across 3,000+ hospitals and clinics in Europe.",
+          "worksFor": {
+            "@id": "https://binnicordova.com/#gpi"
+          }
+        }
+      ],
+      "alumniOf": [
+        {
+          "@type": "CollegeOrUniversity",
+          "name": "University TECSUP",
+          "sameAs": "https://www.tecsup.edu.pe/"
+        },
+        {
+          "@type": "EducationalOrganization",
+          "name": "Tech Institute Trentino Juan Pablo II"
+        }
+      ],
+      "seeks": {
+        "@type": "Demand",
+        "name": "Senior Forward Deployed Engineer roles",
+        "description": "Open to Senior Forward Deployed Engineer, solutions-engineering and senior product-engineering roles. Canada first, then the USA and Europe. Open to visa sponsorship and employer relocation; software engineering sits on Canada's Global Talent Stream Category B in-demand occupations list as NOC 21231 and 21232, a stream the employer initiates.",
+        "availabilityStarts": "2026-09-19",
+        "areaServed": [
+          {
+            "@type": "Country",
+            "name": "Canada"
+          },
+          {
+            "@type": "City",
+            "name": "Toronto"
+          },
+          {
+            "@type": "City",
+            "name": "Vancouver"
+          },
+          {
+            "@type": "City",
+            "name": "Montreal"
+          },
+          {
+            "@type": "City",
+            "name": "Ottawa"
+          },
+          {
+            "@type": "City",
+            "name": "Waterloo"
+          },
+          {
+            "@type": "City",
+            "name": "Calgary"
+          },
+          {
+            "@type": "Country",
+            "name": "United States"
+          },
+          {
+            "@type": "Place",
+            "name": "Europe"
+          }
+        ]
+      }
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://binnicordova.com/#cocacola",
+      "name": "The Coca-Cola Company",
+      "sameAs": [
+        "https://en.wikipedia.org/wiki/The_Coca-Cola_Company",
+        "https://www.wikidata.org/wiki/Q3295867"
+      ],
+      "url": "https://www.coca-colacompany.com/"
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://binnicordova.com/#nfl",
+      "name": "National Football League",
+      "sameAs": [
+        "https://en.wikipedia.org/wiki/National_Football_League",
+        "https://www.wikidata.org/wiki/Q1215884"
+      ],
+      "alternateName": "NFL",
+      "url": "https://www.nfl.com/"
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://binnicordova.com/#itau",
+      "name": "Banco Itaú Chile",
+      "sameAs": [
+        "https://en.wikipedia.org/wiki/Banco_Ita%C3%BA_Chile",
+        "https://www.wikidata.org/wiki/Q4854098"
+      ],
+      "alternateName": [
+        "Itaú",
+        "Itau Bank"
+      ],
+      "url": "https://www.itau.cl/",
+      "parentOrganization": {
+        "@type": "Organization",
+        "name": "Itaú Unibanco",
+        "sameAs": [
+          "https://en.wikipedia.org/wiki/Ita%C3%BA_Unibanco",
+          "https://www.wikidata.org/wiki/Q1424293"
+        ]
+      }
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://binnicordova.com/#platanitos",
+      "name": "Platanitos",
+      "sameAs": [],
+      "url": "https://www.platanitos.com/",
+      "description": "Peru's leading fashion and footwear e-commerce platform."
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://binnicordova.com/#gpi",
+      "name": "Gruppo GPI",
+      "sameAs": [],
+      "alternateName": "GPI Group",
+      "url": "https://www.gpigroup.com/",
+      "description": "Italian healthcare technology group; medical reporting systems across 3,000+ European hospitals and clinics."
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://binnicordova.com/#nfl-plus",
+      "name": "NFL+",
+      "applicationCategory": "Sports streaming",
+      "operatingSystem": "iOS, Android, web, connected TV",
+      "sameAs": [
+        "https://en.wikipedia.org/wiki/NFL%2B",
+        "https://www.wikidata.org/wiki/Q6953709"
+      ],
+      "publisher": {
+        "@id": "https://binnicordova.com/#nfl"
+      }
+    },
+    {
+      "@type": "SoftwareSourceCode",
+      "@id": "https://binnicordova.com/#pkg-biometric",
+      "name": "react-native-check-biometric-changed",
+      "description": "Detects when the device's biometric enrolment has changed on iOS and Android, so an app can revoke a session before a newly enrolled face or fingerprint inherits it. Zero runtime dependencies, autolinked.",
+      "programmingLanguage": [
+        "Swift",
+        "Kotlin",
+        "TypeScript"
+      ],
+      "runtimePlatform": "React Native",
+      "license": "https://opensource.org/licenses/MIT",
+      "author": {
+        "@id": "https://binnicordova.com/#binni"
+      },
+      "codeRepository": "https://github.com/binnicordova",
+      "url": "https://www.npmjs.com/package/react-native-check-biometric-changed"
+    },
+    {
+      "@type": "SoftwareSourceCode",
+      "@id": "https://binnicordova.com/#pkg-feedback",
+      "name": "expo-feedback-ai",
+      "description": "In-app feature-request board for Expo apps whose most-voted ideas are picked up and built by an AI agent. No backend, API key or configuration; runs in Expo Go.",
+      "programmingLanguage": "TypeScript",
+      "runtimePlatform": "Expo",
+      "license": "https://opensource.org/licenses/MIT",
+      "author": {
+        "@id": "https://binnicordova.com/#binni"
+      },
+      "url": "https://www.npmjs.com/package/expo-feedback-ai"
+    },
+    {
+      "@type": "SoftwareSourceCode",
+      "@id": "https://binnicordova.com/#pkg-duo",
+      "name": "iphone-duo-expo-rn",
+      "description": "Frosted-glass \"fold\" interaction driven by device motion, for any Expo app. TypeScript only, no native code; runs on iOS, Android and web.",
+      "programmingLanguage": "TypeScript",
+      "runtimePlatform": "Expo",
+      "license": "https://opensource.org/licenses/MIT",
+      "author": {
+        "@id": "https://binnicordova.com/#binni"
+      },
+      "url": "https://www.npmjs.com/package/iphone-duo-expo-rn"
+    }
   ]
 }
 </script>
@@ -77,7 +584,7 @@
     <li><button type="button" data-leg="6"><span class="route__tick"></span><span class="route__name">Own work</span></button></li>
     <li><button type="button" data-leg="7"><span class="route__tick"></span><span class="route__name">Arrival</span></button></li>
   </ol>
-  <a class="route__cta" href="mailto:binni.2000.cordova@gmail.com?subject=Senior%20mobile%20role">Email Binni</a>
+  <a class="route__cta" href="mailto:binni.2000.cordova@gmail.com?subject=Forward%20Deployed%20Engineer%20role">Email Binni</a>
 </nav>
 
 <!-- The flight IS the main element. A wrapper around it would be a second box
@@ -168,8 +675,8 @@
             <div class="stratum" data-i="1"><div class="stratum__pane"></div><div class="stratum__tag"><b>Bridge</b><span>JSI · TurboModules · Fabric</span></div></div>
             <div class="stratum" data-i="2"><div class="stratum__pane"></div><div class="stratum__tag"><b>Native modules</b><span>Swift · Kotlin · Keychain · Keystore · biometrics</span></div></div>
             <div class="stratum" data-i="3"><div class="stratum__pane"></div><div class="stratum__tag"><b>Offline store</b><span>WatermelonDB · local persistence · conflict resolution</span></div></div>
-            <div class="stratum" data-i="4"><div class="stratum__pane"></div><div class="stratum__tag"><b>Backend for frontend</b><span>Node.js · GraphQL · REST · WebSockets</span></div></div>
-            <div class="stratum" data-i="5"><div class="stratum__pane"></div><div class="stratum__tag"><b>Cloud</b><span>AWS Lambda in Python · Docker · Firestore</span></div></div>
+            <div class="stratum" data-i="4"><div class="stratum__pane"></div><div class="stratum__tag"><b>Microservices</b><span>Node.js · API Gateway · GraphQL · SNS · SQS</span></div></div>
+            <div class="stratum" data-i="5"><div class="stratum__pane"></div><div class="stratum__tag"><b>Serverless cloud</b><span>Lambda in JS and Python · DynamoDB · S3 · Cognito · KMS</span></div></div>
             <div class="stratum" data-i="6"><div class="stratum__pane"></div><div class="stratum__tag"><b>Agents</b><span>LangGraph · Claude Agent SDK · supervised, never unattended</span></div></div>
           </div>
 
@@ -212,7 +719,7 @@
             <div class="phone__screen">
               <!-- the seven legs of the flight, in the order the resume prints -->
               <div data-sc-segment data-sc-w="1.5" data-sc-linger="0.24" data-sc-waypoint="Coca-Cola">
-                <img class="sc-world__poster" src="assets/1-cocacola.jpg?v=2" alt="" decoding="async" width="460" height="1000">
+                <img class="sc-world__poster" src="assets/1-cocacola.jpg?v=2" alt="" fetchpriority="high" decoding="async" width="460" height="1000">
                 <video data-sc-src="assets/1-cocacola.mp4" data-sc-src-mobile="assets/1-cocacola-m.mp4" muted playsinline preload="none"></video>
               </div>
               <div data-sc-segment data-sc-w="1.5" data-sc-linger="0.2" data-sc-waypoint="NFL+">
@@ -268,9 +775,9 @@
     <div class="sc-world__scrim scrim" aria-hidden="true"></div>
 
     <div class="c c--hero" data-sc-copy data-sc-window="hero">
-      <p class="kicker">Open to Senior and Staff roles · Canada, USA, Europe</p>
+      <p class="kicker">Open to Senior Forward Deployed Engineer roles · Canada, USA, Europe</p>
       <h1>Binni Cordova</h1>
-      <p class="lede">Senior Software Engineer and Mobile Architect. Eight years of shipped mobile, and a multi-agent system running in production that works tickets alongside me.</p>
+      <p class="lede">Senior Software Engineer and Mobile Architect. Eight years shipping production software into five industries and five countries, and a multi-agent system running in production that works tickets alongside me.</p>
       <!-- AI is the first thing on the page now, not a footnote at 10vh. Names
            beside every mark: a recruiter should not have to recognise a
            glyph to know what it says. -->
@@ -288,10 +795,10 @@
     <div class="c c--card" data-sc-copy data-sc-window="0.0340 0.0966">
       <article class="card">
         <img class="card__logo" src="assets/logo-cocacola.svg" alt="The Coca-Cola Company" width="150" height="47">
-        <h2 class="card__product">miMarket</h2>
+        <h2 class="card__product"><span class="card__brand">Coca-Cola</span> miMarket</h2>
         <p class="card__meta">Senior Full Stack Software Engineer · USA · Apr 2025 to present</p>
-        <p class="card__line">A backend-for-frontend on Node.js and AWS, Python Lambdas behind it, and a React Native client rebuilt offline-first on WatermelonDB so the field keeps working where the signal does not — in Spanish and in Portuguese.</p>
-        <p class="card__figure"><b>1,500+</b> sellers across Peru, Chile, Argentina, Paraguay and Brazil · <b>1.35M+</b> orders a month to Coca-Cola clients</p>
+        <p class="card__line">Serverless microservices on AWS: Lambda in JavaScript and Python behind API Gateway, with DynamoDB, SNS and SQS. The React Native client in front of them rebuilt offline-first on WatermelonDB, so the field keeps working where the signal does not — in Spanish, Portuguese and English.</p>
+        <p class="card__figure"><b>1,500+</b> sellers across Peru, Chile, Argentina, Paraguay and Brazil · <b>1.35M+</b> orders a month to Coca-Cola clients · <b>3</b> languages</p>
               <p class="stores stores--private"><span>Internal distribution only.</span> <span class="stores__why">It is not on any store: it carries client records and consumes private data, so it ships to field devices under company control.</span></p>
       </article>
     </div>
@@ -299,10 +806,10 @@
     <div class="c c--card c--card-alt" data-sc-copy data-sc-window="0.1156 0.1973">
       <article class="card">
         <img class="card__logo card__logo--sm" src="assets/logo-nfl.svg" alt="NFL" width="60" height="82">
-        <h2 class="card__product">NFL+</h2>
+        <h2 class="card__product"><span class="card__brand">NFL</span> NFL+ CTV</h2>
         <p class="card__meta">Senior Software Engineer · USA · Feb 2024 to Mar 2025</p>
-        <p class="card__line">One React Native and TheoPlayer video player across phones, the web and smart TVs. Recoil retired for Jotai, native modules moved to Expo inside a Turborepo, bridge traffic cut until the thing started fast.</p>
-        <p class="card__figure"><b>Millions</b> of viewers, mobile, web and CTV</p>
+        <p class="card__line">One React Native and TheoPlayer video player across phones, the web and smart TVs. Recoil retired for Jotai, native modules moved to Expo inside a Turborepo, bridge traffic cut until the thing started fast. Shipped internationally in English, Spanish and French.</p>
+        <p class="card__figure"><b>Millions</b> of viewers, mobile, web and CTV · <b>3</b> languages, multinational audience</p>
               <p class="stores"><a href="https://apps.apple.com/us/app/nfl/id389781154" rel="noopener">App&nbsp;Store</a><a href="https://play.google.com/store/apps/details?id=com.gotv.nflgamecenter.us.lite" rel="noopener">Google&nbsp;Play</a><span>NFL+ ships inside the NFL app</span></p>
       </article>
     </div>
@@ -310,10 +817,10 @@
     <div class="c c--card" data-sc-copy data-sc-window="0.2143 0.2789">
       <article class="card">
         <img class="card__logo" src="assets/logo-itau.svg" alt="Itaú" width="64" height="64">
-        <h2 class="card__product">ITU App</h2>
+        <h2 class="card__product"><span class="card__brand">Itaú Bank</span> ITU App</h2>
         <p class="card__meta">Software Engineer · Chile · Dec 2021 to Feb 2024</p>
-        <p class="card__line">Biometric authentication and encrypted transaction workflows, with reusable Swift and Kotlin modules for secure storage and core banking.</p>
-        <p class="card__figure"><b>100,000+</b> people banking on it · <b>90%+</b> automated coverage held on a transaction-critical codebase</p>
+        <p class="card__line">Biometric authentication and encrypted transaction workflows, with reusable Swift and Kotlin modules for secure storage and core banking. Shipped in Spanish and Portuguese across Itaú's Latin American footprint.</p>
+        <p class="card__figure"><b>100,000+</b> people banking on it · <b>90%+</b> automated coverage held on a transaction-critical codebase · <b>2</b> languages</p>
               <p class="stores"><a href="https://apps.apple.com/cl/app/itu-cuenta-corriente-digital/id1620586910" rel="noopener">App&nbsp;Store</a><a href="https://play.google.com/store/apps/details?id=cl.itau.itu" rel="noopener">Google&nbsp;Play</a></p>
       </article>
     </div>
@@ -321,9 +828,9 @@
     <div class="c c--card c--card-alt" data-sc-copy data-sc-window="0.2925 0.3469">
       <article class="card">
         <img class="card__logo card__logo--sm" src="assets/logo-platanitos.svg" alt="Platanitos" width="58" height="58">
-        <h2 class="card__product">Platanitos</h2>
+        <h2 class="card__product">Platanitos <span class="card__brand card__brand--under">E-commerce</span></h2>
         <p class="card__meta">Full Stack Software Engineer · Peru · Mar 2019 to Dec 2021</p>
-        <p class="card__line">A legacy web platform migrated to React Native and Expo, shipping one codebase to iOS, Android and Huawei.</p>
+        <p class="card__line">A legacy web platform migrated to React Native and Expo, shipping one codebase to iOS, Android and Huawei — for a commerce business trading across more than one Latin American market.</p>
         <p class="card__figure"><b>1M+</b> downloads</p>
               <p class="stores"><a href="https://apps.apple.com/pe/app/platanitos/id1093153586" rel="noopener">App&nbsp;Store</a><a href="https://play.google.com/store/apps/details?id=com.platanitos.platanitosapp" rel="noopener">Google&nbsp;Play</a></p>
       </article>
@@ -343,7 +850,7 @@
 
     <div class="c c--peak-out" data-sc-copy data-sc-window="0.5544 0.6190">
       <h2>I build all of it.</h2>
-      <p class="body">Interface down to the Lambda, and the agents that now help work the tickets. Reviewed and signed off by the engineer accountable for them.</p>
+      <p class="body">Interface down to the Lambda, and the agents that now help work the tickets. Reviewed and signed off by the engineer accountable for them. Five industries, five countries, and not one product that shipped to a single country in a single language.</p>
       <!-- The callouts out in the world are decoration as far as a screen
            reader is concerned: .strata is aria-hidden. This is the same six
            layers as real content. It is the visible list on a phone, where six
@@ -353,8 +860,8 @@
         <li><b>Bridge</b> JSI · TurboModules · Fabric</li>
         <li><b>Native modules</b> Swift · Kotlin · Keychain · biometrics</li>
         <li><b>Offline store</b> WatermelonDB · conflict resolution</li>
-        <li><b>Backend for frontend</b> Node.js · GraphQL · REST</li>
-        <li><b>Cloud and agents</b> AWS Lambda · LangGraph · Claude Agent SDK</li>
+        <li><b>Microservices</b> Node.js · API Gateway · GraphQL · SNS · SQS</li>
+        <li><b>Serverless cloud and agents</b> Lambda · DynamoDB · S3 · Cognito · KMS · LangGraph · Claude Agent SDK</li>
       </ul>
     </div>
 
@@ -382,7 +889,7 @@
          this act rather than sitting in a footer. -->
     <div class="c c--range" data-sc-copy data-sc-window="0.7891 0.8878">
       <h2>And then there is what I build for myself.</h2>
-      <p class="body">Thirteen of them, nights and weekends, all shipped. <span class="body__more">Ride hailing, vehicle records, a résumé scorer, a beach-safety guide, a React drill app, a live-event film maker, a personal-safety network, a live-stream AI assistant.</span></p>
+      <p class="body">Thirteen of them, nights and weekends, all shipped — and each one from empty repository to a released product in <b>under 90 days</b>. <span class="body__more">Ride hailing, vehicle records, a résumé scorer, a beach-safety guide, a React drill app, a live-event film maker, a personal-safety network, a live-stream AI assistant.</span></p>
       <p class="stores"><a href="https://play.google.com/store/apps/developer?id=BinniCordova.com" rel="noopener">See them on Google&nbsp;Play</a><span>published under BinniCordova.com</span></p>
       <!-- The turn of the act. The apps are products; this is the layer under
            them, and it is the one that carries the banking work forward. One
@@ -400,8 +907,13 @@
 
     <div class="c c--finale" data-sc-copy data-sc-window="finale">
       <h2>Let's build the next one.</h2>
-      <p class="body">Currently Senior Full Stack Software Engineer at The Coca-Cola Company. Open to visa sponsorship and employer relocation.</p>
-      <a class="cta" href="mailto:binni.2000.cordova@gmail.com?subject=Senior%20mobile%20role">Email Binni</a>
+      <p class="body">Currently Senior Full Stack Software Engineer at The Coca-Cola Company. Open to Forward Deployed and senior product-engineering roles in Canada, the USA and Europe.</p>
+      <!-- "Needs sponsorship" reads as a cost until it is priced. Naming the
+           stream and the NOC turns it into a two-week process the employer
+           already knows how to run, which is the single most useful thing
+           this page can tell a Canadian recruiter. -->
+      <p class="avail">Hiring into Canada runs through the <b>Global Talent Stream</b>, which the employer initiates: software engineering sits on the Category&nbsp;B in-demand list as NOC&nbsp;21231 and 21232, and the stream targets two-week processing.</p>
+      <a class="cta" href="mailto:binni.2000.cordova@gmail.com?subject=Forward%20Deployed%20Engineer%20role">Email Binni</a>
       <p class="fine">
         <a href="tel:+51971581847" rel="me">+51 971 581 847</a>
         <a href="https://github.com/binnicordova" rel="me">GitHub</a>
@@ -430,7 +942,8 @@
 <noscript>
   <div class="fallback">
     <h1>Binni Cordova</h1>
-    <p>AI-native Senior Software Engineer and Mobile Architect. Configures and operates a multi-agent system on LangGraph and the Claude Agent SDK in production at The Coca-Cola Company, accountable for every change it ships. Eight years of React Native, Swift, Kotlin, Node.js and AWS across fintech, banking, media, healthcare and commerce: Coca-Cola, NFL+, Itaú, Platanitos and Gruppo GPI.</p>
+    <p>AI-native Senior Software Engineer and Mobile Architect, seeking Senior Forward Deployed Engineer roles in Canada. Configures and operates a multi-agent system on LangGraph and the Claude Agent SDK in production at The Coca-Cola Company, accountable for every change it ships. Eight years of React Native, Swift, Kotlin, Node.js and AWS serverless microservices across five industries — healthcare, e-commerce, banking, streaming media and consumer-goods field sales — and five countries: Italy, Germany, Peru, Chile and the United States — Coca-Cola, NFL+, Itaú, Platanitos and Gruppo GPI. Every one of those products shipped multinational and multilingual: Spanish, Portuguese, English and French. He has also taken thirteen app products of his own from empty repository to public release in under 90 days each.</p>
+    <p>Open to Senior Forward Deployed Engineer and senior product-engineering roles in Canada (Toronto, Vancouver, Montreal, Ottawa, Waterloo, Calgary), the USA and Europe. Hiring into Canada runs through the Global Talent Stream, which the employer initiates: software engineering is on the Category B in-demand occupations list as NOC 21231 and NOC 21232, and the stream targets two-week processing.</p>
     <p>At Coca-Cola he builds miMarket, a B2B field-sales ordering platform where more than 1,500 sellers across Peru, Chile, Argentina, Paraguay and Brazil place over 1,350,000 orders a month to Coca-Cola clients, on unreliable mobile connections and in both Spanish and Portuguese.</p>
     <p>Thirteen apps of his own, designed, built and shipped independently and listed on Google Play under the BinniCordova.com developer account: <a href="https://play.google.com/store/apps/developer?id=BinniCordova.com">play.google.com/store/apps/developer?id=BinniCordova.com</a>.</p>
     <p>Writes native iOS and Android modules to banking requirements and publishes them: react-native-check-biometric-changed detects a biometric re-enrolment so an app can revoke a session before a newly enrolled face inherits it, and has passed 1,000 installs. It ships alongside expo-feedback-ai and iphone-duo-expo-rn, all MIT, around 500 installs a month across the set. <a href="https://www.npmjs.com/~binnizenobiocordovaleandro">npmjs.com/~binnizenobiocordovaleandro</a></p>

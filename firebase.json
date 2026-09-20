@@ -51,12 +51,28 @@
             "value": "public, max-age=0, must-revalidate"
           }
         ]
-      }
-    ],
-    "rewrites": [
+      },
       {
-        "source": "**",
-        "destination": "/index.html"
+        "source": "/{llms.txt,index.md,robots.txt,sitemap.xml}",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "public, max-age=600, stale-while-revalidate=86400"
+          }
+        ]
+      },
+      {
+        "source": "/Binni_Cordova_Resume.pdf",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "public, max-age=3600, stale-while-revalidate=604800"
+          },
+          {
+            "key": "X-Robots-Tag",
+            "value": "index, follow, max-snippet:-1"
+          }
+        ]
       }
     ]
   }
