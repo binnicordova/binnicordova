@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Binni Cordova - Resume</title>
+<!--
+  THE SOURCE OF THE RESUME PDF.
+
+  Until now the only copy of this document was the exported PDF itself: the
+  Writer file it came out of never made it into the repository, so every edit
+  meant hand-patching a binary. This file is that missing source, rebuilt to
+  the measured geometry of the shipped PDF - Letter, 54pt side margins, 36pt
+  head and foot, 10pt Liberation Serif on 11.55pt, 10.5pt bold section rules,
+  bullets marked at 72pt with their text at 90pt.
+
+  Liberation Serif is named first so a rebuild on Linux reproduces the
+  original exactly; on macOS it falls through to Times New Roman, which is
+  metrically identical, so the line breaks do not move.
+
+  Build with ./build.sh. Keep it to two pages.
+
+  NOTE: the install figure under OPEN SOURCE is a point-in-time number. It was
+  ~509 installs across the three packages in the 30 days to 2026-09-19. Refresh
+  it when you re-export:
+      for p in react-native-check-biometric-changed expo-feedback-ai iphone-duo-expo-rn; do
+        curl -s "https://api.npmjs.org/downloads/point/last-month/$p"; echo; done
+-->
+<style>
+  @page { size: 8.5in 11in; margin: 36pt 54pt; }
+
+  html, body { margin: 0; padding: 0; }
+  body {
+    font-family: "Liberation Serif", "Times New Roman", Times, serif;
+    font-size: 10pt;
+    line-height: 11.55pt;
+    color: #000;
+    /* ATS parsers read the text layer, so nothing here may depend on colour,
+       a background, a column or an image to be understood. */
+    -webkit-font-smoothing: auto;
+  }
+
+  h1 {
+    margin: 0;
+    font-size: 16pt;
+    line-height: 18.5pt;
+    font-weight: bold;
+    text-align: center;
+  }
+  .contact {
+    margin: 2.2pt 0 0;
+    text-align: center;
+  }
+
+  h2 {
+    margin: 10pt 0 0;
+    font-size: 10.5pt;
+    line-height: 12.1pt;
+    font-weight: bold;
+    letter-spacing: 0;
+    /* Every section in the exported document is underscored edge to edge.
+       It is the only rule in the whole layout and it is what makes the thing
+       scannable, so it is not optional decoration. */
+    border-bottom: 0.7pt solid #000;
+    padding-bottom: 1.2pt;
+  }
+  /* The rule under a section head is 6.3pt of air, matching the exported
+     document rather than a round number. */
+  h2 + * { margin-top: 6.3pt !important; }
+
+  p { margin: 0; }
+  p + p { margin-top: 3pt; }
+
+  /* --- experience ------------------------------------------------------- */
+
+  .job { margin-top: 8pt; }
+  .job__head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    font-weight: bold;
+    /* The dates do not run to the right margin. The exported document lands
+       them on a right tab at 522pt - 6.5in from the page edge, the leftover
+       of a 1in-margin template - which is 36pt short of this 54pt margin.
+       Reproduced rather than tidied up: this is how the document a recruiter
+       may already have on file is set. */
+    padding-right: 36pt;
+  }
+  /* Regular weight, like the original. Only the employer is bold. */
+  .job__dates { font-weight: normal; white-space: nowrap; }
+  /* The original embeds LiberationSerif-Italic for exactly two things: the
+     job title under each employer, and the one line describing Platanitos. */
+  .job__role { margin: 0; font-style: italic; }
+  .job__note { margin: 3pt 0 0; font-style: italic; }
+
+  ul {
+    margin: 3pt 0 0;
+    padding: 0 0 0 18pt;
+    list-style: none;
+  }
+  li {
+    position: relative;
+    padding-left: 18pt;
+    margin-top: 2.5pt;
+  }
+  li:first-child { margin-top: 3pt; }
+  li::before {
+    /* Drawn, not typed. Times New Roman has no BLACK CIRCLE, and every macOS
+       fallback that does carries its own ascent, which drops the glyph to the
+       baseline instead of the middle of the line. A shape takes the font out
+       of it: this is the original's mark measured off the page - a 4.2pt
+       circle whose left edge sits at 72.92pt and whose centre rides 6.06pt
+       below the top of the line's text. */
+    content: "";
+    position: absolute;
+    left: 0.92pt;
+    top: 3.96pt;
+    width: 4.2pt;
+    height: 4.2pt;
+    border-radius: 50%;
+    background: #000;
+  }
+
+  /* --- open source ------------------------------------------------------ */
+
+  .pkg { font-weight: bold; }
+
+  /* The exported document carries live link annotations on its URLs and
+     underlines them. Anchors reproduce both, and keep the PDF clickable. */
+  a { color: #000; text-decoration: underline; }
+</style>
+</head>
+<body>
+
+<h1>Binni Cordova</h1>
+<p class="contact">Open to Relocation | +51 971 581 847 | <a href="https://binnicordova.com/">binnicordova.com</a> | <a href="https://github.com/binnicordova">github.com/binnicordova</a> | <a href="https://www.linkedin.com/in/binnicordova">linkedin.com/in/binnicordova</a></p>
+
+<h2>SUMMARY OF QUALIFICATIONS</h2>
+<p>Senior software engineer with 8+ years building React Native applications for fintech, banking, media, and commerce products at scale, including secure banking workflows for 100,000+ users and marketplace platforms on AWS and Node.js. Increasingly specialized in AI-native engineering: uses Claude Code, Codex, and Cursor daily to diagnose issues across front-end and back-end services, automates multi-environment AWS pull-request workflows, and configures and supervises a multi-agent AI system built on LangGraph and the Claude Agent SDK for ticket triage and resolution. Publishes and maintains MIT-licensed React Native and Expo packages on npm, installed roughly 500 times per month. Background also includes native iOS (Swift) and Android (Kotlin/Java) module development for biometrics, encrypted storage, and hardware integrations.</p>
+
+<h2>SKILLS</h2>
+<p><b>Mobile:</b> React Native, Expo (Managed &amp; Bare), TypeScript, JavaScript, Swift, Kotlin/Java, Native Modules, React Native New Architecture (JSI, TurboModules, Fabric), WatermelonDB, Offline-First Architecture</p>
+<p><b>AI Tools &amp; Agent Frameworks:</b> Claude Code, Codex/Codex CLI, Cursor, LangGraph, Claude Agent SDK, multi-agent orchestration, AI-assisted diagnostics, prompt engineering, Spec-Driven Development, LLM integration, On-Device AI (TensorFlow Lite)</p>
+<p><b>Cloud &amp; Backend:</b> AWS (multi-account/multi-environment, Lambda/Python), Google Cloud Platform (Firestore), Node.js, Firebase, GraphQL, REST APIs, WebSockets, SQL</p>
+<p><b>CI/CD &amp; Tooling:</b> GitHub Actions, EAS, Bitrise, Jenkins, Docker, Kubernetes, pnpm/Turborepo (monorepo), OTA Updates/CodePush, JIRA</p>
+<p><b>Open Source:</b> npm Package Authoring &amp; Publishing, Semantic Versioning, Autolinked iOS/Android Native Modules, Expo Go Compatible Libraries</p>
+<p><b>Testing &amp; Observability:</b> Jest, Appium, Detox, Datadog, New Relic</p>
+<p><b>Security &amp; Testing:</b> Secure Storage (Keychain/Keystore), Biometrics, SSL Pinning</p>
+<p><b>State Management:</b> Redux, Zustand, Jotai, Recoil</p>
+
+<h2>PROFESSIONAL EXPERIENCE</h2>
+
+<div class="job">
+  <div class="job__head"><span>The Coca-Cola Company, USA</span><span class="job__dates">Apr 2025 - Present</span></div>
+  <p class="job__role">Senior Full Stack Software Engineer</p>
+  <p class="job__note">miMarket, a B2B field-sales platform: 1,500+ sellers across Peru, Chile, Argentina, Paraguay, and Brazil place 1,350,000+ orders a month to Coca-Cola clients, on unreliable connections and in two languages.</p>
+  <ul>
+    <li>Use Claude Code, Codex, and Cursor daily to diagnose issues across front-end and back-end services, combining AI-assisted analysis with product knowledge to identify solutions before implementation.</li>
+    <li>Configured and operate a multi-agent AI system (Multica.ai) built on LangGraph and the Claude Agent SDK that picks up and works front-end and back-end tickets; review and validate all changes as the accountable engineer.</li>
+    <li>Automated pull-request creation across multi-environment, multi-account AWS microservices, cutting manual release overhead.</li>
+    <li>Designed a Backend-for-Frontend (BFF) architecture on Node.js and AWS for the marketplace platform, using Python-based Lambda functions and Dockerized services to simplify service boundaries and speed up feature delivery.</li>
+    <li>Built native iOS (Swift) and Android (Kotlin/Java) modules for biometrics, encrypted storage, and hardware integrations beyond the JavaScript bridge.</li>
+    <li>Redesigned the React Native platform into an offline-first architecture using WatermelonDB for local persistence and conflict resolution, improving reliability in low-connectivity environments.</li>
+    <li>Mentor engineers, lead architecture reviews, and work directly with Product, Design, QA, and Executive stakeholders to maintain release quality.</li>
+  </ul>
+</div>
+
+<div class="job">
+  <div class="job__head"><span>NFL+ CTV, USA</span><span class="job__dates">Feb 2024 - Mar 2025</span></div>
+  <p class="job__role">Senior Software Engineer</p>
+  <ul>
+    <li>Improved playback controls, performance, cross-platform compatibility, and stability of a React Native + TheoPlayer video player used across mobile, web, and smart TVs by millions of viewers.</li>
+    <li>Participated in refactoring state management from Recoil, which the team deprecated and treated as legacy, to Jotai, improving maintainability going forward.</li>
+    <li>Helped migrate legacy React Native CLI native modules to Expo-compatible modules within a Turborepo monorepo, simplifying the build and native dependency pipeline.</li>
+    <li>Optimized rendering pipelines and asset loading, cutting startup time and memory consumption.</li>
+    <li>Partnered with Product, UX, QA, and backend teams through Agile delivery cycles to keep production releases on track.</li>
+    <li>Used Datadog to profile rendering bottlenecks and reduced unnecessary JavaScript-to-native bridge communication to improve performance.</li>
+  </ul>
+</div>
+
+<div class="job">
+  <div class="job__head"><span>Itau Bank - ITU App, Chile</span><span class="job__dates">Dec 2021 - Feb 2024</span></div>
+  <p class="job__role">Software Engineer</p>
+  <ul>
+    <li>Built biometric authentication and encrypted financial transaction workflows for a mobile banking app serving 100,000+ users.</li>
+    <li>Maintained 90%+ automated test coverage using Jest, Detox, and Appium across unit, integration, and end-to-end tests on a transaction-critical SQL-backed codebase, tracked through JIRA.</li>
+    <li>Strengthened CI/CD pipelines with Bitrise and Jenkins to reduce deployment risk and improve release consistency.</li>
+    <li>Developed reusable Swift and Kotlin/Java native modules for authentication, secure storage, and core banking features.</li>
+    <li>Partnered with backend, infrastructure, and security teams to meet enterprise-grade authentication and data protection requirements.</li>
+  </ul>
+</div>
+
+<div class="job">
+  <div class="job__head"><span>Platanitos APPs, Peru</span><span class="job__dates">Mar 2019 - Dec 2021</span></div>
+  <p class="job__role">Full Stack Software Engineer</p>
+  <p class="job__note">Peru's leading fashion and footwear e-commerce platform, which later expanded regionally into Chile starting in 2024.</p>
+  <ul>
+    <li>Led the migration from a legacy web platform to React Native + Expo, shipping a single codebase across iOS, Android, and Huawei devices.</li>
+    <li>Delivered a cross-platform commerce app that surpassed 1 million downloads.</li>
+    <li>Implemented end-to-end shopping, payments, product search, push notifications, and authentication using Mercado Pago, Algolia, Firebase, and Firestore on Google Cloud Platform.</li>
+    <li>Mentored developers and owned release pipelines, establishing deployment standards across distributed teams.</li>
+    <li>Introduced reusable architecture patterns and standardized state management to improve long-term maintainability.</li>
+  </ul>
+</div>
+
+<div class="job">
+  <div class="job__head"><span>Gruppo GPI - NGH Healthcare System, Italy - Germany</span><span class="job__dates">Mar 2018 - Mar 2019</span></div>
+  <p class="job__role">Software Engineer</p>
+  <ul>
+    <li>Built medical reporting and annotation systems used across 3,000+ hospitals and clinics in Europe.</li>
+    <li>Designed reusable JavaScript and Java components to support enterprise healthcare workflows.</li>
+    <li>Implemented Jasper Reports and collaborated with cross-functional engineering teams across Europe to deliver reporting capabilities.</li>
+  </ul>
+</div>
+
+<h2>OPEN SOURCE</h2>
+<div class="job__head"><span><a href="https://www.npmjs.com/~binnizenobiocordovaleandro">npmjs.com/~binnizenobiocordovaleandro</a></span><span class="job__dates">MIT &middot; ~500 installs/month</span></div>
+<ul>
+  <li><span class="pkg">react-native-check-biometric-changed</span> - Detects when the device's biometric enrolment has changed on iOS and Android, so an app can revoke a session before a newly enrolled face or fingerprint inherits it. Zero runtime dependencies, autolinked, iOS 10+ / Android 23+.</li>
+  <li><span class="pkg">expo-feedback-ai</span> - In-app feature-request board for Expo apps whose most-voted ideas are picked up and built by an AI agent. No backend, API key, or configuration required; runs in Expo Go.</li>
+  <li><span class="pkg">iphone-duo-expo-rn</span> - Frosted-glass "fold" interaction driven by device motion, for any Expo app. TypeScript only, no native code; runs on iOS, Android, and web.</li>
+</ul>
+
+<h2>EDUCATION</h2>
+<p>Software Architecture Certification - University TECSUP, Apr 2025 - Nov 2025</p>
+<p>Bachelor's in Computer Science - Tech Institute Trentino Juan Pablo II, Mar 2013 - Dec 2015</p>
+
+<h2>ADDITIONAL INFORMATION</h2>
+<p>Languages: Spanish (Native), English (Advanced), Italian (Fluent), French (Basic), German (Basic)</p>
+
+</body>
+</html>
