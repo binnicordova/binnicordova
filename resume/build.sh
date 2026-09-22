@@ -45,6 +45,43 @@ if ! pdftotext "$TMP/resume.pdf" - | grep -q "binnizenobiocordovaleandro"; then
   exit 1
 fi
 
+# Typographic hygiene. Two separate problems, one gate:
+#
+#   - Em dashes, en dashes and curly quotes are the characters a word processor
+#     or a language model inserts on your behalf. On a resume they read as
+#     machine-written, and nothing in this document needs them - a colon, a
+#     comma, parentheses or a plain hyphen always says the same thing.
+#   - Zero-width spaces, non-breaking spaces, soft hyphens and a stray BOM are
+#     invisible on the page but land in the text layer, where an ATS tokenises
+#     them into the middle of a word and quietly mangles a keyword.
+#
+# Accented letters are NOT in this list and must never be: "Itau" and
+# "Tecnologico" are misspellings of a bank and a school.
+if ! pdftotext "$TMP/resume.pdf" - | python3 -c '
+import sys, unicodedata
+BAD = {0x2014:"em dash", 0x2013:"en dash", 0x2018:"curly quote",
+       0x2019:"curly quote", 0x201C:"curly double quote",
+       0x201D:"curly double quote", 0x2026:"ellipsis", 0x00B7:"middle dot",
+       0x2022:"bullet char", 0x2212:"minus sign", 0x00A0:"non-breaking space",
+       0x202F:"narrow no-break space", 0x00AD:"soft hyphen",
+       0x200B:"zero-width space", 0x200C:"zero-width non-joiner",
+       0x200D:"zero-width joiner", 0x2060:"word joiner", 0xFEFF:"byte-order mark",
+       0x200E:"left-to-right mark", 0x200F:"right-to-left mark"}
+text = sys.stdin.read()
+hits = {}
+for ch in text:
+    if ord(ch) in BAD:
+        hits[ch] = hits.get(ch, 0) + 1
+if hits:
+    for ch, n in sorted(hits.items(), key=lambda kv: -kv[1]):
+        line = next((l.strip() for l in text.splitlines() if ch in l), "")
+        print(f"  U+{ord(ch):04X} {BAD[ord(ch)]} x{n}: {line[:78]}", file=sys.stderr)
+    sys.exit(1)
+'; then
+  echo "refusing to ship: resume contains machine-inserted or invisible characters" >&2
+  exit 1
+fi
+
 cp "$TMP/resume.pdf" "$BUILD"
 cp "$TMP/resume.pdf" "$PUBLIC"
 

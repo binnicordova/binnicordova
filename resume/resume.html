@@ -19,6 +19,27 @@
 
   Build with ./build.sh. Keep it to two pages.
 
+  STRUCTURE: Harvard resume standard (Harvard OCS, experienced-professional
+  variant). The rules this document is held to, so edits do not drift out of
+  it:
+    - Section order: Summary, Experience, Education, Open Source, Skills.
+      Education sits BELOW experience because eight years of shipped work is
+      the stronger asset; the student-facing Harvard layout puts education
+      first, and swapping the two <section> blocks is all that takes.
+    - Two-line entry heading: organisation and location on the first line,
+      title and dates on the second. Organisation bold, title italic.
+    - EVERY role carries an italic descriptor line under its heading, naming
+      the product and the conditions it ran under. That line holds the scale
+      and the constraint; the bullets underneath hold what was done about
+      them. Context does not belong in a bullet - a bullet that opens by
+      explaining the product is spending its verb on the wrong thing.
+    - Every bullet opens with an action verb - present tense for the current
+      role, past tense for prior roles - and carries a result, not a duty.
+      No first-person pronouns, no "responsible for", no bullet over two
+      lines.
+    - Numbers are load-bearing and every one of them is real. Do not add a
+      metric that is not already true somewhere in this repository.
+
   NOTE: the install figure under OPEN SOURCE is a point-in-time number. It was
   ~509 installs across the three packages in the 30 days to 2026-09-19. Refresh
   it when you re-export:
@@ -73,23 +94,26 @@
   /* --- experience ------------------------------------------------------- */
 
   .job { margin-top: 8pt; }
-  .job__head {
+  /* Harvard's two-line entry heading. Both rows hang off the same right tab
+     so organisation/location and title/dates stack cleanly.
+
+     The tab does not run to the right margin. The exported document lands it
+     at 522pt - 6.5in from the page edge, the leftover of a 1in-margin
+     template - which is 36pt short of this 54pt margin. Reproduced rather
+     than tidied up: this is how the document a recruiter may already have on
+     file is set. */
+  .job__head, .job__sub {
     display: flex;
     justify-content: space-between;
     align-items: baseline;
-    font-weight: bold;
-    /* The dates do not run to the right margin. The exported document lands
-       them on a right tab at 522pt - 6.5in from the page edge, the leftover
-       of a 1in-margin template - which is 36pt short of this 54pt margin.
-       Reproduced rather than tidied up: this is how the document a recruiter
-       may already have on file is set. */
     padding-right: 36pt;
   }
-  /* Regular weight, like the original. Only the employer is bold. */
-  .job__dates { font-weight: normal; white-space: nowrap; }
+  .job__head { font-weight: bold; }
+  /* Regular weight on the right-hand tab, like the original. */
+  .job__loc, .job__dates { font-weight: normal; white-space: nowrap; }
   /* The original embeds LiberationSerif-Italic for exactly two things: the
      job title under each employer, and the one line describing Platanitos. */
-  .job__role { margin: 0; font-style: italic; }
+  .job__role { font-style: italic; }
   .job__note { margin: 3pt 0 0; font-style: italic; }
 
   ul {
@@ -124,6 +148,14 @@
 
   .pkg { font-weight: bold; }
 
+  /* Orphan control only. A heading or an employer line may never be the last
+     thing on a page, and a bullet may not be split down the middle - but a
+     long role MUST be allowed to break across the page boundary. Banning that
+     too pushes the whole block to the next page and costs a page. */
+  h2 { break-after: avoid; page-break-after: avoid; }
+  .job__head, .job__sub { break-after: avoid; page-break-after: avoid; }
+  li { break-inside: avoid; page-break-inside: avoid; }
+
   /* The exported document carries live link annotations on its URLs and
      underlines them. Anchors reproduce both, and keep the PDF clickable. */
   a { color: #000; text-decoration: underline; }
@@ -132,100 +164,107 @@
 <body>
 
 <h1>Binni Cordova</h1>
-<p class="contact">Senior Forward Deployed Engineer | Relocating to Canada | +51 971 581 847 | <a href="https://binnicordova.com/">binnicordova.com</a> | <a href="https://github.com/binnicordova">github.com/binnicordova</a> | <a href="https://www.linkedin.com/in/binnicordova">linkedin.com/in/binnicordova</a></p>
+<p class="contact">Senior Forward Deployed Engineer | Senior Software Engineer</p>
+<p class="contact">Lima, Peru (relocating to Canada) | +51 971 581 847 | <a href="mailto:binni.2000.cordova@gmail.com">binni.2000.cordova@gmail.com</a></p>
+<p class="contact"><a href="https://binnicordova.com/">binnicordova.com</a> | <a href="https://www.linkedin.com/in/binnicordova">linkedin.com/in/binnicordova</a> | <a href="https://github.com/binnicordova">github.com/binnicordova</a></p>
 
 <h2>SUMMARY OF QUALIFICATIONS</h2>
-<p>Senior software engineer with 8+ years shipping and maintaining production software across five industries&mdash;healthcare, e-commerce, banking, streaming media, and consumer-goods field sales&mdash;and five countries. Every product delivered has been multinational and multilingual (Spanish, Portuguese, English, French), including secure banking workflows for 100,000+ users and a field-deployed B2B ordering platform on AWS and Node.js carrying 1,350,000+ orders a month on unreliable connections. Ships fast: thirteen self-built app products went from empty repository to public release in under 90 days each. Specialized in AI-native engineering: uses Claude Code, Codex, and Cursor daily to diagnose issues across front-end and back-end services, automates multi-environment AWS pull-request workflows, and configures and supervises a multi-agent AI system built on LangGraph and the Claude Agent SDK for ticket triage and resolution. Publishes MIT-licensed React Native and Expo packages on npm, installed roughly 500 times per month. Native iOS (Swift) and Android (Kotlin/Java) modules for biometrics, encrypted storage, and hardware integrations.</p>
-
-<h2>SKILLS</h2>
-<p><b>Mobile:</b> React Native, Expo (Managed &amp; Bare), TypeScript, JavaScript, Swift, Kotlin/Java, Native Modules, React Native New Architecture (JSI, TurboModules, Fabric), WatermelonDB, Offline-First Architecture</p>
-<p><b>AI Tools &amp; Agent Frameworks:</b> Claude Code, Codex/Codex CLI, Cursor, LangGraph, Claude Agent SDK, multi-agent orchestration, AI-assisted diagnostics, prompt engineering, Spec-Driven Development, LLM integration, On-Device AI (TensorFlow Lite)</p>
-<p><b>Cloud &amp; Backend:</b> AWS Serverless Microservices (multi-account/multi-environment): Lambda (JavaScript &amp; Python), API Gateway (REST &amp; GraphQL), DynamoDB, S3, SNS, SQS, Cognito, KMS, CloudWatch, CloudSearch, Amplify; Event-Driven Architecture, Backend-for-Frontend, Node.js, Google Cloud Platform (Firestore), Firebase, WebSockets, SQL</p>
-<p><b>CI/CD &amp; Tooling:</b> GitHub Actions, EAS, Bitrise, Jenkins, Docker, Kubernetes, pnpm/Turborepo (monorepo), OTA Updates/CodePush, JIRA</p>
-<p><b>Open Source:</b> npm Package Authoring &amp; Publishing, Semantic Versioning, Autolinked iOS/Android Native Modules, Expo Go Compatible Libraries</p>
-<p><b>Testing &amp; Observability:</b> Jest, Appium, Detox, Datadog, New Relic</p>
-<p><b>Security &amp; Testing:</b> Secure Storage (Keychain/Keystore), Biometrics, SSL Pinning</p>
-<p><b>State Management:</b> Redux, Zustand, Jotai, Recoil</p>
+<ul>
+  <li>Eight years architecting, shipping, and maintaining production software across five industries (healthcare, e-commerce, banking, streaming media, and consumer-goods field sales) and five countries.</li>
+  <li>Delivers multinational, multilingual platforms end to end; every product shipped has run in two or more of Spanish, Portuguese, English, and French across Latin America, the United States, and Europe.</li>
+  <li>Operates at field scale under real constraints: a B2B ordering platform on AWS and Node.js carrying 1,350,000+ orders a month for 1,500+ sellers on unreliable connections, and secure banking workflows for 100,000+ users.</li>
+  <li>Ships alone, end to end, and fast: thirteen self-published cross-platform products on iOS, Android, and web, each taken from empty repository to public release solo in under 90 days.</li>
+  <li>Practices AI-native engineering: configures and supervises a LangGraph and Claude Agent SDK multi-agent system in production, and publishes MIT-licensed React Native and Expo packages installed ~500 times a month on npm.</li>
+</ul>
 
 <h2>PROFESSIONAL EXPERIENCE</h2>
 
 <div class="job">
-  <div class="job__head"><span>The Coca-Cola Company, USA</span><span class="job__dates">Apr 2025 - Present</span></div>
-  <p class="job__role">Senior Full Stack Software Engineer</p>
-  <p class="job__note">miMarket, a B2B field-sales platform: 1,500+ sellers across Peru, Chile, Argentina, Paraguay, and Brazil place 1,350,000+ orders a month to Coca-Cola clients, on unreliable connections and in three languages (Spanish, Portuguese, English).</p>
+  <div class="job__head"><span>The Coca-Cola Company</span><span class="job__loc">USA</span></div>
+  <div class="job__sub"><span class="job__role">Senior Full Stack Software Engineer</span><span class="job__dates">Apr 2025 - Present</span></div>
+  <p class="job__note">miMarket, a B2B field-sales platform: 1,500+ sellers across Peru, Chile, Argentina, Paraguay, and Brazil place 1,350,000+ orders a month to Coca-Cola clients, on unreliable connections and in three languages.</p>
   <ul>
-    <li>Use Claude Code, Codex, and Cursor daily to diagnose issues across front-end and back-end services, combining AI-assisted analysis with product knowledge to identify solutions before implementation.</li>
-    <li>Configured and operate a multi-agent AI system (Multica.ai) built on LangGraph and the Claude Agent SDK that picks up and works front-end and back-end tickets; review and validate all changes as the accountable engineer.</li>
-    <li>Automated pull-request creation across multi-environment, multi-account AWS microservices, cutting manual release overhead.</li>
-    <li>Architected the marketplace platform as serverless microservices on AWS&mdash;Lambda in JavaScript and Python behind API Gateway, with DynamoDB, S3, SNS/SQS for event-driven decoupling, Cognito, KMS, and CloudWatch&mdash;plus a Backend-for-Frontend layer and Dockerized services, sharpening service boundaries and speeding up feature delivery.</li>
-    <li>Built native iOS (Swift) and Android (Kotlin/Java) modules for biometrics, encrypted storage, and hardware integrations beyond the JavaScript bridge.</li>
-    <li>Redesigned the React Native platform into an offline-first architecture using WatermelonDB for local persistence and conflict resolution, improving reliability in low-connectivity environments.</li>
-    <li>Mentor engineers, lead architecture reviews, and work directly with Product, Design, QA, and Executive stakeholders to maintain release quality.</li>
+    <li>Architect the platform as event-driven serverless microservices on AWS, using Lambda (JavaScript and Python), API Gateway, DynamoDB, S3, SNS/SQS, Cognito, and KMS behind a Backend-for-Frontend layer, sharpening service boundaries and speeding feature delivery.</li>
+    <li>Redesigned the React Native platform into an offline-first architecture on WatermelonDB, sustaining order capture and conflict resolution for 1,500+ sellers working where connectivity drops.</li>
+    <li>Configure and operate a multi-agent AI system (Multica.ai) on LangGraph and the Claude Agent SDK that picks up and resolves front-end and back-end tickets, reviewing and signing off every change as the accountable engineer.</li>
+    <li>Automated pull-request creation across multi-environment, multi-account AWS microservices, removing manual release overhead from every deployment.</li>
+    <li>Build native iOS (Swift) and Android (Kotlin/Java) modules for biometrics, encrypted storage, and hardware integrations beyond the JavaScript bridge.</li>
+    <li>Mentor engineers, lead architecture reviews, and partner with Product, Design, QA, and executive stakeholders to hold release quality across five markets.</li>
   </ul>
 </div>
 
 <div class="job">
-  <div class="job__head"><span>NFL+ CTV, USA</span><span class="job__dates">Feb 2024 - Mar 2025</span></div>
-  <p class="job__role">Senior Software Engineer</p>
+  <div class="job__head"><span>NFL+ CTV</span><span class="job__loc">USA</span></div>
+  <div class="job__sub"><span class="job__role">Senior Software Engineer</span><span class="job__dates">Feb 2024 - Mar 2025</span></div>
+  <p class="job__note">NFL+, the league's streaming service: one React Native and TheoPlayer video player delivered to millions of viewers across mobile, web, and smart TVs, in English, Spanish, and French.</p>
   <ul>
-    <li>Improved playback controls, performance, cross-platform compatibility, and stability of a React Native + TheoPlayer video player used across mobile, web, and smart TVs by millions of viewers internationally, shipped in English, Spanish, and French.</li>
-    <li>Refactored state management from deprecated Recoil to Jotai across the player codebase.</li>
-    <li>Helped migrate legacy React Native CLI native modules to Expo-compatible modules within a Turborepo monorepo, simplifying the build and native dependency pipeline.</li>
-    <li>Optimized rendering pipelines and asset loading, cutting startup time and memory consumption.</li>
-    
-    <li>Used Datadog to profile rendering bottlenecks and reduced unnecessary JavaScript-to-native bridge communication to improve performance.</li>
+    <li>Improved playback controls, performance, cross-platform compatibility, and stability across every device target.</li>
+    <li>Profiled rendering bottlenecks with Datadog, then optimized rendering pipelines, asset loading, and JavaScript-to-native bridge traffic to cut startup time and memory consumption.</li>
+    <li>Refactored state management from deprecated Recoil to Jotai across the player codebase, retiring an unmaintained dependency from a live streaming product.</li>
+    <li>Migrated legacy React Native CLI native modules to Expo-compatible modules inside a Turborepo monorepo, simplifying the build and native dependency pipeline.</li>
   </ul>
 </div>
 
 <div class="job">
-  <div class="job__head"><span>Itau Bank - ITU App, Chile</span><span class="job__dates">Dec 2021 - Feb 2024</span></div>
-  <p class="job__role">Software Engineer</p>
+  <div class="job__head"><span>Ita&uacute; Bank - ITU App</span><span class="job__loc">Chile</span></div>
+  <div class="job__sub"><span class="job__role">Software Engineer</span><span class="job__dates">Dec 2021 - Feb 2024</span></div>
+  <p class="job__note">ITU, Ita&uacute;'s digital current-account app: a transaction-critical mobile banking platform serving 100,000+ users in Spanish and Portuguese across the bank's Latin American footprint.</p>
   <ul>
-    <li>Built biometric authentication and encrypted financial transaction workflows for a mobile banking app serving 100,000+ users, shipped in Spanish and Portuguese across Ita&uacute;'s Latin American footprint.</li>
-    <li>Maintained 90%+ automated test coverage using Jest, Detox, and Appium across unit, integration, and end-to-end tests on a transaction-critical SQL-backed codebase, tracked through JIRA.</li>
-    <li>Strengthened CI/CD pipelines with Bitrise and Jenkins to reduce deployment risk and improve release consistency.</li>
+    <li>Engineered biometric authentication and encrypted financial transaction workflows at the app's security layer.</li>
+    <li>Sustained 90%+ automated test coverage with Jest, Detox, and Appium across unit, integration, and end-to-end suites on the SQL-backed codebase, tracked through JIRA.</li>
     <li>Developed reusable Swift and Kotlin/Java native modules for authentication, secure storage, and core banking features.</li>
-    
+    <li>Strengthened Bitrise and Jenkins CI/CD pipelines, reducing deployment risk and improving release consistency.</li>
   </ul>
 </div>
 
 <div class="job">
-  <div class="job__head"><span>Platanitos APPs, Peru</span><span class="job__dates">Mar 2019 - Dec 2021</span></div>
-  <p class="job__role">Full Stack Software Engineer</p>
-  <p class="job__note">Peru's leading fashion and footwear e-commerce platform, trading across more than one Latin American market.</p>
+  <div class="job__head"><span>Platanitos APPs</span><span class="job__loc">Peru</span></div>
+  <div class="job__sub"><span class="job__role">Full Stack Software Engineer</span><span class="job__dates">Mar 2019 - Dec 2021</span></div>
+  <p class="job__note">Platanitos, Peru's leading fashion and footwear e-commerce platform, trading across more than one Latin American market.</p>
   <ul>
-    <li>Led the migration from a legacy web platform to React Native + Expo, shipping a single codebase across iOS, Android, and Huawei devices.</li>
-    <li>Delivered a cross-platform commerce app that surpassed 1 million downloads.</li>
-    <li>Implemented end-to-end shopping, payments, product search, push notifications, and authentication using Mercado Pago, Algolia, Firebase, and Firestore on Google Cloud Platform.</li>
-    
-    
+    <li>Led the migration from a legacy web platform to React Native and Expo, shipping a single codebase to iOS, Android, and Huawei devices.</li>
+    <li>Delivered a cross-platform commerce application that surpassed 1,000,000 downloads.</li>
+    <li>Implemented end-to-end shopping, payments, product search, push notifications, and authentication with Mercado Pago, Algolia, Firebase, and Firestore on Google Cloud Platform.</li>
   </ul>
 </div>
 
 <div class="job">
-  <div class="job__head"><span>Gruppo GPI - NGH Healthcare System, Italy - Germany</span><span class="job__dates">Mar 2018 - Mar 2019</span></div>
-  <p class="job__role">Software Engineer</p>
+  <div class="job__head"><span>Gruppo GPI - NGH Healthcare System</span><span class="job__loc">Italy / Germany</span></div>
+  <div class="job__sub"><span class="job__role">Software Engineer</span><span class="job__dates">Mar 2018 - Mar 2019</span></div>
+  <p class="job__note">NGH, a healthcare information system: medical reporting and annotation deployed across 3,000+ hospitals and clinics in Europe.</p>
   <ul>
-    <li>Built medical reporting and annotation systems used across 3,000+ hospitals and clinics in Europe.</li>
-    <li>Designed reusable JavaScript and Java components to support enterprise healthcare workflows.</li>
-    <li>Implemented Jasper Reports and collaborated with cross-functional engineering teams across Europe to deliver reporting capabilities.</li>
+    <li>Built medical reporting and annotation systems for clinical documentation and review.</li>
+    <li>Implemented Jasper Reports document generation, collaborating with cross-functional engineering teams in Italy and Germany.</li>
   </ul>
 </div>
 
-<h2>OPEN SOURCE</h2>
-<div class="job__head"><span><a href="https://www.npmjs.com/~binnizenobiocordovaleandro">npmjs.com/~binnizenobiocordovaleandro</a></span><span class="job__dates">MIT &middot; ~500 installs/month</span></div>
+<h2>EDUCATION</h2>
+<div class="job__head"><span>TECSUP</span><span class="job__loc">Peru</span></div>
+<div class="job__sub"><span class="job__role">Certification, Software Architecture</span><span class="job__dates">Apr 2025 - Nov 2025</span></div>
+<div class="job" style="margin-top:6pt">
+  <div class="job__head"><span>Instituto Tecnol&oacute;gico Trentino Juan Pablo II</span><span class="job__loc">Peru</span></div>
+  <div class="job__sub"><span class="job__role">Bachelor's Degree, Computer Science</span><span class="job__dates">Mar 2013 - Dec 2015</span></div>
+</div>
+
+<h2>INDEPENDENT PRODUCTS &amp; OPEN SOURCE</h2>
+<div class="job__head"><span><a href="https://play.google.com/store/apps/developer?id=BinniCordova.com">play.google.com/store/apps/developer?id=BinniCordova.com</a></span><span class="job__dates">13 apps, 1,000+ installs/month</span></div>
+<p class="job__note">Thirteen cross-platform products on React Native and Expo (SDK 57+), each designed, built, submitted, and launched alone: one codebase to iOS, Android, and in several cases the web. Several ship AI features.</p>
+<div class="job" style="margin-top:6pt">
+<div class="job__head"><span><a href="https://www.npmjs.com/~binnizenobiocordovaleandro">npmjs.com/~binnizenobiocordovaleandro</a></span><span class="job__dates">MIT, ~500 installs/month</span></div>
 <ul>
-  <li><span class="pkg">react-native-check-biometric-changed</span> - Detects when the device's biometric enrolment has changed on iOS and Android, so an app can revoke a session before a newly enrolled face or fingerprint inherits it. Zero runtime dependencies, autolinked, iOS 10+ / Android 23+.</li>
+  <li><span class="pkg">react-native-check-biometric-changed</span> - Detects when a device's biometric enrolment has changed on iOS and Android, letting an app revoke a session before a newly enrolled face or fingerprint inherits it. Zero runtime dependencies; past 1,000 installs.</li>
   <li><span class="pkg">expo-feedback-ai</span> - In-app feature-request board for Expo apps whose most-voted ideas are picked up and built by an AI agent. No backend, API key, or configuration required; runs in Expo Go.</li>
   <li><span class="pkg">iphone-duo-expo-rn</span> - Frosted-glass "fold" interaction driven by device motion, for any Expo app. TypeScript only, no native code; runs on iOS, Android, and web.</li>
 </ul>
+</div>
 
-<h2>EDUCATION</h2>
-<p>Software Architecture Certification - University TECSUP, Apr 2025 - Nov 2025</p>
-<p>Bachelor's in Computer Science - Tech Institute Trentino Juan Pablo II, Mar 2013 - Dec 2015</p>
-
-<h2>ADDITIONAL INFORMATION</h2>
-<p>Languages: Spanish (Native), English (Advanced), Italian (Fluent), French (Basic), German (Basic)</p>
+<h2>SKILLS</h2>
+<p><b>Languages &amp; Mobile:</b> TypeScript, JavaScript, Swift, Kotlin/Java, Python, SQL; React Native, Expo (Managed &amp; Bare), Native Modules, React Native New Architecture (JSI, TurboModules, Fabric), WatermelonDB, Offline-First Architecture; Redux, Zustand, Jotai, Recoil</p>
+<p><b>AI &amp; Agent Frameworks:</b> Claude Code, Claude Agent SDK, LangGraph, Codex/Codex CLI, Cursor, multi-agent orchestration, AI-assisted diagnostics, prompt engineering, Spec-Driven Development, LLM integration, On-Device AI (TensorFlow Lite)</p>
+<p><b>Cloud &amp; Backend:</b> AWS Serverless Microservices (multi-account/multi-environment): Lambda (JavaScript &amp; Python), API Gateway (REST &amp; GraphQL), DynamoDB, S3, SNS, SQS, Cognito, KMS, CloudWatch, CloudSearch, Amplify; Event-Driven Architecture, Backend-for-Frontend, Node.js, Google Cloud Platform (Firestore), Firebase, WebSockets</p>
+<p><b>CI/CD &amp; Tooling:</b> GitHub Actions, EAS, Bitrise, Jenkins, Docker, Kubernetes, pnpm/Turborepo (monorepo), OTA Updates/CodePush, JIRA; npm package authoring, semantic versioning</p>
+<p><b>Testing, Security &amp; Observability:</b> Jest, Detox, Appium, Datadog, New Relic; Secure Storage (Keychain/Keystore), Biometrics, SSL Pinning</p>
+<p><b>Languages Spoken:</b> Spanish (Native), English (Advanced), Italian (Fluent), French (Basic), German (Basic)</p>
 
 </body>
 </html>
