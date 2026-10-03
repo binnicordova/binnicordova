@@ -161,14 +161,14 @@ it is not on the résumé, and nothing goes on this page he has not claimed.
 A grid of 35 icons is what every junior portfolio does and it argues nothing.
 The marks are placed where they carry weight instead:
 
-- **The hero.** Four named marks under the opening claim. AI is the first
-  thing on the page, not a footnote at 10vh.
+- **The hero.** Three named marks under the opening claim (Claude Agent SDK,
+  Claude Code, TensorFlow Lite). AI is the first thing on the page, not a
+  footnote at 10vh.
 - **The agent layer.** The delamination pulls six planes out from UNDER the
   interface. This one arrives in FRONT of it, same footprint, offset the
-  opposite way, carrying Claude, Codex, Cursor, LangGraph and TensorFlow Lite
-  with their names. That is where agents sit: on top of the whole stack,
-  working it.
-- **The tools list**, beside the Agents copy: five marks, each tied to one
+  opposite way, carrying Claude and TensorFlow Lite with their names. That is
+  where agents sit: on top of the whole stack, working it.
+- **The tools list**, beside the Agents copy: two marks, each tied to one
   line of the résumé rather than to a category.
 - **The toolkit, as the ground the last act stands on.** Eighteen named marks
   around the frame, up with the field at Own work and **holding through

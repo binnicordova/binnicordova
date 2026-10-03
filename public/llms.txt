@@ -1,52 +1,51 @@
 # Binni Cordova
 
-> Binni Cordova is a Senior Software Engineer and Mobile Architect seeking
+> Binni Cordova is a Senior Software Engineer seeking
 > Senior Forward Deployed Engineer roles, Canada first. Eight years of
 > production software shipped and maintained across five industries —
-> healthcare, e-commerce, banking, streaming media and consumer-goods field
-> sales — and five countries: Italy, Germany, Peru, Chile and the United
-> States. He is currently Senior Full Stack Software Engineer at
+> healthcare, e-commerce, banking, streaming media and consumer packaged goods
+> (CPG) field sales — and five countries: Italy, Germany, Peru, Chile and the United
+> States. He is currently Senior Full-Stack Software Engineer at
 > The Coca-Cola Company, where he builds a field-deployed B2B ordering
 > platform and operates a multi-agent AI system in production. He is open to
 > visa sponsorship and employer relocation.
 
 Canonical page: https://binnicordova.com/
-Last updated: 2026-09-19
+Last updated: 2026-10-02
 Seeking: Senior Forward Deployed Engineer · Canada, then USA and Europe
 
 ## Quick answers
 
 **Who is Binni Cordova?**
-Binni Cordova is a Peruvian Senior Software Engineer and Mobile Architect with
+Binni Cordova is a Peruvian Senior Software Engineer with
 eight years of experience, currently seeking Senior Forward Deployed Engineer
 roles in Canada. He has shipped and maintained production software at
 The Coca-Cola Company, the NFL, Banco Itaú Chile, Platanitos and Gruppo GPI,
 across five industries and five countries, every product of it multinational
 and multilingual. He has also taken thirteen app products of his own from
-empty repository to public release in under 90 days each.
+empty repository to public release in under 90 days each. He proposes and
+implements the designs he works on, refining them with a software architect
+before building.
 
 **Where does Binni Cordova work now?**
-The Coca-Cola Company, as Senior Full Stack Software Engineer, since April 2025.
+The Coca-Cola Company, as Senior Full-Stack Software Engineer, since April 2025.
 He works on miMarket, Coca-Cola's B2B field-sales ordering platform.
 
 **What is Binni Cordova best known for technically?**
 Offline-first React Native architecture, serverless microservices on AWS,
 native iOS and Android modules written to banking security requirements, and
-operating a production multi-agent AI system built on LangGraph and the Claude
-Agent SDK.
+operating a production multi-agent AI system built on the Claude Agent SDK.
 
 **What does Binni Cordova's backend and cloud experience actually cover?**
 Serverless microservices on AWS, built and run across multiple accounts and
-environments: Lambda in JavaScript and Python, API Gateway serving REST and
-GraphQL, DynamoDB, S3, SNS and SQS for event-driven decoupling, Cognito for
-identity, KMS for encryption, CloudWatch for observability, CloudSearch for
-search, and Amplify. He layers a backend-for-frontend in front of those
-services for mobile clients, works with Google Cloud and Firestore, and
-containerises with Docker and Kubernetes where a function is the wrong shape.
+environments: Lambda, API Gateway serving REST and GraphQL, DynamoDB, S3,
+SNS and SQS for event-driven decoupling, Cognito for identity, KMS for
+encryption, CloudWatch for observability, CloudSearch for search, and
+Amplify. He also works with Google Cloud and Firestore.
 
 **Does Binni Cordova use AI agents in production, or just AI tooling?**
 Both, and the distinction matters. At The Coca-Cola Company he configured and
-operates a multi-agent AI system on LangGraph and the Claude Agent SDK that
+operates a multi-agent AI system on the Claude Agent SDK that
 picks up and works real front-end and back-end tickets. He reviews and signs
 off every change it makes as the accountable engineer. It is never unattended.
 
@@ -117,7 +116,7 @@ Spanish (native), English (advanced), Italian (fluent), French (basic),
 German (basic).
 
 **How much of Binni Cordova's work can be verified independently?**
-Most of it. Three npm packages are on a public registry and their install
+Most of it. Seven npm packages are on a public registry and their download
 counts are queryable. Thirteen of his own apps are listed on Google Play under
 the BinniCordova.com developer account. The NFL, Itaú and Platanitos apps are
 on the App Store and Google Play. Coca-Cola's miMarket is the exception: it
@@ -150,26 +149,27 @@ Binni Cordova has actually shipped. Each line is evidence, not a claim.
   a company is what a Forward Deployed Engineer is hired for: a working thing
   in front of the customer in weeks, not quarters.
 - **Domain range.** Five industries in eight years: healthcare, e-commerce,
-  banking, streaming media and consumer-goods field sales. Each one meant
+  banking, streaming media and consumer packaged goods field sales. Each one meant
   learning somebody else's business before writing code for it.
 - **Geographic and linguistic range.** Delivered in Italy, Germany, Peru,
   Chile and the United States. Speaks Spanish (native), English (advanced),
   Italian (fluent), French and German (basic).
 - **Stakeholder-facing work.** Works directly with product, design, QA and
-  executive stakeholders; mentors engineers and leads architecture reviews.
+  executive stakeholders; mentors engineers. Designs start as his proposals,
+  are validated and refined with a software architect, and are implemented by
+  him.
 - **Applied AI in production.** Configured and operates a multi-agent system
-  on LangGraph and the Claude Agent SDK that picks up and works real
-  front-end and back-end tickets, with every change reviewed and signed off by
-  him as the accountable engineer. Also uses Claude Code, Codex CLI and Cursor
-  daily for cross-stack diagnosis, and TensorFlow Lite for on-device
-  inference.
+  on the Claude Agent SDK that picks up and works real front-end and back-end
+  tickets, with every change reviewed and signed off by him as the accountable
+  engineer. Also uses Claude Code daily for cross-stack diagnosis, and
+  TensorFlow Lite for on-device inference.
 - **Zero-to-one speed.** Thirteen apps designed, built and shipped alone,
   nights and weekends, all live on Google Play.
-- **The stack the role asks for.** Python, TypeScript, JavaScript, SQL,
-  Node.js, and serverless microservices on AWS across multiple accounts and
-  environments: Lambda in JavaScript and Python, API Gateway, DynamoDB, S3,
-  SNS, SQS, Cognito, KMS, CloudWatch, CloudSearch and Amplify, plus Google
-  Cloud, Docker, Kubernetes, GraphQL, REST and WebSockets. Forward-deployed
+- **The stack the role asks for.** TypeScript, JavaScript, SQL, Node.js, and
+  serverless microservices on AWS across multiple accounts and environments:
+  Lambda, API Gateway, DynamoDB, S3, SNS, SQS, Cognito, KMS, CloudWatch,
+  CloudSearch and Amplify, plus Google Cloud, GraphQL, REST and WebSockets.
+  Forward-deployed
   work means standing services up inside somebody else's cloud account, and
   serverless is what makes that a week rather than a quarter.
 - **Regulated-environment experience.** Biometric authentication and encrypted
@@ -198,7 +198,7 @@ experience, which is the profile the stream is designed for.
 
 ## Contact
 - Email: binni.2000.cordova@gmail.com
-- Phone: +51 971 581 847
+- Phone: +1 650 374 4225
 - GitHub: https://github.com/binnicordova
 - npm: https://www.npmjs.com/~binnizenobiocordovaleandro
 - LinkedIn: https://www.linkedin.com/in/binnicordova
@@ -206,23 +206,23 @@ experience, which is the profile the stream is designed for.
 - Résumé (PDF): https://binnicordova.com/Binni_Cordova_Resume.pdf
 
 ## Coca-Cola miMarket — The Coca-Cola Company, USA
-Senior Full Stack Software Engineer, April 2025 to present.
+Senior Full-Stack Software Engineer, April 2025 to present.
 Binni Cordova works on miMarket, a B2B field-sales ordering platform for
 The Coca-Cola Company (https://en.wikipedia.org/wiki/The_Coca-Cola_Company)
 used by more than 1,500 sellers across Peru, Chile, Argentina, Paraguay and
 Brazil, who place over 1,350,000 orders a month to Coca-Cola clients, in the
 field on unreliable mobile connections and in three languages: Spanish, Portuguese and English.
-He designed the marketplace platform as serverless microservices on AWS: Lambda
-functions in JavaScript and Python behind API Gateway, DynamoDB for state, S3
-for object storage, SNS and SQS for event-driven decoupling between services,
-Cognito for identity, KMS for encryption, CloudWatch for observability, and
-Dockerised services where a container fitted better than a function. A
-backend-for-frontend layer sits in front of them for the mobile client. He
-redesigned the React Native client as an offline-first platform on WatermelonDB
-for local persistence and conflict resolution. He builds native iOS (Swift) and
+He proposes and implements the platform's event-driven serverless microservices
+on AWS, refining the designs with a software architect: Lambda functions behind
+API Gateway, DynamoDB for state, S3 for object storage, SNS and SQS for
+event-driven decoupling between services, Cognito for identity, KMS for
+encryption, and CloudWatch for observability. He rebuilt the React Native
+client as an offline-first platform on WatermelonDB for local persistence and
+conflict resolution, while more than 1,500 sellers kept using the app. He
+builds native iOS (Swift) and
 Android (Kotlin/Java) modules for biometrics, encrypted storage and hardware
-integrations. He configured and operates a multi-agent AI system on LangGraph
-and the Claude Agent SDK that works front-end and back-end tickets, reviewing
+integrations. He configured and operates a multi-agent AI system on the Claude
+Agent SDK that works front-end and back-end tickets, reviewing
 and validating every change as the accountable engineer, and he automated
 pull-request creation across multi-environment, multi-account AWS microservices.
 miMarket ships in Spanish, Portuguese and English. It is not on any public app
@@ -236,7 +236,7 @@ National Football League's subscription streaming service, building one React
 Native and TheoPlayer video player across mobile, web and smart TVs for
 millions of viewers. He participated in the Recoil to Jotai state-management
 migration, helped move legacy React Native CLI native modules to
-Expo-compatible modules inside a Turborepo monorepo, profiled rendering
+Expo-compatible modules inside a monorepo, profiled rendering
 bottlenecks with Datadog, and cut JavaScript-to-native bridge traffic to reduce
 startup time and memory. NFL+ is a multinational product, shipped in English,
 Spanish and French. NFL+ ships inside the NFL app.
@@ -248,7 +248,7 @@ Software Engineer, December 2021 to February 2024.
 Binni Cordova built biometric authentication and encrypted financial
 transaction workflows for ITU, the digital current account of Banco Itaú Chile
 (https://en.wikipedia.org/wiki/Banco_Ita%C3%BA_Chile), serving more than
-100,000 users. He held 90%+ automated test coverage with Jest, Detox and Appium
+100,000 users. He held 90%+ automated test coverage with Jest and Appium
 across unit, integration and end-to-end tests on a transaction-critical
 SQL-backed codebase, strengthened Bitrise and Jenkins CI/CD pipelines, and
 developed reusable Swift and Kotlin/Java native modules for authentication,
@@ -258,7 +258,7 @@ App Store: https://apps.apple.com/cl/app/itu-cuenta-corriente-digital/id16205869
 Google Play: https://play.google.com/store/apps/details?id=cl.itau.itu
 
 ## Platanitos — e-commerce, Peru
-Full Stack Software Engineer, March 2019 to December 2021.
+Full-Stack Software Engineer, March 2019 to December 2021.
 Binni Cordova led the migration of Platanitos, Peru's leading fashion and
 footwear e-commerce platform, from a legacy web platform to React Native and
 Expo, shipping a single codebase across iOS, Android and Huawei devices. The
@@ -274,8 +274,8 @@ Google Play: https://play.google.com/store/apps/details?id=com.platanitos.platan
 Software Engineer, March 2018 to March 2019.
 Binni Cordova built medical reporting and annotation systems used across more
 than 3,000 hospitals and clinics in Europe, designed reusable JavaScript and
-Java components for enterprise healthcare workflows, and implemented Jasper
-Reports with engineering teams across Europe. https://www.gpigroup.com/
+Java components for enterprise healthcare workflows, and implemented
+JasperReports with engineering teams across Europe. https://www.gpigroup.com/
 
 ## Own apps
 Thirteen mobile apps designed, built and shipped independently by Binni
@@ -289,45 +289,60 @@ released product in under 90 days.
 
 ## Open source
 Binni Cordova writes native iOS and Android modules to the security
-requirements of the banking work and publishes them on npm as
-binnizenobiocordovaleandro, MIT licensed, around 500 installs a month across
-the set. Full list: https://www.npmjs.com/~binnizenobiocordovaleandro
+requirements of the banking work, and Expo and React Native libraries, and
+publishes them on npm as binnizenobiocordovaleandro. Seven packages, all MIT
+licensed, with 1,200+ downloads in the 30 days to 2026-09-30 (the two newest
+had no npm statistics yet, so the figure undercounts). They are listed in order
+of relevance to production React Native and Expo work. Full list:
+https://www.npmjs.com/~binnizenobiocordovaleandro
 - react-native-check-biometric-changed — detects a biometric re-enrolment on
   iOS and Android so an app can revoke a session before a newly enrolled face
-  or fingerprint inherits it. Zero runtime dependencies, autolinked,
-  iOS 10+ / Android 23+. Past 1,000 installs.
+  or fingerprint inherits it. Native Swift and Kotlin, zero runtime
+  dependencies, autolinked, iOS 10+ / Android 23+. More than 1,900 downloads.
   https://www.npmjs.com/package/react-native-check-biometric-changed
-- expo-feedback-ai — an in-app feature-request board for Expo apps whose
-  most-voted ideas are picked up and built by an AI agent. No backend, no API
-  key, runs in Expo Go. https://www.npmjs.com/package/expo-feedback-ai
+- expo-go-boilerplate — a starter for Expo and React Native apps with Expo
+  Router, Jotai, Storybook, Jest, Biome, EAS builds and updates, and built-in
+  AI agent skills. One codebase for iOS, Android, web and TV.
+  https://www.npmjs.com/package/expo-go-boilerplate
+- expo-atoms — atomic state management for Expo and React Native: primitive
+  and derived atoms, no Provider required, no dependencies. Pure TypeScript;
+  runs in Expo Go on iOS, Android and web.
+  https://www.npmjs.com/package/expo-atoms
+- expo-feedback-ai — an in-app feature-request board for Expo apps: users vote
+  on ideas and an AI agent builds the most-voted. No backend, no API key, runs
+  in Expo Go. https://www.npmjs.com/package/expo-feedback-ai
+- expo-logs — a file logger for Expo apps on iOS, Android and web, in pure
+  TypeScript: rotating log files, console and error capture, and one-call
+  sharing of logs so users can send diagnostics to support. Runs in Expo Go.
+  https://www.npmjs.com/package/expo-logs
+- expo-useanimations — 79 animated micro-interaction icons for Expo and React
+  Native on iOS, Android and web; works in Expo Go and with EAS Update, no
+  native code. https://www.npmjs.com/package/expo-useanimations
 - iphone-duo-expo-rn — the iPhone "Duo" frosted-glass fold effect driven by
   device motion, for any Expo app. TypeScript only, no native code; runs on
   iOS, Android and web. https://www.npmjs.com/package/iphone-duo-expo-rn
 
 ## Skills
 Mobile: React Native, Expo (managed and bare), TypeScript, JavaScript, Swift,
-Kotlin/Java, native modules, React Native New Architecture (JSI, TurboModules,
-Fabric), WatermelonDB, offline-first architecture.
-AI and agents: Claude Code, Claude Agent SDK, Codex and Codex CLI, Cursor,
-LangGraph, multi-agent orchestration, AI-assisted diagnostics, prompt
-engineering, spec-driven development, LLM integration, on-device AI with
-TensorFlow Lite.
+Kotlin/Java, native modules, WatermelonDB, offline-first architecture.
+AI and agents: Claude Code, Claude Agent SDK, multi-agent orchestration,
+AI-assisted diagnostics, prompt engineering, spec-driven development, LLM
+integration, on-device AI with TensorFlow Lite.
 Cloud and backend: AWS serverless microservices, multi-account and
-multi-environment — Lambda in JavaScript and Python, API Gateway (REST and
-GraphQL), DynamoDB, S3, SNS, SQS, Cognito, KMS, CloudWatch, CloudSearch,
-Amplify. Event-driven and serverless architecture, backend-for-frontend
-layering, Google Cloud and Firestore, Node.js, Firebase, GraphQL, REST,
-WebSockets, SQL.
-CI/CD and tooling: GitHub Actions, EAS, Bitrise, Jenkins, Docker, Kubernetes,
-pnpm and Turborepo monorepos, OTA updates, JIRA.
-Testing and observability: Jest, Appium, Detox, Datadog, New Relic.
+multi-environment — Lambda, API Gateway (REST and GraphQL), DynamoDB, S3, SNS,
+SQS, Cognito, KMS, CloudWatch, CloudSearch, Amplify. Event-driven and
+serverless architecture, Google Cloud and Firestore, Node.js, Firebase,
+GraphQL, REST, WebSockets, SQL.
+CI/CD and tooling: GitHub Actions, EAS, Bitrise, Jenkins, pnpm, OTA updates,
+Jira.
+Testing and observability: Jest, Appium, Datadog, New Relic.
 State management: Redux, Zustand, Jotai, Recoil.
-Security: Keychain and Keystore, biometrics, SSL pinning.
+Security: Keychain and Keystore, biometrics.
 Open source: npm package authoring and publishing, semantic versioning,
 autolinked iOS and Android native modules, Expo Go compatible libraries.
 
 ## Education
-- Software Architecture Certification, University TECSUP (April 2025 to
+- Software Architecture Certificate, University TECSUP (April 2025 to
   November 2025).
 - Bachelor's in Computer Science, Tech Institute Trentino Juan Pablo II
   (March 2013 to December 2015).
