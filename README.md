@@ -1,19 +1,18 @@
 <h1 align="center">Binni Cordova</h1>
 
 <p align="center">
-  <strong>Senior Forward Deployed Engineer</strong><br>
-  Senior Software Engineer · Mobile Architect<br>
-  React Native · Swift · Kotlin · Node · Python · AWS · multi-agent systems in production
+  <strong>Senior Software Engineer</strong><br>
+  React Native · TypeScript · Swift · Kotlin · Node.js · AWS serverless · multi-agent systems in production
 </p>
 
 <p align="center">
-  Currently @ <strong>The Coca-Cola Company</strong> · open to <strong>Forward Deployed</strong> and senior product-engineering roles<br>
+  Currently @ <strong>The Coca-Cola Company</strong> · open to <strong>senior software engineering</strong> roles, Forward Deployed included<br>
   🇨🇦 Canada first · 🇺🇸 USA · 🇪🇺 Europe
 </p>
 
 <p align="center">
   <a href="https://binnicordova.com">
-    <img src=".github/media/site.gif" width="820" alt="binnicordova.com: an iPhone flies through eight legs of shipped work — miMarket at Coca-Cola, NFL+, Itaú, Platanitos — then the device delaminates into the six layers it is made of, labelled bridge, native modules, offline store, backend-for-frontend, cloud and agents.">
+    <img src=".github/media/site.gif" width="820" alt="binnicordova.com: an iPhone flies through eight legs of shipped work — miMarket at Coca-Cola, NFL+, Itaú, Platanitos — then the device delaminates into the six layers it is made of, labelled bridge, native modules, offline store, microservices, serverless cloud and agents.">
   </a>
 </p>
 
@@ -32,44 +31,23 @@
 
 ---
 
-### Forward deployed
+### What I do
 
-The role I am looking for, and the one my record already describes.
-
-The hard gate on Forward Deployed Engineer hiring is production systems shipped and maintained. Mine have been live for eight years, across **five industries** — healthcare, e-commerce, banking, streaming media, consumer-goods field sales — and **five countries**: Italy, Germany, Peru, Chile, the United States.
-
-**Not one of them shipped to a single country in a single language.** miMarket runs in Spanish, Portuguese and English across five Latin American markets. NFL+ shipped internationally in English, Spanish and French. Itaú's ITU app ships in Spanish and Portuguese. Platanitos trades across more than one Latin American market. Internationalisation and multi-market release are the normal condition of my work, not a task somebody files at the end.
-
-**And I ship fast.** Thirteen app products of my own, each from empty repository to public release in **under 90 days** — design, build, store submission, launch, alone. New domain, working product, weeks not quarters. That is the cycle a Forward Deployed Engineer is hired for.
-
-**miMarket is the clearest case.** It is not an app-store product. It carries client records, so it ships to company-controlled devices and runs in the field on more than 1,500 sellers' phones across five Latin American markets, on connections that drop, in Spanish and Portuguese. The offline-first rebuild on WatermelonDB exists because of **where the software had to run**, not because I like the library. That is forward-deployed work whatever the job title said.
-
-| What the role asks for | What I have shipped |
-|---|---|
-| Production systems, shipped and maintained | 8 years · 1.35M+ orders/month, millions of CTV viewers, 100K+ banking users, 3,000+ hospitals |
-| New domain every engagement | 5 industries in 8 years |
-| Multinational, multilingual delivery | Every product: ES · PT · EN · FR, across LatAm, the US and Europe |
-| Speed to a released product | 13 products, empty repo → public release in **under 90 days** each |
-| Deploy into the customer's conditions | Field devices, no signal, three languages, five markets |
-| Customer- and stakeholder-facing | Direct work with product, design, QA and executive stakeholders; architecture reviews; mentoring |
-| Applied AI in production | Multi-agent system on LangGraph and the Claude Agent SDK, running under my sign-off |
-| Python · TypeScript · SQL · cloud | Serverless microservices on AWS — Lambda (JS + Python), API Gateway, DynamoDB, S3, SNS, SQS, Cognito, KMS, CloudWatch — plus GCP, Docker, Kubernetes |
-| Communicate across cultures | 🇪🇸 native · 🇬🇧 advanced · 🇮🇹 fluent · 🇫🇷 🇩🇪 basic |
-
-**Not yet done**, so you do not have to ask: external pre-sales or consulting engagements, retrieval-augmented generation, vector databases, formal LLM evaluation harnesses.
+- **8+ years of production software.** React Native, TypeScript and AWS serverless, with native Swift and Kotlin modules, across five industries (healthcare, e-commerce, banking, streaming media, consumer packaged goods), five countries and four languages.
+- **Built for scale, and for the field.** 1,350,000+ orders a month for 1,500+ sellers on connections that drop; millions of NFL+ viewers on mobile, web and smart TVs; secure banking workflows for 100,000+ users.
+- **I propose, then implement.** I bring designs for event-driven AWS services and offline-first mobile clients, refine them with a software architect, and build them alongside product, design, QA and executives.
+- **I ship on my own, and with AI.** 13 self-published apps, each built solo in under 90 days; 7 open-source npm packages; and a supervised multi-agent system (Claude Agent SDK) that resolves engineering tickets.
 
 ---
 
 ### Agents work my stack now
 
-At Coca-Cola I configured and operate a multi-agent system on **LangGraph** and the **Claude Agent SDK** that picks up front-end and back-end tickets and works them. Every change it makes is reviewed and signed off by me, as the accountable engineer.
+At Coca-Cola I configured and operate a multi-agent system on the **Claude Agent SDK** that picks up front-end and back-end tickets and works them. Every change it makes is reviewed and signed off by me, as the accountable engineer.
 
 | | |
 |---|---|
 | **Claude Code** | daily driver, front end and back end |
-| **Claude Agent SDK · LangGraph** | multi-agent orchestration in production |
-| **Codex CLI** | second opinion on diagnosis |
-| **Cursor** | in-editor work |
+| **Claude Agent SDK** | multi-agent orchestration in production |
 | **TensorFlow Lite** | on-device inference |
 
 Spec-driven development, AI-assisted diagnosis, prompt engineering — with eight years of shipping underneath it, which is what makes the review worth anything.
@@ -80,15 +58,15 @@ Spec-driven development, AI-assisted diagnosis, prompt engineering — with eigh
 
 | Product | Role | Reach |
 |---|---|---|
-| **miMarket** — Coca-Cola | Senior Full Stack · Apr 2025 – present | 1,500+ sellers across 5 South American markets, 1.35M+ orders/month, ES + PT + EN |
+| **miMarket** — Coca-Cola | Senior Full-Stack · Apr 2025 – present | 1,500+ sellers across 5 South American markets, 1.35M+ orders/month, ES + PT + EN |
 | **[NFL+](https://apps.apple.com/us/app/nfl/id389781154)** | Senior Software Engineer · Feb 2024 – Mar 2025 | millions of viewers — mobile, web, CTV — EN + ES + FR |
 | **[Itaú](https://apps.apple.com/cl/app/itu-cuenta-corriente-digital/id1620586910)** | Software Engineer · Dec 2021 – Feb 2024 | 100K+ on a secure banking app, ES + PT, 90%+ automated coverage |
-| **[Platanitos](https://apps.apple.com/pe/app/platanitos/id1093153586)** | Full Stack · Mar 2019 – Dec 2021 | 1M+ downloads, multinational, one codebase to iOS, Android, Huawei |
+| **[Platanitos](https://apps.apple.com/pe/app/platanitos/id1093153586)** | Full-Stack · Mar 2019 – Dec 2021 | 1M+ downloads, multinational, one codebase to iOS, Android, Huawei |
 | **[Gruppo GPI](https://www.gpigroup.com/)** | Software Engineer · Mar 2018 – Mar 2019 | 3,000+ hospitals and clinics across Europe |
 
-miMarket is B2B field sales: 1,500+ sellers across Peru, Chile, Argentina, Paraguay and Brazil place more than 1,350,000 orders a month to Coca-Cola clients. Serverless microservices on AWS underneath it — Lambda in JavaScript and Python behind API Gateway, with DynamoDB, S3, SNS and SQS — and offline-first on WatermelonDB, because the field is where the signal is not. It runs in Spanish, Portuguese and English. Internal distribution only — it carries client records, so it ships to field devices under company control.
+miMarket is B2B field sales: 1,500+ sellers across Peru, Chile, Argentina, Paraguay and Brazil place more than 1,350,000 orders a month to Coca-Cola clients. I propose and implement the serverless microservices on AWS underneath it — Lambda behind API Gateway, with DynamoDB, S3, SNS and SQS — refining the designs with a software architect, and I rebuilt the React Native client offline-first on WatermelonDB while those sellers kept using the app, because the field is where the signal is not. It runs in Spanish, Portuguese and English. Internal distribution only — it carries client records, so it ships to field devices under company control.
 
-One React Native and TheoPlayer video player across phones, the web and smart TVs, shipped internationally in English, Spanish and French. Recoil retired for Jotai, native modules moved to Expo inside a Turborepo, bridge traffic cut until the thing started fast.
+One React Native and TheoPlayer video player across phones, the web and smart TVs, shipped internationally in English, Spanish and French. Recoil retired for Jotai, native modules moved to Expo inside a monorepo, bridge traffic cut until the thing started fast.
 
 ---
 
@@ -101,12 +79,12 @@ I write native iOS and Android modules for a living — biometrics, encrypted st
 #### [`react-native-check-biometric-changed`](https://www.npmjs.com/package/react-native-check-biometric-changed)
 
 [![npm](https://img.shields.io/npm/v/react-native-check-biometric-changed?style=flat-square&color=cb0000&label=npm)](https://www.npmjs.com/package/react-native-check-biometric-changed)
-[![downloads](https://img.shields.io/npm/dt/react-native-check-biometric-changed?style=flat-square&color=8892b0&label=installs)](https://www.npmjs.com/package/react-native-check-biometric-changed)
+[![downloads](https://img.shields.io/npm/dt/react-native-check-biometric-changed?style=flat-square&color=8892b0&label=downloads)](https://www.npmjs.com/package/react-native-check-biometric-changed)
 [![repo](https://img.shields.io/badge/source-GitHub-8892b0?style=flat-square&logo=github&logoColor=white)](https://github.com/binnicordova/react-native-check-biometric-changed)
 
 **Same device, different human.** A session granted to one face should not survive re-enrolment by another. This answers whether the biometric protecting a session is still the one enrolled when the session was granted — so the app can revoke it before a newly enrolled face or fingerprint inherits it.
 
-Swift and Kotlin, straight out of the Itaú banking work. Zero runtime dependencies, autolinked, iOS 10+ and Android 23+. Past **1,000 installs**.
+Swift and Kotlin, straight out of the Itaú banking work. Zero runtime dependencies, autolinked, iOS 10+ and Android 23+. More than **1,900 downloads**.
 
 ```sh
 npm install react-native-check-biometric-changed
@@ -116,10 +94,14 @@ npm install react-native-check-biometric-changed
 
 | Package | | |
 |---|---|---|
-| [`expo-feedback-ai`](https://www.npmjs.com/package/expo-feedback-ai) | An in-app feature-request board whose most-voted ideas get built by an AI agent. No backend, no API key, runs in Expo Go. | [![npm](https://img.shields.io/npm/v/expo-feedback-ai?style=flat-square&color=cb0000&label=npm)](https://www.npmjs.com/package/expo-feedback-ai) |
+| [`expo-go-boilerplate`](https://www.npmjs.com/package/expo-go-boilerplate) | A starter for Expo and React Native apps with Expo Router, Jotai, Storybook, Jest, Biome, EAS builds and updates, and built-in AI agent skills. One codebase for iOS, Android, web and TV. | [![npm](https://img.shields.io/npm/v/expo-go-boilerplate?style=flat-square&color=cb0000&label=npm)](https://www.npmjs.com/package/expo-go-boilerplate) |
+| [`expo-atoms`](https://www.npmjs.com/package/expo-atoms) | Atomic state management for Expo and React Native: primitive and derived atoms, no Provider required, no dependencies. Pure TypeScript; runs in Expo Go on iOS, Android and web. | [![npm](https://img.shields.io/npm/v/expo-atoms?style=flat-square&color=cb0000&label=npm)](https://www.npmjs.com/package/expo-atoms) |
+| [`expo-feedback-ai`](https://www.npmjs.com/package/expo-feedback-ai) | An in-app feature-request board for Expo apps: users vote on ideas and an AI agent builds the most-voted. No backend, no API key, runs in Expo Go. | [![npm](https://img.shields.io/npm/v/expo-feedback-ai?style=flat-square&color=cb0000&label=npm)](https://www.npmjs.com/package/expo-feedback-ai) |
+| [`expo-logs`](https://www.npmjs.com/package/expo-logs) | A file logger for Expo apps on iOS, Android and web, in pure TypeScript: rotating log files, console and error capture, and one-call sharing of logs so users can send diagnostics to support. Runs in Expo Go. | [![npm](https://img.shields.io/npm/v/expo-logs?style=flat-square&color=cb0000&label=npm)](https://www.npmjs.com/package/expo-logs) |
+| [`expo-useanimations`](https://www.npmjs.com/package/expo-useanimations) | 79 animated micro-interaction icons for Expo and React Native on iOS, Android and web. Works in Expo Go and with EAS Update; no native code. | [![npm](https://img.shields.io/npm/v/expo-useanimations?style=flat-square&color=cb0000&label=npm)](https://www.npmjs.com/package/expo-useanimations) |
 | [`iphone-duo-expo-rn`](https://www.npmjs.com/package/iphone-duo-expo-rn) | The iPhone "Duo" frosted-glass fold, driven by device motion. TypeScript only, no native code — iOS, Android and web. | [![npm](https://img.shields.io/npm/v/iphone-duo-expo-rn?style=flat-square&color=cb0000&label=npm)](https://www.npmjs.com/package/iphone-duo-expo-rn) |
 
-All MIT, around **500 installs a month** across the set — [all of them on npm](https://www.npmjs.com/~binnizenobiocordovaleandro).
+All MIT, **1,200+ downloads in the last 30 days** across seven packages — [all of them on npm](https://www.npmjs.com/~binnizenobiocordovaleandro).
 
 ---
 
@@ -131,25 +113,34 @@ They are live on Google Play under **BinniCordova.com** — [see the full list](
 
 ---
 
+### Also open to Forward Deployed roles
+
+The work already looks like it. miMarket is not an app-store product: it carries client records, so it ships to company-controlled devices and runs in the field on more than 1,500 sellers' phones, in three languages. The offline-first rebuild exists because of **where the software had to run**.
+
+**Not yet done**, so you do not have to ask: my stakeholders have been internal (product, design, QA and executives), so I have no external pre-sales or consulting experience; and I have not worked on retrieval-augmented generation, vector databases or formal LLM evaluation harnesses.
+
+---
+
 ### Stack
 
 <p align="center">
-  <img src="https://skillicons.dev/icons?i=react,ts,swift,kotlin,java,nodejs,python,graphql,aws,gcp,firebase,docker,kubernetes,githubactions" alt="React Native, TypeScript, Swift, Kotlin, Java, Node.js, Python, GraphQL, AWS, Google Cloud, Firebase, Docker, Kubernetes, GitHub Actions">
+  <img src="https://skillicons.dev/icons?i=react,ts,swift,kotlin,java,nodejs,graphql,aws,gcp,firebase,githubactions" alt="React Native, TypeScript, Swift, Kotlin, Java, Node.js, GraphQL, AWS, Google Cloud, Firebase, GitHub Actions">
 </p>
 
-- **Mobile** — React Native, Expo (managed and bare), Swift, Kotlin, New Architecture (JSI · TurboModules · Fabric), WatermelonDB
-- **Architecture** — serverless microservices, event-driven (SNS/SQS), offline-first, backend-for-frontend, native modules, Keychain and Keystore, biometrics, SSL pinning
-- **Cloud** — AWS serverless microservices, multi-account and multi-environment: Lambda in JavaScript and Python, API Gateway (REST + GraphQL), DynamoDB, S3, SNS, SQS, Cognito, KMS, CloudWatch, CloudSearch, Amplify. Plus Google Cloud, Firestore, WebSockets, SQL
+- **Languages** — TypeScript, JavaScript, Swift, Kotlin, Java, SQL
+- **Mobile** — React Native, Expo (managed and bare), native iOS and Android modules, WatermelonDB
+- **Patterns** — serverless microservices, event-driven (SNS/SQS), offline-first, native modules, Keychain and Keystore, biometrics
+- **Cloud** — AWS serverless microservices, multi-account and multi-environment: Lambda, API Gateway (REST + GraphQL), DynamoDB, S3, SNS, SQS, Cognito, KMS, CloudWatch, CloudSearch, Amplify. Plus Google Cloud, Firestore, WebSockets
 - **State** — Redux, Zustand, Jotai, Recoil
-- **Delivery** — Turborepo, pnpm, GitHub Actions, EAS, Bitrise, Jenkins, Docker, Kubernetes, OTA updates
-- **Quality** — Jest, Detox, Appium, Datadog, New Relic
+- **Delivery** — pnpm, GitHub Actions, EAS, Bitrise, Jenkins, OTA updates
+- **Quality** — Jest, Appium, Datadog, New Relic
 - **Open source** — npm package authoring and publishing, semantic versioning, autolinked iOS and Android modules, Expo Go compatible libraries
 
 ---
 
 ### Education and languages
 
-- **Software Architecture Certification** — University TECSUP, Apr 2025 – Nov 2025
+- **Software Architecture Certificate** — University TECSUP, Apr 2025 – Nov 2025
 - **Bachelor's in Computer Science** — Tech Institute Trentino Juan Pablo II, Mar 2013 – Dec 2015
 
 🇪🇸 Spanish **native** · 🇬🇧 English **advanced** · 🇮🇹 Italian **fluent** · 🇫🇷 French **basic** · 🇩🇪 German **basic**
@@ -182,7 +173,7 @@ Source is in this repository under `scrollcraft/builds/one-device/`.
 </p>
 
 <p align="center">
-  <a href="tel:+51971581847"><strong>+51 971 581 847</strong></a> ·
+  <a href="tel:+16503744225"><strong>+1 650 374 4225</strong></a> ·
   <a href="mailto:binni.2000.cordova@gmail.com">binni.2000.cordova@gmail.com</a>
 </p>
 
