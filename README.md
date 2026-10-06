@@ -7,7 +7,7 @@
 
 <p align="center">
   Currently @ <strong>The Coca-Cola Company</strong> · open to <strong>senior software engineering</strong> roles, Forward Deployed included<br>
-  🇨🇦 Canada first · 🇺🇸 USA · 🇪🇺 Europe
+  🇨🇦 Relocating to Vancouver, British Columbia, Canada
 </p>
 
 <p align="center">
@@ -22,7 +22,7 @@
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Open%20to-Sponsorship%20%26%20Relocation-e8935c?style=flat-square" alt="Open to sponsorship and relocation">
+  <img src="https://img.shields.io/badge/Relocating%20to-Vancouver%2C%20BC-e8935c?style=flat-square" alt="Relocating to Vancouver, British Columbia">
   <img src="https://img.shields.io/badge/Canada-Global%20Talent%20Stream%20eligible-d52b1e?style=flat-square" alt="Canada: eligible under the Global Talent Stream, NOC 21231 and 21232">
   <img src="https://img.shields.io/badge/Focus-Agentic%20%26%20Spec--Driven%20Development-44e2cd?style=flat-square" alt="Focus: agentic and spec-driven development">
   <a href="https://www.npmjs.com/~binnizenobiocordovaleandro"><img src="https://img.shields.io/badge/npm-packages%20published-cb0000?style=flat-square&logo=npm&logoColor=white" alt="Packages published on npm"></a>
@@ -109,7 +109,7 @@ All MIT, **1,200+ downloads in the last 30 days** across seven packages — [all
 
 Nights and weekends, designed, built and shipped on my own — each from empty repository to a released product in **under 90 days**: ride hailing, vehicle records, a résumé scorer, a beach-safety guide, a React drill app, a live-event film maker, a personal-safety network, a live-stream AI assistant.
 
-They are live on Google Play under **BinniCordova.com** — [see the full list](https://play.google.com/store/apps/developer?id=BinniCordova.com). They also fly past in the last act of [binnicordova.com](https://binnicordova.com).
+They are live on Google Play under **BinniCordova.com**, with 1,000+ installs a month — [see the full list](https://play.google.com/store/apps/developer?id=BinniCordova.com). They also fly past in the last act of [binnicordova.com](https://binnicordova.com).
 
 ---
 
@@ -140,8 +140,8 @@ The work already looks like it. miMarket is not an app-store product: it carries
 
 ### Education and languages
 
-- **Software Architecture Certificate** — University TECSUP, Apr 2025 – Nov 2025
-- **Bachelor's in Computer Science** — Tech Institute Trentino Juan Pablo II, Mar 2013 – Dec 2015
+- **Software Architecture Certificate** — TECSUP, Apr 2025 – Nov 2025
+- **Bachelor's Degree in Computer Science** — Instituto Tecnológico Trentino Juan Pablo II, Mar 2013 – Dec 2015
 
 🇪🇸 Spanish **native** · 🇬🇧 English **advanced** · 🇮🇹 Italian **fluent** · 🇫🇷 French **basic** · 🇩🇪 German **basic**
 
@@ -178,7 +178,7 @@ Source is in this repository under `scrollcraft/builds/one-device/`.
 </p>
 
 <p align="center">
-  <sub>Open to visa sponsorship and employer relocation.</sub>
+  <sub>Relocating to Vancouver, British Columbia, Canada. Open to employer sponsorship.</sub>
 </p>
 
 <p align="center">

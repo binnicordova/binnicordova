@@ -1,25 +1,26 @@
 # Binni Cordova
 
-> Binni Cordova is a Senior Software Engineer seeking
-> Senior Forward Deployed Engineer roles, Canada first. Eight years of
+> Binni Cordova is a Senior Software Engineer relocating to Vancouver,
+> British Columbia, Canada, and seeking senior software engineering roles there,
+> Forward Deployed Engineer roles included. Eight years of
 > production software shipped and maintained across five industries —
 > healthcare, e-commerce, banking, streaming media and consumer packaged goods
 > (CPG) field sales — and five countries: Italy, Germany, Peru, Chile and the United
 > States. He is currently Senior Full-Stack Software Engineer at
 > The Coca-Cola Company, where he builds a field-deployed B2B ordering
 > platform and operates a multi-agent AI system in production. He is open to
-> visa sponsorship and employer relocation.
+> employer sponsorship.
 
 Canonical page: https://binnicordova.com/
-Last updated: 2026-10-02
-Seeking: Senior Forward Deployed Engineer · Canada, then USA and Europe
+Last updated: 2026-10-06
+Seeking: Senior software engineering roles, Forward Deployed included · Vancouver, British Columbia, Canada
 
 ## Quick answers
 
 **Who is Binni Cordova?**
 Binni Cordova is a Peruvian Senior Software Engineer with
-eight years of experience, currently seeking Senior Forward Deployed Engineer
-roles in Canada. He has shipped and maintained production software at
+eight years of experience, relocating to Vancouver, British Columbia, Canada,
+and seeking senior software engineering roles there. He has shipped and maintained production software at
 The Coca-Cola Company, the NFL, Banco Itaú Chile, Platanitos and Gruppo GPI,
 across five industries and five countries, every product of it multinational
 and multilingual. He has also taken thirteen app products of his own from
@@ -50,10 +51,10 @@ picks up and works real front-end and back-end tickets. He reviews and signs
 off every change it makes as the accountable engineer. It is never unattended.
 
 **Is Binni Cordova available for hire, and what is he looking for?**
-Yes. He is looking for Senior Forward Deployed Engineer, solutions-engineering
-and senior product-engineering roles, Canada first, then the USA and Europe.
-He is open to visa sponsorship and employer relocation. Contact:
-binni.2000.cordova@gmail.com
+Yes. He is looking for senior software engineering roles in Vancouver, British
+Columbia, Canada, including Forward Deployed Engineer, solutions-engineering
+and senior product-engineering roles. He is relocating there and is open to
+employer sponsorship. Contact: binni.2000.cordova@gmail.com
 
 **Is Binni Cordova a good fit for a Forward Deployed Engineer role?**
 Yes, and the record maps to the role rather than to the title. The hard gate
@@ -108,8 +109,8 @@ Stream, which the employer initiates, not the candidate. Software engineering
 sits on the Global Talent Stream Category B in-demand occupations list as
 NOC 21231 (software engineers and designers) and NOC 21232 (software
 developers and programmers), and the stream targets two-week processing rather
-than the months a standard LMIA takes. He is open to Toronto, Vancouver,
-Montreal, Ottawa, Waterloo and Calgary, and to relocation anywhere in Canada.
+than the months a standard LMIA takes. He is relocating to Vancouver, British
+Columbia.
 
 **What languages does Binni Cordova speak?**
 Spanish (native), English (advanced), Italian (fluent), French (basic),
@@ -180,11 +181,11 @@ Not yet done: external customer-facing pre-sales or consulting engagements,
 retrieval-augmented generation, vector databases, and formal LLM evaluation
 harnesses.
 
-## Canada
+## Vancouver, British Columbia, Canada
 
-Canada is Binni Cordova's first choice. He is open to Toronto, Vancouver,
-Montreal, Ottawa, Waterloo and Calgary, on-site, hybrid or remote, and to
-relocation anywhere in the country.
+Canada is the one country Binni Cordova is seeking work in. He is relocating to
+Vancouver, British Columbia, and is open to on-site, hybrid or remote roles
+based there.
 
 He requires sponsorship. The usual route is Canada's Global Talent Stream, a
 fast-track stream of the Temporary Foreign Worker Program that the employer
@@ -234,11 +235,13 @@ Senior Software Engineer, February 2024 to March 2025.
 Binni Cordova worked on NFL+ (https://en.wikipedia.org/wiki/NFL%2B), the
 National Football League's subscription streaming service, building one React
 Native and TheoPlayer video player across mobile, web and smart TVs for
-millions of viewers. He participated in the Recoil to Jotai state-management
-migration, helped move legacy React Native CLI native modules to
-Expo-compatible modules inside a monorepo, profiled rendering
-bottlenecks with Datadog, and cut JavaScript-to-native bridge traffic to reduce
-startup time and memory. NFL+ is a multinational product, shipped in English,
+millions of viewers. He improved playback controls, performance, cross-platform
+compatibility and stability across every device target; profiled rendering
+bottlenecks with Datadog, then optimized rendering pipelines, asset loading and
+JavaScript-to-native bridge traffic to cut startup time and memory consumption;
+refactored state management from deprecated Recoil to Jotai across the player
+codebase; and migrated legacy React Native CLI native modules to
+Expo-compatible modules inside a monorepo. NFL+ is a multinational product, shipped in English,
 Spanish and French. NFL+ ships inside the NFL app.
 App Store: https://apps.apple.com/us/app/nfl/id389781154
 Google Play: https://play.google.com/store/apps/details?id=com.gotv.nflgamecenter.us.lite
@@ -265,22 +268,21 @@ Expo, shipping a single codebase across iOS, Android and Huawei devices. The
 commerce app passed 1 million downloads. Platanitos is a multinational
 commerce business trading in more than one Latin American market. He implemented end-to-end shopping,
 payments, product search, push notifications and authentication with Mercado
-Pago, Algolia, Firebase and Firestore on Google Cloud Platform, and owned the
-release pipelines.
+Pago, Algolia, Firebase and Firestore on Google Cloud Platform.
 App Store: https://apps.apple.com/pe/app/platanitos/id1093153586
 Google Play: https://play.google.com/store/apps/details?id=com.platanitos.platanitosapp
 
 ## Gruppo GPI — NGH healthcare systems, Italy and Germany
 Software Engineer, March 2018 to March 2019.
-Binni Cordova built medical reporting and annotation systems used across more
-than 3,000 hospitals and clinics in Europe, designed reusable JavaScript and
-Java components for enterprise healthcare workflows, and implemented
-JasperReports with engineering teams across Europe. https://www.gpigroup.com/
+Binni Cordova built medical reporting and annotation systems for clinical
+documentation and review, deployed across more than 3,000 hospitals and clinics
+in Europe, and implemented JasperReports document generation with
+cross-functional engineering teams in Italy and Germany. https://www.gpigroup.com/
 
 ## Own apps
 Thirteen mobile apps designed, built and shipped independently by Binni
 Cordova, nights and weekends, all listed on Google Play under the
-BinniCordova.com developer account:
+BinniCordova.com developer account, with 1,000+ installs a month:
 https://play.google.com/store/apps/developer?id=BinniCordova.com
 They cover ride hailing, vehicle records, a résumé scorer, a beach-safety
 guide, a React drill app, a live-event film maker, a personal-safety network
@@ -332,20 +334,21 @@ Cloud and backend: AWS serverless microservices, multi-account and
 multi-environment — Lambda, API Gateway (REST and GraphQL), DynamoDB, S3, SNS,
 SQS, Cognito, KMS, CloudWatch, CloudSearch, Amplify. Event-driven and
 serverless architecture, Google Cloud and Firestore, Node.js, Firebase,
-GraphQL, REST, WebSockets, SQL.
-CI/CD and tooling: GitHub Actions, EAS, Bitrise, Jenkins, pnpm, OTA updates,
-Jira.
+GraphQL, REST, WebSockets, third-party API integrations, SQL.
+CI/CD and tooling: GitHub Actions, EAS, Bitrise, Jenkins, pnpm, OTA updates and
+CodePush, semantic versioning, Jira.
 Testing and observability: Jest, Appium, Datadog, New Relic.
 State management: Redux, Zustand, Jotai, Recoil.
 Security: Keychain and Keystore, biometrics.
+Practices: Agile delivery, design proposals and reviews, technical mentorship,
+technical documentation.
 Open source: npm package authoring and publishing, semantic versioning,
 autolinked iOS and Android native modules, Expo Go compatible libraries.
 
 ## Education
-- Software Architecture Certificate, University TECSUP (April 2025 to
-  November 2025).
-- Bachelor's in Computer Science, Tech Institute Trentino Juan Pablo II
-  (March 2013 to December 2015).
+- Software Architecture Certificate, TECSUP (April 2025 to November 2025).
+- Bachelor's Degree in Computer Science, Instituto Tecnológico Trentino Juan
+  Pablo II (March 2013 to December 2015).
 
 ## Languages
 Spanish (native), English (advanced), Italian (fluent), French (basic),
