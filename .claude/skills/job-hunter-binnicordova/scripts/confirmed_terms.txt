@@ -1,0 +1,26 @@
+# Skills Binni confirmed in conversation but that are NOT in the base PDF, so the
+# audit does not flag them as invented vocabulary. Mirror of the memory note
+# confirmed-ios-experience.md: when that note changes, change this file.
+# One term per line. Only list what he actually confirmed.
+SwiftUI
+UIKit
+Swift Concurrency
+Combine
+XCTest
+XCUITest
+deep links
+universal links
+tracking SDKs
+attribution
+in-app messaging
+funnel analytics
+A/B tests
+Xcode
+TestFlight
+App Store Connect
+Scrum
+customer engineering teams
+Objective-C
+PingOne
+react-native-builder-bob
+# Not confirmed, never list: fastlane, Xcode Cloud.

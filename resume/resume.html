@@ -40,8 +40,10 @@
     - Numbers are load-bearing and every one of them is real. Do not add a
       metric that is not already true somewhere in this repository.
 
-  TITLE: the headline is only what the candidate IS: Senior Software Engineer,
-  matching the current job title. It states no target role (the candidate
+  TITLE: the headline is what the candidate IS (Senior Software Engineer, matching
+  the current job title) plus his four core technologies (Expo, React Native,
+  TypeScript, AWS Serverless, added 2026-10-08). Experience stays in reverse
+  chronological order; inside each role the Expo and React Native bullets lead. It states no target role (the candidate
   removed "Seeking Forward Deployed Engineer Roles" on 2026-10-02), so the
   specialization has to be carried by the first Summary bullet. Never write
   "Senior Forward Deployed Engineer" as a title: no employer has given him
@@ -86,23 +88,24 @@
 
   OMITTED ON PURPOSE. The candidate removed these terms from the resume, in
   the skills AND in the experience bullets, so do not re-add them: Python,
-  Backend-for-Frontend, LangGraph, OpenAI Codex CLI, Cursor, React Native
-  New Architecture (JSI, TurboModules, Fabric), Kubernetes, Docker, Turborepo,
+  Backend-for-Frontend, OpenAI Codex CLI, Cursor, React Native
+  New Architecture (JSI, Fabric), Kubernetes, Docker, Turborepo,
   Detox, SSL/TLS certificate pinning. The generic word "monorepo" stays in the
   NFL+ bullet because that part of the work is unchanged.
 
   NOTE: the download figures under OPEN SOURCE are point-in-time numbers. As of
-  2026-10-02 (npm's window, 2026-09-01 to 2026-09-30): atoms 411,
-  react-native-check-biometric-changed 286, expo-feedback-ai 242,
-  iphone-duo-expo-rn 163, expo-logs 135 = 1,237, hence "1,200+" for the seven
-  packages. expo-useanimations (published 2026-10-01) and expo-go-boilerplate
-  (published 2026-10-02) had no stats yet, so the figure undercounts rather
-  than overstates. The biometric package's all-time total is 1,937 (summed over
-  three date ranges, because the API caps a query at 18 months), hence
-  "1,900+". The Summary says "7 open-source npm packages"; keep it in step with
-  the header. Refresh all of it when you re-export:
+  2026-10-08 (npm last-month API): atoms 485, react-native-check-biometric-
+  changed 293, iphone-duo-expo-rn 166, expo-go-boilerplate 175, expo-orbs 160,
+  expo-logs 156, expo-thinking-orbs 115, expo-useanimations 97 = 1,647, hence
+  "1,600+" for the nine packages. expo-feedback-ai returns no stats from the
+  downloads API (it had 242 in September), so the figure undercounts. The
+  biometric package's all-time total is 1,955 (summed over three date ranges,
+  because the API caps a query at 18 months), hence "1,900+". The Summary says
+  "9 open-source npm packages"; keep it in step with the header. expo-orbs and
+  @binnicordova/expo-thinking-orbs are the same code under two names, listed as
+  one entry but counted as two packages (the npm profile shows nine). Refresh:
       curl -s "https://registry.npmjs.org/-/v1/search?text=maintainer:binnizenobiocordovaleandro&size=100"
-      for p in react-native-check-biometric-changed expo-go-boilerplate expo-atoms expo-feedback-ai expo-logs expo-useanimations iphone-duo-expo-rn; do
+      for p in react-native-check-biometric-changed expo-go-boilerplate expo-atoms expo-feedback-ai expo-logs expo-useanimations iphone-duo-expo-rn expo-orbs @binnicordova/expo-thinking-orbs; do
         curl -s "https://api.npmjs.org/downloads/point/last-month/$p"; echo; done
       for r in 2022-10-01:2023-12-31 2024-01-01:2025-03-29 2025-03-30:$(date +%F); do
         curl -s "https://api.npmjs.org/downloads/point/$r/react-native-check-biometric-changed"; echo; done
@@ -113,8 +116,8 @@
   (the engineering standards a team would inherit: routing, state, tests,
   lint, EAS, AI agent skills; brand new, so no download figure); 3 expo-atoms
   (state management, 411 downloads); 4 expo-feedback-ai (AI agent closing the
-  loop from user feedback to a shipped change); 5 expo-logs (field diagnostics
-  a user can send to support). expo-useanimations and iphone-duo-expo-rn are
+  loop from user feedback to a shipped change); 5 expo-orbs (AI and agent UI
+  loading indicators); 6 expo-logs (field diagnostics a user can send to support). expo-useanimations and iphone-duo-expo-rn are
   UI polish with the weakest fit, so they share one "Also published" line.
   Every package is MIT licensed (checked against the registry).
 
@@ -242,7 +245,7 @@
 <body>
 
 <h1>Binni Cordova</h1>
-<p class="contact">Senior Software Engineer</p>
+<p class="contact">Senior Software Engineer | Expo, React Native, TypeScript, AWS Serverless</p>
 <p class="contact">Relocating to Canada | +1 650 374 4225 | <a href="mailto:binni.2000.cordova@gmail.com">binni.2000.cordova@gmail.com</a></p>
 <p class="contact"><a href="https://binnicordova.com/">binnicordova.com</a> | <a href="https://www.linkedin.com/in/binnicordova">linkedin.com/in/binnicordova</a> | <a href="https://github.com/binnicordova">github.com/binnicordova</a></p>
 
@@ -250,23 +253,24 @@
 <ul>
   <li>Senior Software Engineer with 8+ years building production React Native, TypeScript, and AWS serverless software, with native Swift and Kotlin modules, across five industries, five countries, and four languages.</li>
   <li>Delivers at scale: 1,350,000+ orders a month for 1,500+ field sellers on unreliable connections, millions of NFL+ viewers on mobile, web, and smart TVs, and secure banking workflows for 100,000+ users.</li>
-  <li>Proposes and implements event-driven AWS services and offline-first mobile clients, refining designs with a software architect and working alongside product, design, QA, and executives.</li>
-  <li>Ships independently and with AI: 13 self-published apps, each built solo in under 90 days; 7 open-source npm packages; and a supervised multi-agent system (Claude Agent SDK) that resolves engineering tickets.</li>
+  <li>Proposes and implements serverless AWS services and offline-first mobile clients, refining designs with a software architect and working alongside product, design, QA, and executives.</li>
+  <li>Ships independently and with AI: 13 apps through the App Store and Play Store publishing lifecycle, each built solo with AI in under 4 weeks; 9 open-source npm packages; and a supervised multi-agent ticket-resolution system.</li>
 </ul>
 
 <h2>PROFESSIONAL EXPERIENCE</h2>
 
 <div class="job">
   <div class="job__head"><span>The Coca-Cola Company</span><span class="job__loc">USA</span></div>
-  <div class="job__sub"><span class="job__role">Senior Full-Stack Software Engineer</span><span class="job__dates">Apr 2025 - Present</span></div>
+  <div class="job__sub"><span class="job__role">Senior Full-Stack Software Engineer</span><span class="job__dates">Apr 2025 - Sep 2026</span></div>
   <p class="job__note">miMarket, a B2B field-sales platform: 1,500+ sellers across Peru, Chile, Argentina, Paraguay, and Brazil place 1,350,000+ orders a month to Coca-Cola clients, on unreliable connections and in three languages.</p>
   <ul>
-    <li>Propose and implement event-driven serverless microservices on AWS (Lambda, API Gateway, DynamoDB, SNS/SQS), refining designs with a software architect to sharpen service boundaries and speed delivery.</li>
-    <li>Rebuilt the React Native platform into an offline-first architecture on WatermelonDB while 1,500+ sellers kept using the app, sustaining order capture and conflict resolution where connectivity drops.</li>
-    <li>Configure and operate a multi-agent AI system (Multica.ai) on the Claude Agent SDK that picks up and resolves front-end and back-end tickets, reviewing and signing off every change as the accountable engineer.</li>
-    <li>Automated pull-request creation across multi-environment, multi-account AWS microservices, removing manual release overhead from every deployment.</li>
-    <li>Build native iOS (Swift) and Android (Kotlin/Java) modules for biometrics, encrypted storage, and hardware integrations beyond the JavaScript bridge.</li>
-    <li>Mentor engineers and partner with product, design, QA, and executive stakeholders to maintain release quality across five markets.</li>
+    <li>Rebuilt the React Native platform into an offline-first architecture on a SQLCipher encrypted SQLite database, sustaining order capture and conflict resolution where connectivity drops.</li>
+    <li>Maintained the legacy app alongside the new offline version without interrupting sellers' daily operation, across markets with different conditions and languages.</li>
+    <li>Built Swift and Kotlin modules with Expo Modules and Turbo Modules for biometrics, encrypted storage, and hardware.</li>
+    <li>Used spec-driven development to configure and operate a multi-agent AI system (Multica.ai, Paperclip.ing) on the Claude Agent SDK that resolved front-end and back-end tickets, each change signed off by the accountable engineer.</li>
+    <li>Served as code reviewer and promoted engineering best practices to maintain release quality across five markets.</li>
+    <li>Proposed and implemented serverless microservices on AWS (Lambda, API Gateway, DynamoDB, SNS/SQS), refining designs with a software architect to sharpen service boundaries and speed delivery.</li>
+    <li>Automated pull requests across multi-account AWS microservices, removing manual release overhead.</li>
   </ul>
 </div>
 
@@ -275,10 +279,10 @@
   <div class="job__sub"><span class="job__role">Senior Software Engineer</span><span class="job__dates">Feb 2024 - Mar 2025</span></div>
   <p class="job__note">NFL+, the league's streaming service: one React Native and TheoPlayer video player delivered to millions of viewers across mobile, web, and smart TVs, in English, Spanish, and French.</p>
   <ul>
-    <li>Improved playback controls, performance, cross-platform compatibility, and stability across every device target.</li>
-    <li>Profiled rendering bottlenecks with Datadog, then optimized rendering pipelines, asset loading, and JavaScript-to-native bridge traffic to cut startup time and memory consumption.</li>
-    <li>Refactored state management from deprecated Recoil to Jotai across the player codebase, retiring an unmaintained dependency from a live streaming product.</li>
     <li>Migrated legacy React Native CLI native modules to Expo-compatible modules inside a monorepo, simplifying the build and native dependency pipeline.</li>
+    <li>Improved playback controls, performance, cross-platform compatibility, and stability across every device target.</li>
+    <li>Profiled rendering bottlenecks, then optimized rendering pipelines, asset loading, and JavaScript-to-native bridge traffic to cut startup time and memory consumption.</li>
+    <li>Refactored state management from deprecated Recoil to Jotai across the player codebase, retiring an unmaintained dependency from a live streaming product.</li>
   </ul>
 </div>
 
@@ -289,7 +293,7 @@
   <ul>
     <li>Engineered biometric authentication and encrypted financial transaction workflows at the app's security layer.</li>
     <li>Sustained 90%+ automated test coverage with Jest and Appium across unit, integration, and end-to-end suites on the SQL-backed codebase, with work tracked in Jira.</li>
-    <li>Developed reusable Swift and Kotlin/Java native modules for authentication, secure storage, and core banking features.</li>
+    <li>Developed reusable Swift and Kotlin native modules for authentication, secure storage, and core banking features.</li>
     <li>Strengthened Bitrise and Jenkins CI/CD pipelines, reducing deployment risk and improving release consistency.</li>
   </ul>
 </div>
@@ -326,27 +330,28 @@
 <h2>INDEPENDENT PRODUCTS &amp; OPEN SOURCE</h2>
 <div class="job__head"><span><a href="https://play.google.com/store/apps/developer?id=BinniCordova.com">play.google.com/store/apps/developer?id=BinniCordova.com</a></span><span class="job__dates">13 apps, 1,000+ installs/month</span></div>
 <div class="job__head"><span><a href="https://apps.apple.com/us/iphone/search?term=BinniCordova.com">apps.apple.com/us/iphone/search?term=BinniCordova.com</a></span></div>
-<p class="job__note">Thirteen React Native and Expo apps for iOS and Android (several also on web), each designed, built, and launched alone.</p>
+<p class="job__note">Thirteen React Native and Expo apps for iOS and Android (several also on web), each built alone with Claude Sonnet 5.5, Opus 5.5, and OpenAI Terra; releases automated with CI/CD and EAS over-the-air updates.</p>
 <div class="job" style="margin-top:6pt">
-<div class="job__head"><span><a href="https://www.npmjs.com/~binnizenobiocordovaleandro">npmjs.com/~binnizenobiocordovaleandro</a></span><span class="job__dates">7 packages, MIT, 1,200+ downloads in 30 days</span></div>
+<div class="job__head"><span><a href="https://www.npmjs.com/~binnizenobiocordovaleandro">npmjs.com/~binnizenobiocordovaleandro</a></span><span class="job__dates">9 packages, MIT, 1,600+ downloads in 30 days</span></div>
 <ul>
   <li><span class="pkg">react-native-check-biometric-changed</span> - Detects changed biometric enrolment on iOS and Android so an app can revoke a session before a new face or fingerprint inherits it. Swift and Kotlin, zero dependencies; 1,900+ downloads.</li>
   <li><span class="pkg">expo-go-boilerplate</span> - Starter for Expo and React Native apps with Expo Router, Jotai, Storybook, Jest, Biome, EAS builds and updates, and built-in AI agent skills. One codebase for iOS, Android, web, and TV.</li>
-  <li><span class="pkg">expo-atoms</span> - Atomic state management for Expo and React Native: primitive and derived atoms, no Provider required, no dependencies. Pure TypeScript; runs in Expo Go on iOS, Android, and web.</li>
-  <li><span class="pkg">expo-feedback-ai</span> - In-app feature-request board for Expo apps: users vote on ideas and an AI agent builds the most-voted. No backend, API key, or configuration required; runs in Expo Go.</li>
-  <li><span class="pkg">expo-logs</span> - File logger for Expo apps (iOS, Android, web) in pure TypeScript: rotating log files, console and error capture, and one-call log sharing so users can send diagnostics to support.</li>
+  <li><span class="pkg">expo-atoms</span> - Atomic state management for Expo and React Native: primitive and derived atoms, no Provider, zero dependencies.</li>
+  <li><span class="pkg">expo-feedback-ai</span> - In-app feature-request board for Expo apps: users vote and an AI agent builds the top idea.</li>
+  <li><span class="pkg">expo-orbs</span> - Loading indicators for AI and agent UIs in Expo: pure TypeScript, Jotai state, ships over EAS Update.</li>
+  <li><span class="pkg">expo-logs</span> - File logger for Expo apps: rotating logs, error capture, and one-call sharing.</li>
   <li><span class="pkg">Also published:</span> expo-useanimations (79 animated icons), iphone-duo-expo-rn (frosted-glass fold effect).</li>
 </ul>
 </div>
 
 <h2>SKILLS</h2>
-<p><b>Programming Languages:</b> TypeScript, JavaScript, Swift, Kotlin, Java, SQL</p>
-<p><b>Cloud &amp; Back-End:</b> AWS (Lambda, API Gateway with REST and GraphQL, DynamoDB, S3, SNS, SQS, Cognito, KMS, CloudWatch, CloudSearch, Amplify); serverless, event-driven, multi-account microservices; Node.js; Google Cloud Platform (Firestore); Firebase; WebSockets; third-party API integrations</p>
-<p><b>AI &amp; Agentic Engineering:</b> Claude Code, Claude Agent SDK, multi-agent orchestration, prompt engineering, spec-driven development, LLM integration, on-device AI (TensorFlow Lite)</p>
-<p><b>Mobile &amp; Front-End:</b> React Native, Expo (managed and bare), native iOS and Android modules, offline-first architecture, WatermelonDB; state management with Redux, Zustand, Jotai, Recoil</p>
-<p><b>DevOps &amp; CI/CD:</b> GitHub Actions, EAS, Bitrise, Jenkins, pnpm, OTA updates/CodePush, semantic versioning</p>
-<p><b>Testing, Security &amp; Observability:</b> Jest, Appium, Datadog, New Relic; secure storage (Keychain/Keystore), biometrics</p>
-<p><b>Practices:</b> Agile delivery, Jira, design proposals and reviews, technical mentorship, technical documentation</p>
+<p><b>Mobile &amp; Front-End:</b> Expo (managed and bare), React Native, Expo Modules, Turbo Modules, react-native-vision-camera frame processors, offline-first, SQLCipher SQLite; state management with Redux, Zustand, Jotai, Recoil</p>
+<p><b>Programming Languages:</b> TypeScript, JavaScript, Swift, Kotlin, SQL</p>
+<p><b>Cloud &amp; Back-End:</b> AWS (Lambda, API Gateway with REST and GraphQL, DynamoDB, S3, SNS, SQS, Cognito, KMS, CloudWatch); serverless, multi-account microservices; Node.js; Google Cloud Platform (Firestore); Firebase; WebSockets</p>
+<p><b>AI &amp; Agentic Engineering:</b> Claude Code, Claude Sonnet 5.5, Claude Opus 5.5, OpenAI Terra, Claude Agent SDK, multi-agent orchestration, prompt engineering, spec-driven development, Multica.ai, Paperclip.ing, LangChain, LangGraph, LLM integration, on-device AI (TensorFlow Lite)</p>
+<p><b>DevOps &amp; CI/CD:</b> GitHub Actions, EAS Update (over-the-air releases), CI/CD, Bitrise, Jenkins, pnpm, semantic versioning</p>
+<p><b>Testing, Security &amp; Observability:</b> Jest, Appium; secure storage (Keychain/Keystore), biometrics</p>
+<p><b>Practices:</b> Agile delivery, Jira, design reviews, code review, best practices, documentation</p>
 <p><b>Languages:</b> Spanish (Native), English (Advanced), Italian (Fluent), French (Basic), German (Basic)</p>
 
 </body>

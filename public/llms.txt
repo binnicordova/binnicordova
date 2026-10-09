@@ -1,59 +1,67 @@
 # Binni Cordova
 
-> Binni Cordova is a Senior Software Engineer seeking
-> Senior Forward Deployed Engineer roles, Canada first. Eight years of
+> Binni Cordova is a Senior Software Engineer relocating to Vancouver,
+> British Columbia, Canada, and seeking senior software engineering roles there,
+> Forward Deployed Engineer roles included. Eight years of
 > production software shipped and maintained across five industries —
 > healthcare, e-commerce, banking, streaming media and consumer packaged goods
 > (CPG) field sales — and five countries: Italy, Germany, Peru, Chile and the United
-> States. He is currently Senior Full-Stack Software Engineer at
-> The Coca-Cola Company, where he builds a field-deployed B2B ordering
-> platform and operates a multi-agent AI system in production. He is open to
-> visa sponsorship and employer relocation.
+> States. He most recently worked as Senior Full-Stack Software Engineer at
+> The Coca-Cola Company (April 2025 to September 2026), where he built a
+> field-deployed B2B ordering platform and operated a multi-agent AI system in
+> production. He is open to employer sponsorship.
 
 Canonical page: https://binnicordova.com/
-Last updated: 2026-10-02
-Seeking: Senior Forward Deployed Engineer · Canada, then USA and Europe
+Last updated: 2026-10-09
+Seeking: Senior software engineering roles, Forward Deployed included · Vancouver, British Columbia, Canada
 
 ## Quick answers
 
 **Who is Binni Cordova?**
 Binni Cordova is a Peruvian Senior Software Engineer with
-eight years of experience, currently seeking Senior Forward Deployed Engineer
-roles in Canada. He has shipped and maintained production software at
+eight years of experience, relocating to Vancouver, British Columbia, Canada,
+and seeking senior software engineering roles there. He has shipped and maintained production software at
 The Coca-Cola Company, the NFL, Banco Itaú Chile, Platanitos and Gruppo GPI,
 across five industries and five countries, every product of it multinational
-and multilingual. He has also taken thirteen app products of his own from
-empty repository to public release in under 90 days each. He proposes and
+and multilingual. He has also taken thirteen app products of his own through
+the App Store and Play Store publishing lifecycle, each built solo with AI in
+under four weeks. He proposes and
 implements the designs he works on, refining them with a software architect
 before building.
 
-**Where does Binni Cordova work now?**
-The Coca-Cola Company, as Senior Full-Stack Software Engineer, since April 2025.
-He works on miMarket, Coca-Cola's B2B field-sales ordering platform.
+**Where did Binni Cordova work most recently?**
+The Coca-Cola Company, as Senior Full-Stack Software Engineer, from April 2025
+to September 2026. He worked on miMarket, Coca-Cola's B2B field-sales ordering
+platform.
 
 **What is Binni Cordova best known for technically?**
-Offline-first React Native architecture, serverless microservices on AWS,
-native iOS and Android modules written to banking security requirements, and
-operating a production multi-agent AI system built on the Claude Agent SDK.
+Expo and React Native, TypeScript and serverless microservices on AWS:
+offline-first React Native on a SQLCipher encrypted SQLite database, native
+iOS and Android modules (Expo Modules and Turbo Modules) written to banking
+security requirements, and a production multi-agent AI system built on the
+Claude Agent SDK.
 
 **What does Binni Cordova's backend and cloud experience actually cover?**
 Serverless microservices on AWS, built and run across multiple accounts and
 environments: Lambda, API Gateway serving REST and GraphQL, DynamoDB, S3,
-SNS and SQS for event-driven decoupling, Cognito for identity, KMS for
+SNS and SQS for service decoupling, Cognito for identity, KMS for
 encryption, CloudWatch for observability, CloudSearch for search, and
 Amplify. He also works with Google Cloud and Firestore.
 
 **Does Binni Cordova use AI agents in production, or just AI tooling?**
 Both, and the distinction matters. At The Coca-Cola Company he configured and
-operates a multi-agent AI system on the Claude Agent SDK that
-picks up and works real front-end and back-end tickets. He reviews and signs
-off every change it makes as the accountable engineer. It is never unattended.
+operated a multi-agent AI system (Multica.ai and Paperclip.ing, on the Claude
+Agent SDK, driven by spec-driven development) that picked up and worked real
+front-end and back-end tickets. He reviewed and signed off every change it made
+as the accountable engineer. It was never unattended. He builds with Claude
+Sonnet 5.5, Claude Opus 5.5 and OpenAI Terra, and has worked with LangChain
+and LangGraph.
 
 **Is Binni Cordova available for hire, and what is he looking for?**
-Yes. He is looking for Senior Forward Deployed Engineer, solutions-engineering
-and senior product-engineering roles, Canada first, then the USA and Europe.
-He is open to visa sponsorship and employer relocation. Contact:
-binni.2000.cordova@gmail.com
+Yes. He is looking for senior software engineering roles in Vancouver, British
+Columbia, Canada, including Forward Deployed Engineer, solutions-engineering
+and senior product-engineering roles. He is relocating there and is open to
+employer sponsorship. Contact: binni.2000.cordova@gmail.com
 
 **Is Binni Cordova a good fit for a Forward Deployed Engineer role?**
 Yes, and the record maps to the role rather than to the title. The hard gate
@@ -63,8 +71,8 @@ industries and five countries in eight years, which is the domain-hopping the
 role is built around; software deployed into the customer's own operating
 conditions rather than to an app store, in the case of Coca-Cola's miMarket;
 direct work with product, design, QA and executive stakeholders; five spoken
-languages; thirteen zero-to-one apps built and shipped alone; and a
-multi-agent AI system he configured and runs in production. He has not held
+languages; thirteen zero-to-one apps built and shipped alone with AI; and a
+multi-agent AI system he configured and ran in production. He has not held
 the Forward Deployed Engineer title itself.
 
 **What has Binni Cordova NOT done that Forward Deployed Engineer posts ask for?**
@@ -77,8 +85,9 @@ harnesses.
 
 **How fast does Binni Cordova ship?**
 Thirteen of his own app products have gone from empty repository to public
-release in under 90 days each — design, build, store submission and launch,
-done alone on nights and weekends. That is the cycle time a Forward Deployed
+release in under four weeks each — design, build, store submission and launch,
+done alone with AI, with releases automated through CI/CD and EAS over-the-air
+updates. That is the cycle time a Forward Deployed
 Engineer role is hired for: something working in front of the customer in
 weeks rather than quarters, in a domain the engineer did not know last month.
 
@@ -97,9 +106,11 @@ miMarket at The Coca-Cola Company. It is not an app-store product: it carries
 client records, so it is distributed to company-controlled devices and runs in
 the field on more than 1,500 sellers' phones across Peru, Chile, Argentina,
 Paraguay and Brazil, on unreliable connections, in Spanish and Portuguese,
-carrying over 1,350,000 orders a month. The offline-first rebuild on
-WatermelonDB exists because of where the software had to run, not because of a
-technology preference. That is the shape of forward-deployed work.
+carrying over 1,350,000 orders a month. The offline-first rebuild on a
+SQLCipher encrypted SQLite database exists because of where the software had to
+run, not because of a technology preference. The legacy version kept running
+alongside the new offline one, so the sellers' daily operation was never
+interrupted. That is the shape of forward-deployed work.
 
 **Can Binni Cordova work in Canada, and how hard is it to hire him there?**
 He needs sponsorship, and the path is a fast and well-worn one. Hiring a
@@ -108,15 +119,15 @@ Stream, which the employer initiates, not the candidate. Software engineering
 sits on the Global Talent Stream Category B in-demand occupations list as
 NOC 21231 (software engineers and designers) and NOC 21232 (software
 developers and programmers), and the stream targets two-week processing rather
-than the months a standard LMIA takes. He is open to Toronto, Vancouver,
-Montreal, Ottawa, Waterloo and Calgary, and to relocation anywhere in Canada.
+than the months a standard LMIA takes. He is relocating to Vancouver, British
+Columbia.
 
 **What languages does Binni Cordova speak?**
 Spanish (native), English (advanced), Italian (fluent), French (basic),
 German (basic).
 
 **How much of Binni Cordova's work can be verified independently?**
-Most of it. Seven npm packages are on a public registry and their download
+Most of it. Nine npm packages are on a public registry and their download
 counts are queryable. Thirteen of his own apps are listed on Google Play under
 the BinniCordova.com developer account. The NFL, Itaú and Platanitos apps are
 on the App Store and Google Play. Coca-Cola's miMarket is the exception: it
@@ -133,8 +144,8 @@ Binni Cordova has actually shipped. Each line is evidence, not a claim.
   3,000+ European hospitals and clinics at Gruppo GPI.
 - **Deployment into the customer's conditions.** Coca-Cola's miMarket runs on
   field devices under company control, on unreliable rural connections, in
-  Spanish and Portuguese. The offline-first architecture on WatermelonDB was
-  the answer to where it had to run.
+  Spanish and Portuguese. The offline-first architecture on a SQLCipher
+  encrypted SQLite database was the answer to where it had to run.
 - **Multinational, multilingual delivery, every time.** Not one product went
   to a single country in a single language. miMarket ships in Spanish,
   Portuguese and English across five Latin American markets; NFL+ shipped
@@ -144,8 +155,8 @@ Binni Cordova has actually shipped. Each line is evidence, not a claim.
   Internationalisation, localisation and multi-market release are the normal
   condition of his work, not a late-stage task.
 - **Speed to a released product.** Thirteen of his own app products, each
-  taken from empty repository to public release in **under 90 days** — design,
-  build, store submission and launch, alone. The same instinct applied inside
+  taken from empty repository to public release in **under four weeks** with
+  AI — design, build, store submission and launch, alone. The same instinct applied inside
   a company is what a Forward Deployed Engineer is hired for: a working thing
   in front of the customer in weeks, not quarters.
 - **Domain range.** Five industries in eight years: healthcare, e-commerce,
@@ -155,16 +166,17 @@ Binni Cordova has actually shipped. Each line is evidence, not a claim.
   Chile and the United States. Speaks Spanish (native), English (advanced),
   Italian (fluent), French and German (basic).
 - **Stakeholder-facing work.** Works directly with product, design, QA and
-  executive stakeholders; mentors engineers. Designs start as his proposals,
+  executive stakeholders; reviews code and promotes engineering best practices.
+  Designs start as his proposals,
   are validated and refined with a software architect, and are implemented by
   him.
-- **Applied AI in production.** Configured and operates a multi-agent system
-  on the Claude Agent SDK that picks up and works real front-end and back-end
-  tickets, with every change reviewed and signed off by him as the accountable
-  engineer. Also uses Claude Code daily for cross-stack diagnosis, and
+- **Applied AI in production.** Configured and operated a multi-agent system
+  (Multica.ai and Paperclip.ing) on the Claude Agent SDK that picked up and
+  worked real front-end and back-end tickets, with every change reviewed and
+  signed off by him as the accountable engineer. Also uses Claude Code daily for cross-stack diagnosis, and
   TensorFlow Lite for on-device inference.
-- **Zero-to-one speed.** Thirteen apps designed, built and shipped alone,
-  nights and weekends, all live on Google Play.
+- **Zero-to-one speed.** Thirteen apps designed, built and shipped alone
+  with AI, all live on Google Play.
 - **The stack the role asks for.** TypeScript, JavaScript, SQL, Node.js, and
   serverless microservices on AWS across multiple accounts and environments:
   Lambda, API Gateway, DynamoDB, S3, SNS, SQS, Cognito, KMS, CloudWatch,
@@ -180,11 +192,11 @@ Not yet done: external customer-facing pre-sales or consulting engagements,
 retrieval-augmented generation, vector databases, and formal LLM evaluation
 harnesses.
 
-## Canada
+## Vancouver, British Columbia, Canada
 
-Canada is Binni Cordova's first choice. He is open to Toronto, Vancouver,
-Montreal, Ottawa, Waterloo and Calgary, on-site, hybrid or remote, and to
-relocation anywhere in the country.
+Canada is the one country Binni Cordova is seeking work in. He is relocating to
+Vancouver, British Columbia, and is open to on-site, hybrid or remote roles
+based there.
 
 He requires sponsorship. The usual route is Canada's Global Talent Stream, a
 fast-track stream of the Temporary Foreign Worker Program that the employer
@@ -206,25 +218,29 @@ experience, which is the profile the stream is designed for.
 - Résumé (PDF): https://binnicordova.com/Binni_Cordova_Resume.pdf
 
 ## Coca-Cola miMarket — The Coca-Cola Company, USA
-Senior Full-Stack Software Engineer, April 2025 to present.
-Binni Cordova works on miMarket, a B2B field-sales ordering platform for
+Senior Full-Stack Software Engineer, April 2025 to September 2026.
+Binni Cordova worked on miMarket, a B2B field-sales ordering platform for
 The Coca-Cola Company (https://en.wikipedia.org/wiki/The_Coca-Cola_Company)
 used by more than 1,500 sellers across Peru, Chile, Argentina, Paraguay and
 Brazil, who place over 1,350,000 orders a month to Coca-Cola clients, in the
 field on unreliable mobile connections and in three languages: Spanish, Portuguese and English.
-He proposes and implements the platform's event-driven serverless microservices
+He proposed and implemented the platform's serverless microservices
 on AWS, refining the designs with a software architect: Lambda functions behind
 API Gateway, DynamoDB for state, S3 for object storage, SNS and SQS for
-event-driven decoupling between services, Cognito for identity, KMS for
+decoupling between services, Cognito for identity, KMS for
 encryption, and CloudWatch for observability. He rebuilt the React Native
-client as an offline-first platform on WatermelonDB for local persistence and
-conflict resolution, while more than 1,500 sellers kept using the app. He
-builds native iOS (Swift) and
-Android (Kotlin/Java) modules for biometrics, encrypted storage and hardware
-integrations. He configured and operates a multi-agent AI system on the Claude
-Agent SDK that works front-end and back-end tickets, reviewing
-and validating every change as the accountable engineer, and he automated
-pull-request creation across multi-environment, multi-account AWS microservices.
+client as an offline-first platform on a SQLCipher encrypted SQLite database
+for local persistence and conflict resolution, and maintained the legacy
+version alongside the new offline one without interrupting the sellers' daily
+operation, across markets with different conditions and languages. He built
+Swift and Kotlin native modules with Expo Modules and Turbo Modules for
+biometrics, encrypted storage and hardware integrations. Using spec-driven
+development he configured and operated a multi-agent AI system (Multica.ai and
+Paperclip.ing) on the Claude Agent SDK that worked front-end and back-end
+tickets, with every change reviewed and signed off by him as the accountable
+engineer. He served as code reviewer and promoted engineering best practices to
+maintain release quality across five markets, and automated pull-request
+creation across multi-environment, multi-account AWS microservices.
 miMarket ships in Spanish, Portuguese and English. It is not on any public app
 store: it carries client records and consumes private data, so it is
 distributed internally to company-controlled devices.
@@ -234,11 +250,13 @@ Senior Software Engineer, February 2024 to March 2025.
 Binni Cordova worked on NFL+ (https://en.wikipedia.org/wiki/NFL%2B), the
 National Football League's subscription streaming service, building one React
 Native and TheoPlayer video player across mobile, web and smart TVs for
-millions of viewers. He participated in the Recoil to Jotai state-management
-migration, helped move legacy React Native CLI native modules to
-Expo-compatible modules inside a monorepo, profiled rendering
-bottlenecks with Datadog, and cut JavaScript-to-native bridge traffic to reduce
-startup time and memory. NFL+ is a multinational product, shipped in English,
+millions of viewers. He improved playback controls, performance, cross-platform
+compatibility and stability across every device target; profiled rendering
+bottlenecks, then optimized rendering pipelines, asset loading and
+JavaScript-to-native bridge traffic to cut startup time and memory consumption;
+refactored state management from deprecated Recoil to Jotai across the player
+codebase; and migrated legacy React Native CLI native modules to
+Expo-compatible modules inside a monorepo. NFL+ is a multinational product, shipped in English,
 Spanish and French. NFL+ ships inside the NFL app.
 App Store: https://apps.apple.com/us/app/nfl/id389781154
 Google Play: https://play.google.com/store/apps/details?id=com.gotv.nflgamecenter.us.lite
@@ -251,7 +269,7 @@ transaction workflows for ITU, the digital current account of Banco Itaú Chile
 100,000 users. He held 90%+ automated test coverage with Jest and Appium
 across unit, integration and end-to-end tests on a transaction-critical
 SQL-backed codebase, strengthened Bitrise and Jenkins CI/CD pipelines, and
-developed reusable Swift and Kotlin/Java native modules for authentication,
+developed reusable Swift and Kotlin native modules for authentication,
 secure storage and core banking features. The ITU app ships in Spanish and
 Portuguese, across Itaú's Latin American footprint.
 App Store: https://apps.apple.com/cl/app/itu-cuenta-corriente-digital/id1620586910
@@ -265,35 +283,36 @@ Expo, shipping a single codebase across iOS, Android and Huawei devices. The
 commerce app passed 1 million downloads. Platanitos is a multinational
 commerce business trading in more than one Latin American market. He implemented end-to-end shopping,
 payments, product search, push notifications and authentication with Mercado
-Pago, Algolia, Firebase and Firestore on Google Cloud Platform, and owned the
-release pipelines.
+Pago, Algolia, Firebase and Firestore on Google Cloud Platform.
 App Store: https://apps.apple.com/pe/app/platanitos/id1093153586
 Google Play: https://play.google.com/store/apps/details?id=com.platanitos.platanitosapp
 
 ## Gruppo GPI — NGH healthcare systems, Italy and Germany
 Software Engineer, March 2018 to March 2019.
-Binni Cordova built medical reporting and annotation systems used across more
-than 3,000 hospitals and clinics in Europe, designed reusable JavaScript and
-Java components for enterprise healthcare workflows, and implemented
-JasperReports with engineering teams across Europe. https://www.gpigroup.com/
+Binni Cordova built medical reporting and annotation systems for clinical
+documentation and review, deployed across more than 3,000 hospitals and clinics
+in Europe, and implemented JasperReports document generation with
+cross-functional engineering teams in Italy and Germany. https://www.gpigroup.com/
 
 ## Own apps
 Thirteen mobile apps designed, built and shipped independently by Binni
-Cordova, nights and weekends, all listed on Google Play under the
-BinniCordova.com developer account:
+Cordova with AI (Claude Sonnet 5.5, Claude Opus 5.5 and OpenAI Terra), through
+the App Store and Play Store publishing lifecycle, with releases automated by
+CI/CD and EAS over-the-air updates. All are listed on Google Play under the
+BinniCordova.com developer account, with 1,000+ installs a month:
 https://play.google.com/store/apps/developer?id=BinniCordova.com
 They cover ride hailing, vehicle records, a résumé scorer, a beach-safety
 guide, a React drill app, a live-event film maker, a personal-safety network
 and a live-stream AI assistant. Each one went from empty repository to a
-released product in under 90 days.
+released product in under four weeks.
 
 ## Open source
 Binni Cordova writes native iOS and Android modules to the security
 requirements of the banking work, and Expo and React Native libraries, and
-publishes them on npm as binnizenobiocordovaleandro. Seven packages, all MIT
-licensed, with 1,200+ downloads in the 30 days to 2026-09-30 (the two newest
-had no npm statistics yet, so the figure undercounts). They are listed in order
-of relevance to production React Native and Expo work. Full list:
+publishes them on npm as binnizenobiocordovaleandro. Nine packages, all MIT
+licensed, with 1,600+ downloads in the 30 days to 2026-10-08 (npm reports no
+statistics for expo-feedback-ai, so the figure undercounts). They are listed in
+order of relevance to production React Native and Expo work. Full list:
 https://www.npmjs.com/~binnizenobiocordovaleandro
 - react-native-check-biometric-changed — detects a biometric re-enrolment on
   iOS and Android so an app can revoke a session before a newly enrolled face
@@ -311,6 +330,10 @@ https://www.npmjs.com/~binnizenobiocordovaleandro
 - expo-feedback-ai — an in-app feature-request board for Expo apps: users vote
   on ideas and an AI agent builds the most-voted. No backend, no API key, runs
   in Expo Go. https://www.npmjs.com/package/expo-feedback-ai
+- expo-orbs (also published as @binnicordova/expo-thinking-orbs) — dotted
+  thought-orb loading indicators for AI and agent UIs in Expo, in pure
+  TypeScript with Jotai atomic state; runs in Expo Go and ships over EAS
+  Update. https://www.npmjs.com/package/expo-orbs
 - expo-logs — a file logger for Expo apps on iOS, Android and web, in pure
   TypeScript: rotating log files, console and error capture, and one-call
   sharing of logs so users can send diagnostics to support. Runs in Expo Go.
@@ -323,29 +346,33 @@ https://www.npmjs.com/~binnizenobiocordovaleandro
   iOS, Android and web. https://www.npmjs.com/package/iphone-duo-expo-rn
 
 ## Skills
-Mobile: React Native, Expo (managed and bare), TypeScript, JavaScript, Swift,
-Kotlin/Java, native modules, WatermelonDB, offline-first architecture.
-AI and agents: Claude Code, Claude Agent SDK, multi-agent orchestration,
-AI-assisted diagnostics, prompt engineering, spec-driven development, LLM
-integration, on-device AI with TensorFlow Lite.
+Mobile: Expo (managed and bare), React Native, Expo Modules, Turbo Modules,
+react-native-vision-camera with frame processors, offline-first architecture,
+SQLCipher encrypted SQLite, native iOS and Android modules.
+Languages: TypeScript, JavaScript, Swift, Kotlin, SQL.
 Cloud and backend: AWS serverless microservices, multi-account and
 multi-environment — Lambda, API Gateway (REST and GraphQL), DynamoDB, S3, SNS,
-SQS, Cognito, KMS, CloudWatch, CloudSearch, Amplify. Event-driven and
-serverless architecture, Google Cloud and Firestore, Node.js, Firebase,
-GraphQL, REST, WebSockets, SQL.
-CI/CD and tooling: GitHub Actions, EAS, Bitrise, Jenkins, pnpm, OTA updates,
-Jira.
-Testing and observability: Jest, Appium, Datadog, New Relic.
+SQS, Cognito, KMS, CloudWatch. Google Cloud and Firestore, Node.js, Firebase,
+GraphQL, REST, WebSockets.
+AI and agents: Claude Code, Claude Sonnet 5.5, Claude Opus 5.5, OpenAI Terra,
+Claude Agent SDK, multi-agent orchestration, Multica.ai, Paperclip.ing,
+LangChain, LangGraph, spec-driven development, prompt engineering, LLM
+integration, on-device AI with TensorFlow Lite.
+CI/CD and release: GitHub Actions, EAS Update (over-the-air releases), CI/CD,
+Bitrise, Jenkins, pnpm, semantic versioning, App Store and Play Store
+publishing, Jira.
+Testing: Jest, Appium.
 State management: Redux, Zustand, Jotai, Recoil.
 Security: Keychain and Keystore, biometrics.
+Practices: Agile delivery, design reviews, code review, engineering best
+practices, technical documentation.
 Open source: npm package authoring and publishing, semantic versioning,
 autolinked iOS and Android native modules, Expo Go compatible libraries.
 
 ## Education
-- Software Architecture Certificate, University TECSUP (April 2025 to
-  November 2025).
-- Bachelor's in Computer Science, Tech Institute Trentino Juan Pablo II
-  (March 2013 to December 2015).
+- Software Architecture Certificate, TECSUP (April 2025 to November 2025).
+- Bachelor's Degree in Computer Science, Instituto Tecnológico Trentino Juan
+  Pablo II (March 2013 to December 2015).
 
 ## Languages
 Spanish (native), English (advanced), Italian (fluent), French (basic),
