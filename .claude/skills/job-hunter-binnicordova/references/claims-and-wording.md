@@ -78,3 +78,23 @@ Native Swift/Kotlin detail on a pure React Native posting, Jira, JasperReports, 
 and Firebase, New Relic, CodePush, on-device AI, WebSockets, Redux/Recoil lists, unrelated
 packages, Italian and German. Keep React Native, Expo, TypeScript and AWS prominent whenever the
 posting is anywhere near them. Never cut an employer to save space; trim its bullets.
+
+## Presentation rules from reviewer feedback (2026-11-02)
+
+A career coach reviewed the Abby Care variant and asked for clearer achievements, individual
+contribution with measurable impact, plainer senior ownership, AI framed as a complement, and
+more detail on earlier roles. What holds up, applied to every variant:
+- Lead each role with its strongest result, then the work that produced it. A result bullet says
+  what changed and by how much, using only confirmed numbers (memory
+  confirmed-leadership-and-impact: Coca-Cola offline orders from zero to 500+ a month after the
+  Sep 2026 release, 10% of sellers on it).
+- State ownership as things he did: proposed designs refined with a software architect, code
+  reviewer at Coca-Cola, owned App Store and Google Play releases at Itau and Platanitos, mentored
+  engineers at Itau and Platanitos, led a team of three developers at Platanitos. Still never
+  Architect, Tech Lead or "led architecture".
+- AI goes after the mobile core: not in the headline unless the posting is AI-first, one Summary
+  bullet framed as "uses AI to ship mobile work faster", the AI skills row below the delivery rows.
+- Earlier roles get 2 to 4 bullets with stack and team context (Platanitos team of three and
+  store releases; GPI Group's NGH on a JavaScript web front end over SQL databases), not just
+  a one-line duty.
+- Where a reviewer asks for metrics he does not have (NFL+ startup time), ask him; do not invent.

@@ -1,7 +1,7 @@
 # Binni Cordova
 
-> Binni Cordova is a Senior Software Engineer relocating to Vancouver,
-> British Columbia, Canada, and seeking senior software engineering roles there,
+> Binni Cordova is a Senior Software Engineer moving to Canada
+> and seeking senior software engineering roles there,
 > Forward Deployed Engineer roles included. Eight years of
 > production software shipped and maintained across five industries —
 > healthcare, e-commerce, banking, streaming media and consumer packaged goods
@@ -12,14 +12,14 @@
 > production. He is open to employer sponsorship.
 
 Canonical page: https://binnicordova.com/
-Last updated: 2026-10-09
-Seeking: Senior software engineering roles, Forward Deployed included · Vancouver, British Columbia, Canada
+Last updated: 2026-11-02
+Seeking: Senior software engineering roles, Forward Deployed included · Moving to Canada
 
 ## Quick answers
 
 **Who is Binni Cordova?**
 Binni Cordova is a Peruvian Senior Software Engineer with
-eight years of experience, relocating to Vancouver, British Columbia, Canada,
+eight years of experience, moving to Canada,
 and seeking senior software engineering roles there. He has shipped and maintained production software at
 The Coca-Cola Company, the NFL, Banco Itaú Chile, Platanitos and Gruppo GPI,
 across five industries and five countries, every product of it multinational
@@ -58,9 +58,8 @@ Sonnet 5.5, Claude Opus 5.5 and OpenAI Terra, and has worked with LangChain
 and LangGraph.
 
 **Is Binni Cordova available for hire, and what is he looking for?**
-Yes. He is looking for senior software engineering roles in Vancouver, British
-Columbia, Canada, including Forward Deployed Engineer, solutions-engineering
-and senior product-engineering roles. He is relocating there and is open to
+Yes. He is looking for senior software engineering roles in Canada, including Forward Deployed Engineer, solutions-engineering
+and senior product-engineering roles. He is moving there and is open to
 employer sponsorship. Contact: binni.2000.cordova@gmail.com
 
 **Is Binni Cordova a good fit for a Forward Deployed Engineer role?**
@@ -119,8 +118,7 @@ Stream, which the employer initiates, not the candidate. Software engineering
 sits on the Global Talent Stream Category B in-demand occupations list as
 NOC 21231 (software engineers and designers) and NOC 21232 (software
 developers and programmers), and the stream targets two-week processing rather
-than the months a standard LMIA takes. He is relocating to Vancouver, British
-Columbia.
+than the months a standard LMIA takes. He is moving to Canada.
 
 **What languages does Binni Cordova speak?**
 Spanish (native), English (advanced), Italian (fluent), French (basic),
@@ -140,8 +138,10 @@ Binni Cordova has actually shipped. Each line is evidence, not a claim.
 
 - **Production systems shipped and maintained.** Eight years, five employers,
   all of it live: 1,350,000+ orders a month at Coca-Cola, millions of viewers
-  on NFL+, 100,000+ banking users at Itaú, 1,000,000+ downloads at Platanitos,
-  3,000+ European hospitals and clinics at Gruppo GPI.
+  on NFL+, Itaú's ITU app taken from zero to 50,000+ downloads (100,000+
+  today), Platanitos from zero to 500,000+ (1,000,000+ today), 500+ patient
+  record forms at Gruppo GPI, and Coca-Cola's offline ordering from zero to
+  500+ orders a month.
 - **Deployment into the customer's conditions.** Coca-Cola's miMarket runs on
   field devices under company control, on unreliable rural connections, in
   Spanish and Portuguese. The offline-first architecture on a SQLCipher
@@ -170,10 +170,11 @@ Binni Cordova has actually shipped. Each line is evidence, not a claim.
   Designs start as his proposals,
   are validated and refined with a software architect, and are implemented by
   him.
-- **Applied AI in production.** Configured and operated a multi-agent system
-  (Multica.ai and Paperclip.ing) on the Claude Agent SDK that picked up and
-  worked real front-end and back-end tickets, with every change reviewed and
-  signed off by him as the accountable engineer. Also uses Claude Code daily for cross-stack diagnosis, and
+- **Applied AI in production.** Automated the support team's tasks at
+  Coca-Cola with a Claude multi-agent system, and configured and operated a
+  multi-agent system (Multica.ai and Paperclip.ing) on the Claude Agent SDK that
+  took Jira tickets and released app changes to their definitions, with every
+  change reviewed and signed off by him as the accountable engineer. Also uses Claude Code daily for cross-stack diagnosis, and
   TensorFlow Lite for on-device inference.
 - **Zero-to-one speed.** Thirteen apps designed, built and shipped alone
   with AI, all live on Google Play.
@@ -192,11 +193,10 @@ Not yet done: external customer-facing pre-sales or consulting engagements,
 retrieval-augmented generation, vector databases, and formal LLM evaluation
 harnesses.
 
-## Vancouver, British Columbia, Canada
+## Moving to Canada
 
-Canada is the one country Binni Cordova is seeking work in. He is relocating to
-Vancouver, British Columbia, and is open to on-site, hybrid or remote roles
-based there.
+Canada is the one country Binni Cordova is seeking work in. He is moving to
+Canada and is open to on-site, hybrid or remote roles based there.
 
 He requires sponsorship. The usual route is Canada's Global Talent Stream, a
 fast-track stream of the Temporary Foreign Worker Program that the employer
@@ -232,13 +232,17 @@ encryption, and CloudWatch for observability. He rebuilt the React Native
 client as an offline-first platform on a SQLCipher encrypted SQLite database
 for local persistence and conflict resolution, and maintained the legacy
 version alongside the new offline one without interrupting the sellers' daily
-operation, across markets with different conditions and languages. He built
+operation, through a year of rebuild and three months of stabilization. After
+the September 2026 production release, offline orders went from zero to 500+ a
+month with 10% of sellers on the new app, and adoption is still growing. He built
 Swift and Kotlin native modules with Expo Modules and Turbo Modules for
 biometrics, encrypted storage and hardware integrations. Using spec-driven
 development he configured and operated a multi-agent AI system (Multica.ai and
-Paperclip.ing) on the Claude Agent SDK that worked front-end and back-end
-tickets, with every change reviewed and signed off by him as the accountable
-engineer. He served as code reviewer and promoted engineering best practices to
+Paperclip.ing) on the Claude Agent SDK that took Jira tickets and released app
+changes to their definitions, with every change reviewed and signed off by him
+as the accountable engineer. His highlight there was using a Claude multi-agent
+system to automate the support team's tasks, moving that time to development
+and to building the product. He served as code reviewer and promoted engineering best practices to
 maintain release quality across five markets, and automated pull-request
 creation across multi-environment, multi-account AWS microservices.
 miMarket ships in Spanish, Portuguese and English. It is not on any public app
@@ -250,7 +254,10 @@ Senior Software Engineer, February 2024 to March 2025.
 Binni Cordova worked on NFL+ (https://en.wikipedia.org/wiki/NFL%2B), the
 National Football League's subscription streaming service, building one React
 Native and TheoPlayer video player across mobile, web and smart TVs for
-millions of viewers. He improved playback controls, performance, cross-platform
+millions of viewers; the NFL app grew from 50M+ to 100M+ downloads while he was
+on it. He stabilized the video player component and built a native Android
+module for the Fire TV app that adds the NFL+ catalog to the device's home
+screen. He improved playback controls, performance, cross-platform
 compatibility and stability across every device target; profiled rendering
 bottlenecks, then optimized rendering pipelines, asset loading and
 JavaScript-to-native bridge traffic to cut startup time and memory consumption;
@@ -263,10 +270,13 @@ Google Play: https://play.google.com/store/apps/details?id=com.gotv.nflgamecente
 
 ## Itaú Bank — ITU App, Chile
 Software Engineer, December 2021 to February 2024.
-Binni Cordova built biometric authentication and encrypted financial
-transaction workflows for ITU, the digital current account of Banco Itaú Chile
-(https://en.wikipedia.org/wiki/Banco_Ita%C3%BA_Chile), serving more than
-100,000 users. He held 90%+ automated test coverage with Jest and Appium
+Binni Cordova joined ITU, the digital current account of Banco Itaú Chile
+(https://en.wikipedia.org/wiki/Banco_Ita%C3%BA_Chile), at the start and helped
+take it from zero users to 50,000+ downloads by February 2024; it has more than
+100,000 today. He built biometric authentication and encrypted financial
+transaction workflows, owned the App Store and Google Play releases through
+TestFlight and App Store Connect, and mentored new engineers on the codebase,
+code review and release process. He held 90%+ automated test coverage with Jest and Appium
 across unit, integration and end-to-end tests on a transaction-critical
 SQL-backed codebase, strengthened Bitrise and Jenkins CI/CD pipelines, and
 developed reusable Swift and Kotlin native modules for authentication,
@@ -277,10 +287,12 @@ Google Play: https://play.google.com/store/apps/details?id=cl.itau.itu
 
 ## Platanitos — e-commerce, Peru
 Full-Stack Software Engineer, March 2019 to December 2021.
-Binni Cordova led the migration of Platanitos, Peru's leading fashion and
-footwear e-commerce platform, from a legacy web platform to React Native and
-Expo, shipping a single codebase across iOS, Android and Huawei devices. The
-commerce app passed 1 million downloads. Platanitos is a multinational
+Binni Cordova led a team of three developers through the migration of
+Platanitos, Peru's leading fashion and footwear e-commerce platform, from a
+legacy web platform to React Native and Expo, shipping a single codebase across
+iOS, Android and Huawei devices, and owned the store releases. The new
+commerce app grew from zero to 500,000+ downloads by December 2021, when he
+left, and has passed 1 million since. Platanitos is a multinational
 commerce business trading in more than one Latin American market. He implemented end-to-end shopping,
 payments, product search, push notifications and authentication with Mercado
 Pago, Algolia, Firebase and Firestore on Google Cloud Platform.
@@ -289,9 +301,12 @@ Google Play: https://play.google.com/store/apps/details?id=com.platanitos.platan
 
 ## Gruppo GPI — NGH healthcare systems, Italy and Germany
 Software Engineer, March 2018 to March 2019.
-Binni Cordova built medical reporting and annotation systems for clinical
-documentation and review, deployed across more than 3,000 hospitals and clinics
-in Europe, and implemented JasperReports document generation with
+NGH is the healthcare information system of GPI Group (Gruppo GPI), an Italian
+healthcare technology group. It had no functional forms when Binni Cordova
+started; he implemented more than 500 forms for patients' hospital records
+that doctors use, with Angular 2, Bootstrap and SQL. He also built medical
+reporting and annotation systems for clinical documentation and review,
+deployed across more than 3,000 hospitals and clinics in Europe, and implemented JasperReports document generation with
 cross-functional engineering teams in Italy and Germany. https://www.gpigroup.com/
 
 ## Own apps
