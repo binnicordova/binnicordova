@@ -23,4 +23,41 @@ customer engineering teams
 Objective-C
 PingOne
 react-native-builder-bob
-# Not confirmed, never list: fastlane, Xcode Cloud.
+# Confirmed 2026-10-03 (memory confirmed-web-skills), missing here until 2026-10-23.
+HTML
+CSS
+# Confirmed 2026-10-23 (Talent Arabia Dubai RN Lead run): Next.js, Java for Android, Visual Studio Code.
+Next.js
+Java
+Visual Studio Code
+# Not confirmed, never list: fastlane, Xcode Cloud, Vite, Bitbucket, SourceTree, Cypress.
+# Confirmed 2026-10-28 (insurance Senior Full Stack run), no employer named: AppSync, PostgreSQL.
+AppSync
+PostgreSQL
+# Confirmed 2026-10-28 (CAA Full Stack Web Developer run), no employer named. Tailwind moves off the never-claim list.
+Express.js
+Express
+MongoDB
+MySQL
+MSSQL
+Material UI
+Bootstrap
+Tailwind
+# Confirmed 2026-10-29 (Kake fintech trading RN run), no employer named: OAuth 2.0 / OIDC sign-in, token refresh, real-time market data in a trading or investing app.
+OAuth
+OAuth 2.0
+OIDC
+OpenID Connect
+token refresh
+real-time market data
+market data
+trading
+# Confirmed 2026-11-02: Angular 2 with Bootstrap and SQL at GPI Group (NGH forms).
+Angular
+Angular 2
+# Confirmed 2026-11-02: NFL+ Fire TV (Android-based Fire OS) native module that adds the catalog to the device home screen.
+Fire TV
+Fire OS
+catalog
+NFL
+reusable

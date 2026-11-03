@@ -71,8 +71,8 @@ Rules for what to build:
 - A **list or search URL**: triage every card, build only BUILD and BUILD WITH CAVEATS (strongest
   five if there are more), and list every skip with its reason.
 - Canadian postings: the work-eligibility and location gate is the first thing to report. His
-  header says only "Relocating to Canada" (a deliberate choice) and the resume never claims
-  authorization. Report the gate; do not skip over it, because he knows his own status.
+  header says only "Open to relocation" (his choice since 2026-11-02; it was "Relocating to
+  Canada") and the resume never claims authorization. Report the gate; do not skip over it, because he knows his own status.
 
 ## Step 4. Map requirements to evidence
 
@@ -116,7 +116,7 @@ the section order: Summary, Experience, Education, open source, Skills.
 - Building more than three variants: assemble them from one throwaway generator script in the
   scratchpad (shared bullets copied verbatim from the PDF, per-variant summary, skills and
   keywords), never in the repo. Still run `build.sh` per variant.
-- Latin American remote postings: the base header says "Relocating to Canada", which can read
+- Latin American remote postings: the base header says "Open to relocation", which can read
   as "leaving soon" to a regional employer. Keep it (his choice) and tell him it is one line to
   change. Many Chile-only "remote" roles probably need residence in Chile; say so in the report.
 
@@ -148,6 +148,22 @@ which PDF to upload:
 Under it: skips with reasons, the gate for each Canadian role, every interest-only term, every
 derived number, and every phrase not literally in the PDF that he should confirm. Send the PDFs
 with SendUserFile when he is following from another device.
+
+When a PDF is attached to an email or uploaded anywhere, it goes out named after the position, not
+the company: `<Position>-Binni_Cordova.pdf` in short CamelCase (`SrFullStack-Binni_Cordova.pdf`,
+`SrMobileEngineer-Binni_Cordova.pdf`). Copy it to that name in the scratchpad first; the repo
+keeps `Binni_Cordova_Resume_<slug>.pdf`. Put the upload name in the JOBS.md table.
+
+When a message asks for a cover letter, write `resume/cover_<slug>.html` (one page, same serif and
+contact header as the resume, plain paragraphs, every claim from the PDF or a confirmed note,
+interest-only terms worded as interest) and render it with Chrome headless to
+`resume/Binni_Cordova_CoverLetter_<slug>.pdf`; it goes out as `<Position>-CoverLetter-Binni_Cordova.pdf`.
+Shape: opening that ties his strongest matching work to the company's stated need; one paragraph
+of results with numbers; one on ownership (designs refined with an architect, code review,
+releases, mentoring where confirmed); one on the domain; AI last, as a complement; a short close.
+When a reviewer sends feedback on a variant, sort it into adopt, adapt, reject (anything that
+would need an unconfirmed claim), ask him for the missing facts, build `<slug>_v2`, and add the
+rules that generalize to `references/claims-and-wording.md`.
 
 ## Hard stops
 

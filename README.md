@@ -7,7 +7,7 @@
 
 <p align="center">
   Previously @ <strong>The Coca-Cola Company</strong> (Apr 2025 – Sep 2026) · open to <strong>senior software engineering</strong> roles, Forward Deployed included<br>
-  🇨🇦 Relocating to Vancouver, British Columbia, Canada
+  🇨🇦 Moving to Canada
 </p>
 
 <p align="center">
@@ -22,7 +22,7 @@
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Relocating%20to-Vancouver%2C%20BC-e8935c?style=flat-square" alt="Relocating to Vancouver, British Columbia">
+  <img src="https://img.shields.io/badge/Moving%20to-Canada-e8935c?style=flat-square" alt="Moving to Canada">
   <img src="https://img.shields.io/badge/Canada-Global%20Talent%20Stream%20eligible-d52b1e?style=flat-square" alt="Canada: eligible under the Global Talent Stream, NOC 21231 and 21232">
   <img src="https://img.shields.io/badge/Focus-Agentic%20%26%20Spec--Driven%20Development-44e2cd?style=flat-square" alt="Focus: agentic and spec-driven development">
   <a href="https://www.npmjs.com/~binnizenobiocordovaleandro"><img src="https://img.shields.io/badge/npm-packages%20published-cb0000?style=flat-square&logo=npm&logoColor=white" alt="Packages published on npm"></a>
@@ -34,9 +34,10 @@
 ### What I do
 
 - **8+ years of production software.** Expo, React Native, TypeScript and AWS serverless, with native Swift and Kotlin modules, across five industries (healthcare, e-commerce, banking, streaming media, consumer packaged goods), five countries and four languages.
+- **From zero to scale.** Helped take Itaú's ITU app from zero to 50,000+ downloads (100,000+ today) and Platanitos from zero to 500,000+ (1M+ today), and took Coca-Cola's offline ordering from zero to 500+ orders a month.
 - **Built for scale, and for the field.** 1,350,000+ orders a month for 1,500+ sellers on connections that drop; millions of NFL+ viewers on mobile, web and smart TVs; secure banking workflows for 100,000+ users.
-- **I propose, then implement.** I bring designs for serverless AWS services and offline-first mobile clients, refine them with a software architect, and build them alongside product, design, QA and executives.
-- **I ship on my own, and with AI.** 13 self-published apps taken through the App Store and Play Store publishing lifecycle, each built solo with AI in under 4 weeks, with releases automated through CI/CD and EAS over-the-air updates; 9 open-source npm packages; and a supervised multi-agent system (Claude Agent SDK) that resolved engineering tickets.
+- **I propose, then implement.** I bring designs for serverless AWS services and offline-first mobile clients, refine them with a software architect, and build them alongside product, design, QA and executives. I review code, own App Store and Google Play releases, and have mentored engineers at Itaú and Platanitos, where I led a team of three.
+- **I ship on my own, and with AI.** 13 self-published apps taken through the App Store and Play Store publishing lifecycle, each built solo with AI in under 4 weeks, with releases automated through CI/CD and EAS over-the-air updates; 9 open-source npm packages; and a supervised multi-agent system (Claude Agent SDK) that automated support tasks at Coca-Cola and took Jira tickets to release.
 
 ---
 
@@ -61,13 +62,13 @@ Spec-driven development, AI-assisted diagnosis, prompt engineering — with eigh
 
 | Product | Role | Reach |
 |---|---|---|
-| **miMarket** — Coca-Cola | Senior Full-Stack · Apr 2025 – Sep 2026 | 1,500+ sellers across 5 South American markets, 1.35M+ orders/month, ES + PT + EN |
-| **[NFL+](https://apps.apple.com/us/app/nfl/id389781154)** | Senior Software Engineer · Feb 2024 – Mar 2025 | millions of viewers — mobile, web, CTV — EN + ES + FR |
-| **[Itaú](https://apps.apple.com/cl/app/itu-cuenta-corriente-digital/id1620586910)** | Software Engineer · Dec 2021 – Feb 2024 | 100K+ on a secure banking app, ES + PT, 90%+ automated coverage |
-| **[Platanitos](https://apps.apple.com/pe/app/platanitos/id1093153586)** | Full-Stack · Mar 2019 – Dec 2021 | 1M+ downloads, multinational, one codebase to iOS, Android, Huawei |
-| **[Gruppo GPI](https://www.gpigroup.com/)** | Software Engineer · Mar 2018 – Mar 2019 | 3,000+ hospitals and clinics across Europe |
+| **miMarket** — Coca-Cola | Senior Full-Stack · Apr 2025 – Sep 2026 | 1,500+ sellers across 5 South American markets, 1.35M+ orders/month, offline orders 0 to 500+/month after launch, ES + PT + EN |
+| **[NFL+](https://apps.apple.com/us/app/nfl/id389781154)** | Senior Software Engineer · Feb 2024 – Mar 2025 | NFL app 50M+ to 100M+ downloads while I was there; Fire TV home-screen catalog module, player stabilized; EN + ES + FR |
+| **[Itaú](https://apps.apple.com/cl/app/itu-cuenta-corriente-digital/id1620586910)** | Software Engineer · Dec 2021 – Feb 2024 | 0 to 50K+ downloads while I was there (100K+ today), ES + PT, 90%+ automated coverage, store releases owned |
+| **[Platanitos](https://apps.apple.com/pe/app/platanitos/id1093153586)** | Full-Stack · Mar 2019 – Dec 2021 | 0 to 500K+ downloads by Dec 2021 (1M+ today), team of 3 led, one codebase to iOS, Android, Huawei |
+| **[Gruppo GPI](https://www.gpigroup.com/)** | Software Engineer · Mar 2018 – Mar 2019 | 500+ patient record forms (Angular 2, Bootstrap, SQL), 3,000+ hospitals and clinics across Europe |
 
-miMarket is B2B field sales: 1,500+ sellers across Peru, Chile, Argentina, Paraguay and Brazil place more than 1,350,000 orders a month to Coca-Cola clients. I proposed and implemented the serverless microservices on AWS underneath it — Lambda behind API Gateway, with DynamoDB, S3, SNS and SQS — refining the designs with a software architect, and I rebuilt the React Native client offline-first on a SQLCipher encrypted SQLite database, maintaining the legacy version alongside the new offline one so the sellers' daily operation was never interrupted, across markets with different conditions and languages. Along the way I built Swift and Kotlin modules with Expo Modules and Turbo Modules, served as code reviewer and promoted engineering best practices. It runs in Spanish, Portuguese and English. Internal distribution only — it carries client records, so it ships to field devices under company control.
+miMarket is B2B field sales: 1,500+ sellers across Peru, Chile, Argentina, Paraguay and Brazil place more than 1,350,000 orders a month to Coca-Cola clients. I proposed and implemented the serverless microservices on AWS underneath it — Lambda behind API Gateway, with DynamoDB, S3, SNS and SQS — refining the designs with a software architect, and I rebuilt the React Native client offline-first on a SQLCipher encrypted SQLite database, maintaining the legacy version alongside the new offline one so the sellers' daily operation was never interrupted, across markets with different conditions and languages. After the September 2026 release, offline orders went from zero to 500+ a month with 10% of sellers on the new app. Along the way I built Swift and Kotlin modules with Expo Modules and Turbo Modules, served as code reviewer and promoted engineering best practices. It runs in Spanish, Portuguese and English. Internal distribution only — it carries client records, so it ships to field devices under company control.
 
 One React Native and TheoPlayer video player across phones, the web and smart TVs, shipped internationally in English, Spanish and French. Recoil retired for Jotai, native modules moved to Expo inside a monorepo, bridge traffic cut until the thing started fast.
 
@@ -182,7 +183,7 @@ Source is in this repository under `scrollcraft/builds/one-device/`.
 </p>
 
 <p align="center">
-  <sub>Relocating to Vancouver, British Columbia, Canada. Open to employer sponsorship.</sub>
+  <sub>Moving to Canada. Open to employer sponsorship.</sub>
 </p>
 
 <p align="center">
